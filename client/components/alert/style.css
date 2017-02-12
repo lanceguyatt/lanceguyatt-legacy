@@ -1,4 +1,4 @@
-@import '../../styling/colors';
+@import '../../styling/settings/_colors';
 
 .c-alert {
   border-color: var(--red);

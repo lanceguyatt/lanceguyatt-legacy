@@ -1,0 +1,24 @@
+@import '../../styling/settings/_colors';
+
+@import '../../styling/base';
+
+.c-titlebar {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 2px 0;
+  height: var(--titlebar-height);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+  position: absolute 0 0 *;
+  z-index: 1;
+
+  a {
+    float: left;
+  }
+}
+
+:root {
+  --titlebar-height: 22px;
+}

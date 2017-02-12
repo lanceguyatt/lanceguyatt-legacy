@@ -1,13 +1,12 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-
 import Layout from './components/layout/';
-import Hello from './components/hello/';
-import GuruMeditation from './components/guru_meditation';
+import WorkBench from './containers/workbench/';
+import GuruMeditation from './containers/guru_meditation';
 
 const routes = (
   <Route path="/" component={Layout}>
-    <IndexRoute component={Hello} />
+    <IndexRoute component={WorkBench} />
     <Route path="*" component={GuruMeditation} />
   </Route>
 );
