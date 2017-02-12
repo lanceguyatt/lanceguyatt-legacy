@@ -1,0 +1,56 @@
+:root {
+  --black: #000;
+  --blue: #6687ba;
+  --gray: #aaa;
+  --purple: #401040;
+  --red: #ed1c24;
+  --tumbleweed: #e0a080;
+  --white: #fff;
+}
+
+
+.u-hide { display: none }
+.u-relative { position: relative }
+
+.u-bg-black {background-color: var(--black) }
+.u-bg-blue { background-color: var(--blue) }
+.u-bg-gray { background-color: var(--gray) }
+.u-bg-purple { background-color: var(--purple) }
+.u-bg-red { background-color: var(--red) }
+.u-bg-tumbleweed { background-color: var(--tumbleweed) }
+.u-bg-white { background-color: var(--white) }
+
+.u-black { color: var(--black) }
+.u-blue { color: var(--blue) }
+.u-gray { color: var(--gray) }
+.u-purple { color: var(--purple) }
+.u-red { color: var(--red) }
+.u-tumbleweed { color: var(--tumbleweed) }
+.u-white { color: var(--white) }
+
+.u-border-black { border-color: var(--black) }
+.u-border-blue { border-color: var(--black) }
+.u-border-gray { border-color: var(--gray) }
+.u-border-purple { border-color: var(--purple) }
+.u-border-white { border-color: var(--white) }
+.u-border-red { border-color: var(--red) }
+
+.u-p0 { padding: 0 }
+.u-p1 { padding: var(--space-1) }
+.u-p2 { padding: var(--space-2) }
+.u-p3 { padding: var(--space-3) }
+
+.u-flex { display: flex }
+
+.u-h100 { height: 100% }
+.u-h100vh { height: 100vh }
+
+.u-relative { position: relative }
+
+.u-border { border-width: 5px; border-style: solid }
+
+:root {
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 20px;
+}

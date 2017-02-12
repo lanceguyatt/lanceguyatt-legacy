@@ -1,0 +1,10 @@
+@import '../../styling/colors';
+
+.c-alert {
+  border-color: var(--red);
+  border-style: solid;
+  border-width: 1rem;
+  max-width: 500px;
+  padding: 2rem;
+  text-align: center;
+}

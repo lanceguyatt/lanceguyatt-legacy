@@ -1,0 +1,14 @@
+.c-window {
+	/*border-image: url(./window.svg) 29 55 71 21 stretch;
+	border-style: solid;*/
+	border-width: 29px 55px 71px 21px;
+	transition-duration: 1s;
+	transition-property: background-color;
+  height: 100%;
+  position: relative;
+}
+
+.c-window__main {
+  position: absolute -7px -37px -52px -17px;
+  padding: 20px;
+}
