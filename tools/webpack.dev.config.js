@@ -2,7 +2,6 @@
   import/no-extraneous-dependencies */
 var webpack = require('webpack');
 var path = require('path');
-// var stylelint = require('stylelint');
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -21,24 +20,36 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loaders: ['babel'],
+        loaders: ['babel-loader'],
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        loaders: [
-          'style?sourceMap',
-          'css?modules&importLoaders=1&localIdentName=[local]__[hash:base64:5]',
-          'postcss',
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[local]__[hash:base64:5]',
+            },
+          },
+          'postcss-loader',
         ],
       },
       {
-        test: /\.(png|jpg|gif|ico)$/,
+        test: /\.(svg|png|jpg|gif|ico)$/,
         loaders: [
-          'file?name=[path][name].[ext]',
+          'file-loader?name=[path][name].[ext]',
         ],
       },
     ],

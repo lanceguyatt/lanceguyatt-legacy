@@ -3,12 +3,12 @@ import { Route, IndexRoute } from 'react-router';
 
 import Layout from './components/layout/';
 import Hello from './components/hello/';
-import NotFound from './components/not_found';
+import GuruMeditation from './components/guru_meditation';
 
 const routes = (
   <Route path="/" component={Layout}>
     <IndexRoute component={Hello} />
-    <Route path="*" component={NotFound} />
+    <Route path="*" component={GuruMeditation} />
   </Route>
 );
 

@@ -4,21 +4,13 @@ var webpack = require('webpack');
 var path = require('path');
 var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var autoprefixer = require('autoprefixer');
-var functions = require('postcss-functions');
-var atImport = require('postcss-import');
-var precss = require('precss');
-// var stylelint = require("stylelint");
-var rem = require('to-rem');
-var rucksack = require('rucksack-css');
 
+// var stylelint = require("stylelint");
 // Plugin that extracts and keeps track of the real paths to the assets,
 // saved within webpack-assets.json
 // Reason is to have Wepback's require() like behaviour when requiring
 // images etc. within Node when the static site is being rendered.
-var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(
-  require('./isomorphic.prod.config.js')
-);
+var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config.js'));
 
 module.exports = {
   devtool: 'source-map',
@@ -32,41 +24,66 @@ module.exports = {
     publicPath: '',
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
+
     new webpack.optimize.UglifyJsPlugin({
       screw_ie8: true,
       compressor: { warnings: false },
     }),
-    new ExtractTextPlugin('bundle-[contenthash].css', { allChunks: true }),
+
+    new ExtractTextPlugin({
+      filename: 'bundle-[contenthash].css',
+      allChunks: true,
+    }),
+
     webpackIsomorphicToolsPlugin,
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loaders: ['babel'],
+        loaders: ['babel-loader'],
         exclude: /node_modules/,
       },
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('css'),
-        loader: ExtractTextPlugin.extract(
-          'style',
-          [
-            'css?minimize&modules&importLoaders=1&localIdentName=_[hash:base64:5]',
-            'postcss',
-          ]
-        ),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[hash:base64:5]',
+              },
+            },
+            'postcss-loader',
+          ],
+        }),
       },
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('images'),
-        loaders: [
-          'file?name=img/[sha512:hash:base64:7].[ext]',
-          'image-webpack?optimizationLevel=7&progressive=true',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'img/[sha512:hash:base64:7].[ext]',
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              optimizationLevel: 7,
+              progressive: true,
+            },
+          },
         ],
       },
     ],

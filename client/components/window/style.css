@@ -1,6 +1,9 @@
+@import '../../styling/settings/_colors.css';
+
 .c-window {
-	/*border-image: url(./window.svg) 29 55 71 21 stretch;
-	border-style: solid;*/
+  background-color: var(--blue);
+	/*border-image: url(./window.svg) 29 55 71 21 stretch;*/
+	border-style: solid;
 	border-width: 29px 55px 71px 21px;
 	transition-duration: 1s;
 	transition-property: background-color;
@@ -9,6 +12,7 @@
 }
 
 .c-window__main {
+  background-color: var(--gray);
   position: absolute -7px -37px -52px -17px;
   padding: 20px;
 }
