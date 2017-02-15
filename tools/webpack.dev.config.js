@@ -48,9 +48,24 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpg|gif|ico)$/,
-        loaders: [
-          'file-loader?name=[path][name].[ext]',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path]/[name].[ext]',
+            },
+          },
         ],
+      },
+
+      {
+        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          name: 'fonts/[hash].[ext]',
+          limit: 50000,
+          mimetype: 'application/font-woff',
+        },
       },
     ],
   },

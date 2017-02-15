@@ -86,6 +86,15 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          name: 'fonts/[hash].[ext]',
+          limit: 50000,
+          mimetype: 'application/font-woff',
+        },
+      },
     ],
   },
 };

@@ -1,10 +1,31 @@
 @import '../../styling/settings/_colors';
 
 .c-alert {
+  animation: pulse 1.5s infinite ease-in-out;
   border-color: var(--red);
   border-style: solid;
   border-width: 1rem;
+  color: var(--red);
   max-width: 500px;
   padding: 2rem;
+  position: absolute 50% * * 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.c-alert__link {
+  color: inherit;
+  position: absolute 0;
+  z-index: 1;
+  text-indent: -999999px;
+}
+
+@keyframes pulse {
+	0% {
+		border-color: var(--red)
+	}
+
+	100% {
+		border-color: var(--black)
+	}
 }

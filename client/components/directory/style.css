@@ -1,0 +1,13 @@
+.c-directory {
+  display: flex;
+  list-style: none;
+}
+
+.c-directory__item {
+  border: 1px solid red;
+}
+
+.c-directory__item__link {
+  display: block;
+  background: lime;
+}

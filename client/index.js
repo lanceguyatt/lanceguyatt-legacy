@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+/* eslint-disable global-require, no-undef */
 import 'react-fastclick';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -10,7 +10,7 @@ let render = () => {
 
   ReactDOM.render(
     <Root />,
-    rootEl
+    rootEl,
   );
 };
 

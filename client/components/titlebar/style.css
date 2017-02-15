@@ -1,9 +1,9 @@
 @import '../../styling/settings/_colors';
 
-@import '../../styling/base';
-
 .c-titlebar {
-  border-color: transparent;
+  background-color: var(--white);
+  border-top-color: var(--white);
+  border-bottom-color: var(--black);
   border-style: solid;
   border-width: 2px 0;
   height: var(--titlebar-height);
@@ -11,8 +11,10 @@
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
-  position: absolute 0 0 *;
-  z-index: 1;
+
+  h2, h3 {
+    float: left;
+  }
 
   a {
     float: left;

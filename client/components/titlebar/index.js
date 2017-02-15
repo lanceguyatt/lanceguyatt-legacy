@@ -1,18 +1,18 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classnames from 'classnames/bind';
+
 import styles from './style.css';
 
 const cx = classnames.bind(styles);
 
-const Titlebar = ({ name, cssClasses }) => (
-  <div className={`${cx('c-titlebar')} ${cx(cssClasses)}`}>
-    <h2>{name}</h2>
+const Titlebar = ({ children }) => (
+  <div className={`${cx('c-titlebar')}`}>
+    {children}
   </div>
 );
 
 Titlebar.propTypes = {
-  name: PropTypes.string,
-  cssClasses: PropTypes.string,
+  children: React.PropTypes.element,
 };
 
 export default Titlebar;

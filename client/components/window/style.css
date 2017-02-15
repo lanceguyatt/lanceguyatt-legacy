@@ -2,12 +2,12 @@
 
 .c-window {
   background-color: var(--blue);
-	/*border-image: url(./window.svg) 29 55 71 21 stretch;*/
-	border-style: solid;
-	border-width: 29px 55px 71px 21px;
-	transition-duration: 1s;
-	transition-property: background-color;
-  height: 100%;
+  /*border-image: url(./window.svg) 29 55 71 21 stretch;*/
+  border-style: solid;
+  border-width: 29px 55px 71px 21px;
+  transition-duration: 1s;
+  transition-property: background-color;
+  height: 100vh;
   position: relative;
 }
 

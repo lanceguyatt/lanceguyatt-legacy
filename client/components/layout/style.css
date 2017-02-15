@@ -1,6 +1,12 @@
 @import 'normalize.css';
 @import '../../styling/base.css';
 
+@font-face {
+  font-family: 'Topaz';
+  src: url('../../assets/fonts/topaz.woff2') format('woff2');
+  font-weight: normal;
+}
+
 :root {
   font-size: 10px;
 }
@@ -11,7 +17,7 @@ body {
   height: 100%;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Topaz';
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.25;

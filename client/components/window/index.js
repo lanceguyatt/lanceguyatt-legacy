@@ -1,14 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classnames from 'classnames/bind';
 
-import Titlebar from '../titlebar/';
 import styles from './style.css';
 
 const cx = classnames.bind(styles);
 
-const Window = ({ name, children }) => (
+const Window = ({ children }) => (
   <div className={cx('c-window')}>
-    <Titlebar name={name} cssClasses="u-bg-white" />
     <div className={cx('c-window__main')}>
       {children}
     </div>
@@ -16,8 +14,7 @@ const Window = ({ name, children }) => (
 );
 
 Window.propTypes = {
-  name: PropTypes.string,
-  children: PropTypes.string,
+  children: React.PropTypes.element,
 };
 
 export default Window;
