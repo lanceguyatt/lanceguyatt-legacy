@@ -1,0 +1,39 @@
+@import '../../styling/settings/_colors';
+
+.c-guru-meditation {
+  background-color: var(--black);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.c-toasty {
+  position: absolute * -var(--toasty-width) 0 *;
+  size: var(--toasty-width);
+}
+
+.konami {
+  animation: showToastyGuy 1s;
+}
+
+:root {
+  --toasty-width: 200px;
+}
+
+@keyframes showToastyGuy {
+  0% {
+    right: -var(--toasty-width)
+  }
+
+  40% {
+    right: 0
+  }
+
+  60% {
+    right: 0
+  }
+
+  100% {
+    right: -var(--toasty-width)
+  }
+}

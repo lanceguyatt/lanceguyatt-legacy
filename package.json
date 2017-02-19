@@ -99,7 +99,7 @@
     "style-loader": "^0.13.1",
     "stylelint": "^7.5.0",
     "stylelint-config-standard": "^16.0.0",
-    "to-rem": "^0.1.0",
+    "svg-inline-loader": "^0.7.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.8.4",

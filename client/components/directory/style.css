@@ -1,6 +1,8 @@
 .c-directory {
   display: flex;
   list-style: none;
+  padding: 0;
+  margin-left: 0;
 }
 
 .c-directory__item {

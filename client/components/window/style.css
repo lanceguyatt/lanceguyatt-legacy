@@ -7,7 +7,7 @@
   border-width: 29px 55px 71px 21px;
   transition-duration: 1s;
   transition-property: background-color;
-  height: 100vh;
+  min-height: 300px;
   position: relative;
 }
 

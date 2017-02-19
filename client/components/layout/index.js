@@ -1,7 +1,3 @@
-// ==================================================
-// Layout
-// ==================================================
-
 import React from 'react';
 import './style.css';
 
@@ -12,7 +8,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-  children: React.PropTypes.element,
+  children: React.PropTypes.node,
 };
 
 export default Layout;

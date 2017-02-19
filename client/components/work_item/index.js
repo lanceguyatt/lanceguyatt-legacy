@@ -4,7 +4,7 @@ import Titlebar from '../titlebar/';
 import Window from '../window/';
 
 const page = {
-  name: 'Wilson Fletcher',
+  name: 'Wilson Fletcher - Work - WorkBench - Lance Guyatt, Web Developer',
   description: 'Description of Wilson Fletcher',
   url: '/work/wilson-fletcher',
 };
@@ -13,10 +13,12 @@ const WorkItem = () => (
   <article>
     <Head page={page} />
     <Titlebar>
-      <h1>Wilson Fletcher</h1>
+      <h2>Wilson Fletcher</h2>
     </Titlebar>
     <Window>
-      <p>sdsdsd</p>
+      <article>
+        <h1>Wilson Fletcher</h1>
+      </article>
     </Window>
   </article>
 );

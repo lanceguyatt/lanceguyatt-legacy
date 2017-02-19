@@ -10,7 +10,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // saved within webpack-assets.json
 // Reason is to have Wepback's require() like behaviour when requiring
 // images etc. within Node when the static site is being rendered.
-var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config.js'));
+var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
 
 module.exports = {
   devtool: 'source-map',
@@ -21,7 +21,7 @@ module.exports = {
     path: path.resolve(__dirname, '../build'),
     filename: '[name]-[hash].js',
     libraryTarget: 'umd',
-    publicPath: '',
+    publicPath: '/',
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -50,6 +50,12 @@ module.exports = {
         loaders: ['babel-loader'],
         exclude: /node_modules/,
       },
+
+      {
+        test: /\.svg$/,
+        loaders: ['svg-inline-loader'],
+      },
+
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('css'),
         use: ExtractTextPlugin.extract({
@@ -68,13 +74,14 @@ module.exports = {
           ],
         }),
       },
+
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('images'),
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: 'img/[sha512:hash:base64:7].[ext]',
+              name: 'images/[sha512:hash:base64:7].[ext]',
             },
           },
           {
@@ -86,6 +93,17 @@ module.exports = {
           },
         ],
       },
+
+      {
+        test: /\.mp3$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'audio/[hash].[ext]',
+          },
+        },
+      },
+
       {
         test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader',

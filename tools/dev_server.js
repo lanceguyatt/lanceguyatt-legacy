@@ -2,8 +2,8 @@
 import express from 'express';
 import webpack from 'webpack';
 
-import renderDocument from './lib/render_document.js';
-import webpackConfig from './webpack.dev.config.js';
+import renderDocument from './lib/render_document';
+import webpackConfig from './webpack.dev.config';
 
 const app = express();
 const compiler = webpack(webpackConfig);

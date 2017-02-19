@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import path from 'path';
 import WebpackIsomorphicTools from 'webpack-isomorphic-tools';
-import isomorphicConfig from './isomorphic.prod.config.js';
+import isomorphicConfig from './isomorphic.prod.config';
 
 const projectBasePath = path.resolve(__dirname, '..');
 

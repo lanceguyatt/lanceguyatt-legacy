@@ -12,13 +12,18 @@
   user-select: none;
   white-space: nowrap;
 
-  h2, h3 {
-    float: left;
+  h1, h2, h3 {
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0;
+    display: inline;
   }
+}
 
-  a {
-    float: left;
-  }
+.c-titlebar__inner {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 :root {

@@ -1,7 +1,6 @@
 .c-icon {
-  background-color: lime;
   display: inline-block;
-  xsize: 4rem;
+  size: 4rem;
 }
 
 .c-icon--resize {

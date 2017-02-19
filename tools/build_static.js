@@ -3,14 +3,14 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import Helmet from 'react-helmet';
 
-import getPaths from './lib/get_paths.js';
-import renderSitemap from './lib/render_sitemap.js';
-import writeFile from './lib/write_file.js';
-import renderDocument from './lib/render_document.js';
+import getPaths from './lib/get_paths';
+import renderSitemap from './lib/render_sitemap';
+import writeFile from './lib/write_file';
+import renderDocument from './lib/render_document';
 
 import config from '../package.json';
-import webpackConfig from './webpack.prod.config.js';
-import routes from '../client/routes.js';
+import webpackConfig from './webpack.prod.config';
+import routes from '../client/routes';
 
 /**
  * Build a site by rendering every route into it's own file.

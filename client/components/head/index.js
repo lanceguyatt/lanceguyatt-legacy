@@ -3,12 +3,18 @@ import Helmet from 'react-helmet';
 
 import SITE from '../../../data/site/index.json';
 
-const Head = ({ page }) => (
+const Head = ({ data }) => (
   <Helmet
-    title={page.name}
+    title={data.name}
     meta={[
-      { property: 'og:description', content: page.description },
-      { property: 'og:url', content: SITE.url + page.url },
+      { property: 'og:description', content: data.description },
+      {
+        property: 'og:url',
+        content: `${SITE.url}${data.url}`,
+      }, {
+        property: 'og:image',
+        content: data.image ? `${SITE.url}${data.image}` : `${SITE.url}${SITE.image}`,
+      },
     ]}
     link={[
       { rel: 'shortcut icon', href: require('../../assets/favicon.ico') },
@@ -17,16 +23,20 @@ const Head = ({ page }) => (
 );
 
 Head.propTypes = {
-  page: React.PropTypes.shape({
-    name: React.PropTypes.string.isRequired,
-    description: React.PropTypes.string.isRequired,
+  data: React.PropTypes.shape({
+    name: React.PropTypes.string,
+    description: React.PropTypes.string,
     url: React.PropTypes.string,
+    image: React.PropTypes.string,
   }),
 };
 
 Head.defaultProps = {
-  page: {
+  data: {
+    name: SITE.name,
+    description: SITE.description,
     url: SITE.url,
+    image: `${SITE.url}logo.png`,
   },
 };
 

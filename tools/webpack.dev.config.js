@@ -21,11 +21,12 @@ module.exports = {
   ],
   module: {
     rules: [
+
       {
         test: /\.js$/,
         loaders: ['babel-loader'],
-        exclude: /node_modules/,
       },
+
       {
         test: /\.css$/,
         use: [
@@ -46,20 +47,41 @@ module.exports = {
           'postcss-loader',
         ],
       },
+
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {},
+      //     },
+      //   ],
+      // },
+
       {
-        test: /\.(svg|png|jpg|gif|ico)$/,
+        test: /\.(png|jpg|gif|ico)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[path]/[name].[ext]',
+              name: 'images/[path]/[name].[ext]',
             },
           },
         ],
       },
 
       {
-        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.mp3$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'audio/[hash].[ext]',
+          },
+        },
+      },
+
+      {
+        test: /\.woff2$/,
         loader: 'url-loader',
         options: {
           name: 'fonts/[hash].[ext]',

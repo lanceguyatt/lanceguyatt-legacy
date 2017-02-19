@@ -1,0 +1,63 @@
+@import '../../styling/settings/_media_queries';
+@import '../../styling/settings/_colors';
+
+.c-kickstart {
+  background-color: var(--purple);
+  color: var(--tumbleweed);
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.c-copyright {
+  margin: 20px auto;
+  size: 170px *;
+
+  img {
+    margin: * auto 30px;
+  }
+}
+
+.disk {
+  animation-name: insert-disk;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-duration: 1.5s;
+  position: absolute * * 0 10px;
+}
+
+@keyframes insert-disk {
+  0% {
+    transform-origin: 0% 0%;
+  }
+
+  20% {
+    transform: translateY(20px);
+    transform-origin: 0% 0%;
+  }
+
+  100% {
+    transform: rotateX(83deg) translateY(-360px);
+    transform-origin: 0% 0%;
+  }
+}
+
+.c-load {
+  display: block;
+  margin: * auto;
+  position: relative;
+  size: 156px 169px;
+}
+
+@media (--breakpoint-md) {
+
+  .c-copyright {
+    position: absolute * * 50px 50px;
+    margin: 0;
+  }
+
+  .c-load {
+    position: absolute * 50px 50px *;
+    margin: 0;
+  }
+}

@@ -6,11 +6,15 @@ const icons = require('../../assets/icons.svg');
 
 const cx = classnames.bind(styles);
 
-const Icon = ({ name }) => (
-  <svg className={`${cx('c-icon')} c-icon--${name}`}>
-    <use xlinkHref={`${icons}#i-${name}`} />
-  </svg>
-);
+const Icon = ({ name }) => {
+  const className = cx('c-icon', `c-icon--${name}`);
+
+  return (
+    <svg className={className}>
+      <use xlinkHref={`${icons}#i-${name}`} />
+    </svg>
+  );
+};
 
 Icon.propTypes = {
   name: React.PropTypes.string.isRequired,
