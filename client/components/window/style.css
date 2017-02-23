@@ -4,20 +4,20 @@
   background-color: var(--blue);
   border-image: url(./window.svg) 29 55 71 21 stretch;
   border-style: solid;
-  border-width: 29px 55px 71px 21px;
+  border-width: 2.9rem 5.5rem 7.1rem 2.1rem;
   transition-duration: 1s;
   transition-property: background-color;
-  height: 300px;
+  height: 300rem;
   position: relative;
 }
 
 .c-window--full {
-  position: absolute 22px 0 0;
+  position: absolute 2.2rem 0 0;
   height: auto;
 }
 
 .c-window__header {
-  position: absolute -27px -55px 0 -21px;
+  position: absolute -2.7rem -5.5rem 0 -2.1rem;
   height: var(--window-header-height);
   font-size: 1.6rem;
   line-height: 1.125;
@@ -32,8 +32,9 @@
 
 .c-window__main {
   background-color: var(--gray);
+  overflow: hidden;
   padding: 2rem;
-  position: absolute -7px -37px -52px -17px;
+  position: absolute -.7rem -3.7rem -5.2rem -1.7rem;
 }
 
 :root {

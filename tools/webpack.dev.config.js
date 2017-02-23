@@ -47,7 +47,19 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpg|gif|ico|svg|mp3|woff2)$/,
+        test: /\.(png|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 5000,
+            },
+          },
+        ],
+      },
+
+      {
+        test: /\.(jpg|gif|ico|mp3|m4a|woff2)$/,
         use: [
           {
             loader: 'file-loader',

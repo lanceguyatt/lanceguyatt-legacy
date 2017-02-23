@@ -17,12 +17,23 @@ const DirectoryList = ((children, cssClasses) => {
   );
 });
 
-const DirectoryListItem = ({ id, name, url, type }) => (
+const internalLink = (name, url, type) => (
+  <Link className={cx('c-directory__item__link')} to={url}>
+    <Icon name={type} />
+    {name}
+  </Link>
+);
+
+const externalLink = (name, url, type) => (
+  <a className={cx('c-directory__item__link')} href={url} target="_blank" rel="noopener noreferrer">
+    <Icon name={type} />
+    {name}
+  </a>
+);
+
+const DirectoryListItem = ({ id, name, url, type, external }) => (
   <li className={cx('c-directory__item')} key={id}>
-    <Link className={cx('c-directory__item__link')} to={url}>
-      <Icon name={type} />
-      {name}
-    </Link>
+    { external ? externalLink(name, url, type) : internalLink(name, url, type) }
   </li>
 );
 
@@ -31,6 +42,7 @@ DirectoryListItem.propTypes = {
   name: React.PropTypes.string,
   url: React.PropTypes.string,
   type: React.PropTypes.string,
+  external: React.PropTypes.boolean,
 };
 
 const Directory = R.compose(DirectoryList, R.map(DirectoryListItem), R.prop('data'));

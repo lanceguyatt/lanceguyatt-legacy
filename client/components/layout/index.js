@@ -1,5 +1,8 @@
 import React from 'react';
-import './style.css';
+import styles from './style.css';
+import classnames from 'classnames/bind';
+
+const cx = classnames.bind(styles);
 
 const Layout = ({ children }) => (
   <div className="c-app">

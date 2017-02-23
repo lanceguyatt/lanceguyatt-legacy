@@ -1,0 +1,20 @@
+{
+  "name": "About",
+  "description": "About description",
+  "url": "/about/",
+  "parent": "/",
+  "items": [
+    {
+      "id": "1",
+      "name": "Github",
+      "url": "http://github.com/lanceguyatt",
+      "type": "drawer",
+      "external": "true"
+    }
+  ],
+  "memory": {
+    "full": "5%",
+    "free": "25M",
+    "use": "2,972k"
+  }
+}

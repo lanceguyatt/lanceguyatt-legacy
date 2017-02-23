@@ -5,25 +5,53 @@
   background-color: var(--purple);
   color: var(--tumbleweed);
   height: 100vh;
+  min-height: 400px;
   position: relative;
   overflow: hidden;
 }
 
 .c-copyright {
-  margin: 20px auto;
-  size: 170px *;
+  margin: 2rem auto;
+  size: 17rem *;
 
   img {
-    margin: * auto 30px;
+    margin: * auto 3rem;
   }
 }
 
-.disk {
-  animation-name: insert-disk;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
+.c-group {
+  display: block;
+  margin: * auto;
+  position: relative;
+  size: 15.6rem 16.9rem;
+}
+
+
+.c-floppy-disk {
   animation-duration: 1.5s;
-  position: absolute * * 0 10px;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: insert-disk;
+  position: absolute * * 0 1rem;
+  size: 13.2rem 12rem;
+}
+
+.c-disk-drive {
+  position: absolute 0 * * 0;
+  size: 15.6rem 3.8rem;
+}
+
+@media (--breakpoint-md) {
+
+  .c-copyright {
+    position: absolute * * 5rem 5rem;
+    margin: 0;
+  }
+
+  .c-group {
+    position: absolute * 5rem 5rem *;
+    margin: 0;
+  }
 }
 
 @keyframes insert-disk {
@@ -32,32 +60,22 @@
   }
 
   20% {
-    transform: translateY(20px);
+    transform: translateY(2rem);
     transform-origin: 0% 0%;
   }
 
   100% {
-    transform: rotateX(83deg) translateY(-360px);
+    transform: rotateX(83deg) translateY(-36rem);
     transform-origin: 0% 0%;
   }
 }
 
-.c-load {
-  display: block;
-  margin: * auto;
-  position: relative;
-  size: 156px 169px;
-}
-
-@media (--breakpoint-md) {
-
-  .c-copyright {
-    position: absolute * * 50px 50px;
-    margin: 0;
-  }
-
-  .c-load {
-    position: absolute * 50px 50px *;
-    margin: 0;
-  }
+:root {
+  --black: #000;
+  --blue: #6687ba;
+  --gray: #aaa;
+  --purple: #401040;
+  --red: #ed1c24;
+  --tumbleweed: #e0a080;
+  --white: #fff;
 }

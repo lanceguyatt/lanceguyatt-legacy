@@ -9,8 +9,7 @@ import site from '../../../data/site/index.json';
 
 class WorkBench extends React.Component {
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   render() {
     const { data } = this.props.route;

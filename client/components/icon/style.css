@@ -13,17 +13,17 @@
 
 .c-icon--drive,
 .c-icon--drive-active {
-	size: 85px 44px;
+	size: 8.5rem 4.4rem;
 }
 
 .c-icon--drawer,
 .c-icon--drawer-active {
-	size: 65px 38px;
+	size: 6.5rem 3.8rem;
 }
 
 .c-icon--disk,
 .c-icon--disk-active {
-	size: 43px 46px;
+	size: 4.3rem 4.6rem;
 }
 
 .c-icon--trash,
@@ -34,7 +34,7 @@
 .c-icon--floppy-disk { size: 13.4rem 12rem }
 
 .c-icon--close,
-.c-icon--close-active { size: 17px 18px }
+.c-icon--close-active { size: 1.7rem 1.8rem }
 
 .c-icon--scroll-top,
 .c-icon--scroll-bottom { size: 1.6rem 1.8rem }

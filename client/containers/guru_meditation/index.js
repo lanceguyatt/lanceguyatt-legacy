@@ -5,7 +5,7 @@ import classnames from 'classnames/bind';
 import Head from '../../components/head/';
 import Titlebar from '../../components/titlebar/';
 import Alert from '../../components/alert/';
-import Audio from '../../components/audio/';
+// import Audio from '../../components/audio/';
 
 import styles from './style.css';
 
@@ -16,15 +16,15 @@ import site from '../../../data/site/index.json';
 const cx = classnames.bind(styles);
 
 const alert = {
-  name: 'Software Failure. Press left mouse button to continue',
-  description: 'Guru Meditation #404',
+  name: 'Software Failure. Press left mouse button to continue.',
+  description: 'Guru Meditation #00004040.00004040',
   url: '/',
 };
 
 // const toast = {
 //   id: 'js-toasty-audio',
 //   src: toastyMp3,
-//   type: 'audio/mpeg',
+//   type: 'audio/mp4',
 // };
 
 class GuruMeditation extends React.Component {
@@ -33,7 +33,7 @@ class GuruMeditation extends React.Component {
     let konamiCodeArray = [];
     const konamiCodeKey = '38,38,40,40,37,39,37,39,66,65';
     const konamiClass = `${cx('konami')}`;
-    const toastyAudio = document.getElementById('js-toasty-audio');
+    // const toastyAudio = document.getElementById('js-toasty-audio');
     const toastyImage = document.getElementById('js-toasty-image');
     const animationEvent = this.whichAnimationEvent();
 
@@ -41,8 +41,8 @@ class GuruMeditation extends React.Component {
       konamiCodeArray.push(e.keyCode);
 
       if (konamiCodeArray.toString().indexOf(konamiCodeKey) >= 0) {
-        toastyAudio.load();
-        toastyAudio.play();
+        // toastyAudio.load();
+        // toastyAudio.play();
         toastyImage.classList.add(konamiClass);
         konamiCodeArray = [];
       }

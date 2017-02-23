@@ -2,15 +2,17 @@
 
 .c-alert {
   animation: pulse 1.5s infinite ease-in-out;
+  background-color: var(--black);
   border-color: var(--red);
   border-style: solid;
-  border-width: 1rem;
+  border-width: .6rem;
   color: var(--red);
-  max-width: 500px;
-  padding: 2rem;
+  max-width: 64rem;
+  padding: 1rem;
   position: absolute 50% * * 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  line-height: 1.875;
 }
 
 .c-alert__link {
@@ -28,4 +30,14 @@
 	100% {
 		border-color: var(--black)
 	}
+}
+
+:root {
+  --black: #000;
+  --blue: #6687ba;
+  --gray: #aaa;
+  --purple: #401040;
+  --red: #ed1c24;
+  --tumbleweed: #e0a080;
+  --white: #fff;
 }

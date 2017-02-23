@@ -8,8 +8,8 @@ import { renderToStaticMarkup } from 'react-dom/server';
  */
 const renderDocument = (props) => {
   const Html = ({
-    Title = [<title key={1}>*No title defined*</title>],
-    metas = [<meta key={1} name="description" content="Use react-helmet." />],
+    Title = [<title key={1}>Title</title>],
+    metas = [],
     links = [<link key={1} rel="shortcut icon" href="#" />],
     scripts,
     cssBundle,
@@ -33,7 +33,7 @@ const renderDocument = (props) => {
       <body>
         <div id="react-root" dangerouslySetInnerHTML={{ __html: body }} />
         <script src={jsBundle} />
-      </body>
+    </body>
     </html>
   );
 

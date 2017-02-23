@@ -12,10 +12,17 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // images etc. within Node when the static site is being rendered.
 var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
 
+// const vendorLibraries = [
+//   'react',
+//   'react-router',
+//   'react-dom',
+// ];
+
 module.exports = {
-  devtool: 'source-map',
+  devtool: false,
   entry: {
-    bundle: ['./client/index.js'],
+    bundle: './client/index.js',
+    // vendor: vendorLibraries,
   },
   output: {
     path: path.resolve(__dirname, '../build'),
@@ -27,13 +34,19 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         loaders: ['babel-loader'],
       },
 
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('css'),
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: [
+            {
+              loader: 'style-loader',
+              options: {},
+            },
+          ],
           use: [
             {
               loader: 'css-loader',
@@ -43,16 +56,13 @@ module.exports = {
                 import: true,
                 url: true,
                 minimize: true,
-                sourceMap: false,
                 camelCase: false,
                 importLoaders: 1,
                 localIdentName: '[hash:base64:5]',
               },
             }, {
               loader: 'postcss-loader',
-              options: {
-                sourceMap: false,
-              },
+              options: {},
             },
           ],
         }),
@@ -98,7 +108,7 @@ module.exports = {
       },
 
       {
-        test: /\.mp3$/,
+        test: /\.(mp3|m4a)$/,
         use: {
           loader: 'file-loader',
           // options: {
@@ -112,7 +122,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           name: 'fonts/[hash].[ext]',
-          limit: 50000,
+          limit: 10000,
           mimetype: 'application/font-woff',
         },
       },
@@ -120,7 +130,13 @@ module.exports = {
     ],
   },
   plugins: [
+
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    // }),
+
     new webpack.optimize.OccurrenceOrderPlugin(),
+
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),

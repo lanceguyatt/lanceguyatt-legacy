@@ -7,7 +7,7 @@ const Head = ({ data }) => (
   <Helmet
     htmlAttributes={{ lang: 'en' }}
     defaultTitle={SITE.name}
-    titleTemplate="%s - Lance Guyatt"
+    titleTemplate="%s - Lance Guyatt, Web Developer"
     title={data.name}
     meta={[
       { name: 'description', content: data.description },
@@ -15,8 +15,7 @@ const Head = ({ data }) => (
       { property: 'og:title', content: data.name },
       { property: 'og:description', content: data.description },
       { property: 'og:url', content: `${SITE.url}${data.url}` },
-      { property: 'og:image', content: data.image ? `${SITE.url}${data.image}` : `${SITE.url}${SITE.image}` },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1' },
+      { property: 'og:image', content: require('../../assets/logo.png') },
       { name: 'apple-mobile-web-app-title', content: 'Lance Guyatt' },
     ]}
     link={[
