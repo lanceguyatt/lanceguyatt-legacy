@@ -46,16 +46,6 @@ module.exports = {
         ],
       },
 
-      // {
-      //   test: /\.svg$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {},
-      //     },
-      //   ],
-      // },
-
       {
         test: /\.(png|jpg|gif|ico|svg|mp3|woff2)$/,
         use: [
@@ -66,19 +56,6 @@ module.exports = {
         ],
       },
 
-      // {
-      //   test: /\.mp3$/,
-      //   use: {
-      //     loader: 'file-loader',
-      //     options: {},
-      //   },
-      // },
-      //
-      // {
-      //   test: /\.woff2$/,
-      //   loader: 'file-loader',
-      //   options: {},
-      // },
     ],
   },
   plugins: [

@@ -5,6 +5,7 @@
 }
 
 .c-directory--wrap {
+  background: lime;
   align-items: flex-end;
   display: flex;
   flex-wrap: wrap;

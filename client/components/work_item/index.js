@@ -1,23 +1,25 @@
 import React from 'react';
 import Head from '../head/';
-import Titlebar from '../titlebar/';
 import Window from '../window/';
 
 const page = {
-  name: 'Wilson Fletcher - Work - WorkBench - Lance Guyatt, Web Developer',
+  name: 'Wilson Fletcher',
   description: 'Description of Wilson Fletcher',
   url: '/work/wilson-fletcher',
+  parent: '/work/',
+  type: 'drawer',
+  memory: {
+    full: '35%',
+    free: '21%',
+    use: '168MB',
+  },
 };
 
 const WorkItem = () => (
-  <article>
+  <div>
     <Head page={page} />
-    <Window name="Wilson Fletcher" parent="/work">
-      <article>
-        <h1>Wilson Fletcher</h1>
-      </article>
-    </Window>
-  </article>
+    <Window data={page} />
+  </div>
 );
 
 export default WorkItem;

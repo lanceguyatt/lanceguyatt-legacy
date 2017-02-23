@@ -21,7 +21,7 @@ module.exports = {
     path: path.resolve(__dirname, '../build'),
     filename: '[name]-[hash].js',
     libraryTarget: 'umd',
-    publicPath: 'http://localhost:3000/',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -38,28 +38,35 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                minimize: true,
+                root: '/',
                 modules: true,
+                import: true,
+                url: true,
+                minimize: true,
+                sourceMap: false,
+                camelCase: false,
                 importLoaders: 1,
                 localIdentName: '[hash:base64:5]',
               },
+            }, {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: false,
+              },
             },
-            'postcss-loader',
           ],
         }),
       },
 
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              name: '[sha512:hash:base64:7].[ext]',
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {},
+      //     },
+      //   ],
+      // },
 
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('images'),
@@ -69,12 +76,22 @@ module.exports = {
             options: {
               name: 'images/[sha512:hash:base64:7].[ext]',
             },
-          },
-          {
+          }, {
             loader: 'image-webpack-loader',
-            options: {
-              optimizationLevel: 7,
-              progressive: true,
+            query: {
+              mozjpeg: {
+                progressive: true,
+              },
+              optipng: {
+                optimizationLevel: 7,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4,
+              },
             },
           },
         ],
@@ -84,9 +101,9 @@ module.exports = {
         test: /\.mp3$/,
         use: {
           loader: 'file-loader',
-          options: {
-            name: 'audio/[hash].[ext]',
-          },
+          // options: {
+          //   name: 'audio/[hash].[ext]',
+          // },
         },
       },
 
@@ -99,6 +116,7 @@ module.exports = {
           mimetype: 'application/font-woff',
         },
       },
+
     ],
   },
   plugins: [

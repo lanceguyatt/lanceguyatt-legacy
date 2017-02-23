@@ -9,8 +9,8 @@ import styles from './style.css';
 
 const cx = classnames.bind(styles);
 
-const DirectoryList = ((children) => {
-  const className = cx('c-directory', 'c-directory--wrap');
+const DirectoryList = ((children, cssClasses) => {
+  const className = cx('c-directory', cssClasses);
 
   return (
     <ul className={className}>{children}</ul>

@@ -11,7 +11,7 @@ import styles from './style.css';
 
 import site from '../../../data/site/index.json';
 
-import toastyMp3 from './toasty.mp3';
+// import toastyMp3 from './toasty.mp3';
 
 const cx = classnames.bind(styles);
 
@@ -21,11 +21,11 @@ const alert = {
   url: '/',
 };
 
-const toast = {
-  id: 'js-toasty-audio',
-  src: toastyMp3,
-  type: 'audio/mpeg',
-};
+// const toast = {
+//   id: 'js-toasty-audio',
+//   src: toastyMp3,
+//   type: 'audio/mpeg',
+// };
 
 class GuruMeditation extends React.Component {
 
@@ -84,7 +84,7 @@ class GuruMeditation extends React.Component {
           </Titlebar>
           <Alert alert={alert} cssClasses="u-border-red" />
           <div id="js-toasty-image" className={`${cx('c-toasty')}`} />
-          <Audio audio={toast} />
+          { /* <Audio audio={toast} />*/ }
         </div>
       </div>
     );

@@ -23,8 +23,8 @@ class WorkBench extends React.Component {
           Copyright &copy; 2000-2017
           All Rights Reserved.
         </Titlebar>
-        <Window name={data.name} parent="/kickstart" cssClasses="c-window--full">
-          <Directory data={data.items} wrap={'true'} />
+        <Window data={data} cssClasses="c-window--full">
+          <Directory data={data.items} cssClasses="c-directory--column" />
           {this.props.children}
         </Window>
       </div>

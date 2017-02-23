@@ -23,34 +23,12 @@
   "plate_config": {
     "website": "http://lanceguyatt.com"
   },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "rules": {
-      "strict": [
-        2,
-        "never"
-      ],
-      "new-cap": 0,
-      "global-require": 0,
-      "react/require-extension": 0,
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ]
-    }
-  },
   "engines": {
     "node": ">=4.4"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "history": "^3.2.0",
+    "history": "^3.0.0",
     "normalize.css": "^5.0.0",
     "ramda": "^0.23.0",
     "react": "^15.3.2",
@@ -61,7 +39,7 @@
     "react-router-scroll": "^0.4.1"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.2",
+    "autoprefixer": "^6.7.5",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
@@ -71,7 +49,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "cross-env": "^3.1.3",
     "css-loader": "^0.26.1",
-    "eslint": "^3.9.1",
+    "eslint": "^3.16.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
@@ -79,7 +57,7 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "file-loader": "^0.10.0",
-    "image-webpack-loader": "^3.0.0",
+    "image-webpack-loader": "^3.2.0",
     "json-loader": "^0.5.4",
     "lodash": "^4.16.6",
     "mkdirp": "^0.5.1",
@@ -103,7 +81,7 @@
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.2",
-    "webpack-isomorphic-tools": "^2.6.4"
+    "webpack-isomorphic-tools": "^2.6.6"
   },
   "author": "Yannik Schweinzer",
   "repository": {
