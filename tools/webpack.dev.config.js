@@ -16,9 +16,6 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/',
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
   module: {
     rules: [
 
@@ -48,15 +45,15 @@ module.exports = {
         ],
       },
 
-      // {
-      //   test: /\.svg$/,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {},
-      //     },
-      //   ],
-      // },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
 
       {
         test: /\.(png|jpg|gif|ico)$/,
@@ -91,4 +88,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };

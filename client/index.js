@@ -1,4 +1,4 @@
-/* eslint-disable global-require, no-undef */
+/* eslint-disable import/no-extraneous-dependencies, global-require, no-undef */
 import 'react-fastclick';
 import React from 'react';
 import ReactDOM from 'react-dom';

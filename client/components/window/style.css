@@ -2,17 +2,40 @@
 
 .c-window {
   background-color: var(--blue);
-  /*border-image: url(./window.svg) 29 55 71 21 stretch;*/
+  border-image: url(./window.svg) 29 55 71 21 stretch;
   border-style: solid;
   border-width: 29px 55px 71px 21px;
   transition-duration: 1s;
   transition-property: background-color;
-  min-height: 300px;
+  height: 300px;
   position: relative;
+}
+
+.c-window--full {
+  position: absolute 22px 0 0;
+  height: auto;
+}
+
+.c-window__header {
+  position: absolute -27px -55px 0 -21px;
+  height: var(--window-header-height);
+  font-size: 1.6rem;
+  line-height: 1.125;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  a {
+    float: left;
+  }
 }
 
 .c-window__main {
   background-color: var(--gray);
   padding: 2rem;
   position: absolute -7px -37px -52px -17px;
+}
+
+:root {
+  --window-header-height: 1.8rem;
 }

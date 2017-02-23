@@ -2,10 +2,11 @@ import React from 'react';
 import { Route } from 'react-router';
 
 import Layout from './components/layout/';
+import WorkBench from './containers/workbench/';
 import Folder from './components/folder/';
-import WorkItem from './components/work_item/';
 import KickStart from './containers/kickstart/';
 import GuruMeditation from './containers/guru_meditation/';
+import WorkItem from './components/work_item/';
 
 const workbench = {
   name: 'Workbench',
@@ -42,6 +43,7 @@ const work = {
       id: 1,
       name: 'Wilson Fletcher',
       url: 'work/wilson-fletcher',
+      type: 'drawer',
     },
   ],
 };
@@ -65,6 +67,7 @@ const about = {
       id: 1,
       name: 'Github',
       url: 'http://github.com/lanceguyatt',
+      type: 'drawer',
     },
   ],
 };
@@ -78,7 +81,7 @@ const kickstart = {
 const routes = (
   <div>
     <Route component={Layout}>
-      <Route path="/" component={Folder} data={workbench}>
+      <Route path="/" component={WorkBench} data={workbench}>
         <Route path="/ramdisk" component={Folder} data={ramdisk} />
         <Route path="/work" component={Folder} data={work}>
           <Route path="/work/wilson-fletcher" component={WorkItem} />

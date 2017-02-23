@@ -2,30 +2,19 @@
 
 .c-titlebar {
   background-color: var(--white);
-  border-top-color: var(--white);
   border-bottom-color: var(--black);
   border-style: solid;
-  border-width: 2px 0;
+  border-top-color: var(--white);
+  border-width: var(--titlebar-border-width) 0;
+  font-size: 1.6rem;
   height: var(--titlebar-height);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  user-select: none;
-  white-space: nowrap;
-
-  h1, h2, h3 {
-    font-size: 16px;
-    line-height: 1.25;
-    margin: 0;
-    display: inline;
-  }
-}
-
-.c-titlebar__inner {
+  line-height: 1.125;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 :root {
-  --titlebar-height: 22px;
+  --titlebar-border-width: .2rem;
+  --titlebar-height: 2.2rem;
 }

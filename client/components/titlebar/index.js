@@ -7,14 +7,12 @@ const cx = classnames.bind(styles);
 
 const Titlebar = ({ children }) => (
   <div className={`${cx('c-titlebar')}`}>
-    <div className={`${cx('c-titlebar__inner')}`}>
-      {children}
-    </div>
+    {children}
   </div>
 );
 
 Titlebar.propTypes = {
-  children: React.PropTypes.shape(),
+  children: React.PropTypes.node,
 };
 
 export default Titlebar;

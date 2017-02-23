@@ -1,15 +1,32 @@
 .c-directory {
-  display: flex;
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin-left: 0;
+}
+
+.c-directory--wrap {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+
+  .c-directory__item {
+    margin-right: 1rem;
+  }
+}
+
+.c-directory--column {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 
 .c-directory__item {
-  border: 1px solid red;
-}
+  margin-bottom: 1rem;
+  max-width: 10rem;
+  text-align: center;
 
-.c-directory__item__link {
-  display: block;
-  background: lime;
+  svg {
+    display: block;
+    margin: * auto .5rem;
+  }
 }

@@ -12,10 +12,7 @@ const page = {
 const WorkItem = () => (
   <article>
     <Head page={page} />
-    <Titlebar>
-      <h2>Wilson Fletcher</h2>
-    </Titlebar>
-    <Window>
+    <Window name='Wilson Fletcher'>
       <article>
         <h1>Wilson Fletcher</h1>
       </article>
