@@ -78,6 +78,12 @@ const kickstart = {
   url: 'kickstart',
 };
 
+const guruMeditation = {
+  name: 'Guru Meditation',
+  description: 'Guru Meditation description',
+  url: '/404',
+};
+
 const routes = (
   <div>
     <Route component={Layout}>
@@ -89,7 +95,7 @@ const routes = (
         <Route path="/about" component={Folder} data={about} />
       </Route>
       <Route path="/kickstart" component={KickStart} data={kickstart} />
-      <Route path="*" component={GuruMeditation} status={404} />
+      <Route path="*" component={GuruMeditation} status={404} data={guruMeditation} />
     </Route>
   </div>
 );

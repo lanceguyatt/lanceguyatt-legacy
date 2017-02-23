@@ -21,44 +21,13 @@ module.exports = {
     path: path.resolve(__dirname, '../build'),
     filename: '[name]-[hash].js',
     libraryTarget: 'umd',
-    publicPath: '/',
+    publicPath: 'http://localhost:3000/',
   },
-  plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
-
-    new webpack.optimize.UglifyJsPlugin({
-      screw_ie8: true,
-      compressor: { warnings: false },
-    }),
-
-    new ExtractTextPlugin({
-      filename: 'bundle-[contenthash].css',
-      allChunks: true,
-    }),
-
-    webpackIsomorphicToolsPlugin,
-  ],
   module: {
     rules: [
       {
         test: /\.js$/,
         loaders: ['babel-loader'],
-        exclude: /node_modules/,
-      },
-
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {},
-          },
-        ],
       },
 
       {
@@ -78,6 +47,18 @@ module.exports = {
             'postcss-loader',
           ],
         }),
+      },
+
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[sha512:hash:base64:7].[ext]',
+            },
+          },
+        ],
       },
 
       {
@@ -110,7 +91,7 @@ module.exports = {
       },
 
       {
-        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.woff2$/,
         loader: 'url-loader',
         options: {
           name: 'fonts/[hash].[ext]',
@@ -120,4 +101,24 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+
+    new webpack.optimize.UglifyJsPlugin({
+      screw_ie8: true,
+      compressor: { warnings: false },
+    }),
+
+    new ExtractTextPlugin({
+      filename: 'bundle-[contenthash].css',
+      allChunks: true,
+    }),
+
+    webpackIsomorphicToolsPlugin,
+  ],
 };

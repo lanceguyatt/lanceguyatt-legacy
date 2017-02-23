@@ -21,9 +21,9 @@
 }
 
 .c-directory__item {
+  text-align: center;
   margin-bottom: 1rem;
   max-width: 10rem;
-  text-align: center;
 
   svg {
     display: block;

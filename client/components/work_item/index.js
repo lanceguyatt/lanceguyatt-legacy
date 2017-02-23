@@ -12,7 +12,7 @@ const page = {
 const WorkItem = () => (
   <article>
     <Head page={page} />
-    <Window name='Wilson Fletcher'>
+    <Window name="Wilson Fletcher" parent="/work">
       <article>
         <h1>Wilson Fletcher</h1>
       </article>

@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 
 const Layout = ({ children }) => (
-  <div>
+  <div className="c-app">
     {children}
   </div>
 );

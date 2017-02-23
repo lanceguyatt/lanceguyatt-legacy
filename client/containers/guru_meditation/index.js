@@ -5,19 +5,15 @@ import classnames from 'classnames/bind';
 import Head from '../../components/head/';
 import Titlebar from '../../components/titlebar/';
 import Alert from '../../components/alert/';
-// import Audio from '../../components/audio/';
+import Audio from '../../components/audio/';
 
 import styles from './style.css';
 
-// import toastyMp3 from '../../assets/audio/toasty.mp3';
-import toastyPng from '../../assets/images/toasty.png';
+import site from '../../../data/site/index.json';
+
+import toastyMp3 from './toasty.mp3';
 
 const cx = classnames.bind(styles);
-
-const page = {
-  name: 'Guru Meditation',
-  description: 'Guru Meditation description',
-};
 
 const alert = {
   name: 'Software Failure. Press left mouse button to continue',
@@ -25,13 +21,11 @@ const alert = {
   url: '/',
 };
 
-// const toast = {
-//   id: 'js-toasty-audio',
-//   src: toastyMp3,
-//   type: 'audio/mpeg',
-// };
-
-const foo = { backgroundImage: `url(${toastyPng})` };
+const toast = {
+  id: 'js-toasty-audio',
+  src: toastyMp3,
+  type: 'audio/mpeg',
+};
 
 class GuruMeditation extends React.Component {
 
@@ -79,24 +73,26 @@ class GuruMeditation extends React.Component {
   }
 
   render() {
+    const { data } = this.props.route;
+
     return (
       <div className={cx('c-guru-meditation')}>
-        <Head />
+        <Head data={data} />
         <div className={cx('c-guru-meditation__main')}>
           <Titlebar>
-            <h2>
-              Lance Guyatt, Web Developer.
-              Guru Meditation #404.
-              Copyright © 2000-2017.
-              All Rights Reserved.
-          </h2>
+            {site.name}. Copyright &copy; 2000-2017 All Rights Reserved.
           </Titlebar>
           <Alert alert={alert} cssClasses="u-border-red" />
-          <div id="js-toasty-image" className={`${cx('c-toasty')}`} style={foo} />
+          <div id="js-toasty-image" className={`${cx('c-toasty')}`} />
+          <Audio audio={toast} />
         </div>
       </div>
     );
   }
 }
+
+GuruMeditation.propTypes = {
+  route: React.PropTypes.shape(),
+};
 
 export default GuruMeditation;

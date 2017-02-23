@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames/bind';
 
 import styles from './style.css';
-import icons from '../../assets/images/icons.svg';
+// import icons from '../../assets/images/icons.svg';
 
 const cx = classnames.bind(styles);
 
@@ -12,10 +12,6 @@ const Icon = ({ name }) => {
   return (
     <div>
       <svg className={className} role="img">
-        <use xlinkHref={`${icons}#i-${name}`} />
-      </svg>
-      <svg className={className} role="img">
-        <use xlinkHref={`${icons}#i-${name}-active`} />
       </svg>
     </div>
   );

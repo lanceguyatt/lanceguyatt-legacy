@@ -32,21 +32,32 @@ module.exports = {
             options: {
               sourceMap: true,
             },
-          },
-          {
+          }, {
             loader: 'css-loader',
             options: {
               modules: true,
               importLoaders: 1,
               localIdentName: '[local]__[hash:base64:5]',
             },
+          }, {
+            loader: 'postcss-loader',
+            options: {},
           },
-          'postcss-loader',
         ],
       },
 
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {},
+      //     },
+      //   ],
+      // },
+
       {
-        test: /\.svg$/,
+        test: /\.(png|jpg|gif|ico|svg|mp3|woff2)$/,
         use: [
           {
             loader: 'file-loader',
@@ -55,37 +66,19 @@ module.exports = {
         ],
       },
 
-      {
-        test: /\.(png|jpg|gif|ico)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[path]/[name].[ext]',
-            },
-          },
-        ],
-      },
-
-      {
-        test: /\.mp3$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'audio/[hash].[ext]',
-          },
-        },
-      },
-
-      {
-        test: /\.woff2$/,
-        loader: 'url-loader',
-        options: {
-          name: 'fonts/[hash].[ext]',
-          limit: 50000,
-          mimetype: 'application/font-woff',
-        },
-      },
+      // {
+      //   test: /\.mp3$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {},
+      //   },
+      // },
+      //
+      // {
+      //   test: /\.woff2$/,
+      //   loader: 'file-loader',
+      //   options: {},
+      // },
     ],
   },
   plugins: [

@@ -8,16 +8,13 @@
 }
 
 .c-toasty {
+  background-image: url(./toasty.png);
   position: absolute * -var(--toasty-width) 0 *;
   size: var(--toasty-width);
 }
 
 .konami {
   animation: showToastyGuy 1s;
-}
-
-:root {
-  --toasty-width: 200px;
 }
 
 @keyframes showToastyGuy {
@@ -36,4 +33,8 @@
   100% {
     right: -var(--toasty-width)
   }
+}
+
+:root {
+  --toasty-width: 200px;
 }

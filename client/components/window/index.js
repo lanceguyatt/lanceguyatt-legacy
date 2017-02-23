@@ -17,7 +17,7 @@ const Window = ({ parent, name, children, cssClasses }) => {
         <Link to={parent}>
           <Icon name="close" />
         </Link>
-        {name} sdsdsd sdsd  sd sd sd sd s sd sdsdsdsd
+        {name}
       </div>
       <div className={`${cx('c-window__main')}`}>
         {children}
