@@ -21,8 +21,8 @@ class Folder extends React.Component {
         <Head data={data} />
         <Window data={data}>
           <Directory data={data.items} cssClasses="c-directory--wrap" />
-          {this.props.children}
         </Window>
+        {this.props.children}
       </section>
     );
   }

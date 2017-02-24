@@ -1,20 +1,17 @@
 @import '../../styling/settings/_colors';
 
 .c-titlebar {
-  background-color: var(--white);
-  border-bottom-color: var(--black);
-  border-style: solid;
-  border-top-color: var(--white);
-  border-width: var(--titlebar-border-width) 0;
+  background-color: var(--black);
   font-size: 1.6rem;
+  color: var(--gray);
   height: var(--titlebar-height);
-  line-height: 1.125;
+  line-height: 1.25;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding: .1rem .23rem .1rem .5rem;
 }
 
 :root {
-  --titlebar-border-width: .2rem;
   --titlebar-height: 2.2rem;
 }

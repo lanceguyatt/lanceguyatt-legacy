@@ -34,7 +34,12 @@
 .c-icon--floppy-disk { size: 13.4rem 12rem }
 
 .c-icon--close,
-.c-icon--close-active { size: 1.7rem 1.8rem }
+.c-icon--close-active {
+  border-right: .1rem solid var(--black);
+  size: 1.8rem 1.8rem;
+  margin-right: .5rem;
+  position: relative;
+}
 
 .c-icon--scroll-top,
 .c-icon--scroll-bottom { size: 1.6rem 1.8rem }
@@ -49,3 +54,7 @@
 .c-icon--depth { size: 2.1rem 1.8rem }
 .c-icon--zoom { size: 2.1rem 1.8rem }
 .c-icon--checked { size: 2.2rem 1.8rem }
+
+:root {
+  --black: #000;
+}

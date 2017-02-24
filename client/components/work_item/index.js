@@ -2,6 +2,8 @@ import React from 'react';
 import Head from '../head/';
 import Window from '../window/';
 
+import Button from '../button/';
+
 const page = {
   name: 'Wilson Fletcher',
   description: 'Description of Wilson Fletcher',
@@ -18,7 +20,9 @@ const page = {
 const WorkItem = () => (
   <div>
     <Head page={page} />
-    <Window data={page} />
+    <Window data={page}>
+      <Button url="http://wilsonfletcher.com" name="Launch" external="true" />
+    </Window>
   </div>
 );
 

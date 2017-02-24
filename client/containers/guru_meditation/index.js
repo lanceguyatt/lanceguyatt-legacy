@@ -3,13 +3,10 @@ import React from 'react';
 import classnames from 'classnames/bind';
 
 import Head from '../../components/head/';
-import Titlebar from '../../components/titlebar/';
 import Alert from '../../components/alert/';
 // import Audio from '../../components/audio/';
 
 import styles from './style.css';
-
-import site from '../../../data/site/index.json';
 
 // import toastyMp3 from './toasty.mp3';
 
@@ -49,7 +46,7 @@ class GuruMeditation extends React.Component {
     });
 
     animationEvent && toastyImage.addEventListener(animationEvent, () => {
-      toastyImage.classList.remove(konamiClass);
+      toastyImage.classList.remove(konamiClass)
     });
   }
 
@@ -79,9 +76,6 @@ class GuruMeditation extends React.Component {
       <div className={cx('c-guru-meditation')}>
         <Head data={data} />
         <div className={cx('c-guru-meditation__main')}>
-          <Titlebar>
-            {site.name}. Copyright &copy; 2000-2017 All Rights Reserved.
-          </Titlebar>
           <Alert alert={alert} cssClasses="u-border-red" />
           <div id="js-toasty-image" className={`${cx('c-toasty')}`} />
           { /* <Audio audio={toast} />*/ }

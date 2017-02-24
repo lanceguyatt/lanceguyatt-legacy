@@ -8,7 +8,7 @@
       "id": "1",
       "name": "Github",
       "url": "http://github.com/lanceguyatt",
-      "type": "drawer",
+      "type": "shell",
       "external": "true"
     }
   ],

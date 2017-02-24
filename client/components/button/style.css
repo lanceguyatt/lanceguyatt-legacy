@@ -1,0 +1,17 @@
+.c-button {
+  appearance: none;
+  border-image: url(./button.svg) 2 stretch;
+  border-style: solid;
+  border-width: .2rem;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  outline: 0;
+  padding: * .5rem;
+  text-align: center;
+  user-select: none;
+
+  &:focus,
+  &:active {
+    border-image: url(./button_active.svg) 2 stretch;
+  }
+}
