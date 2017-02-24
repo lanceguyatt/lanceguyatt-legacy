@@ -36,9 +36,7 @@
 .c-icon--close,
 .c-icon--close-active {
   border-right: .1rem solid var(--black);
-  size: 1.8rem 1.8rem;
-  margin-right: .5rem;
-  position: relative;
+  size: 1.8rem;
 }
 
 .c-icon--scroll-top,

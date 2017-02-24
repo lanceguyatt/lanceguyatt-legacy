@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import SITE from '../../../data/site/index.json';
+import image from '../../assets/logo.png';
 
 const Head = ({ data }) => (
   <Helmet
@@ -15,7 +16,7 @@ const Head = ({ data }) => (
       { property: 'og:title', content: data.name },
       { property: 'og:description', content: data.description },
       { property: 'og:url', content: `${SITE.url}${data.url}` },
-      { property: 'og:image', content: require('../../assets/logo.png') },
+      { property: 'og:image', content: `${SITE.url}${image}` },
       { name: 'apple-mobile-web-app-title', content: 'Lance Guyatt' },
     ]}
     link={[

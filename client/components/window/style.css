@@ -2,27 +2,25 @@
 
 .c-window {
   background-color: var(--blue);
-  border-image: url(./window.svg) 29 55 71 21 stretch;
+  border-image: url(./window-1.svg) 29 55 71 21 stretch;
   border-style: solid;
   border-width: 2.9rem 5.5rem 7.1rem 2.1rem;
-  transition-duration: 1s;
-  transition-property: background-color;
   position: absolute 2.2rem 0 0;
 }
 
-
 .c-window__header {
-  position: absolute -2.7rem -5.5rem 0 -2.1rem;
+  position: absolute -2.7rem -5.5rem 0 -2.0rem;
   height: var(--window-header-height);
   font-size: 1.6rem;
   line-height: 1.125;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: * .5rem * *;
+  padding: * 5.5rem * *;
 
   a {
     float: left;
+    margin-right: .5rem;
   }
 }
 
