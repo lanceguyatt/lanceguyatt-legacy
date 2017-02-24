@@ -5,7 +5,6 @@
 }
 
 .c-directory--wrap {
-  background: lime;
   align-items: flex-end;
   display: flex;
   flex-wrap: wrap;
@@ -27,7 +26,34 @@
   max-width: 10rem;
 
   svg {
-    display: block;
-    margin: * auto .1rem;
+    zdisplay: block;
+    margin: * auto .2rem;
   }
+}
+
+.c-directory__item__link {
+  color: var(--black);
+  display: block;
+  user-select: none;
+  outline: 0;
+
+  &:active,
+  &:focus {
+
+    .c-directory__item__link__icon-inactive {
+      display: none;
+    }
+
+    .c-directory__item__link__icon-active {
+      display: block;
+    }
+  }
+}
+
+.c-directory__item__link__icon-active {
+  display: none;
+}
+
+:root {
+  --black: #000;
 }

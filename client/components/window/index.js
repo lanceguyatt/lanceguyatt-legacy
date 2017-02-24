@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
 import classnames from 'classnames/bind';
 
-import Icon from '../../components/icon/';
+import IconLink from '../../components/icon_link/';
 
 import styles from './style.css';
 
@@ -14,7 +13,7 @@ const Window = ({ data, children, cssClasses }) => {
   return (
     <div className={className}>
       <div className={`${cx('c-window__header')}`}>
-        <Link to={data.parent}><Icon name="close" /></Link>
+        <IconLink url={data.parent} name="" icon="close" activeClass="false" />
         {data.name} {data.memory.full} full, {data.memory.free} free, {data.memory.use} in use
       </div>
       <div className={`${cx('c-window__main')}`}>

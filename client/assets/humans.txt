@@ -20,7 +20,7 @@
 
 	Node.js: https://nodejs.org/en/
 	npm: https://www.npmjs.com/
-	gulp.js: http://gulpjs.com/
+	webpack: http://webpack.org/
 	Pug: https://pugjs.org/
 	Browserify: http://browserify.org/
 	Babel: https://babeljs.io/

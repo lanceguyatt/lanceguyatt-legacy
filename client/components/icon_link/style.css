@@ -1,0 +1,22 @@
+.c-icon-link {
+  display: block;
+}
+
+.c-icon-link__active {
+  display: none;
+}
+
+.c-icon-link:active,
+.c-icon-link:focus,
+.c-icon-link--active {
+  outline: 0;
+
+
+  .c-icon-link__inactive {
+    display: none;
+  }
+
+  .c-icon-link__active {
+    display: block;
+  }
+}

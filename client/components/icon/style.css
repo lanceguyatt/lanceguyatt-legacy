@@ -2,6 +2,22 @@
   display: inline-block;
 }
 
+.c-icon--active {
+  display: none;
+}
+
+&:focus,
+&:active {
+
+  .c-icon--inactive {
+    display: none;
+  }
+
+  .c-icon--active {
+    display: block;
+  }
+}
+
 .c-icon--resize {
 	size: 16px;
 }
