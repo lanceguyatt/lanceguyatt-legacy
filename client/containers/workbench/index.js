@@ -7,7 +7,6 @@ import Head from '../../components/head/';
 import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
 import Directory from '../../components/directory';
-import Button from '../../components/button';
 
 import styles from './style.css';
 

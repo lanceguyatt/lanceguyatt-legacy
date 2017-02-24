@@ -8,6 +8,10 @@
   position: absolute 2.2rem 0 0;
 }
 
+.c-window--drawer {
+  position: absolute 0;
+}
+
 .c-window__header {
   position: absolute -2.7rem -5.5rem 0 -2.0rem;
   height: var(--window-header-height);

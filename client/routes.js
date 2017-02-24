@@ -3,7 +3,7 @@ import { Route } from 'react-router';
 
 import Layout from './components/layout/';
 import WorkBench from './containers/workbench/';
-import Folder from './components/folder/';
+import Drawer from './components/drawer/';
 import WorkItem from './components/work_item/';
 import KickStart from './containers/kickstart/';
 import GuruMeditation from './containers/guru_meditation/';
@@ -80,11 +80,11 @@ const routes = (
   <div>
     <Route component={Layout}>
       <Route path="/" component={WorkBench} data={workbench}>
-        <Route path="/ramdisk/" component={Folder} data={ramdisk} />
-        <Route path="/work/" component={Folder} data={work}>
+        <Route path="/ramdisk/" component={Drawer} data={ramdisk} />
+        <Route path="/work/" component={Drawer} data={work}>
           <Route path="/work/wilson-fletcher/" component={WorkItem} />
         </Route>
-        <Route path="/about/" component={Folder} data={about} />
+        <Route path="/about/" component={Drawer} data={about} />
       </Route>
       <Route path="/kickstart/" component={KickStart} data={kickstart} />
       <Route path="*" component={GuruMeditation} status={404} data={guruMeditation} />

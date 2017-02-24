@@ -26,7 +26,7 @@
   max-width: 10rem;
 
   svg {
-    zdisplay: block;
+    display: block;
     margin: * auto .2rem;
   }
 }
@@ -34,26 +34,31 @@
 .c-directory__item__link {
   color: var(--black);
   display: block;
-  user-select: none;
   outline: 0;
+}
 
-  &:active,
-  &:focus {
-
-    .c-directory__item__link__icon-inactive {
-      display: none;
-    }
-
-    .c-directory__item__link__icon-active {
-      display: block;
-    }
-  }
+.c-directory__item__link__icon-inactive {
+  display: block;
 }
 
 .c-directory__item__link__icon-active {
   display: none;
 }
 
+.c-directory__item__link:--focus-active,
+.c-directory__item__link--active {
+
+  .c-directory__item__link__icon-inactive {
+    display: none;
+  }
+
+  .c-directory__item__link__icon-active {
+    display: block;
+  }
+}
+
 :root {
   --black: #000;
 }
+
+@custom-selector :--focus-active :focus, :active;

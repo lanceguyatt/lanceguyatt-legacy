@@ -9,32 +9,30 @@ import styles from './style.css';
 
 const cx = classnames.bind(styles);
 
-class Folder extends React.Component {
+class Drawer extends React.Component {
   componentDidMount() {}
 
   render() {
     const { data } = this.props.route;
-    const className = cx('c-folder');
+    const className = cx('c-drawer');
 
     return (
-      <section className={className}>
+      <div className={className}>
         <Head data={data} />
-        <Window data={data}>
+        <Window data={data} cssClasses="c-window--drawer">
           <Directory data={data.items} cssClasses="c-directory--wrap" />
         </Window>
         {this.props.children}
-      </section>
+      </div>
     );
   }
 }
 
-Folder.propTypes = {
+Drawer.propTypes = {
   route: React.PropTypes.shape({
-    data: React.PropTypes.shape({
-      parent: React.PropTypes.string,
-    }),
+    data: React.PropTypes.shape(),
   }),
   children: React.PropTypes.element,
 };
 
-export default Folder;
+export default Drawer;

@@ -3,6 +3,11 @@
   "description": "About description",
   "url": "/about/",
   "parent": "/",
+  "memory": {
+    "full": "5%",
+    "free": "15M",
+    "use": "2,972k"
+  },
   "items": [
     {
       "id": "1",
@@ -10,11 +15,12 @@
       "url": "http://github.com/lanceguyatt",
       "type": "shell",
       "external": "true"
+    }, {
+      "id": "2",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/lanceguyatt/",
+      "type": "shell",
+      "external": "true"
     }
-  ],
-  "memory": {
-    "full": "5%",
-    "free": "25M",
-    "use": "2,972k"
-  }
+  ]
 }
