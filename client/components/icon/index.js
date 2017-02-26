@@ -9,9 +9,7 @@ const Icon = ({ name }) => {
   const className = cx('c-icon', `c-icon--${name}`);
 
   return (
-    <svg className={className} role="img">
-      <use xlinkHref={`#i-${name}`} />
-    </svg>
+    <span className={className} />
   );
 };
 

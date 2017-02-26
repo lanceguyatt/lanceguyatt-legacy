@@ -1,13 +1,5 @@
-/*@import 'normalize.css';*/
-@import '../../styling/base.css';
-
-@custom-media --breakpoint-max-sm (max-width: 480px);
-
-@custom-media --breakpoint-md (min-width: 768px);
-@custom-media --breakpoint-max-md (max-width: 768px);
-
-@custom-media --breakpoint-lg (min-width: 1024px);
-@custom-media --breakpoint-max-lg (max-width: 1024px);
+@import '../../styling/settings/_media_queries';
+@import '../../styling/settings/_colors';
 
 @font-face {
   font-family: 'Topaz';
@@ -15,20 +7,6 @@
   font-weight: normal;
 }
 
-:root {
-  --topaz: 'Topaz', sans-serif;
-}
-
-:root {
-  font-size: 12px;
-}
-
-@media (--breakpoint-lg) {
-
-  :root {
-    font-size: 10px;
-  }
-}
 
 html {
   box-sizing: border-box;
@@ -41,6 +19,7 @@ html {
   margin: 0;
   padding: 0;
 }
+
 a,
 body,
 button{
@@ -53,6 +32,7 @@ body {
 }
 
 body {
+  background-color: var(--gray);
   font-family: var(--topaz);
   font-size: 1.6rem;
   font-weight: 400;
@@ -65,7 +45,6 @@ body {
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   box-sizing: border-box;
 }
 
@@ -99,4 +78,9 @@ p {
 
 .c-app {
   overflow: hidden;
+}
+
+:root {
+  --topaz: 'Topaz', sans-serif;
+  font-size: 10px;
 }

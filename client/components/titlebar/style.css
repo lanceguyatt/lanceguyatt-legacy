@@ -10,6 +10,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   padding: .1rem .23rem .1rem .5rem;
+  user-select: none;
 }
 
 :root {

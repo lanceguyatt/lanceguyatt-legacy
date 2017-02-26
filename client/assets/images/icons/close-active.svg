@@ -1,1 +1,16 @@
-<svg width="19" height="22" viewBox="0 0 19 22" xmlns="http://www.w3.org/2000/svg"><title>close-active</title><g fill="none" fill-rule="evenodd"><path fill="#000" d="M7 6h5v10H7z"/><path fill="#AAA" d="M8 8h3v6H8z"/><path d="M0 0h19v2H0V0zm0 2h1v18H0V2z" fill="#000"/><path d="M0 20h19v2H0v-2zM18 2h1v18h-1V2z" fill="#FFF"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>close-active</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="close-active">
+            <rect id="Rectangle-2" x="0" y="0" width="17" height="18"></rect>
+            <rect id="Rectangle" fill="#AAAAAA" x="7" y="6" width="3" height="6"></rect>
+            <rect id="Rectangle-3" fill="#000000" x="17" y="0" width="1" height="18"></rect>
+            <rect id="Rectangle-4" fill="#FFFFFF" x="18" y="0" width="1" height="18"></rect>
+            <path d="M10,12 L10,6 L11,6 L11,12.5 L11,14 L7,14 L7,12 L10,12 Z M6,4 L11,4 L11,6 L6,6 L6,4 Z M6,6 L7,6 L7,14 L6,14 L6,6 Z" id="Combined-Shape" fill="#000000"></path>
+        </g>
+    </g>
+</svg>

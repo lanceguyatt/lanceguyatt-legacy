@@ -1,4 +1,6 @@
 import React from 'react';
+import Draggable from 'react-draggable';
+
 import Head from '../head/';
 import Window from '../window/';
 
@@ -18,12 +20,14 @@ const page = {
 };
 
 const WorkItem = () => (
-  <div>
-    <Head page={page} />
-    <Window data={page}>
-      <Button url="http://wilsonfletcher.com" name="Launch" external="true" />
-    </Window>
-  </div>
+  <Draggable>
+    <div>
+      <Head page={page} />
+      <Window data={page} cssClasses="c-window--drawer">
+        <Button url="http://wilsonfletcher.com" name="Launch" external="true" />
+      </Window>
+    </div>
+  </Draggable>
 );
 
 export default WorkItem;

@@ -32,6 +32,7 @@
 }
 
 .c-directory__item__link {
+  border: 1px solid red;
   color: var(--black);
   display: block;
   outline: 0;

@@ -11,8 +11,10 @@
 }
 
 .c-copyright {
+  font-size: 1.6rem;
+  line-height: 1.5;
   margin: 2rem auto;
-  size: 17rem *;
+  size: 20rem *;
 }
 
 .c-tick {
@@ -82,11 +84,6 @@
 }
 
 :root {
-  --black: #000;
-  --blue: #6687ba;
-  --gray: #aaa;
   --purple: #401040;
-  --red: #ed1c24;
   --tumbleweed: #e0a080;
-  --white: #fff;
 }

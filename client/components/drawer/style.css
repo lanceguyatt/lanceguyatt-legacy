@@ -1,6 +1,15 @@
+@import '../../styling/settings/_media_queries';
+
 .c-drawer {
-  position: absolute 50% * * 50%;
-  width: 500px;
-  height: 400px;
-  transform: translate(-50%, -50%);
+  position: absolute 2.2rem 0 0;
+}
+
+@media (--breakpoint-lg) {
+
+  .c-drawer {
+    top: 50%;
+    left: 50%;
+    size: 50rem;
+    margin: -25rem * * -25rem;
+  }
 }

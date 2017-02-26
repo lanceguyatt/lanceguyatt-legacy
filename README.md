@@ -3,47 +3,13 @@
 > Build static sites with React & CSS Modules to host on [Amazon S3](https://aws.amazon.com/s3/), [Github Pages](https://pages.github.com/), [Surge](https://surge.sh/) etc.
 > *React | React Router | Babel 6 | CSS Modules | PostCSS | Webpack*
 
-<img src="https://cloud.githubusercontent.com/assets/9054585/17802667/d4ecfaac-661b-11e6-87f4-82dbae105371.jpg" alt="" width="600"/>
+The .info file contains the icon image and its spatial position within its parent window. The icon also specifies the type of the file, as used by Workbench. Workbench recognises five different file types:[4]
 
-### Features
+* Tool: An executable program.
+* Project: A data file of an executable program. The program which created the file is named in the icon file, double-clicking on the icon loads the program that created it.
+* Drawer: A directory containing files, and other drawers.
+* Volume: A physical disk or a RAM disk.
+* Garbage: The Trashcan – a deleted file backup, which works in a similar way to the 'Recycle bin' in Microsoft Windows.
 
-- ES6+.
-- Hot Reloading.
-- ESLint rules based on Airbnb's Javascript Styleguide.
-- Every route is completely rendered into a `.html` page with `renderToString`.
-- Deferred script loading, so the browser can render the html without waiting for the js bundle first.
-- Hash is added to every asset's filename, so you can cache all assets forever.
-- Title, Meta and other SEO tags with [react-helmet](https://github.com/nfl/react-helmet).
-- SEO friendly, no JavaScript required to view a page.
-- Generates sitemap.xml
-
-### Getting Started
-
-Fork the repo, install the node modules and run the dev server:
-
-```
-$ npm install
-$ npm start
-```
-
-Open [http://localhost:3000](http://localhost:3000) & have fun. 🐒
-
-### Deploy
-
-Set your `website` in `package.json` and generate all the static files with `npm run build`. Then upload the contents of the `build/` folder to your hosting solution of choice. Finish!
-
-You can also check out the production build on your local machine using `http-server`:
-
-```
-$ npm install -g http-server
-$ cd build
-$ http-server
-```
-
-### FAQ
-
-**My site is not working properly on Amazon S3**:<br>
-Make sure you define paths *with* trailing slashes, like `<Route path="about/">`.
-
-**My site is not working properly on Github Pages**:<br>
-Make sure you define paths *without* trailing slashes, like `<Route path="about">`.
+* http://www.gregdonner.org/workbench/index.html
+* http://guide.abime.net/wb2.x/chap2.htm

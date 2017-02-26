@@ -21,10 +21,15 @@ class KickStart extends React.Component {
         <div className={`${cx('c-copyright')}`}>
           <Link to="/">
             <div className={`${cx('c-tick')}`} />
-            <p>2.05 Roms (37.350)
-            Lance Guyatt, Inc.
-            Copyright 2000-2017
-            All Rights Reserved.</p>
+            <p>
+              2.0 Roms (37.350)
+              <br />
+              Copyright &copy; 2000-2017
+              <br />
+              Lance Guyatt, Inc.
+              <br />
+              All Rights Reserved
+            </p>
           </Link>
         </div>
 

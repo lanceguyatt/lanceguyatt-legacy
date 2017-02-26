@@ -4,7 +4,6 @@ import { Route } from 'react-router';
 import Layout from './components/layout/';
 import WorkBench from './containers/workbench/';
 import Drawer from './components/drawer/';
-import WorkItem from './components/work_item/';
 import KickStart from './containers/kickstart/';
 import GuruMeditation from './containers/guru_meditation/';
 
@@ -52,8 +51,27 @@ const work = {
     {
       id: 1,
       name: 'Wilson Fletcher',
-      url: '/work/wilson-fletcher/',
-      type: 'drawer',
+      url: 'https://www.wilsonfletcher.com/',
+      type: 'shell',
+      external: 'true',
+    }, {
+      id: 2,
+      name: 'Associated Press',
+      url: 'https://www.ap.org/en-gb/',
+      type: 'shell',
+      external: 'true',
+    }, {
+      id: 3,
+      name: 'MQ',
+      url: 'http://mqmentalhealth.org',
+      type: 'shell',
+      external: 'true',
+    }, {
+      id: 4,
+      name: 'Neon',
+      url: 'https://www.neontv.co.nz/',
+      type: 'shell',
+      external: 'true',
     },
   ],
   memory: {
@@ -81,9 +99,7 @@ const routes = (
     <Route component={Layout}>
       <Route path="/" component={WorkBench} data={workbench}>
         <Route path="/ramdisk/" component={Drawer} data={ramdisk} />
-        <Route path="/work/" component={Drawer} data={work}>
-          <Route path="/work/wilson-fletcher/" component={WorkItem} />
-        </Route>
+        <Route path="/work/" component={Drawer} data={work} />
         <Route path="/about/" component={Drawer} data={about} />
       </Route>
       <Route path="/kickstart/" component={KickStart} data={kickstart} />

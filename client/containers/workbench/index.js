@@ -8,6 +8,8 @@ import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
 import Directory from '../../components/directory';
 
+import Button from '../../components/button';
+
 import styles from './style.css';
 
 import site from '../../../data/site/index.json';
@@ -15,6 +17,12 @@ import site from '../../../data/site/index.json';
 const copyrightYear = moment().format('YYYY');
 
 const cx = classnames.bind(styles);
+
+const data1 = {
+  name: 'sdklskdls sdsldk kdlsdksl sdkl sasa aasas s',
+  memory: 'dsdsds',
+};
+
 
 class WorkBench extends React.Component {
 
@@ -27,10 +35,18 @@ class WorkBench extends React.Component {
     return (
       <div className={className}>
         <Head data={data} />
-        <Titlebar>Copyright &copy; 2000-{copyrightYear} {site.name}. All Rights Reserved</Titlebar>
-        <Window data={data} cssClasses="c-window--full">
-          <Directory data={data.items} cssClasses="c-directory--column" />
+        <Titlebar>{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
+
+        <Window data={data1} cssClasses="c-window--1">
+          <Button name="sdsd" url="/sdssd" />
         </Window>
+
+        <Window data={data} cssClasses="c-window--2">
+          <Directory data={data.items} cssClasses="c-directory--column" />
+          <Button name="sdsd" url="/sdssd" />
+        </Window>
+
+
         {this.props.children}
       </div>
     );

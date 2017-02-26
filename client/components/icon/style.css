@@ -1,58 +1,54 @@
 .c-icon {
+  background-position: center center;
+  background-repeat: no-repeat;
   display: inline-block;
 }
 
-.c-icon--active {
-  display: none;
-}
-
-&:focus,
-&:active {
-
-  .c-icon--inactive {
-    display: none;
-  }
-
-  .c-icon--active {
-    display: block;
-  }
-}
-
 .c-icon--resize {
-	size: 16px;
+  size: 16px;
 }
 
 .c-icon--left,
 .c-icon--right {
-	size: 14px 16px;
+  size: 14px 16px;
 }
 
-.c-icon--drive,
+.c-icon--drive {
+  background-image: url(./drive.svg);
+  size: 8.5rem 4.4rem;
+}
+
 .c-icon--drive-active {
-	size: 8.5rem 4.4rem;
+  background-image: url(./drive-active.svg);
+  size: 8.5rem 4.4rem;
 }
 
-.c-icon--drawer,
+.c-icon--drawer {
+  background-image: url(./drawer.svg);
+  size: 6.5rem 3.8rem;
+}
 .c-icon--drawer-active {
-	size: 6.5rem 3.8rem;
+  background-image: url(./drawer-active.svg);
+  size: 6.5rem 3.8rem;
 }
 
-.c-icon--disk,
+.c-icon--disk {
+  background-image: url(./disk.svg);
+  size: 4.3rem 4.6rem;
+}
+
 .c-icon--disk-active {
-	size: 4.3rem 4.6rem;
+  background-image: url(./disk-active.svg);
+  size: 4.3rem 4.6rem;
 }
 
 .c-icon--trash,
 .c-icon--trash-active { size: 7.1rem 7rem }
 
-.c-icon--disk-drive { size: 15.6rem 3.8rem }
-
-.c-icon--floppy-disk { size: 13.4rem 12rem }
-
 .c-icon--close,
 .c-icon--close-active {
-  border-right: .1rem solid var(--black);
-  size: 1.8rem;
+  size: 2rem 2.2rem;
+  background-image: url(./close.svg);
 }
 
 .c-icon--scroll-top,
