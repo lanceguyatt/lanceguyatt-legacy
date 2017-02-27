@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="22px" viewBox="0 0 26 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>checkbox</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="checkbox">
+            <g id="Combined-Shape">
+                <path d="M0,0 L25,0 L25,2 L0,2 L0,0 Z M0,2 L2,2 L2,20 L0,20 L0,2 Z M0,20 L1,20 L1,22 L0,22 L0,20 Z" fill="#FFFFFF"></path>
+                <path d="M1,0 L26,0 L26,2 L1,2 L1,0 Z M1,2 L3,2 L3,20 L1,20 L1,2 Z M1,20 L2,20 L2,22 L1,22 L1,20 Z" fill="#000000" transform="translate(13.500000, 11.000000) rotate(180.000000) translate(-13.500000, -11.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

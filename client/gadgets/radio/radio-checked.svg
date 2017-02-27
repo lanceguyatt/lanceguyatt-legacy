@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="18px" viewBox="0 0 17 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>radio-checked</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="radio-checked">
+            <g id="checkbox-active" transform="translate(8.500000, 9.000000) rotate(180.000000) translate(-8.500000, -9.000000) ">
+                <path d="M2,0 L14,0 L14,2 L2,2 L2,0 Z M1,2 L3,2 L3,4 L1,4 L1,2 Z M0,4 L2,4 L2,14 L0,14 L0,4 Z M1,14 L3,14 L3,16 L1,16 L1,14 Z M2,16 L3,16 L3,18 L2,18 L2,16 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                <path d="M5,0 L17,0 L17,2 L5,2 L5,0 Z M4,2 L6,2 L6,4 L4,4 L4,2 Z M3,4 L5,4 L5,14 L3,14 L3,4 Z M4,14 L6,14 L6,16 L4,16 L4,14 Z M5,16 L6,16 L6,18 L5,18 L5,16 Z" id="Combined-Shape" fill="#000000" transform="translate(10.000000, 9.000000) rotate(180.000000) translate(-10.000000, -9.000000) "></path>
+            </g>
+            <path d="M4,6 L5,6 L5,12 L4,12 L4,6 Z M5,4 L12,4 L12,14 L5,14 L5,4 Z M12,6 L13,6 L13,12 L12,12 L12,6 Z" id="Combined-Shape" fill="#6080B0"></path>
+        </g>
+    </g>
+</svg>

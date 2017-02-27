@@ -1,0 +1,24 @@
+.c-radio {
+  background: red;
+  margin-bottom: .8rem;
+}
+
+.c-radio__label {
+  background: hotpink;
+  display: block;
+  overflow: hidden;
+  user-select: none;
+}
+
+.c-radio__input {
+  appearance: none;
+  background-image: url('./radio.svg');
+  size: 1.7rem 1.8rem;
+  outline: 0;
+  margin-right: .7rem;
+  float: left;
+
+  &:checked {
+    background-image: url('./radio-checked.svg');
+  }
+}

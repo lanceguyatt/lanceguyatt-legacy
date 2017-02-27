@@ -8,7 +8,10 @@ import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
 import Directory from '../../components/directory';
 
-import Button from '../../components/button';
+import Button from '../../gadgets/button';
+import Checkbox from '../../gadgets/checkbox';
+import Radio from '../../gadgets/radio';
+import Text from '../../gadgets/text';
 
 import styles from './style.css';
 
@@ -39,13 +42,17 @@ class WorkBench extends React.Component {
 
         <Window data={data1} cssClasses="c-window--1">
           <Button name="sdsd" url="/sdssd" />
+          <Radio name="Agree" description="Windows" />
+          <Radio name="Agree" description="Windows" />
+          <Checkbox name="Agree" description="Windows" />
+          <Text name="Text" value="Foo" id="id-1" placeholder="" />
+
         </Window>
 
         <Window data={data} cssClasses="c-window--2">
           <Directory data={data.items} cssClasses="c-directory--column" />
           <Button name="sdsd" url="/sdssd" />
         </Window>
-
 
         {this.props.children}
       </div>

@@ -1,11 +1,13 @@
 import React from 'react';
 import classnames from 'classnames/bind';
 
-import IconLink from '../../components/icon_link/';
+import Gadget from '../../components/gadget/';
 
 import styles from './style.css';
 
 const cx = classnames.bind(styles);
+
+const handleZoom = () => console.log('Zoom');
 
 const Window = ({ data, children, cssClasses }) => {
   const className = cx('c-window', cssClasses);
@@ -13,10 +15,12 @@ const Window = ({ data, children, cssClasses }) => {
   return (
     <div className={className}>
       <div className={`${cx('c-window__header')}`}>
-        <IconLink url={data.parent} name="" icon="close" />
+        <Gadget name="close" />
         <div className={`${cx('c-window__header__name')}`}>
           {data.name} {data.memory.full} full, {data.memory.free} free, {data.memory.use}
         </div>
+        <Gadget name="zoom" onClick={handleZoom} />
+        <Gadget name="depth" />
       </div>
 
       <div className={`${cx('c-window__main')}`}>

@@ -17,6 +17,7 @@
   xbackground: purple;
   height: var(--window-header-height);
   position: absolute -2.7rem 0 * -1.8rem;
+  display: flex;
 }
 
 .c-window__header__name {
@@ -25,7 +26,6 @@
   line-height: 1.125;
   overflow: hidden;
   padding: * 5px;
-  position: absolute .2rem 0 * 1.9rem;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;

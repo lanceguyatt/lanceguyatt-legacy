@@ -22,7 +22,8 @@ html {
 
 a,
 body,
-button{
+button,
+input {
   cursor: url(./cursor.svg), default
 }
 

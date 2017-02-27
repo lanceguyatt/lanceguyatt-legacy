@@ -1,0 +1,24 @@
+.c-checkbox {
+  background: red;
+  margin-bottom: .8rem;
+}
+
+.c-checkbox__label {
+  background: hotpink;
+  display: block;
+  overflow: hidden;
+  user-select: none;
+}
+
+.c-checkbox__input {
+  appearance: none;
+  background-image: url('./checkbox.svg');
+  size: 2.6rem 2.2rem;
+  outline: 0;
+  margin-right: .7rem;
+  float: left;
+
+  &:checked {
+    background-image: url('./checkbox-checked.svg');
+  }
+}

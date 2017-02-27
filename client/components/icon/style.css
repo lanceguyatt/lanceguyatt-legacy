@@ -4,15 +4,6 @@
   display: inline-block;
 }
 
-.c-icon--resize {
-  size: 16px;
-}
-
-.c-icon--left,
-.c-icon--right {
-  size: 14px 16px;
-}
-
 .c-icon--drive {
   background-image: url(./drive.svg);
   size: 8.5rem 4.4rem;
@@ -45,27 +36,10 @@
 .c-icon--trash,
 .c-icon--trash-active { size: 7.1rem 7rem }
 
-.c-icon--close,
-.c-icon--close-active {
-  size: 2rem 2.2rem;
-  background-image: url(./close.svg);
-}
-
-.c-icon--scroll-top,
-.c-icon--scroll-bottom { size: 1.6rem 1.8rem }
-
-.c-icon--scroll-left,
-.c-icon--scroll-right { size: 1.4rem 1.6rem }
-
 .c-icon--clock { size: 3.2rem }
 
 .c-icon--shell,
 .c-icon--shell-active { size: 6rem 4.8rem }
-
-.c-icon--depth { size: 2.1rem 1.8rem }
-.c-icon--zoom { size: 2.1rem 1.8rem }
-.c-icon--checked { size: 2.2rem 1.8rem }
-
 
 :root {
   --black: #000;
