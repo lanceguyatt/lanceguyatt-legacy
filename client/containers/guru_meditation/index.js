@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React from 'react';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 
 import Head from '../../components/head/';
 import Alert from '../../components/alert/';
@@ -9,8 +9,6 @@ import Alert from '../../components/alert/';
 import styles from './style.css';
 
 // import toastyMp3 from './toasty.mp3';
-
-const cx = classnames.bind(styles);
 
 const alert = {
   name: 'Software Failure. Press left mouse button to continue.',
@@ -29,7 +27,7 @@ class GuruMeditation extends React.Component {
   componentDidMount() {
     let konamiCodeArray = [];
     const konamiCodeKey = '38,38,40,40,37,39,37,39,66,65';
-    const konamiClass = `${cx('konami')}`;
+    const konamiClass = 'konami';
     // const toastyAudio = document.getElementById('js-toasty-audio');
     const toastyImage = document.getElementById('js-toasty-image');
     const animationEvent = this.whichAnimationEvent();
@@ -73,11 +71,11 @@ class GuruMeditation extends React.Component {
     const { data } = this.props.route;
 
     return (
-      <div className={cx('c-guru-meditation')}>
+      <div styleName="c-guru-meditation">
         <Head data={data} />
-        <div className={cx('c-guru-meditation__main')}>
-          <Alert alert={alert} cssClasses="u-border-red" />
-          <div id="js-toasty-image" className={`${cx('c-toasty')}`} />
+        <div styleName="c-guru-meditation__main">
+          <Alert alert={alert} cssClasses="u-border-red u-red" />
+          <div styleName="c-toasty" id="js-toasty-image" />
           { /* <Audio audio={toast} />*/ }
         </div>
       </div>
@@ -89,4 +87,4 @@ GuruMeditation.propTypes = {
   route: React.PropTypes.shape(),
 };
 
-export default GuruMeditation;
+export default CSSModules(GuruMeditation, styles, { allowMultiple: true });

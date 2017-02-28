@@ -1,2 +1,7 @@
-.workbench {
+@import '../../styling/base.css';
+
+:local {
+
+  .workbench {
+  }
 }

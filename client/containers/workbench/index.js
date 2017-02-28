@@ -1,25 +1,22 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-// import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 import moment from 'moment';
 
 import Head from '../../components/head/';
 // import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
 // import Directory from '../../components/directory';
-
-import Button from '../../gadgets/button';
 import Checkbox from '../../gadgets/checkbox';
 import Radio from '../../gadgets/radio';
 import Text from '../../gadgets/text';
+import Button from '../../gadgets/button';
 
 import styles from './style.css';
 
 import site from '../../../data/site/index.json';
 
 const copyrightYear = moment().format('YYYY');
-
-// const cx = classnames.bind(styles);
 
 // const data1 = {
 //   name: 'sdklskdls sdsldk kdlsdksl sdkl sasa aasas s',
@@ -39,19 +36,24 @@ class WorkBench extends React.Component {
         <Head data={data} />
         <Titlebar>{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
 
-        <Button name="Button" url="#" />
-        <Button name="Button" url="#" />
-        <Button name="Button" url="#" />
+        <form action="#" styleName="u-p4">
+          <fieldset styleName="u-bg-blue">
 
-        <fieldset>
-          <Radio id="foo1" name="foo" value="Foo 1" label="Foo 1" />
-          <Radio id="foo2" name="foo" value="Foo 2" label="Foo 2" />
-        </fieldset>
+            <div styleName="u-mb3">
+              <Radio id="foo1" name="foo" value="Foo 1" label="Foo 1" />
+            </div>
 
-        <Checkbox id="agree1" name="agree_1" value="I agree 1" label="I agree 1" />
-        <Checkbox id="agree2" name="agree_2" value="I agree 2" label="I agree 2" checked={true} />
+            <Radio id="foo2" name="foo" value="Foo 2" label="Foo 2" />
 
-        <Text name="Text" value="Foo" id="id-1" placeholder="" />
+            <Checkbox id="agree1" name="agree_1" value="I agree 1" label="I agree 1" />
+
+            <Text name="Text" value="Foo" id="id-1" placeholder="" />
+
+            <div styleName="u-mb3">
+              <Button name="Submit" url="#" type="submit" />
+            </div>
+          </fieldset>
+        </form>
 
         { /*
         <Window data={data1} cssClasses="c-window--1">
@@ -87,4 +89,4 @@ WorkBench.propTypes = {
   children: React.PropTypes.element,
 };
 
-export default WorkBench;
+export default CSSModules(WorkBench, styles);

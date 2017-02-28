@@ -1,4 +1,4 @@
-.c-gadget {
+.gadget {
   appearance: none;
   background-color: red;
   border: 0;
@@ -7,7 +7,7 @@
   outline: 0;
 }
 
-.c-gadget--close {
+.gadget--close {
   background-image: url('./close.svg');
   size: 2rem 2.2rem;
 
@@ -16,7 +16,7 @@
   }
 }
 
-.c-gadget--depth {
+.gadget--depth {
   background-image: url('./depth.svg');
   size: 2.3rem 2.2rem;
 
@@ -25,7 +25,7 @@
   }
 }
 
-.c-gadget--zoom {
+.gadget--zoom {
   background-image: url('./zoom.svg');
   size: 2.3rem 2.2rem;
 

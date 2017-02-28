@@ -1,34 +1,46 @@
 import React from 'react';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 
 import Gadget from '../../components/gadget/';
 
 import styles from './style.css';
 
-const cx = classnames.bind(styles);
+class Window extends React.Component {
 
-const handleZoom = () => console.log('Zoom');
+  constructor(props) {
+    super(props);
+    this.state = { active: false };
+  }
 
-const Window = ({ data, children, cssClasses }) => {
-  const className = cx('c-window', cssClasses);
+  componentWillMount() {
+    this.setState({ active: true });
+  }
 
-  return (
-    <div className={className}>
-      <div className={`${cx('c-window__header')}`}>
-        <Gadget name="close" />
-        <div className={`${cx('c-window__header__name')}`}>
-          {data.name} {data.memory.full} full, {data.memory.free} free, {data.memory.use}
+  componentWillUnMount() {
+    this.setState({ active: false });
+  }
+
+  render() {
+    const { children, cssClasses, data } = this.props;
+    const activeClass = this.state.active ? 'window--active' : '';
+
+    return (
+      <div styleName={`window ${cssClasses} ${activeClass}`}>
+        <div styleName="window__header">
+          <Gadget name="close" />
+          <div styleName="window__header__name">
+            {data.name} {data.memory.full} full, {data.memory.free} free, {data.memory.use}
+          </div>
+          <Gadget name="zoom" />
+          <Gadget name="depth" />
         </div>
-        <Gadget name="zoom" onClick={handleZoom} />
-        <Gadget name="depth" />
+        <div styleName="window__main">
+          {children}
+        </div>
       </div>
-
-      <div className={`${cx('c-window__main')}`}>
-        {children}
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 Window.propTypes = {
   data: React.PropTypes.shape({
@@ -52,4 +64,4 @@ Window.defaultTypes = {
   cssClasses: '',
 };
 
-export default Window;
+export default CSSModules(Window, styles, { allowMultiple: true });

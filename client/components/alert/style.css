@@ -1,43 +1,33 @@
-@import '../../styling/settings/_colors';
+@import '../../styling/base';
 
-.c-alert {
-  animation: pulse 1.5s infinite ease-in-out;
-  background-color: var(--black);
-  border-color: var(--red);
-  border-style: solid;
-  border-width: .6rem;
-  color: var(--red);
-  max-width: 64rem;
-  padding: 1rem;
-  position: absolute 50% * * 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  line-height: 1.875;
-}
+:local {
 
-.c-alert__link {
-  color: inherit;
-  position: absolute 0;
-  z-index: 1;
-  text-indent: -999999px;
+  .c-alert {
+    animation: pulse 1.5s infinite ease-in-out;
+    border-style: solid;
+    border-width: .6rem;
+    line-height: 1.875;
+    max-width: 64rem;
+    padding: 1rem;
+    position: absolute 50% * * 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .c-alert__link {
+    color: inherit;
+    position: absolute 0;
+    z-index: 1;
+    text-indent: -999999px;
+  }
 }
 
 @keyframes pulse {
-	0% {
-		border-color: var(--red)
-	}
+  0% {
+    border-color: currentColor;
+  }
 
-	100% {
-		border-color: var(--black)
-	}
-}
-
-:root {
-  --black: #000;
-  --blue: #6687ba;
-  --gray: #aaa;
-  --purple: #401040;
-  --red: #ed1c24;
-  --tumbleweed: #e0a080;
-  --white: #fff;
+  100% {
+    border-color: transparent;
+  }
 }

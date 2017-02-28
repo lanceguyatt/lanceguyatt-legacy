@@ -1,20 +1,12 @@
 import React from 'react';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
 
-const cx = classnames.bind(styles);
-
-const Gadget = ({ name }) => {
-  const className = cx('c-gadget', `c-gadget--${name}`);
-
-  return (
-    <button className={className} />
-  );
-};
+const Gadget = ({ name }) => <button styleName={`gadget gadget--${name}`} />;
 
 Gadget.propTypes = {
   name: React.PropTypes.string,
 };
 
-export default Gadget;
+export default CSSModules(Gadget, styles, { allowMultiple: true });

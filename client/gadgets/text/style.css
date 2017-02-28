@@ -1,3 +1,5 @@
+@import '../../styling/settings/_colors';
+
 .c-text {
   appearance: none;
   background-color: var(--gray);

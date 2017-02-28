@@ -1,24 +1,27 @@
 @import '../../styling/settings/_colors';
 
-:local(.button) {
-  composes: reset from '../../styling/shared.css';
-  border-image: url(./button.svg) 2 stretch;
-  border-style: solid;
-  border-width: .2rem;
-  display: inline-block;
-  font-family: inherit;
-  font-size: 1.6rem;
-  line-height: 1.25;
-  padding: * 2rem;
-  text-align: center;
-  user-select: none;
+:local {
 
-  &:focus,
-  &:active {
-    border-image: url(./button_active.svg) 2 stretch;
-  }
+  .button {
+    composes: reset from '../../styling/shared.css';
+    border-image: url(./button.svg) 2 stretch;
+    border-style: solid;
+    border-width: .2rem;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    padding: * 2rem;
+    text-align: center;
+    user-select: none;
 
-  &:active {
-    background-color: var(--blue);
+    &:focus,
+    &:active {
+      border-image: url(./button_active.svg) 2 stretch;
+    }
+
+    &:active {
+      background-color: var(--blue);
+    }
   }
 }

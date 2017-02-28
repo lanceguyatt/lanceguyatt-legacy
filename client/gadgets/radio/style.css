@@ -1,24 +1,29 @@
-.c-radio {
-  display: flex;
-  align-items: center;
-  margin-bottom: .8rem;
-}
+@import '../../styling/settings/_colors';
 
-.c-radio__label {
-  user-select: none;
-}
+:local {
 
-.c-radio__input {
-  appearance: none;
-  background-color: transparent;
-  background-image: url('./radio.svg');
-  border-radius: 0;
-  border: 0;
-  margin-right: .7rem;
-  outline: 0;
-  size: 1.7rem 1.8rem;
+  .c-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: .8rem;
+  }
 
-  &:checked {
-    background-image: url('./radio-checked.svg');
+  .c-radio__label {
+    user-select: none;
+  }
+
+  .c-radio__input {
+    appearance: none;
+    background-color: transparent;
+    background-image: url('./radio.svg');
+    border-radius: 0;
+    border: 0;
+    margin-right: .7rem;
+    outline: 0;
+    size: 1.7rem 1.8rem;
+
+    &:checked {
+      background-image: url('./radio-checked.svg');
+    }
   }
 }

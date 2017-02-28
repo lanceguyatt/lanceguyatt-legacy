@@ -1,6 +1,5 @@
 import React from 'react';
-// import Draggable from 'react-draggable';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
@@ -8,19 +7,16 @@ import Directory from '../../components/directory/';
 
 import styles from './style.css';
 
-const cx = classnames.bind(styles);
-
 class Drawer extends React.Component {
   componentDidMount() {}
 
   render() {
     const { data } = this.props.route;
-    const className = cx('c-drawer');
 
     return (
-      <div className={className}>
+      <div styleName="drawer">
         <Head data={data} />
-        <Window data={data} cssClasses="c-window--drawer">
+        <Window data={data} cssClasses="window--2">
           <Directory data={data.items} cssClasses="c-directory--wrap" />
         </Window>
       </div>
@@ -34,4 +30,4 @@ Drawer.propTypes = {
   }),
 };
 
-export default Drawer;
+export default CSSModules(Drawer, styles);

@@ -1,20 +1,24 @@
-@import '../../styling/settings/_colors';
+@import '../../styling/base';
 
-.c-guru-meditation {
-  background-color: var(--black);
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
+:local {
+  .c-guru-meditation {
+    background-color: var(--black);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
 
-.c-toasty {
-  background-image: url(./toasty.png);
-  position: absolute * -var(--toasty-width) 0 *;
-  size: var(--toasty-width);
-}
+  .c-guru-meditation__main {}
 
-.konami {
-  animation: showToastyGuy 1s;
+  .c-toasty {
+    background-image: url(./toasty.png);
+    position: absolute * -var(--toasty-width) 0 *;
+    size: var(--toasty-width);
+  }
+
+  .konami {
+    animation: showToastyGuy 1s;
+  }
 }
 
 @keyframes showToastyGuy {
