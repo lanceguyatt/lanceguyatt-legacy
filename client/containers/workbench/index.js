@@ -1,12 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import classnames from 'classnames/bind';
+// import classnames from 'classnames/bind';
 import moment from 'moment';
 
 import Head from '../../components/head/';
-import Window from '../../components/window/';
+// import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
-import Directory from '../../components/directory';
+// import Directory from '../../components/directory';
 
 import Button from '../../gadgets/button';
 import Checkbox from '../../gadgets/checkbox';
@@ -19,13 +19,12 @@ import site from '../../../data/site/index.json';
 
 const copyrightYear = moment().format('YYYY');
 
-const cx = classnames.bind(styles);
+// const cx = classnames.bind(styles);
 
-const data1 = {
-  name: 'sdklskdls sdsldk kdlsdksl sdkl sasa aasas s',
-  memory: 'dsdsds',
-};
-
+// const data1 = {
+//   name: 'sdklskdls sdsldk kdlsdksl sdkl sasa aasas s',
+//   memory: 'dsdsds',
+// };
 
 class WorkBench extends React.Component {
 
@@ -33,26 +32,37 @@ class WorkBench extends React.Component {
 
   render() {
     const { data } = this.props.route;
-    const className = cx('c-workbench');
+    // const className = cx('c-workbench');
 
     return (
-      <div className={className}>
+      <div className={styles.workbench}>
         <Head data={data} />
         <Titlebar>{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
 
-        <Window data={data1} cssClasses="c-window--1">
-          <Button name="sdsd" url="/sdssd" />
-          <Radio name="Agree" description="Windows" />
-          <Radio name="Agree" description="Windows" />
-          <Checkbox name="Agree" description="Windows" />
-          <Text name="Text" value="Foo" id="id-1" placeholder="" />
+        <Button name="Button" url="#" />
+        <Button name="Button" url="#" />
+        <Button name="Button" url="#" />
 
+        <fieldset>
+          <Radio id="foo1" name="foo" value="Foo 1" label="Foo 1" />
+          <Radio id="foo2" name="foo" value="Foo 2" label="Foo 2" />
+        </fieldset>
+
+        <Checkbox id="agree1" name="agree_1" value="I agree 1" label="I agree 1" />
+        <Checkbox id="agree2" name="agree_2" value="I agree 2" label="I agree 2" checked={true} />
+
+        <Text name="Text" value="Foo" id="id-1" placeholder="" />
+
+        { /*
+        <Window data={data1} cssClasses="c-window--1">
         </Window>
 
         <Window data={data} cssClasses="c-window--2">
           <Directory data={data.items} cssClasses="c-directory--column" />
           <Button name="sdsd" url="/sdssd" />
         </Window>
+        */
+        }
 
         {this.props.children}
       </div>

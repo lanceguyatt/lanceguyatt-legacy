@@ -1,9 +1,7 @@
 import React from 'react';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
-
-const cx = classnames.bind(styles);
 
 class Radio extends React.Component {
 
@@ -15,21 +13,25 @@ class Radio extends React.Component {
   }
 
   render() {
-    const { name, description, checked } = this.props;
+    const { id, name, value, label, checked } = this.props;
 
     return (
-      <div className={cx('c-radio')}>
-        <input type="checkBox" name={name} checked={checked} className={cx('c-radio__input')} />
-        <label htmlFor={name} className={cx('c-radio__label')}>{description}</label>
+      <div styleName="c-radio">
+        <label htmlFor={id} styleName="c-radio__label">
+          <input type="radio" id={id} name={name} value={value} checked={checked} styleName="c-radio__input" />
+          {label}
+        </label>
       </div>
     );
   }
 }
 
 Radio.propTypes = {
+  id: React.PropTypes.string,
   name: React.PropTypes.string,
-  description: React.PropTypes.string,
+  value: React.PropTypes.string,
+  label: React.PropTypes.string,
   checked: React.PropTypes.string,
 };
 
-export default Radio;
+export default CSSModules(Radio, styles);

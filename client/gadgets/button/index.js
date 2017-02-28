@@ -1,16 +1,13 @@
 import React from 'react';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
 
-const cx = classnames.bind(styles);
-
 const Button = ({ name, url, external }) => {
-  const className = cx('c-button');
   const target = external ? '_blank' : null;
 
   return (
-    <a className={className} href={url} target={target}>{name}</a>
+    <a styleName="button" href={url} target={target}>{name}</a>
   );
 };
 
@@ -20,4 +17,4 @@ Button.propTypes = {
   external: React.PropTypes.string,
 };
 
-export default Button;
+export default CSSModules(Button, styles);

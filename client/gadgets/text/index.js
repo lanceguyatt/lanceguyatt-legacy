@@ -6,11 +6,23 @@ import styles from './style.css';
 const cx = classnames.bind(styles);
 
 class Text extends React.Component {
-  handleChange() {
+
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ value: nextProps.value });
+  }
+
+  handleChange(e) {
+    this.setState({ value: e.target.value });
   }
 
   render() {
-    const { id, name, value, placeholder } = this.props;
+    const { id, name, placeholder } = this.props;
 
     return (
       <input
@@ -18,7 +30,7 @@ class Text extends React.Component {
         id={id}
         name={name}
         className={cx('c-text')}
-        value={value}
+        value={this.state.value}
         placeholder={placeholder}
         onChange={this.handleChange}
       />

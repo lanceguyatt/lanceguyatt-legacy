@@ -1,0 +1,15 @@
+:local(.reset) {
+  appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  outline: 0;
+}
+
+:local(.foo) {
+  font-size: 12rem !important;
+}
+
+/*.u-bg-red {
+  background-color: red;
+}*/

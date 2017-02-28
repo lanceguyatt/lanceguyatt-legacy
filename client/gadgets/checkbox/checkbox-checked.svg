@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="26px" height="22px" viewBox="0 0 26 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <title>checkbox-checked</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="checkbox-checked">
-            <g id="checkbox-active">
-                <path d="M0,0 L25,0 L25,2 L0,2 L0,0 Z M0,2 L2,2 L2,20 L0,20 L0,2 Z M0,20 L1,20 L1,22 L0,22 L0,20 Z" id="Combined-Shape" fill="#FFFFFF"></path>
-                <path d="M1,0 L26,0 L26,2 L1,2 L1,0 Z M1,2 L3,2 L3,20 L1,20 L1,2 Z M1,20 L2,20 L2,22 L1,22 L1,20 Z" id="Combined-Shape" fill="#000000" transform="translate(13.500000, 11.000000) rotate(180.000000) translate(-13.500000, -11.000000) "></path>
-                <path d="M17,4 L20,4 L20,6 L17,6 L17,4 Z M16,6 L18,6 L18,8 L16,8 L16,6 Z M15,8 L17,8 L17,10 L15,10 L15,8 Z M14,10 L16,10 L16,12 L14,12 L14,10 Z M13,12 L15,12 L15,14 L13,14 L13,12 Z M9,14 L14,14 L14,16 L9,16 L9,14 Z M10,16 L13,16 L13,18 L10,18 L10,16 Z M8,12 L11,12 L11,14 L8,14 L8,12 Z M7,10 L10,10 L10,12 L7,12 L7,10 Z" id="Combined-Shape" fill="#000000"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="26" height="22" viewBox="0 0 26 22" xmlns="http://www.w3.org/2000/svg"><title>checkbox-checked</title><g fill="none" fill-rule="evenodd"><path d="M0 0h25v2H0V0zm0 2h2v18H0V2zm0 18h1v2H0v-2z" fill="#FFF"/><path d="M26 22H1v-2h25v2zm0-2h-2V2h2v18zm0-18h-1V0h1v2zM17 4h3v2h-3V4zm-1 2h2v2h-2V6zm-1 2h2v2h-2V8zm-1 2h2v2h-2v-2zm-1 2h2v2h-2v-2zm-4 2h5v2H9v-2zm1 2h3v2h-3v-2zm-2-4h3v2H8v-2zm-1-2h3v2H7v-2z" fill="#000"/></g></svg>

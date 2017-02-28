@@ -1,40 +1,54 @@
 import React from 'react';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
-
-const cx = classnames.bind(styles);
 
 class Checkbox extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      isSelected: false,
+      checked: null,
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange() {
-    console('Changed!');
+  componentWillReceiveProps(nextProps) {
+    this.setState({ checked: nextProps.checked });
+  }
+
+  handleChange(nextProps) {
+    this.setState({ checked: nextProps.checked });
   }
 
   render() {
-    const { name, description, checked } = this.props;
+    const { id, name, value, label } = this.props;
 
     return (
-      <div className={cx('c-checkbox')}>
-        <input type="checkBox" name={name} checked={checked} className={cx('c-checkbox__input')} onClick={this.handleChange} />
-        <label htmlFor={name} className={cx('c-checkbox__label')}>{description}</label>
+      <div styleName="checkbox">
+        <label htmlFor={id} styleName="checkbox__label">
+          <input
+            type="checkbox"
+            id={id}
+            name={name}
+            value={value}
+            checked={this.state.checked}
+            styleName="checkbox__input"
+            onChange={this.handleChange}
+          />
+          {label}
+        </label>
       </div>
     );
   }
 }
 
 Checkbox.propTypes = {
+  id: React.PropTypes.string,
   name: React.PropTypes.string,
-  description: React.PropTypes.string,
-  checked: React.PropTypes.string,
+  value: React.PropTypes.string,
+  label: React.PropTypes.string,
+  checked: React.PropTypes.bool,
 };
 
-export default Checkbox;
+export default CSSModules(Checkbox, styles);

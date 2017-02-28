@@ -18,7 +18,8 @@
     "clean": "rimraf build",
     "build:bundle": "cross-env NODE_ENV=production webpack --config ./tools/webpack.prod.config.js",
     "build:static": "cross-env NODE_ENV=production babel-node ./tools/build_static_entry.js",
-    "build": "npm run clean && npm run build:bundle && npm run build:static"
+    "build": "npm run clean && npm run build:bundle && npm run build:static",
+    "deploy": "npm run build && surge -p build -d lanceguyatt.surge.sh"
   },
   "plate_config": {
     "website": "http://lanceguyatt.com"
@@ -32,6 +33,7 @@
     "normalize.css": "^5.0.0",
     "ramda": "^0.23.0",
     "react": "^15.3.2",
+    "react-css-modules": "^4.1.0",
     "react-dom": "^15.3.2",
     "react-draggable": "^2.2.3",
     "react-fastclick": "^3.0.1",

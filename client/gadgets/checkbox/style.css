@@ -1,24 +1,26 @@
-.c-checkbox {
-  background: red;
-  margin-bottom: .8rem;
-}
+@import '../../styling/settings/_colors';
 
-.c-checkbox__label {
-  background: hotpink;
-  display: block;
-  overflow: hidden;
-  user-select: none;
-}
+:local {
 
-.c-checkbox__input {
-  appearance: none;
-  background-image: url('./checkbox.svg');
-  size: 2.6rem 2.2rem;
-  outline: 0;
-  margin-right: .7rem;
-  float: left;
+  .checkbox {
+    background: red;
+    display: flex;
+    margin-bottom: .8rem;
+  }
 
-  &:checked {
-    background-image: url('./checkbox-checked.svg');
+  .checkbox__label {
+    /*composes: u-bg-red from '../../styling/shared.css';*/
+    user-select: none;
+  }
+
+  .checkbox__input {
+    composes: reset from '../../styling/shared.css';
+    background-image: url('./checkbox.svg');
+    margin-right: .7rem;
+    size: 2.6rem 2.2rem;
+
+    &:checked {
+      background-image: url('./checkbox-checked.svg');
+    }
   }
 }

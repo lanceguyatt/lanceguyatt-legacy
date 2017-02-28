@@ -68,22 +68,13 @@ module.exports = {
         }),
       },
 
-      // {
-      //   test: /\.svg$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {},
-      //     },
-      //   ],
-      // },
-
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('images'),
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
+              limit: 8000,
               name: 'images/[sha512:hash:base64:7].[ext]',
             },
           }, {
@@ -101,6 +92,15 @@ module.exports = {
               pngquant: {
                 quality: '65-90',
                 speed: 4,
+              },
+              svgo: {
+                plugins: [
+                  {
+                    removeViewBox: false,
+                  }, {
+                    removeEmptyAttrs: false,
+                  },
+                ],
               },
             },
           },
