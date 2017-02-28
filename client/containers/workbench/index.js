@@ -4,24 +4,24 @@ import CSSModules from 'react-css-modules';
 import moment from 'moment';
 
 import Head from '../../components/head/';
-// import Window from '../../components/window/';
+import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
-// import Directory from '../../components/directory';
+import Directory from '../../components/directory';
 import Checkbox from '../../gadgets/checkbox';
 import Radio from '../../gadgets/radio';
 import Text from '../../gadgets/text';
 import Button from '../../gadgets/button';
 
 import styles from './style.css';
-
+// import image from '../../assets/logo.png';
 import site from '../../../data/site/index.json';
 
 const copyrightYear = moment().format('YYYY');
 
-// const data1 = {
-//   name: 'sdklskdls sdsldk kdlsdksl sdkl sasa aasas s',
-//   memory: 'dsdsds',
-// };
+const data1 = {
+  name: 'Workbench UI',
+  memory: '',
+};
 
 class WorkBench extends React.Component {
 
@@ -29,42 +29,36 @@ class WorkBench extends React.Component {
 
   render() {
     const { data } = this.props.route;
-    // const className = cx('c-workbench');
 
     return (
       <div className={styles.workbench}>
         <Head data={data} />
-        <Titlebar>{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
+        <Titlebar cssClasses="u-bg-black u-gray">{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
 
-        <form action="#" styleName="u-p4">
-          <fieldset styleName="u-bg-blue">
+        <Window data={data1} cssClasses="window--1">
+          <form action="#">
+            <fieldset>
+              <div styleName="u-mb3">
+                <Radio id="foo1" name="foo" value="Foo 1" label="Foo 1" />
+              </div>
 
-            <div styleName="u-mb3">
-              <Radio id="foo1" name="foo" value="Foo 1" label="Foo 1" />
-            </div>
+              <Radio id="foo2" name="foo" value="Foo 2" label="Foo 2" />
 
-            <Radio id="foo2" name="foo" value="Foo 2" label="Foo 2" />
+              <Checkbox id="agree1" name="agree_1" value="I agree 1" label="I agree 1" />
 
-            <Checkbox id="agree1" name="agree_1" value="I agree 1" label="I agree 1" />
+              <Text name="Text" value="Foo" id="id-1" placeholder="" />
 
-            <Text name="Text" value="Foo" id="id-1" placeholder="" />
-
-            <div styleName="u-mb3">
-              <Button name="Submit" url="#" type="submit" />
-            </div>
-          </fieldset>
-        </form>
-
-        { /*
-        <Window data={data1} cssClasses="c-window--1">
+              <div styleName="u-mb3">
+                <Button name="Submit" url="#" type="submit" />
+              </div>
+            </fieldset>
+          </form>
         </Window>
 
-        <Window data={data} cssClasses="c-window--2">
+        <Window data={data} cssClasses="window--2">
           <Directory data={data.items} cssClasses="c-directory--column" />
           <Button name="sdsd" url="/sdssd" />
         </Window>
-        */
-        }
 
         {this.props.children}
       </div>

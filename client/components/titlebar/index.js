@@ -1,18 +1,17 @@
 import React from 'react';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
 
-const cx = classnames.bind(styles);
-
-const Titlebar = ({ children }) => (
-  <div className={`${cx('c-titlebar')}`}>
+const Titlebar = ({ children, cssClasses }) => (
+  <div styleName={`titlebar ${cssClasses}`}>
     {children}
   </div>
 );
 
 Titlebar.propTypes = {
   children: React.PropTypes.node,
+  cssClasses: React.PropTypes.string,
 };
 
-export default Titlebar;
+export default CSSModules(Titlebar, styles, { allowMultiple: true });

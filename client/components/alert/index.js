@@ -5,10 +5,10 @@ import { Link } from 'react-router';
 import styles from './style.css';
 
 const Alert = ({ alert, cssClasses }) => (
-  <div styleName={`c-alert ${cssClasses}`} role="dialog">
+  <div styleName={`alert ${cssClasses}`} role="dialog">
     <h2>{alert.name}</h2>
     <p>{alert.description}</p>
-    <Link to={alert.url} styleName="c-alert__link">{alert.name}</Link>
+    <Link to={alert.url} styleName="alert__link">{alert.name}</Link>
   </div>
 );
 

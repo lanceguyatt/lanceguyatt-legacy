@@ -2,7 +2,7 @@
 
 :local {
 
-  .c-alert {
+  .alert {
     animation: pulse 1.5s infinite ease-in-out;
     border-style: solid;
     border-width: .6rem;
@@ -14,8 +14,9 @@
     transform: translate(-50%, -50%);
   }
 
-  .c-alert__link {
+  .alert__link {
     color: inherit;
+    display: block;
     position: absolute 0;
     z-index: 1;
     text-indent: -999999px;

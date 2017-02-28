@@ -1,9 +1,7 @@
-@import '../../styling/settings/_colors';
+@import '../../styling/base';
 
-.c-titlebar {
-  background-color: var(--black);
+.titlebar {
   font-size: 1.6rem;
-  color: var(--gray);
   height: var(--titlebar-height);
   line-height: 1.25;
   overflow: hidden;
