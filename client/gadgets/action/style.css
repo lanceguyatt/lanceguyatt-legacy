@@ -1,10 +1,10 @@
-@import '../../styling/settings/_colors';
+@import '../../styling/base.css';
 
 :local {
 
-  .button {
-    composes: reset from '../../styling/shared.css';
-    border-image: url(./button.svg) 2 stretch;
+  .action {
+    composes: reset;
+    border-image: url(./action_unselected.svg) 2 stretch;
     border-style: solid;
     border-width: .2rem;
     display: inline-block;
@@ -17,7 +17,7 @@
 
     &:focus,
     &:active {
-      border-image: url(./button_active.svg) 2 stretch;
+      border-image: url(./action_selected.svg) 2 stretch;
     }
 
     &:active {

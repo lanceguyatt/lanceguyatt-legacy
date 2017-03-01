@@ -51,12 +51,7 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                root: '/',
                 modules: true,
-                import: true,
-                url: true,
-                minimize: true,
-                camelCase: false,
                 importLoaders: 1,
                 localIdentName: '[hash:base64:5]',
               },

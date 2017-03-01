@@ -1,65 +1,59 @@
-.c-directory {
+@import '../../styling/base.css';
+
+.directory {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.c-directory--wrap {
+.directory--wrap {
   align-items: flex-end;
   display: flex;
   flex-wrap: wrap;
 
-  .c-directory__item {
+  .directory__item {
     margin-right: 1rem;
   }
 }
 
-.c-directory--column {
+.directory--column {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
 }
 
-.c-directory__item {
+.directory__item {
   text-align: center;
   margin-bottom: 1rem;
   max-width: 10rem;
-
-  svg {
-    display: block;
-    margin: * auto .2rem;
-  }
 }
 
-.c-directory__item__link {
+.directory__item__link {
   border: 1px solid red;
   color: var(--black);
   display: block;
   outline: 0;
 }
 
-.c-directory__item__link__icon-inactive {
+.directory__item__link__icon-inactive {
   display: block;
 }
 
-.c-directory__item__link__icon-active {
+.directory__item__link__icon-active {
   display: none;
 }
 
-.c-directory__item__link:--focus-active,
-.c-directory__item__link--active {
+.directory__item__link:--focus-active,
+.directory__item__link--active {
 
-  .c-directory__item__link__icon-inactive {
+  .directory__item__link__icon-inactive {
     display: none;
   }
 
-  .c-directory__item__link__icon-active {
+  .directory__item__link__icon-active {
     display: block;
   }
 }
 
-:root {
-  --black: #000;
-}
 
 @custom-selector :--focus-active :focus, :active;

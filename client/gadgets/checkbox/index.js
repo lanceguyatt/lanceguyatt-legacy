@@ -51,4 +51,4 @@ Checkbox.propTypes = {
   checked: React.PropTypes.bool,
 };
 
-export default CSSModules(Checkbox, styles);
+export default CSSModules(Checkbox, styles, { allowMultiple: true });

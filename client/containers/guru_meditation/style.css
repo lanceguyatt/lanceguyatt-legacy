@@ -1,16 +1,17 @@
 @import '../../styling/base';
 
 :local {
-  .c-guru-meditation {
+
+  .guru-meditation {
     background-color: var(--black);
-    height: 100vh;
+    size: 100%;
     overflow: hidden;
     position: relative;
   }
 
-  .c-guru-meditation__main {}
+  .guru-meditation__main {}
 
-  .c-toasty {
+  .toasty {
     background-image: url(./toasty.png);
     position: absolute * -var(--toasty-width) 0 *;
     size: var(--toasty-width);

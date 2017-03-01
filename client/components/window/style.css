@@ -1,9 +1,8 @@
-@import '../../styling/settings/_colors.css';
+@import '../../styling/base.css';
 
 .window {
   background-color: var(--gray);
   border-style: solid;
-  min-height: 200px;
   position: relative;
 }
 

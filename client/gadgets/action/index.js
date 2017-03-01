@@ -3,18 +3,18 @@ import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
 
-const Button = ({ name, url, external }) => {
+const Action = ({ name, url, external }) => {
   const target = external ? '_blank' : null;
 
   return (
-    <a styleName="button" href={url} target={target}>{name}</a>
+    <a styleName="action" href={url} target={target}>{name}</a>
   );
 };
 
-Button.propTypes = {
+Action.propTypes = {
   name: React.PropTypes.string,
   url: React.PropTypes.string,
   external: React.PropTypes.string,
 };
 
-export default CSSModules(Button, styles);
+export default CSSModules(Action, styles);

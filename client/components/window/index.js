@@ -29,7 +29,9 @@ class Window extends React.Component {
         <div styleName="window__header">
           <Gadget name="close" />
           <div styleName="window__header__name">
-            {data.name} {data.memory.full} full, {data.memory.free} free, {data.memory.use}
+            { /* {data.name}
+            {data.memory.full} full, {data.memory.free} free, {data.memory.use} */ }
+            {data.name}
           </div>
           <Gadget name="zoom" />
           <Gadget name="depth" />

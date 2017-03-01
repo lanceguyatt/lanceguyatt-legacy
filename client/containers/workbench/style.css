@@ -3,5 +3,14 @@
 :local {
 
   .workbench {
+    height: 100%;
+
+    .titlebar {
+      flex: none;
+    }
+
+    .window {
+      flex: auto;
+    }
   }
 }

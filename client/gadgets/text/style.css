@@ -1,27 +1,20 @@
-@import '../../styling/settings/_colors';
+@import '../../styling/base.css';
 
-.c-text {
-  appearance: none;
-  background-color: var(--gray);
-  background-image: none;
-  border-image: url(./text.svg) 4 stretch;
-  border-radius: 0;
-  border-style: solid;
-  border-width: .4rem;
-  display: inline-block;
-  font-family: inherit;
-  font-size: 1.6rem;
-  line-height: 1.25;
-  outline: 0;
-  height: 2.8rem;
-  padding: * .3rem;
-  text-align: left;
-  user-select: none;
-  width: auto;
-  min-width: 0;
-}
+:local {
 
-:root {
-  --black: #000;
-  --gray: #aaa;
+  .text {
+    composes: reset;
+    border-image: url(./text.svg) 4 stretch;
+    border-style: solid;
+    border-width: .4rem;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1.6rem;
+    height: 2.8rem;
+    line-height: 1.25;
+    min-width: 0;
+    padding: * .3rem;
+    text-align: left;
+    width: auto;
+  }
 }

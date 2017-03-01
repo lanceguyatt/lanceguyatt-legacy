@@ -1,9 +1,7 @@
 import React from 'react';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
-
-const cx = classnames.bind(styles);
 
 class Text extends React.Component {
 
@@ -22,27 +20,32 @@ class Text extends React.Component {
   }
 
   render() {
-    const { id, name, placeholder } = this.props;
+    const { label, type, id, name, placeholder } = this.props;
 
     return (
-      <input
-        type="text"
-        id={id}
-        name={name}
-        className={cx('c-text')}
-        value={this.state.value}
-        placeholder={placeholder}
-        onChange={this.handleChange}
-      />
+      <div styleName="flex">
+        <label htmlFor={id}>{label}</label>
+        <input
+          type={type}
+          id={id}
+          name={name}
+          styleName="text"
+          value={this.state.value}
+          placeholder={placeholder}
+          onChange={this.handleChange}
+        />
+      </div>
     );
   }
 }
 
 Text.propTypes = {
+  type: React.PropTypes.oneOf(['text', 'email']),
   id: React.PropTypes.string,
   name: React.PropTypes.string,
+  label: React.PropTypes.string,
   value: React.PropTypes.string,
   placeholder: React.PropTypes.string,
 };
 
-export default Text;
+export default CSSModules(Text, styles, { allowMultiple: true });

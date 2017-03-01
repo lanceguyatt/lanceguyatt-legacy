@@ -1,14 +1,12 @@
 @import '../../styling/base';
 
 .titlebar {
-  font-size: 1.6rem;
   height: var(--titlebar-height);
-  line-height: 1.25;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   padding: .1rem .23rem .1rem .5rem;
+  text-overflow: ellipsis;
   user-select: none;
+  white-space: nowrap;
 }
 
 :root {

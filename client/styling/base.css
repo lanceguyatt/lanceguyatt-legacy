@@ -1,11 +1,7 @@
 @import 'settings/_colors';
+@import 'settings/_media_queries';
 
-:global {
-
-  fieldset {
-    border: 0;
-  }
-}
+@custom-selector :--focus-active :focus, :active;
 
 :local {
 
@@ -48,7 +44,11 @@
   .u-mb3 { margin-bottom: var(--space-3) }
   .u-mb4 { margin-bottom: var(--space-4) }
 
-  .u-flex { display: flex }
+  .flex { display: flex }
+  .flex-row { flex-direction: row }
+  .flex-column { flex-direction: column }
+  .flex-none { flex: none }
+  .flex-auto { flex: auto }
 
   .u-h100 { height: 100% }
   .u-h100vh { height: 100vh }
@@ -58,6 +58,15 @@
   .u-list-reset { list-style-type: none;}
 
   .u-border { border-width: 5px; border-style: solid }
+
+  .reset {
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0;
+    border: 0;
+    outline: 0;
+    font-size: 1.6rem;
+  }
 }
 
 :root {

@@ -1,29 +1,28 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import { Link } from 'react-router';
 import R from 'ramda';
-import classnames from 'classnames/bind';
 
 import Icon from '../icon/';
 
 import styles from './style.css';
 
-const cx = classnames.bind(styles);
+const DirectoryList = ({ children, cssClasses }) => (
+  <ul styleName={`directory ${cssClasses}`}>{children}</ul>
+);
 
-const DirectoryList = ((children, cssClasses) => {
-  const className = cx('c-directory', cssClasses);
-
-  return (
-    <ul className={className}>{children}</ul>
-  );
-});
+DirectoryList.propTypes = {
+  children: React.PropTypes.node,
+  cssClasses: React.PropTypes.string,
+};
 
 const DirectoryListItem = ({ id, name, url, type, external }) => {
   const inner = (
     <div>
-      <div className={cx('c-directory__item__link__icon-inactive')}>
+      <div styleName="directory__item__link__icon-inactive">
         <Icon name={type} />
       </div>
-      <div className={cx('c-directory__item__link__icon-active')}>
+      <div styleName="directory__item__link__icon-active">
         <Icon name={`${type}-active`} />
       </div>
       {name}
@@ -31,19 +30,19 @@ const DirectoryListItem = ({ id, name, url, type, external }) => {
   );
 
   const bar = (
-    <Link to={url} className={cx('c-directory__item__link')} activeClassName={cx('c-directory__item__link--active')}>
+    <Link to={url} className="directory__item__link" activeClassName="directory__item__link--active">
       {inner}
     </Link>
   );
 
   const foo = (
-    <a href={url} className={cx('c-directory__item__link')} target="_blank" rel="noopener noreferrer">
+    <a href={url} styleName="directory__item__link" target="_blank" rel="noopener noreferrer">
       {inner}
     </a>
   );
 
   return (
-    <li className={cx('c-directory__item')} key={id}>
+    <li styleName="directory__item" key={id}>
       {external === 'true' ? foo : bar}
     </li>
   );
@@ -57,6 +56,6 @@ DirectoryListItem.propTypes = {
   external: React.PropTypes.string,
 };
 
-const Directory = R.compose(DirectoryList, R.map(DirectoryListItem), R.prop('data'));
+const Directory = R.compose(CSSModules(DirectoryList, styles, { allowMultiple: true }), R.map(CSSModules(DirectoryListItem, styles, { allowMultiple: true })), R.prop('data'));
 
-export default Directory;
+export default CSSModules(Directory, styles, { allowMultiple: true });

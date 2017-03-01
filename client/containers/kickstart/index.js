@@ -1,12 +1,10 @@
 import React from 'react';
-import classnames from 'classnames/bind';
+import CSSModules from 'react-css-modules';
 import { Link } from 'react-router';
 
 import Head from '../../components/head/';
 
 import styles from './style.css';
-
-const cx = classnames.bind(styles);
 
 class KickStart extends React.Component {
 
@@ -16,11 +14,11 @@ class KickStart extends React.Component {
     const { data } = this.props.route;
 
     return (
-      <div className={`${cx('c-kickstart')}`}>
+      <div styleName="kickstart">
         <Head data={data} />
-        <div className={`${cx('c-copyright')}`}>
+        <div styleName="copyright">
           <Link to="/">
-            <div className={`${cx('c-tick')}`} />
+            <div styleName="tick" />
             <p>
               2.0 Roms (37.350)
               <br />
@@ -33,9 +31,9 @@ class KickStart extends React.Component {
           </Link>
         </div>
 
-        <Link to="/" className={`${cx('c-group')}`}>
-          <div className={`${cx('c-disk-drive')}`} />
-          <div className={`${cx('c-floppy-disk')}`} />
+        <Link to="/" styleName="group">
+          <div styleName="disk-drive" />
+          <div styleName="floppy-disk" />
         </Link>
       </div>
     );
@@ -46,4 +44,4 @@ KickStart.propTypes = {
   route: React.PropTypes.shape(),
 };
 
-export default KickStart;
+export default CSSModules(KickStart, styles);

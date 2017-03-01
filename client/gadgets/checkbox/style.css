@@ -1,26 +1,23 @@
-@import '../../styling/settings/_colors';
+@import '../../styling/base.css';
 
 :local {
 
   .checkbox {
-    background: red;
-    display: flex;
     margin-bottom: .8rem;
   }
 
   .checkbox__label {
-    /*composes: u-bg-red from '../../styling/shared.css';*/
     user-select: none;
   }
 
   .checkbox__input {
-    composes: reset from '../../styling/shared.css';
-    background-image: url('./checkbox.svg');
+    composes: reset;
+    background-image: url('./checkbox_unselected.svg');
     margin-right: .7rem;
     size: 2.6rem 2.2rem;
 
     &:checked {
-      background-image: url('./checkbox-checked.svg');
+      background-image: url('./checkbox_selected.svg');
     }
   }
 }

@@ -1,29 +1,23 @@
-@import '../../styling/settings/_colors';
+@import '../../styling/base.css';
 
 :local {
 
-  .c-radio {
-    display: flex;
-    align-items: center;
+  .radio {
     margin-bottom: .8rem;
   }
 
-  .c-radio__label {
+  .radio__label {
     user-select: none;
   }
 
-  .c-radio__input {
-    appearance: none;
-    background-color: transparent;
-    background-image: url('./radio.svg');
-    border-radius: 0;
-    border: 0;
+  .radio__input {
+    composes: reset;
+    background-image: url('./radio_unselected.svg');
     margin-right: .7rem;
-    outline: 0;
     size: 1.7rem 1.8rem;
 
     &:checked {
-      background-image: url('./radio-checked.svg');
+      background-image: url('./radio_selected.svg');
     }
   }
 }

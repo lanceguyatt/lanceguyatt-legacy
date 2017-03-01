@@ -6,11 +6,12 @@ import moment from 'moment';
 import Head from '../../components/head/';
 import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
-import Directory from '../../components/directory';
+// import Directory from '../../components/directory';
+
 import Checkbox from '../../gadgets/checkbox';
 import Radio from '../../gadgets/radio';
 import Text from '../../gadgets/text';
-import Button from '../../gadgets/button';
+import Action from '../../gadgets/action';
 
 import styles from './style.css';
 // import image from '../../assets/logo.png';
@@ -20,7 +21,7 @@ const copyrightYear = moment().format('YYYY');
 
 const data1 = {
   name: 'Workbench UI',
-  memory: '',
+  memory: {},
 };
 
 class WorkBench extends React.Component {
@@ -31,35 +32,39 @@ class WorkBench extends React.Component {
     const { data } = this.props.route;
 
     return (
-      <div className={styles.workbench}>
-        <Head data={data} />
-        <Titlebar cssClasses="u-bg-black u-gray">{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
+      <div styleName="workbench flex flex-column">
 
-        <Window data={data1} cssClasses="window--1">
+        <Head data={data} />
+
+        <Titlebar cssClasses="u-bg-black u-gray flex-none">{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
+
+        <Window data={data1} cssClasses="window--1 flex-auto">
           <form action="#">
             <fieldset>
               <div styleName="u-mb3">
-                <Radio id="foo1" name="foo" value="Foo 1" label="Foo 1" />
+                <Radio id="foo1" name="foo" value="Foo 1" label="Radio Gadget" disabled />
               </div>
 
-              <Radio id="foo2" name="foo" value="Foo 2" label="Foo 2" />
+              <Radio id="foo2" name="foo" value="Foo 2" label="Radio Gadget" />
 
-              <Checkbox id="agree1" name="agree_1" value="I agree 1" label="I agree 1" />
+              <Checkbox id="agree1" name="agree_1" value="I agree 1" label="Checkbox Gadget" />
 
-              <Text name="Text" value="Foo" id="id-1" placeholder="" />
+              <Text type="email" label="Text" name="Text" value="Text Gadget" id="id-1" placeholder="" />
 
               <div styleName="u-mb3">
-                <Button name="Submit" url="#" type="submit" />
+                <Action name="Action Gadget" url="" type="submit" />
               </div>
+
             </fieldset>
           </form>
         </Window>
 
+        { /*
         <Window data={data} cssClasses="window--2">
           <Directory data={data.items} cssClasses="c-directory--column" />
-          <Button name="sdsd" url="/sdssd" />
+          <Action name="sdsd" url="/sdssd" />
         </Window>
-
+        */ }
         {this.props.children}
       </div>
     );
@@ -83,4 +88,4 @@ WorkBench.propTypes = {
   children: React.PropTypes.element,
 };
 
-export default CSSModules(WorkBench, styles);
+export default CSSModules(WorkBench, styles, { allowMultiple: true });

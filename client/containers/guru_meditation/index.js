@@ -71,11 +71,11 @@ class GuruMeditation extends React.Component {
     const { data } = this.props.route;
 
     return (
-      <div styleName="c-guru-meditation">
+      <div styleName="guru-meditation">
         <Head data={data} />
-        <div styleName="c-guru-meditation__main">
+        <div styleName="guru-meditation__main">
           <Alert alert={alert} cssClasses="u-border-red u-red" />
-          <div styleName="c-toasty" id="js-toasty-image" />
+          <div styleName="toasty" id="js-toasty-image" />
           { /* <Audio audio={toast} />*/ }
         </div>
       </div>
