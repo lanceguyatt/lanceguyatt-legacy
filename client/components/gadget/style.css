@@ -1,34 +1,37 @@
-@import '../../styling/base';
+:local {
 
-.gadget {
-  composes: reset;
-  display: inline-block;
-  user-select: none;
-}
+  .gadget {
+    background-size: 100%;
+    display: inline-block;
+    user-select: none;
+  }
 
-.gadget--close {
-  background-image: url('./close.svg');
-  size: 2rem 2.2rem;
+  .gadget--close {
+    background-image: url('./close.svg');
+    size: 2rem 2.2rem;
 
-  &:--focus-active {
-    background-image: url('./close-active.svg');
+    &:--focus-active {
+      background-image: url('./close-active.svg');
+    }
+  }
+
+  .gadget--depth {
+    background-image: url('./depth.svg');
+    size: 2.3rem 2.2rem;
+
+    &:--focus-active {
+      background-image: url('./depth-active.svg');
+    }
+  }
+
+  .gadget--zoom {
+    background-image: url('./zoom.svg');
+    size: 2.3rem 2.2rem;
+
+    /*&:--focus-active {
+      background-image: url('./zoom-active.svg');
+    }*/
   }
 }
 
-.gadget--depth {
-  background-image: url('./depth.svg');
-  size: 2.3rem 2.2rem;
-
-  &:--focus-active {
-    background-image: url('./depth-active.svg');
-  }
-}
-
-.gadget--zoom {
-  background-image: url('./zoom.svg');
-  size: 2.3rem 2.2rem;
-
-  /*&:--focus-active {
-    background-image: url('./zoom-active.svg');
-  }*/
-}
+@custom-selector :--focus-active :focus, :active;

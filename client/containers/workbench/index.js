@@ -32,39 +32,31 @@ class WorkBench extends React.Component {
     const { data } = this.props.route;
 
     return (
-      <div styleName="workbench flex flex-column">
+      <div styleName="workbench">
 
         <Head data={data} />
 
-        <Titlebar cssClasses="u-bg-black u-gray flex-none">{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
+        <Titlebar cssClasses="flex-none">{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
 
-        <Window data={data1} cssClasses="window--1 flex-auto">
+        <Window data={data1} cssClasses="flex-auto window--1">
           <form action="#">
             <fieldset>
-              <div styleName="u-mb3">
-                <Radio id="foo1" name="foo" value="Foo 1" label="Radio Gadget" disabled />
-              </div>
-
+              <Radio id="foo1" name="foo" value="Foo 1" label="Radio Gadget" disabled />
               <Radio id="foo2" name="foo" value="Foo 2" label="Radio Gadget" />
 
               <Checkbox id="agree1" name="agree_1" value="I agree 1" label="Checkbox Gadget" />
 
               <Text type="email" label="Text" name="Text" value="Text Gadget" id="id-1" placeholder="" />
 
-              <div styleName="u-mb3">
-                <Action name="Action Gadget" url="" type="submit" />
-              </div>
+              <Action name="Action Gadget" url="" type="submit" />
 
             </fieldset>
           </form>
         </Window>
 
-        { /*
-        <Window data={data} cssClasses="window--2">
-          <Directory data={data.items} cssClasses="c-directory--column" />
+        <Window data={data} cssClasses="flex-auto window--2">
           <Action name="sdsd" url="/sdssd" />
         </Window>
-        */ }
         {this.props.children}
       </div>
     );

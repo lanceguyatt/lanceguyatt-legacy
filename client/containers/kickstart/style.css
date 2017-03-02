@@ -1,5 +1,3 @@
-@import '../../styling/base';
-
 :local {
 
   .kickstart {
@@ -7,20 +5,29 @@
     color: var(--tumbleweed);
     position: relative;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .copyright {
-    font-size: 1.6rem;
+    xfont-size: 1.6rem;
     line-height: 1.5;
     margin: 2rem auto;
     size: 20rem *;
+
+    a {
+      color: inherit;
+      display: block;
+      text-decoration: none;
+    }
   }
 
   .tick {
     background: url('./tick.png') no-repeat;
     background-size: cover;
     size: 16.5rem 15rem;
-    margin: * auto 2rem;
+    xmargin: * auto 2rem;
   }
 
   .group {
@@ -29,7 +36,6 @@
     position: relative;
     size: 15.6rem 16.9rem;
   }
-
 
   .floppy-disk {
     animation-duration: 1.5s;
@@ -82,3 +88,10 @@
     transform-origin: 0% 0%;
   }
 }
+
+:root {
+  --purple: #401040;
+  --tumbleweed: #e0a080;
+}
+
+@custom-media --breakpoint-md (min-width: 768px);

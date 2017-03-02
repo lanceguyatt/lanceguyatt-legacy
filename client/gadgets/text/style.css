@@ -1,17 +1,23 @@
-@import '../../styling/base.css';
-
 :local {
 
+  .text-group {
+    background: red;
+    margin-bottom: .5rem;
+
+    label {
+      background: lime;
+      margin-right: .5rem;
+      user-select: none;
+    }
+  }
+
   .text {
-    composes: reset;
+    /*composes: reset from '../../styling/base.css';*/
     border-image: url(./text.svg) 4 stretch;
     border-style: solid;
     border-width: .4rem;
     display: inline-block;
-    font-family: inherit;
-    font-size: 1.6rem;
     height: 2.8rem;
-    line-height: 1.25;
     min-width: 0;
     padding: * .3rem;
     text-align: left;

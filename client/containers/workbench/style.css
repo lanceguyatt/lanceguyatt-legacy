@@ -1,16 +1,8 @@
-@import '../../styling/base.css';
-
 :local {
 
   .workbench {
     height: 100%;
-
-    .titlebar {
-      flex: none;
-    }
-
-    .window {
-      flex: auto;
-    }
+    display: flex;
+    flex-direction: column;
   }
 }

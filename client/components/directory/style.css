@@ -1,5 +1,3 @@
-@import '../../styling/base.css';
-
 .directory {
   list-style: none;
   margin: 0;
@@ -30,7 +28,7 @@
 
 .directory__item__link {
   border: 1px solid red;
-  color: var(--black);
+  color: inherit;
   display: block;
   outline: 0;
 }

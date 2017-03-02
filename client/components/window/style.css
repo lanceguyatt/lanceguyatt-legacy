@@ -1,9 +1,11 @@
-@import '../../styling/base.css';
-
 .window {
   background-color: var(--gray);
   border-style: solid;
   position: relative;
+}
+
+.flex-auto {
+  flex: auto;
 }
 
 .window--active {
@@ -65,8 +67,8 @@
 }
 
 
-
-
 :root {
   --window-header-height: 2.2rem;
+  --gray: #aaa;
+  --blue: red;
 }

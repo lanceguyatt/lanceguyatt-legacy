@@ -1,14 +1,23 @@
-@import '../../styling/base';
+:local {
 
-.titlebar {
-  height: var(--titlebar-height);
-  overflow: hidden;
-  padding: .1rem .23rem .1rem .5rem;
-  text-overflow: ellipsis;
-  user-select: none;
-  white-space: nowrap;
+  .titlebar {
+    background-color: var(--black);
+    color: var(--gray);
+    overflow: hidden;
+    padding: .1rem .23rem .1rem .5rem;
+    size: 100% var(--titlebar-height);
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .flex-none {
+    flex: none
+  }
 }
 
 :root {
+  --black: #000;
+  --gray: #aaa;
   --titlebar-height: 2.2rem;
 }

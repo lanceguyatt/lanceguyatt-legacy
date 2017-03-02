@@ -1,19 +1,24 @@
-@import '../../styling/base.css';
-
 :local {
 
   .radio {
-    margin-bottom: .8rem;
+    background: yellow;
+    overflow: hidden;
+    margin-bottom: .5rem;
   }
 
   .radio__label {
     user-select: none;
+    line-height: 1.8rem;
+    background: lime;
+    float: left;
   }
 
   .radio__input {
-    composes: reset;
+    /*composes: reset from '../../styling/base.css';*/
     background-image: url('./radio_unselected.svg');
-    margin-right: .7rem;
+    background-size: 100%;
+    float: left;
+    margin-right: .5rem;
     size: 1.7rem 1.8rem;
 
     &:checked {

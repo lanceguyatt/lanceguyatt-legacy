@@ -23,17 +23,18 @@ class Text extends React.Component {
     const { label, type, id, name, placeholder } = this.props;
 
     return (
-      <div styleName="flex">
-        <label htmlFor={id}>{label}</label>
-        <input
-          type={type}
-          id={id}
-          name={name}
-          styleName="text"
-          value={this.state.value}
-          placeholder={placeholder}
-          onChange={this.handleChange}
-        />
+      <div styleName="text-group">
+        <label htmlFor={id}>{label}
+          <input
+            type={type}
+            id={id}
+            name={name}
+            styleName="text"
+            value={this.state.value}
+            placeholder={placeholder}
+            onChange={this.handleChange}
+          />
+        </label>
       </div>
     );
   }

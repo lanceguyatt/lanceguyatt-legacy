@@ -47,7 +47,7 @@ module.exports = {
       },
 
       {
-        test: /\.(png|svg)$/,
+        test: /\.svg$/,
         use: [
           {
             loader: 'url-loader',
@@ -59,7 +59,7 @@ module.exports = {
       },
 
       {
-        test: /\.(jpg|gif|ico|mp3|m4a|woff2)$/,
+        test: /\.(png|jpg|gif|ico|mp3|woff2)$/,
         use: [
           {
             loader: 'file-loader',

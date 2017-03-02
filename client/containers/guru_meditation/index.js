@@ -14,6 +14,7 @@ const alert = {
   name: 'Software Failure. Press left mouse button to continue.',
   description: 'Guru Meditation #00004040.00004040',
   url: '/',
+  type: 'error',
 };
 
 // const toast = {
@@ -44,7 +45,7 @@ class GuruMeditation extends React.Component {
     });
 
     animationEvent && toastyImage.addEventListener(animationEvent, () => {
-      toastyImage.classList.remove(konamiClass)
+      toastyImage.classList.remove(konamiClass);
     });
   }
 
@@ -73,11 +74,9 @@ class GuruMeditation extends React.Component {
     return (
       <div styleName="guru-meditation">
         <Head data={data} />
-        <div styleName="guru-meditation__main">
-          <Alert alert={alert} cssClasses="u-border-red u-red" />
-          <div styleName="toasty" id="js-toasty-image" />
-          { /* <Audio audio={toast} />*/ }
-        </div>
+        <Alert alert={alert} />
+        <div styleName="toasty" id="js-toasty-image" />
+        { /* <Audio audio={toast} />*/ }
       </div>
     );
   }
