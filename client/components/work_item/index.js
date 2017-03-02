@@ -4,8 +4,6 @@ import Draggable from 'react-draggable';
 import Head from '../head/';
 import Window from '../window/';
 
-import Button from '../button/';
-
 const page = {
   name: 'Wilson Fletcher',
   description: 'Description of Wilson Fletcher',
@@ -23,9 +21,7 @@ const WorkItem = () => (
   <Draggable>
     <div>
       <Head page={page} />
-      <Window data={page} cssClasses="c-window--drawer">
-        <Button url="http://wilsonfletcher.com" name="Launch" external="true" />
-      </Window>
+      <Window data={page} />
     </div>
   </Draggable>
 );

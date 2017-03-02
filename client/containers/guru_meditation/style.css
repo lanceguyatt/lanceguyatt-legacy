@@ -4,42 +4,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    position: relative;
     height: 100%;
     background-color: var(--black);
-  }
-
-  .toasty {
-    background-image: url(./toasty.png);
-    position: absolute * -var(--toasty-width) 0 *;
-    size: var(--toasty-width);
-  }
-
-  .konami {
-    animation: showToastyGuy 1s;
-  }
-}
-
-@keyframes showToastyGuy {
-  0% {
-    right: -var(--toasty-width)
-  }
-
-  40% {
-    right: 0
-  }
-
-  60% {
-    right: 0
-  }
-
-  100% {
-    right: -var(--toasty-width)
   }
 }
 
 :root {
-  --toasty-width: 200px;
   --black: #000;
 }

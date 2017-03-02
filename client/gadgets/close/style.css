@@ -1,0 +1,18 @@
+:local {
+
+  .close {
+    display: block;
+    background-image: url('./close_unselected.svg');
+    background-size: 100%;
+    size: 2rem 2.2rem;
+    user-select: none;
+    text-indent: -999999px;
+    overflow: hidden;
+
+    &:--focus-active {
+      background-image: url('./close_selected.svg');
+    }
+  }
+}
+
+@custom-selector :--focus-active :focus, :active;

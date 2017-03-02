@@ -1,7 +1,8 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
 
-import Gadget from '../../components/gadget/';
+// import Gadget from '../../components/gadget/';
+import Close from '../../gadgets/close';
 
 import styles from './style.css';
 
@@ -27,14 +28,14 @@ class Window extends React.Component {
     return (
       <div styleName={`window ${cssClasses} ${activeClass}`}>
         <div styleName="window__header">
-          <Gadget name="close" />
+          <div styleName="gadget">
+            <Close url={data.parent} />
+          </div>
           <div styleName="window__header__name">
             { /* {data.name}
             {data.memory.full} full, {data.memory.free} free, {data.memory.use} */ }
             {data.name}
           </div>
-          <Gadget name="zoom" />
-          <Gadget name="depth" />
         </div>
         <div styleName="window__main">
           {children}
@@ -54,7 +55,7 @@ Window.propTypes = {
   cssClasses: React.PropTypes.string,
 };
 
-Window.defaultTypes = {
+Window.defaultProps = {
   data: {
     name: '',
     parent: '',

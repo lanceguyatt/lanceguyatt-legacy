@@ -21,7 +21,7 @@ import about from '../../../data/about.json';
 const copyrightYear = moment().format('YYYY');
 
 const data1 = {
-  name: 'Workbench UI',
+  name: 'Workbench',
   memory: {},
 };
 
@@ -39,7 +39,7 @@ class WorkBench extends React.Component {
 
         <Titlebar cssClasses="flex-none">{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
 
-        <Window data={data1} cssClasses="flex-auto window--1">
+        <Window data={data1} cssClasses="window-flex window--1">
           { /*
           <form action="#">
             <fieldset>
@@ -53,8 +53,7 @@ class WorkBench extends React.Component {
             </fieldset>
           </form>
           */ }
-          <Directory directory={about.items} />
-          <Directory directory={about.items} wrap />
+          <Directory directory={data.items} />
 
         </Window>
 

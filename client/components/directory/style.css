@@ -7,7 +7,6 @@
   }
 
   .directory__item {
-    background: lime;
     text-align: center;
     margin-bottom: 1rem;
     max-width: 10rem;
@@ -26,23 +25,6 @@
     margin: * auto .3rem;
   }
 
-  .shell {
-    background-image: url('./shell_unselected.svg');
-    size: 6rem 4.8rem;
-  }
-
-  .drive {
-    background-image: url('./drive_unselected.svg');
-    size: 8.5rem 4.4rem;
-  }
-
-  .directory__link:active {
-
-    .drive {
-      background-image: url('./drive_selected.svg');
-    }
-  }
-
   .directory__name {
     display: block;
   }
@@ -53,6 +35,42 @@
 
     .directory__item {
       margin-right: 1rem;
+    }
+  }
+
+  .shell {
+    background-image: url('./shell_unselected.svg');
+    size: 6rem 4.8rem;
+  }
+
+  .directory__link:--focus-active {
+
+    .shell {
+      background-image: url('./drive_selected.svg');
+    }
+  }
+
+  .drive {
+    background-image: url('./drive_unselected.svg');
+    size: 8.5rem 4.4rem;
+  }
+
+  .directory__link:--focus-active {
+
+    .drive {
+      background-image: url('./drive_selected.svg');
+    }
+  }
+
+  .disk {
+    background-image: url('./disk_unselected.svg');
+    size: 4.3rem 4.6rem;
+  }
+
+  .directory__link:--focus-active {
+
+    .disk {
+      background-image: url('./disk_selected.svg');
     }
   }
 }

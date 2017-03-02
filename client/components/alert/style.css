@@ -18,6 +18,7 @@
     position: absolute 0;
     text-indent: -999999px;
     z-index: 1;
+    outline: 0;
   }
 
   .info {

@@ -6,6 +6,11 @@
     user-select: none;
   }
 
+  .foo {
+    background: yellow;
+    flex: none;
+  }
+
   .gadget--close {
     background-image: url('./close.svg');
     size: 2rem 2.2rem;
