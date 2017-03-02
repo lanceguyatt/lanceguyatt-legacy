@@ -13,3 +13,6 @@ The .info file contains the icon image and its spatial position within its paren
 
 * http://www.gregdonner.org/workbench/index.html
 * http://guide.abime.net/wb2.x/chap2.htm
+
+* https://github.com/gajus/react-css-modules
+* https://github.com/gajus/babel-plugin-react-css-modules

@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
-// import Directory from '../../components/directory/';
+import Directory from '../../components/directory/';
 
 import styles from './style.css';
 
@@ -17,7 +17,7 @@ class Drawer extends React.Component {
       <div styleName="drawer">
         <Head data={data} />
         <Window data={data} cssClasses="window--2">
-          { /* <Directory data={data.items} cssClasses="c-directory--wrap" /> */ }
+          <Directory directory={data.items} wrap />
         </Window>
       </div>
     );

@@ -3,6 +3,8 @@
 var webpack = require('webpack');
 var path = require('path');
 
+const context = path.resolve(__dirname, 'client');
+
 module.exports = {
   devtool: 'eval-source-map',
   entry: {
@@ -21,7 +23,12 @@ module.exports = {
 
       {
         test: /\.js$/,
-        loaders: ['babel-loader'],
+        use: [
+          {
+            loader: 'babel-loader',
+            query: {},
+          },
+        ],
       },
 
       {
@@ -29,9 +36,7 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
+            options: {},
           }, {
             loader: 'css-loader',
             options: {

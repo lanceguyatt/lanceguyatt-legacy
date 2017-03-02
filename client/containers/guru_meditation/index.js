@@ -4,11 +4,9 @@ import CSSModules from 'react-css-modules';
 
 import Head from '../../components/head/';
 import Alert from '../../components/alert/';
-// import Audio from '../../components/audio/';
+import Audio from '../../components/audio/';
 
 import styles from './style.css';
-
-// import toastyMp3 from './toasty.mp3';
 
 const alert = {
   name: 'Software Failure. Press left mouse button to continue.',
@@ -17,11 +15,11 @@ const alert = {
   type: 'error',
 };
 
-// const toast = {
-//   id: 'js-toasty-audio',
-//   src: toastyMp3,
-//   type: 'audio/mp4',
-// };
+const toastyMp3 = {
+  id: 'js-toasty-audio',
+  src: require('./toasty.mp3'),
+  type: 'audio/mp3',
+};
 
 class GuruMeditation extends React.Component {
 
@@ -29,7 +27,7 @@ class GuruMeditation extends React.Component {
     let konamiCodeArray = [];
     const konamiCodeKey = '38,38,40,40,37,39,37,39,66,65';
     const konamiClass = 'konami';
-    // const toastyAudio = document.getElementById('js-toasty-audio');
+    const toastyAudio = document.getElementById('js-toasty-audio');
     const toastyImage = document.getElementById('js-toasty-image');
     const animationEvent = this.whichAnimationEvent();
 
@@ -37,8 +35,8 @@ class GuruMeditation extends React.Component {
       konamiCodeArray.push(e.keyCode);
 
       if (konamiCodeArray.toString().indexOf(konamiCodeKey) >= 0) {
-        // toastyAudio.load();
-        // toastyAudio.play();
+        toastyAudio.load();
+        toastyAudio.play();
         toastyImage.classList.add(konamiClass);
         konamiCodeArray = [];
       }
@@ -76,7 +74,7 @@ class GuruMeditation extends React.Component {
         <Head data={data} />
         <Alert alert={alert} />
         <div styleName="toasty" id="js-toasty-image" />
-        { /* <Audio audio={toast} />*/ }
+        <Audio audio={toastyMp3} />
       </div>
     );
   }

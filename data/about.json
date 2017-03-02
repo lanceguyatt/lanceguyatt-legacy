@@ -21,6 +21,18 @@
       "url": "https://www.linkedin.com/in/lanceguyatt/",
       "type": "shell",
       "external": "true"
+    }, {
+      "id": "3",
+      "name": "Github",
+      "url": "http://github.com/lanceguyatt",
+      "type": "shell",
+      "external": "true"
+    }, {
+      "id": "4",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/lanceguyatt/",
+      "type": "shell",
+      "external": "true"
     }
   ]
 }

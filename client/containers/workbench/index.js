@@ -6,16 +6,17 @@ import moment from 'moment';
 import Head from '../../components/head/';
 import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
-// import Directory from '../../components/directory';
+import Directory from '../../components/directory';
 
-import Checkbox from '../../gadgets/checkbox';
-import Radio from '../../gadgets/radio';
-import Text from '../../gadgets/text';
-import Action from '../../gadgets/action';
+// import Checkbox from '../../gadgets/checkbox';
+// import Radio from '../../gadgets/radio';
+// import Text from '../../gadgets/text';
+// import Action from '../../gadgets/action';
 
 import styles from './style.css';
 // import image from '../../assets/logo.png';
 import site from '../../../data/site/index.json';
+import about from '../../../data/about.json';
 
 const copyrightYear = moment().format('YYYY');
 
@@ -39,24 +40,25 @@ class WorkBench extends React.Component {
         <Titlebar cssClasses="flex-none">{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
 
         <Window data={data1} cssClasses="flex-auto window--1">
+          { /*
           <form action="#">
             <fieldset>
               <Radio id="foo1" name="foo" value="Foo 1" label="Radio Gadget" disabled />
               <Radio id="foo2" name="foo" value="Foo 2" label="Radio Gadget" />
-
               <Checkbox id="agree1" name="agree_1" value="I agree 1" label="Checkbox Gadget" />
-
-              <Text type="email" label="Text" name="Text" value="Text Gadget" id="id-1" placeholder="" />
-
+              <Text
+                type="email" label="Text" name="Text" value="Text Gadget" id="id-1" placeholder=""
+              />
               <Action name="Action Gadget" url="" type="submit" />
-
             </fieldset>
           </form>
+          */ }
+          <Directory directory={about.items} />
+          <Directory directory={about.items} wrap />
+
         </Window>
 
-        <Window data={data} cssClasses="flex-auto window--2">
-          <Action name="sdsd" url="/sdssd" />
-        </Window>
+        { /* <Window data={data} cssClasses="flex-auto window--2" /> */ }
         {this.props.children}
       </div>
     );

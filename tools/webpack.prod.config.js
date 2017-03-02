@@ -32,10 +32,15 @@ module.exports = {
   },
   module: {
     rules: [
+
       {
         test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        use: [
+          {
+            loader: 'babel-loader',
+            query: {},
+          },
+        ],
       },
 
       {
@@ -104,12 +109,12 @@ module.exports = {
       },
 
       {
-        test: /\.(mp3|m4a)$/,
+        test: /\.mp3$/,
         use: {
           loader: 'file-loader',
-          // options: {
-          //   name: 'audio/[hash].[ext]',
-          // },
+          options: {
+            name: '[hash].[ext]',
+          },
         },
       },
 

@@ -1,13 +1,11 @@
 :local {
 
   .checkbox {
-    background: pink;
     overflow: hidden;
     margin-bottom: .8rem;
   }
 
   .checkbox__label {
-    background: lime;
     line-height: 2.2rem;
     user-select: none;
     float: left;
