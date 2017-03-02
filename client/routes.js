@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router';
 
-import Layout from './components/layout/';
+import App from './containers/app/';
 import WorkBench from './containers/workbench/';
 import Drawer from './components/drawer/';
 import KickStart from './containers/kickstart/';
@@ -96,7 +96,7 @@ const ramdisk = {
 
 const routes = (
   <div>
-    <Route component={Layout}>
+    <Route component={App}>
       <Route path="/" component={WorkBench} data={workbench}>
         <Route path="/ramdisk/" component={Drawer} data={ramdisk} />
         <Route path="/work/" component={Drawer} data={work} />

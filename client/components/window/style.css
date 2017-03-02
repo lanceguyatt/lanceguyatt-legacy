@@ -40,7 +40,7 @@
 .window--1 {
   border-image: url(./window-1.svg) 23 5 5 5 stretch;
   border-width: 2.3rem .5rem .5rem .5rem;
-  xposition: absolute 4rem * * 4rem;
+  position: absolute 4rem * * 4rem;
 
   .window__header {
     position: absolute -2.3rem -.5rem * -.5rem;
@@ -70,5 +70,5 @@
 :root {
   --window-header-height: 2.2rem;
   --gray: #aaa;
-  --blue: red;
+  --blue: #6687ba;
 }

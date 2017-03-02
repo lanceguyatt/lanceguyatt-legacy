@@ -14,7 +14,7 @@
   }
 
   .radio__input {
-    /*composes: reset from '../../styling/base.css';*/
+    appearance: none;
     background-image: url('./radio_unselected.svg');
     background-size: 100%;
     float: left;

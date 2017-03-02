@@ -1,7 +1,6 @@
-/*@import '../../styling/settings/_media_queries';*/
+:local {
 
-.drawer {
-  position: absolute 2.2rem 0 0;
+  .drawer {}
 }
 
 /*@media (--breakpoint-lg) {

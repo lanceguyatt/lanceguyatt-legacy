@@ -8,7 +8,7 @@ import React from 'react';
 import { Router, browserHistory, applyRouterMiddleware } from 'react-router';
 import { useScroll } from 'react-router-scroll';
 
-import routes from '../routes';
+import routes from './routes';
 
 const Root = () => (
   <Router

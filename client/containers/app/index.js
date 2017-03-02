@@ -3,14 +3,14 @@ import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
 
-const Layout = ({ children }) => (
-  <div styleName="layout">
+const App = ({ children }) => (
+  <div styleName="app">
     {children}
   </div>
 );
 
-Layout.propTypes = {
+App.propTypes = {
   children: React.PropTypes.node,
 };
 
-export default CSSModules(Layout, styles, { allowMultiple: true });
+export default CSSModules(App, styles, { allowMultiple: true });

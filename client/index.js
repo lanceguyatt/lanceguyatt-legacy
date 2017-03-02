@@ -1,12 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies, global-require, no-undef */
-import 'react-fastclick';
+// import 'react-fastclick';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 const rootEl = document.getElementById('react-root');
 
 let render = () => {
-  const Root = require('./components/root.js').default;
+  const Root = require('./root.js').default;
 
   ReactDOM.render(
     <Root />,
@@ -35,7 +35,7 @@ if (module.hot) {
     }
   };
 
-  module.hot.accept('./components/root.js', () => {
+  module.hot.accept('./root.js', () => {
     render();
   });
 }
