@@ -1,19 +1,24 @@
-:local {
+.titlebar {
+  background: lime;
+  flex: none;
+  line-height: 2.2rem;
+  size: 100% var(--titlebar-height);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+}
 
-  .titlebar {
-    background-color: var(--black);
-    color: var(--gray);
-    overflow: hidden;
-    padding: .1rem .23rem .1rem .5rem;
-    size: 100% var(--titlebar-height);
-    text-overflow: ellipsis;
-    user-select: none;
-    white-space: nowrap;
-  }
+.titlebar--default {
+  composes: titlebar;
+  xbackground-color: var(--black);
+  color: var(--gray);
+}
 
-  .flex-none {
-    flex: none
-  }
+.titlebar--window {
+  composes: titlebar;
+  position: absolute -2.3rem -3rem * 2rem;
+  z-index: 1;
 }
 
 :root {

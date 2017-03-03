@@ -11,6 +11,12 @@
     flex-wrap: nowrap;
     justify-content: center;
     min-height: min-content;
+
+    a {
+      display: block;
+      outline: 0;
+      user-select: none;
+    }
   }
 
   .copyright {
@@ -92,7 +98,6 @@
 }
 
 :root {
-  font-size: 10px;
   --purple: #401040;
   --tumbleweed: #e0a080;
 }

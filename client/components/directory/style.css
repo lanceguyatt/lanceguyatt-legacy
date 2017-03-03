@@ -1,77 +1,78 @@
-:local {
+.directory {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .directory {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+.directory--flex {
+  composes: directory;
+  display: flex;
+  flex-wrap: wrap;
 
   .directory__item {
-    text-align: center;
-    margin-bottom: 1rem;
-    max-width: 10rem;
+    margin-right: 1rem;
   }
+}
 
-  .directory__link {
-    color: inherit;
-    display: block;
-    outline: 0;
-    user-select: none;
-  }
+.directory__item {
+  text-align: center;
+  margin-bottom: 1rem;
+  max-width: 10rem;
+}
 
-  .directory__icon {
-    background-size: 100%;
-    display: block;
-    margin: * auto .3rem;
-  }
+.directory__link {
+  color: inherit;
+  display: block;
+  outline: 0;
+  user-select: none;
+}
 
-  .directory__name {
-    display: block;
-  }
+.directory__icon {
+  background-size: 100%;
+  display: block;
+  margin: * auto .3rem;
+}
 
-  .flex {
-    display: flex;
-    flex-wrap: wrap;
+.directory__name {
+  display: block;
+}
 
-    .directory__item {
-      margin-right: 1rem;
-    }
-  }
+.shell {
+  composes: directory__icon;
+  background-image: url('./shell_unselected.svg');
+  size: 6rem 4.8rem;
+}
+
+.directory__link:--focus-active {
 
   .shell {
-    background-image: url('./shell_unselected.svg');
-    size: 6rem 4.8rem;
+    background-image: url('./drive_selected.svg');
   }
+}
 
-  .directory__link:--focus-active {
+.drive {
+  composes: directory__icon;
+  background-image: url('./drive_unselected.svg');
+  size: 8.5rem 4.4rem;
+}
 
-    .shell {
-      background-image: url('./drive_selected.svg');
-    }
-  }
+.directory__link:--focus-active {
 
   .drive {
-    background-image: url('./drive_unselected.svg');
-    size: 8.5rem 4.4rem;
+    background-image: url('./drive_selected.svg');
   }
+}
 
-  .directory__link:--focus-active {
+.disk {
+  composes: directory__icon;
+  background-image: url('./disk_unselected.svg');
+  size: 4.3rem 4.6rem;
+}
 
-    .drive {
-      background-image: url('./drive_selected.svg');
-    }
-  }
+.directory__link:--focus-active {
 
   .disk {
-    background-image: url('./disk_unselected.svg');
-    size: 4.3rem 4.6rem;
-  }
-
-  .directory__link:--focus-active {
-
-    .disk {
-      background-image: url('./disk_selected.svg');
-    }
+    background-image: url('./disk_selected.svg');
   }
 }
 

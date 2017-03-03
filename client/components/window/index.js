@@ -1,8 +1,7 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
-// import Gadget from '../../components/gadget/';
-import Close from '../../gadgets/close';
+import Titlebar from '../titlebar/';
+// import Close from '../../gadgets/close';
 
 import styles from './style.css';
 
@@ -22,22 +21,13 @@ class Window extends React.Component {
   }
 
   render() {
-    const { children, cssClasses, data } = this.props;
-    const activeClass = this.state.active ? 'window--active' : '';
+    const { children, data } = this.props;
+    // const activeClass = this.state.active ? 'window--active' : '';
 
     return (
-      <div styleName={`window ${cssClasses} ${activeClass}`}>
-        <div styleName="window__header">
-          <div styleName="gadget">
-            <Close url={data.parent} />
-          </div>
-          <div styleName="window__header__name">
-            { /* {data.name}
-            {data.memory.full} full, {data.memory.free} free, {data.memory.use} */ }
-            {data.name}
-          </div>
-        </div>
-        <div styleName="window__main">
+      <div className={styles.window}>
+        <Titlebar window>{data.name}</Titlebar>
+        <div className={styles.windowMain}>
           {children}
         </div>
       </div>
@@ -52,7 +42,6 @@ Window.propTypes = {
     memory: React.PropTypes.shape(),
   }),
   children: React.PropTypes.node,
-  cssClasses: React.PropTypes.string,
 };
 
 Window.defaultProps = {
@@ -67,4 +56,4 @@ Window.defaultProps = {
   cssClasses: '',
 };
 
-export default CSSModules(Window, styles, { allowMultiple: true });
+export default Window;

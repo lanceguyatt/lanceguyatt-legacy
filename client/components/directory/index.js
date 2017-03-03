@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 import { Link } from 'react-router';
 
 import styles from './style.css';
@@ -9,10 +8,10 @@ class Directory extends React.Component {
   renderItems() {
     return this.props.directory.map((item) => {
       return (
-        <li styleName="directory__item" key={item.id}>
-          <Link to={item.url} styleName="directory__link">
-            <span styleName={`directory__icon ${item.type}`} />
-            <span styleName="directory__name">{item.name}</span>
+        <li className={styles.directoryItem} key={item.id}>
+          <Link to={item.url} className={styles.directoryLink}>
+            <span className={item.type === 'drive' ? styles.drive : styles.disk} />
+            <span className={styles.directoryName}>{item.name}</span>
           </Link>
         </li>
       );
@@ -20,9 +19,8 @@ class Directory extends React.Component {
   }
 
   render() {
-    const flex = this.props.wrap ? 'flex' : '';
     return (
-      <ul styleName={`directory ${flex}`}>
+      <ul className={this.props.wrap ? styles.directoryFlex : styles.directory}>
         {this.props.directory ? this.renderItems() : '' }
       </ul>
     );
@@ -30,7 +28,7 @@ class Directory extends React.Component {
 }
 
 Directory.propTypes = {
-  directory: React.PropTypes.shape(),
+  directory: React.PropTypes.node,
   wrap: React.PropTypes.bool,
 };
 
@@ -39,4 +37,4 @@ Directory.defaultProps = {
   wrap: false,
 };
 
-export default CSSModules(Directory, styles, { allowMultiple: true });
+export default Directory;

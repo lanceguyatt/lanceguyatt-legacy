@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
 
@@ -16,9 +15,16 @@ class Radio extends React.Component {
     const { id, name, value, label, checked } = this.props;
 
     return (
-      <div styleName="radio">
-        <label htmlFor={id} styleName="radio__label">
-          <input type="radio" id={id} name={name} value={value} checked={checked} styleName="radio__input" />
+      <div className={styles.radio}>
+        <label htmlFor={id} className={styles.radioLabel}>
+          <input
+            type="radio"
+            id={id}
+            name={name}
+            value={value}
+            checked={checked}
+            className={styles.radioInput}
+          />
           {label}
         </label>
       </div>
@@ -34,4 +40,4 @@ Radio.propTypes = {
   checked: React.PropTypes.string,
 };
 
-export default CSSModules(Radio, styles, { allowMultiple: true });
+export default Radio;

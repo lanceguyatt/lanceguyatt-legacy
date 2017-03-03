@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
 
@@ -25,15 +24,15 @@ class Checkbox extends React.Component {
     const { id, name, value, label } = this.props;
 
     return (
-      <div styleName="checkbox">
-        <label htmlFor={id} styleName="checkbox__label">
+      <div className={styles.checkbox}>
+        <label htmlFor={id} className={styles.checkboxLabel}>
           <input
             type="checkbox"
             id={id}
             name={name}
             value={value}
             checked={this.state.checked}
-            styleName="checkbox__input"
+            className={styles.checkboxInput}
             onChange={this.handleChange}
           />
           {label}
@@ -51,4 +50,4 @@ Checkbox.propTypes = {
   checked: React.PropTypes.bool,
 };
 
-export default CSSModules(Checkbox, styles, { allowMultiple: true });
+export default Checkbox;

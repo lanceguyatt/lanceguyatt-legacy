@@ -2,6 +2,7 @@
   background-color: var(--gray);
   border-style: solid;
   position: relative;
+  flex: auto;
 }
 
 .gadget {
@@ -18,19 +19,23 @@
 }
 
 .window-flex {
-  flex: auto;
 }
 
 .window__main {
   background-color: var(--gray);
-  overflow: hidden;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   padding: 1rem;
   position: absolute -.7rem -3.7rem -5.2rem -1.6rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.window__header {
+/*.window__header {
   height: var(--window-header-height);
-  position: absolute -2.7rem 0 * -1.8rem;
+  position: absolute -2.9rem 0 * -1.8rem;
   display: flex;
   flex: auto;
 }
@@ -43,19 +48,19 @@
   user-select: none;
   white-space: nowrap;
   flex: auto;
-}
+}*/
 
-.window--1 {
+.window {
   border-image: url(./window-1.svg) 23 5 5 5 stretch;
   border-width: 2.3rem .5rem .5rem .5rem;
 
-  .window__header {
+  /*.window__header {
     position: absolute -2.3rem -.5rem * -.5rem;
   }
 
   .window__header__name {
     position: absolute .2rem 0 * 2rem;
-  }
+  }*/
 
   .window__main {
     position: absolute -.1rem;
@@ -65,6 +70,10 @@
 .window--2 {
   border-image: url(./window-2.svg) 29 55 71 19 stretch;
   border-width: 2.9rem 5.5rem 7.1rem 1.9rem;
+
+  /*.window__header__name {
+    position: absolute .2rem -5.5rem * 2rem;
+  }*/
 }
 
 :root {

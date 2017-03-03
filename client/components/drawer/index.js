@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
@@ -14,9 +13,9 @@ class Drawer extends React.Component {
     const { data } = this.props.route;
 
     return (
-      <div styleName="drawer">
+      <div className={styles.drawer}>
         <Head data={data} />
-        <Window data={data} cssClasses="window--2">
+        <Window data={data}>
           <Directory directory={data.items} wrap />
         </Window>
       </div>
@@ -30,4 +29,4 @@ Drawer.propTypes = {
   }),
 };
 
-export default CSSModules(Drawer, styles);
+export default Drawer;

@@ -3,8 +3,6 @@
 var webpack = require('webpack');
 var path = require('path');
 
-const context = path.resolve(__dirname, 'client');
-
 module.exports = {
   devtool: 'eval-source-map',
   entry: {
@@ -26,7 +24,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            query: {},
           },
         ],
       },
@@ -40,9 +37,10 @@ module.exports = {
           }, {
             loader: 'css-loader',
             options: {
-              modules: true,
+              camelCase: true,
               importLoaders: 1,
               localIdentName: '[local]-[hash:base64:5]',
+              modules: true,
             },
           }, {
             loader: 'postcss-loader',

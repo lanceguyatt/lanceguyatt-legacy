@@ -38,7 +38,6 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            query: {},
           },
         ],
       },
@@ -56,10 +55,11 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                modules: true,
+                camelCase: true,
                 importLoaders: 1,
                 localIdentName: '[hash:base64:5]',
                 minimize: true,
+                modules: true,
               },
             }, {
               loader: 'postcss-loader',
@@ -108,15 +108,15 @@ module.exports = {
         ],
       },
 
-      {
-        test: /\.mp3$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[hash].[ext]',
-          },
-        },
-      },
+      // {
+      //   test: /\.mp3$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[hash].[ext]',
+      //     },
+      //   },
+      // },
 
       {
         test: /\.woff2$/,

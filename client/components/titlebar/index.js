@@ -1,17 +1,16 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
 
-const Titlebar = ({ children, cssClasses }) => (
-  <div styleName={`titlebar ${cssClasses}`}>
+const Titlebar = ({ children, isWindow }) => (
+  <div className={isWindow ? styles.titlebarWindow : styles.titlebarDefault}>
     {children}
   </div>
 );
 
 Titlebar.propTypes = {
   children: React.PropTypes.node,
-  cssClasses: React.PropTypes.string,
+  isWindow: React.PropTypes.bool,
 };
 
-export default CSSModules(Titlebar, styles, { allowMultiple: true });
+export default Titlebar;

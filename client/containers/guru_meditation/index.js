@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import Head from '../../components/head/';
 import Alert from '../../components/alert/';
@@ -10,7 +9,6 @@ const alert = {
   name: 'Software Failure. Press left mouse button to continue.',
   description: 'Guru Meditation #00004040.00004040',
   url: '/',
-  type: 'error',
 };
 
 class GuruMeditation extends React.Component {
@@ -20,9 +18,9 @@ class GuruMeditation extends React.Component {
     const { data } = this.props.route;
 
     return (
-      <div styleName="guru-meditation">
+      <div className={styles.guruMeditation}>
         <Head data={data} />
-        <Alert alert={alert} />
+        <Alert alert={alert} error />
       </div>
     );
   }
@@ -32,4 +30,4 @@ GuruMeditation.propTypes = {
   route: React.PropTypes.shape(),
 };
 
-export default CSSModules(GuruMeditation, styles, { allowMultiple: true });
+export default GuruMeditation;

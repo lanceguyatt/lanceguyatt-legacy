@@ -1,14 +1,13 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 import { Link } from 'react-router';
 
 import styles from './style.css';
 
 const Alert = ({ alert }) => (
-  <div styleName={`alert ${alert.type}`} role="dialog">
+  <div className={styles.alertError} role="dialog">
     <h2>{alert.name}</h2>
     <p>{alert.description}</p>
-    <Link to={alert.url} styleName="alert__link">{alert.name}</Link>
+    <Link to={alert.url} className={styles.alertLink}>{alert.name}</Link>
   </div>
 );
 
@@ -17,8 +16,15 @@ Alert.propTypes = {
     name: React.PropTypes.string,
     description: React.PropTypes.string,
     url: React.PropTypes.string,
-    type: React.PropTypes.oneOf(['info', 'error']),
   }),
 };
 
-export default CSSModules(Alert, styles, { allowMultiple: true });
+Alert.defaultProps = {
+  alert: {
+    name: 'Alert name',
+    description: 'Alert description',
+    url: '#',
+  },
+};
+
+export default Alert;

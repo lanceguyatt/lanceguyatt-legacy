@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import CSSModules from 'react-css-modules';
 import moment from 'moment';
 
 import Head from '../../components/head/';
@@ -8,15 +7,15 @@ import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
 import Directory from '../../components/directory';
 
-// import Checkbox from '../../gadgets/checkbox';
-// import Radio from '../../gadgets/radio';
-// import Text from '../../gadgets/text';
-// import Action from '../../gadgets/action';
+import Checkbox from '../../gadgets/checkbox';
+import Radio from '../../gadgets/radio';
+import Text from '../../gadgets/text';
+import Requester from '../../gadgets/requester';
+import Action from '../../gadgets/action';
 
 import styles from './style.css';
 // import image from '../../assets/logo.png';
 import site from '../../../data/site/index.json';
-import about from '../../../data/about.json';
 
 const copyrightYear = moment().format('YYYY');
 
@@ -33,14 +32,18 @@ class WorkBench extends React.Component {
     const { data } = this.props.route;
 
     return (
-      <div styleName="workbench">
+      <div className={styles.workbench}>
 
         <Head data={data} />
 
         <Titlebar cssClasses="flex-none">{site.name}. Copyright &copy; 2000-{copyrightYear}. All Rights Reserved</Titlebar>
 
         <Window data={data1} cssClasses="window-flex window--1">
-          { /*
+
+          <Requester name="Test">
+            <Action name="Go" url="#" />
+          </Requester>
+
           <form action="#">
             <fieldset>
               <Radio id="foo1" name="foo" value="Foo 1" label="Radio Gadget" disabled />
@@ -52,7 +55,6 @@ class WorkBench extends React.Component {
               <Action name="Action Gadget" url="" type="submit" />
             </fieldset>
           </form>
-          */ }
           <Directory directory={data.items} />
 
         </Window>
@@ -81,4 +83,4 @@ WorkBench.propTypes = {
   children: React.PropTypes.element,
 };
 
-export default CSSModules(WorkBench, styles, { allowMultiple: true });
+export default WorkBench;

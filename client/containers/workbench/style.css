@@ -1,8 +1,5 @@
-:local {
-
-  .workbench {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+.workbench {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }

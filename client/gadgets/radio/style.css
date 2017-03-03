@@ -1,7 +1,6 @@
 :local {
 
   .radio {
-    background: yellow;
     overflow: hidden;
     margin-bottom: .5rem;
   }
@@ -9,7 +8,6 @@
   .radio__label {
     user-select: none;
     line-height: 1.8rem;
-    background: lime;
     float: left;
   }
 

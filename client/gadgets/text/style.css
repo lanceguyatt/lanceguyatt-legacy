@@ -1,18 +1,15 @@
 :local {
 
-  .text-group {
-    background: red;
+  .text {
     margin-bottom: .5rem;
-
-    label {
-      background: lime;
-      margin-right: .5rem;
-      user-select: none;
-    }
   }
 
-  .text {
-    /*composes: reset from '../../styling/base.css';*/
+  .text__label {
+    margin-right: .5rem;
+    user-select: none;
+  }
+
+  .text__input {
     border-image: url(./text.svg) 4 stretch;
     border-style: solid;
     border-width: .4rem;

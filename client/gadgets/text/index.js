@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 
 import styles from './style.css';
 
@@ -23,13 +22,13 @@ class Text extends React.Component {
     const { label, type, id, name, placeholder } = this.props;
 
     return (
-      <div styleName="text-group">
-        <label htmlFor={id}>{label}
+      <div className={styles.text}>
+        <label htmlFor={id} className={styles.textLabel}>{label}
           <input
             type={type}
             id={id}
             name={name}
-            styleName="text"
+            className={styles.textInput}
             value={this.state.value}
             placeholder={placeholder}
             onChange={this.handleChange}
@@ -49,4 +48,4 @@ Text.propTypes = {
   placeholder: React.PropTypes.string,
 };
 
-export default CSSModules(Text, styles, { allowMultiple: true });
+export default Text;

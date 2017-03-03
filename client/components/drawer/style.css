@@ -1,14 +1,16 @@
-:local {
-
-  .drawer {}
+.drawer {
+  display: flex;
+  flex-direction: column;
+  position: absolute 2.2rem 0 0;
 }
 
-/*@media (--breakpoint-lg) {
+@media (--breakpoint-md) {
 
   .drawer {
-    xtop: 50%;
-    xleft: 50%;
-    xsize: 50rem;
-    xmargin: -25rem * * -25rem;
+    position: absolute 50% * * 50%;
+    size: 40rem;
+    transform: translate(-50%, -50%);
   }
-}*/
+}
+
+@custom-media --breakpoint-md (min-width: 768px);

@@ -1,5 +1,4 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
 import { Link } from 'react-router';
 
 import Head from '../../components/head/';
@@ -14,11 +13,11 @@ class KickStart extends React.Component {
     const { data } = this.props.route;
 
     return (
-      <div styleName="kickstart">
+      <div className={styles.kickstart}>
         <Head data={data} />
-        <div styleName="copyright">
+        <div className={styles.copyright}>
           <Link to="/">
-            <div styleName="tick" />
+            <div className={styles.tick} />
             <p>
               2.0 Roms (37.350)
               <br />
@@ -31,9 +30,9 @@ class KickStart extends React.Component {
           </Link>
         </div>
 
-        <Link to="/" styleName="group">
-          <div styleName="disk-drive" />
-          <div styleName="floppy-disk" />
+        <Link to="/" className={styles.group}>
+          <div className={styles.diskDrive} />
+          <div className={styles.floppyDisk} />
         </Link>
       </div>
     );
@@ -44,4 +43,4 @@ KickStart.propTypes = {
   route: React.PropTypes.shape(),
 };
 
-export default CSSModules(KickStart, styles);
+export default KickStart;
