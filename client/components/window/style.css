@@ -1,24 +1,17 @@
 .window {
-  background-color: var(--gray);
   border-style: solid;
   position: relative;
   flex: auto;
 }
 
-.gadget {
-  flex: none;
-}
-
-.gadgets {
-  flex: auto;
-  margin-left: auto;
-}
-
-.window--active {
+.window--selected {
+  composes: window;
   background-color: var(--blue);
 }
 
-.window-flex {
+.window--unselected {
+  composes: window;
+  background-color: var(--gray);
 }
 
 .window__main {

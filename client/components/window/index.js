@@ -9,23 +9,24 @@ class Window extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { active: false };
+    this.state = { isSelected: false };
   }
 
   componentWillMount() {
-    this.setState({ active: true });
+    this.setState({ isSelected: true });
   }
 
   componentWillUnMount() {
-    this.setState({ active: false });
+    this.setState({ isSelected: false });
   }
 
   render() {
     const { children, data } = this.props;
-    // const activeClass = this.state.active ? 'window--active' : '';
+
+    const className = this.state.isSelected ? styles.windowSelected : styles.windowUnselected;
 
     return (
-      <div className={styles.window}>
+      <div className={className}>
         <Titlebar window>{data.name}</Titlebar>
         <div className={styles.windowMain}>
           {children}
