@@ -1,12 +1,12 @@
 :local {
 
-  .close {
+  .depth {
     composes: foo from '../../styles/foo.css';
-    background-image: url('./close_unselected.svg');
-    size: 2rem 2.2rem;
+    background-image: url('./depth_unselected.svg');
+    size: 2.3rem 2.2rem;
 
     &:--focus-active {
-      background-image: url('./close_selected.svg');
+      background-image: url('./depth_selected.svg');
     }
   }
 }

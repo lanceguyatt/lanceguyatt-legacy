@@ -1,7 +1,10 @@
 import React from 'react';
 
 import Titlebar from '../titlebar/';
-// import Close from '../../gadgets/close';
+
+import Close from '../../gadgets/close';
+import Zoom from '../../gadgets/zoom';
+import Depth from '../../gadgets/depth';
 
 import styles from './style.css';
 
@@ -9,7 +12,11 @@ class Window extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { isSelected: false };
+    this.state = {
+      isSelected: false,
+      isZoomed: false,
+    };
+    this.handleZoom = this.handleZoom.bind(this);
   }
 
   componentWillMount() {
@@ -20,14 +27,23 @@ class Window extends React.Component {
     this.setState({ isSelected: false });
   }
 
+  handleZoom() {
+    this.setState({ isZoomed: true });
+  }
+
   render() {
-    const { children, data } = this.props;
+    const { children, close, zoom, depth, titlebar } = this.props;
 
     const className = this.state.isSelected ? styles.windowSelected : styles.windowUnselected;
 
     return (
       <div className={className}>
-        <Titlebar window>{data.name}</Titlebar>
+        <div className={styles.flex}>
+          {close ? <Close url={close} /> : null}
+          <Titlebar isWindow titlebar={titlebar} />
+          {zoom ? <Zoom /> : null}
+          {depth ? <Depth /> : null}
+        </div>
         <div className={styles.windowMain}>
           {children}
         </div>
@@ -37,24 +53,19 @@ class Window extends React.Component {
 }
 
 Window.propTypes = {
-  data: React.PropTypes.shape({
-    name: React.PropTypes.string,
-    parent: React.PropTypes.string,
-    memory: React.PropTypes.shape(),
-  }),
+  titlebar: React.PropTypes.string,
+  close: React.PropTypes.string,
+  zoom: React.PropTypes.bool,
+  depth: React.PropTypes.bool,
   children: React.PropTypes.node,
 };
 
 Window.defaultProps = {
-  data: {
-    name: '',
-    parent: '',
-    memory: {
-      full: '',
-    },
-  },
+  titlebar: 'Titlebar name',
+  close: '',
+  zoom: false,
+  depth: false,
   children: '',
-  cssClasses: '',
 };
 
 export default Window;

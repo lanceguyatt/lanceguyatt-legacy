@@ -1,76 +1,54 @@
-.window {
-  border-style: solid;
-  position: relative;
-  flex: auto;
-}
+@import '../../styles/settings/_colors.css';
 
-.window--selected {
-  composes: window;
-  background-color: var(--blue);
-}
+:local {
 
-.window--unselected {
-  composes: window;
-  background-color: var(--gray);
-}
-
-.window__main {
-  background-color: var(--gray);
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  padding: 1rem;
-  position: absolute -.7rem -3.7rem -5.2rem -1.6rem;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-/*.window__header {
-  height: var(--window-header-height);
-  position: absolute -2.9rem 0 * -1.8rem;
-  display: flex;
-  flex: auto;
-}
-
-.window__header__name {
-  height: 1.8rem;
-  overflow: hidden;
-  padding: * 5px;
-  text-overflow: ellipsis;
-  user-select: none;
-  white-space: nowrap;
-  flex: auto;
-}*/
-
-.window {
-  border-image: url(./window-1.svg) 23 5 5 5 stretch;
-  border-width: 2.3rem .5rem .5rem .5rem;
-
-  /*.window__header {
-    position: absolute -2.3rem -.5rem * -.5rem;
+  .window {
+    border-image: url(./window-1.svg) 22 4 4 stretch;
+    border-style: solid;
+    border-width: 2.2rem .4rem .4rem;
+    position: relative;
   }
 
-  .window__header__name {
-    position: absolute .2rem 0 * 2rem;
-  }*/
+  .window--selected {
+    composes: window;
+    background-color: var(--blue);
+  }
+
+  .window--unselected {
+    composes: window;
+    background-color: var(--gray);
+  }
 
   .window__main {
-    position: absolute -.1rem;
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
-}
 
-.window--2 {
-  border-image: url(./window-2.svg) 29 55 71 19 stretch;
-  border-width: 2.9rem 5.5rem 7.1rem 1.9rem;
+  .flex {
+    display: flex;
+    height: 2.2rem;
+    position: absolute -2.2rem -.4rem -.4rem;
 
-  /*.window__header__name {
-    position: absolute .2rem -5.5rem * 2rem;
-  }*/
-}
+    a,
+    button {
+      flex: none;
+    }
 
-:root {
-  --window-header-height: 2.2rem;
-  --gray: #aaa;
-  --blue: #6687ba;
+    div {
+      flex: auto;
+    }
+
+    button {
+      margin-left: auto;
+    }
+  }
 }

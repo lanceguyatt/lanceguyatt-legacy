@@ -1,0 +1,23 @@
+.list {
+  list-style: none;
+  margin: 1rem;
+
+  li {
+    max-width: 10rem;
+  }
+}
+
+.list--column {
+  composes: list;
+  display: flex;
+  flex-direction: column;
+}
+
+.list--row {
+  composes: list;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}

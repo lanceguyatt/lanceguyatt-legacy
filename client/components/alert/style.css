@@ -1,3 +1,5 @@
+@import '../../styles/settings/_colors.css';
+
 .alert {
   animation: pulse 1.5s infinite ease-in-out;
   border-style: solid;
@@ -43,5 +45,4 @@
 
 :root {
   --red: #ed1c24;
-  --blue: #6687ba;
 }

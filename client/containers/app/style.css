@@ -1,3 +1,5 @@
+@import '../../styles/settings/_colors';
+
 @font-face {
   font-family: 'Topaz';
   src: url('./topaz.woff2') format('woff2');
@@ -68,7 +70,13 @@ input {
   background-color: transparent;
   border: 0;
   border-radius: 0;
-  outline: 0;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 button {
@@ -76,9 +84,7 @@ button {
 }
 
 input {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  outline: 0;
 }
 
 fieldset {
@@ -94,8 +100,6 @@ fieldset {
 
 :root {
   --topaz: 'Topaz', sans-serif;
-  --black: #000;
-  --gray: #aaa;
 }
 
 @custom-media --breakpoint-md (min-width: 768px);

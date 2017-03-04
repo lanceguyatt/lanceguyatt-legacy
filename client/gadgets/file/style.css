@@ -1,0 +1,24 @@
+.file {
+  composes: link from '../../styles/foo.css';
+}
+
+.file__image {
+  composes: linkImage from '../../styles/foo.css';
+  background-image: url('./file_unselected.svg');
+  size: 4.6rem 6.2rem;
+}
+
+.file__name {
+  composes: linkName from '../../styles/foo.css';
+}
+
+.file {
+
+  &:focus,
+  &:active {
+
+    .file__image {
+      background-image: url('./file_selected.svg');
+    }
+  }
+}

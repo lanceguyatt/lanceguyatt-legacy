@@ -1,0 +1,26 @@
+.foo {
+  background-size: 100%;
+  display: block;
+  overflow: hidden;
+  text-indent: -999999px;
+}
+
+.link {
+  display: block;
+  padding: .5rem;
+  user-select: none;
+  width: 10rem;
+  outline: 0;
+}
+
+.link__image {
+  background-repeat: none;
+  background-size: 100%;
+  display: block;
+  margin: * auto .5rem;
+}
+
+.link__name {
+  display: block;
+  text-align: center;
+}

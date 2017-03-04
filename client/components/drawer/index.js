@@ -2,7 +2,7 @@ import React from 'react';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
-import Directory from '../../components/directory/';
+import List from '../../components/list/';
 
 import styles from './style.css';
 
@@ -15,8 +15,8 @@ class Drawer extends React.Component {
     return (
       <div className={styles.drawer}>
         <Head data={data} />
-        <Window data={data}>
-          <Directory directory={data.items} wrap />
+        <Window close zoom depth titlebar={data.name}>
+          <List data={data.items} wrap />
         </Window>
       </div>
     );
@@ -27,6 +27,12 @@ Drawer.propTypes = {
   route: React.PropTypes.shape({
     data: React.PropTypes.shape(),
   }),
+};
+
+Drawer.defaultProps = {
+  route: {
+    data: {},
+  },
 };
 
 export default Drawer;
