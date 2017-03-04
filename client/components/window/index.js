@@ -39,7 +39,9 @@ class Window extends React.Component {
           {depth ? <Depth /> : null}
         </div>
         <div className={styles.windowMain}>
-          {children}
+          <div className={styles.windowMainInner}>
+            {children}
+          </div>
         </div>
       </div>
     );

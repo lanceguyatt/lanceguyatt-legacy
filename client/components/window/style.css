@@ -49,7 +49,10 @@
     }
   }
 
-
+  .window__main__inner {
+    size: 101%;
+    position: absolute 0;
+  }
 }
 
 :root {

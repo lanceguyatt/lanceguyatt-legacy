@@ -35,7 +35,7 @@ class WorkBench extends React.Component {
     return (
       <div className={styles.workbench}>
         <Head data={data} />
-        <Titlebar titlebar={`${site.name}. Copyright &copy; 2000-${copyrightYear}. All Rights Reserved`} depth cssClasses={styles.flexNone} />
+        <Titlebar titlebar={`${site.name}. Copyright © 2000-${copyrightYear}. All Rights Reserved`} depth cssClasses={styles.flexNone} />
         <Window close="/kickstart/" titlebar={data.name} zoom depth>
           <List data={data.items} />
         </Window>

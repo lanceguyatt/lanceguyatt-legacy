@@ -8,8 +8,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 15px;
-  -webkit-tap-highlight-color: transparent;
+  font-size: 14px;
 
   @media (--breakpoint-md) {
     font-size: 10px;
@@ -43,14 +42,15 @@ body {
 
 body {
   background-color: var(--gray);
+  color: var(--black);
   font-family: var(--topaz);
   font-size: 1.6rem;
   line-height: 1.25;
-  color: var(--black);
+  overflow: hidden;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -87,10 +87,6 @@ input {
   outline: 0;
 }
 
-fieldset {
-  border: 0;
-}
-
 :local {
 
   .app {
@@ -102,4 +98,4 @@ fieldset {
   --topaz: 'Topaz', sans-serif;
 }
 
-@custom-media --breakpoint-md (min-width: 768px);
+@custom-media --breakpoint-md (min-width: 481px);
