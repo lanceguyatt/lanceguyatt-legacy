@@ -25,7 +25,7 @@ class WorkBench extends React.Component {
     this.setState({ active: true });
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     this.setState({ active: true });
   }
 
@@ -34,17 +34,12 @@ class WorkBench extends React.Component {
 
     return (
       <div className={styles.workbench}>
-
         <Head data={data} />
-
-        <Titlebar titlebar={`${site.name}. Copyright &copy; 2000-${copyrightYear}. All Rights Reserved`} depth />
-
-        <Window close="/kickstart/" titlebar={data.name}>
+        <Titlebar titlebar={`${site.name}. Copyright &copy; 2000-${copyrightYear}. All Rights Reserved`} depth cssClasses={styles.flexNone} />
+        <Window close="/kickstart/" titlebar={data.name} zoom depth>
           <List data={data.items} />
         </Window>
-
         {this.props.children}
-
       </div>
     );
   }

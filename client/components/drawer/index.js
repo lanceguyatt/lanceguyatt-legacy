@@ -15,7 +15,7 @@ class Drawer extends React.Component {
     return (
       <div className={styles.drawer}>
         <Head data={data} />
-        <Window close zoom depth titlebar={data.name}>
+        <Window close={data.parent} zoom depth titlebar={data.name}>
           <List data={data.items} wrap />
         </Window>
       </div>

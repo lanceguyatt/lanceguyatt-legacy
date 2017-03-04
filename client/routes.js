@@ -15,30 +15,19 @@ const workbench = {
   name: 'Workbench',
   description: 'Workbench description',
   url: '',
-  parent: '/kickstart/',
   items: [
     {
       id: 1,
-      name: 'Ram Disk',
-      url: '/ramdisk/',
-      type: 'drawer',
-    }, {
-      id: 2,
       name: 'Work',
       url: '/work/',
       type: 'drawer',
     }, {
-      id: 3,
+      id: 2,
       name: 'About',
       url: '/about/',
       type: 'drawer',
     },
   ],
-  memory: {
-    full: '5%',
-    free: '25M',
-    use: '2,972k',
-  },
 };
 
 const work = {
@@ -70,31 +59,13 @@ const work = {
       type: 'file',
     },
   ],
-  memory: {
-    full: '5%',
-    free: '25M',
-    use: '2,972k',
-  },
 };
 
-const ramdisk = {
-  name: 'Ramdisk',
-  description: 'Ramdisk description',
-  url: '/ramdisk/',
-  parent: '/',
-  items: [],
-  memory: {
-    full: '5%',
-    free: '25M',
-    use: '2,972k',
-  },
-};
 
 const routes = (
   <div>
     <Route component={App}>
       <Route path="/" component={WorkBench} data={workbench}>
-        <Route path="/ramdisk/" component={Drawer} data={ramdisk} />
         <Route path="/work/" component={Drawer} data={work} />
         <Route path="/about/" component={Drawer} data={about} />
       </Route>

@@ -1,6 +1,7 @@
 .foo {
   background-size: 100%;
   display: block;
+  outline: 0;
   overflow: hidden;
   text-indent: -999999px;
 }

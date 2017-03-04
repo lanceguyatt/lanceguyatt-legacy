@@ -3,10 +3,10 @@
 :local {
 
   .window {
-    border-image: url(./window-1.svg) 22 4 4 stretch;
+    border-image: url(./window-2.svg) 29 55 71 21 stretch;
     border-style: solid;
-    border-width: 2.2rem .4rem .4rem;
-    position: relative;
+    border-width: 2.9rem 5.5rem 7.1rem 2.1rem;
+    position: absolute var(--window-header-height) 0 0;
   }
 
   .window--selected {
@@ -19,24 +19,10 @@
     background-color: var(--gray);
   }
 
-  .window__main {
-    background-color: var(--gray);
+  .window__header {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    flex: 1;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .flex {
-    display: flex;
-    height: 2.2rem;
-    position: absolute -2.2rem -.4rem -.4rem;
+    height: var(--window-header-height);
+    position: absolute -2.9rem -5.5rem * -2.1rem;
 
     a,
     button {
@@ -51,4 +37,21 @@
       margin-left: auto;
     }
   }
+
+  .window__main {
+    background-color: var(--gray);
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: absolute -.7rem -3.7rem -5.1rem -1.7rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+
+}
+
+:root {
+  --window-header-height: 2.2rem;
 }

@@ -8,6 +8,7 @@
   size: 6.5rem 3.8rem;
 }
 
+.drawer--active .drawer__image,
 .drawer:focus .drawer__image,
 .drawer:active .drawer__image {
   background-image: url('./drawer_selected.svg');

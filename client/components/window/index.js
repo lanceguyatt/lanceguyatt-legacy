@@ -14,9 +14,7 @@ class Window extends React.Component {
     super(props);
     this.state = {
       isSelected: false,
-      isZoomed: false,
     };
-    this.handleZoom = this.handleZoom.bind(this);
   }
 
   componentWillMount() {
@@ -27,10 +25,6 @@ class Window extends React.Component {
     this.setState({ isSelected: false });
   }
 
-  handleZoom() {
-    this.setState({ isZoomed: true });
-  }
-
   render() {
     const { children, close, zoom, depth, titlebar } = this.props;
 
@@ -38,7 +32,7 @@ class Window extends React.Component {
 
     return (
       <div className={className}>
-        <div className={styles.flex}>
+        <div className={styles.windowHeader}>
           {close ? <Close url={close} /> : null}
           <Titlebar isWindow titlebar={titlebar} />
           {zoom ? <Zoom /> : null}
