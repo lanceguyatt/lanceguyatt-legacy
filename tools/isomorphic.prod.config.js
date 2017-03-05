@@ -9,5 +9,8 @@ module.exports = {
     text: {
       extensions: ['txt', 'ico'],
     },
+    audio: {
+      extensions: ['mp3'],
+    },
   },
 };

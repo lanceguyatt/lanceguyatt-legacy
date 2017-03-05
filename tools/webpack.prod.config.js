@@ -12,22 +12,22 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // images etc. within Node when the static site is being rendered.
 var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
 
-// const vendorLibraries = [
-//   'react',
-//   'react-router',
-//   'react-dom',
-// ];
+const vendorLibraries = [
+  'react',
+  'react-router',
+  'react-dom',
+  'react-fastclick',
+];
 
 module.exports = {
   devtool: false,
   entry: {
     bundle: './client/index.js',
-    // vendor: vendorLibraries,
+    vendor: vendorLibraries,
   },
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: '[name]-[hash].js',
-    // libraryTarget: 'umd',
     publicPath: '/',
   },
   module: {
@@ -71,13 +71,13 @@ module.exports = {
         test: /\.svg$/,
         loader: 'url-loader',
         options: {
+          name: '[hash].[ext]',
           limit: 2000,
-          name: 'images/[hash].[ext]',
         },
       },
 
       {
-        test: /\.png$/,
+        test: /\.(png|woff2)$/,
         loader: 'file-loader',
         options: {
           name: '[hash].[ext]',
@@ -116,22 +116,13 @@ module.exports = {
       //     },
       //   ],
       // },
-
-      {
-        test: /\.woff2$/,
-        loader: 'file-loader',
-        options: {
-          name: 'fonts/[hash].[ext]',
-        },
-      },
-
     ],
   },
   plugins: [
 
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    // }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+    }),
 
     new webpack.optimize.OccurrenceOrderPlugin(),
 
@@ -147,7 +138,7 @@ module.exports = {
     }),
 
     new ExtractTextPlugin({
-      filename: 'styles/bundle-[contenthash].css',
+      filename: 'bundle-[contenthash].css',
       allChunks: true,
     }),
 
