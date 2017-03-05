@@ -1,18 +1,18 @@
 {
   "name": "About",
-  "description": "About me",
-  "url": "/about/",
+  "description": "About",
+  "url": "about/",
   "parent": "/",
   "items": [
     {
       "id": "1",
-      "name": "Github",
-      "url": "http://github.com/lanceguyatt",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/lanceguyatt/",
       "type": "file"
     }, {
       "id": "2",
-      "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/lanceguyatt/",
+      "name": "Github",
+      "url": "http://github.com/lanceguyatt",
       "type": "file"
     }
   ]

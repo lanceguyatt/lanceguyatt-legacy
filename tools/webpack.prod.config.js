@@ -21,7 +21,7 @@ var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./i
 module.exports = {
   devtool: false,
   entry: {
-    bundle: './client/index.js',
+    app: './client/index.js',
     // vendor: vendorLibraries,
   },
   output: {
@@ -159,7 +159,7 @@ module.exports = {
     }),
 
     new ExtractTextPlugin({
-      filename: 'bundle-[contenthash].css',
+      filename: 'app-[contenthash].css',
       allChunks: true,
     }),
 
