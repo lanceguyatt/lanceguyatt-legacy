@@ -2,17 +2,17 @@ import React from 'react';
 
 import styles from './style.css';
 
-const Titlebar = ({ titlebar, isWindow }) => (
-  <div className={isWindow ? styles.titlebarWindow : styles.titlebarDefault}>{titlebar}</div>
+const Titlebar = ({ name, isWindow }) => (
+  <div className={isWindow ? styles.titlebarWindow : styles.titlebarDefault}>{name}</div>
 );
 
 Titlebar.propTypes = {
-  titlebar: React.PropTypes.string,
+  name: React.PropTypes.string,
   isWindow: React.PropTypes.bool,
 };
 
 Titlebar.defaultProps = {
-  titlebar: 'Name here',
+  name: 'Name here',
   isWindow: false,
 };
 

@@ -20,7 +20,7 @@
     "build:bundle": "cross-env NODE_ENV=production webpack --config ./tools/webpack.prod.config.js",
     "build:static": "cross-env NODE_ENV=production babel-node ./tools/build_static_entry.js",
     "build": "npm run clean && npm run build:bundle && npm run build:static",
-    "deploy": "npm run build && surge -p build -d lanceguyatt.surge.sh"
+    "deploy": "npm run build && surge -p build -d lanceguyatt.com"
   },
   "plate_config": {
     "website": "http://lanceguyatt.com"

@@ -15,6 +15,8 @@ class Window extends React.Component {
     this.state = {
       isSelected: false,
     };
+    this.handleZoom = this.handleZoom.bind(this);
+    this.handleDepth = this.handleDepth.bind(this);
   }
 
   componentWillMount() {
@@ -25,8 +27,16 @@ class Window extends React.Component {
     this.setState({ isSelected: false });
   }
 
+  handleZoom() {
+    this.setState({ isZoom: false });
+  }
+
+  handleDepth() {
+    this.setState({ isSelected: false });
+  }
+
   render() {
-    const { children, close, zoom, depth, titlebar } = this.props;
+    const { name, children, close, zoom, depth } = this.props;
 
     const className = this.state.isSelected ? styles.windowSelected : styles.windowUnselected;
 
@@ -34,9 +44,9 @@ class Window extends React.Component {
       <div className={className}>
         <div className={styles.windowHeader}>
           {close ? <Close url={close} /> : null}
-          <Titlebar isWindow titlebar={titlebar} />
-          {zoom ? <Zoom /> : null}
-          {depth ? <Depth /> : null}
+          <Titlebar isWindow name={name} />
+          {zoom ? <Zoom foo={this.handleZoom} /> : null}
+          {depth ? <Depth handleClick={this.handleDepth} /> : null}
         </div>
         <div className={styles.windowMain}>
           <div className={styles.windowMainInner}>
@@ -49,7 +59,7 @@ class Window extends React.Component {
 }
 
 Window.propTypes = {
-  titlebar: React.PropTypes.string,
+  name: React.PropTypes.string,
   close: React.PropTypes.string,
   zoom: React.PropTypes.bool,
   depth: React.PropTypes.bool,
@@ -57,7 +67,7 @@ Window.propTypes = {
 };
 
 Window.defaultProps = {
-  titlebar: 'Titlebar name',
+  name: 'Titlebar name',
   close: '',
   zoom: false,
   depth: false,

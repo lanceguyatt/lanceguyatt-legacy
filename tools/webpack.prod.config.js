@@ -70,12 +70,21 @@ module.exports = {
       },
 
       {
+        test: /\.ico$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+
+      {
         test: webpackIsomorphicToolsPlugin.regular_expression('images'),
         use: [
           {
             loader: 'url-loader',
             options: {
-              limit: 8000,
+              limit: 7000,
               name: 'images/[sha512:hash:base64:7].[ext]',
             },
           }, {

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
-import List from '../../components/list/';
+import Directory from '../../components/directory/';
 
 import styles from './style.css';
 
@@ -15,8 +15,8 @@ class Drawer extends React.Component {
     return (
       <div className={styles.drawer}>
         <Head data={data} />
-        <Window close={data.parent} zoom depth titlebar={data.name}>
-          <List data={data.items} wrap />
+        <Window close={data.parent} zoom depth name={data.name}>
+          <Directory items={data.items} wrap />
         </Window>
       </div>
     );

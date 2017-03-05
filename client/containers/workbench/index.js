@@ -5,11 +5,11 @@ import moment from 'moment';
 import Head from '../../components/head/';
 import Window from '../../components/window/';
 import Titlebar from '../../components/titlebar';
-import List from '../../components/list/';
+import Directory from '../../components/directory/';
 
 import styles from './style.css';
 
-import site from '../../../data/site/index.json';
+import site from '../../../data/site.json';
 
 const copyrightYear = moment().format('YYYY');
 
@@ -26,7 +26,7 @@ class WorkBench extends React.Component {
   }
 
   componentWillUnmount() {
-    this.setState({ active: true });
+    this.setState({ active: false });
   }
 
   render() {
@@ -35,9 +35,9 @@ class WorkBench extends React.Component {
     return (
       <div className={styles.workbench}>
         <Head data={data} />
-        <Titlebar titlebar={`${site.name}. Copyright © 2000-${copyrightYear}. All Rights Reserved`} depth cssClasses={styles.flexNone} />
-        <Window close="/kickstart/" titlebar={data.name} zoom depth>
-          <List data={data.items} />
+        <Titlebar name={`${site.name}. Copyright © 2000-${copyrightYear}. All Rights Reserved`} />
+        <Window close="/kickstart/" name={data.name} zoom depth>
+          <Directory items={data.items} />
         </Window>
         {this.props.children}
       </div>
@@ -46,20 +46,8 @@ class WorkBench extends React.Component {
 }
 
 WorkBench.propTypes = {
-  route: React.PropTypes.shape({
-    data: React.PropTypes.shape({
-      name: React.PropTypes.string,
-      description: React.PropTypes.string,
-      url: React.PropTypes.string,
-      image: React.PropTypes.string,
-      items: React.PropTypes.arrayOf(React.PropTypes.shape({
-        id: React.PropTypes.number,
-        name: React.PropTypes.string,
-        url: React.PropTypes.string,
-      })),
-    }),
-  }),
-  children: React.PropTypes.element,
+  route: React.PropTypes.shape(),
+  children: React.PropTypes.node,
 };
 
 WorkBench.defaultProps = {

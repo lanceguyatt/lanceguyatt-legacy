@@ -30,4 +30,8 @@ GuruMeditation.propTypes = {
   route: React.PropTypes.shape(),
 };
 
+GuruMeditation.defaultProps = {
+  route: {},
+};
+
 export default GuruMeditation;

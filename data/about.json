@@ -1,13 +1,8 @@
 {
   "name": "About",
-  "description": "About description",
+  "description": "About me",
   "url": "/about/",
   "parent": "/",
-  "memory": {
-    "full": "5%",
-    "free": "15M",
-    "use": "2,972k"
-  },
   "items": [
     {
       "id": "1",

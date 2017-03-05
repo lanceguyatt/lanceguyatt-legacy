@@ -3,22 +3,22 @@ import { Link } from 'react-router';
 
 import styles from './style.css';
 
-const Drawer = ({ data }) => (
-  <Link className={styles.drawer} to={data.url} activeClassName={styles.drawerActive}>
+const Drawer = ({ item }) => (
+  <Link className={styles.drawer} to={item.url} activeClassName={styles.drawerActive}>
     <span className={styles.drawerImage} />
-    <span className={styles.drawerName}>{data.name}</span>
+    <span className={styles.drawerName}>{item.name}</span>
   </Link>
 );
 
 Drawer.propTypes = {
-  data: React.PropTypes.shape({
+  item: React.PropTypes.shape({
     name: React.PropTypes.string,
     url: React.PropTypes.string,
   }),
 };
 
 Drawer.defaultProps = {
-  data: {
+  item: {
     name: '',
     url: '#',
   },

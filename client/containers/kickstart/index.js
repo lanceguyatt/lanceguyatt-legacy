@@ -43,4 +43,8 @@ KickStart.propTypes = {
   route: React.PropTypes.shape(),
 };
 
+KickStart.defaultProps = {
+  route: {},
+};
+
 export default KickStart;

@@ -12,4 +12,8 @@ App.propTypes = {
   children: React.PropTypes.node,
 };
 
+App.defaultProps = {
+  children: '',
+};
+
 export default App;

@@ -1,0 +1,17 @@
+:local {
+
+  .directory {
+    list-style: none;
+    margin: 1rem;
+  }
+
+  .directory--row {
+    composes: directory;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .directory__item {
+    max-width: 10rem;
+  }
+}
