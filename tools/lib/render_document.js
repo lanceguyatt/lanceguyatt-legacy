@@ -44,6 +44,16 @@ const renderDocument = (props) => {
     body: React.PropTypes.string,
   };
 
+  // Html.defaultProps = {
+  //   Title: '',
+  //   metas: '',
+  //   links: '',
+  //   scripts: '',
+  //   cssBundle: '',
+  //   jsBundle: '',
+  //   body: '',
+  // };
+
   return `<!doctype html>${renderToStaticMarkup(<Html {...props} />)}`;
 };
 

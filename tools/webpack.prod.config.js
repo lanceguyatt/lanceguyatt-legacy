@@ -21,13 +21,13 @@ var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./i
 module.exports = {
   devtool: false,
   entry: {
-    app: './client/index.js',
+    bundle: './client/index.js',
     // vendor: vendorLibraries,
   },
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: '[name]-[hash].js',
-    libraryTarget: 'umd',
+    // libraryTarget: 'umd',
     publicPath: '/',
   },
   module: {
@@ -48,7 +48,6 @@ module.exports = {
           fallback: [
             {
               loader: 'style-loader',
-              options: {},
             },
           ],
           use: [
@@ -63,77 +62,66 @@ module.exports = {
               },
             }, {
               loader: 'postcss-loader',
-              options: {},
             },
           ],
         }),
       },
 
       {
-        test: /\.ico$/,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        test: /\.svg$/,
+        loader: 'url-loader',
+        options: {
+          limit: 2000,
+          name: 'images/[hash].[ext]',
+        },
       },
 
       {
-        test: webpackIsomorphicToolsPlugin.regular_expression('images'),
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 7000,
-              name: 'images/[sha512:hash:base64:7].[ext]',
-            },
-          }, {
-            loader: 'image-webpack-loader',
-            query: {
-              mozjpeg: {
-                progressive: true,
-              },
-              optipng: {
-                optimizationLevel: 7,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
-              },
-              svgo: {
-                plugins: [
-                  {
-                    removeViewBox: false,
-                  }, {
-                    removeEmptyAttrs: false,
-                  },
-                ],
-              },
-            },
-          },
-        ],
+        test: /\.png$/,
+        loader: 'file-loader',
+        options: {
+          name: '[hash].[ext]',
+        },
       },
 
       // {
-      //   test: /\.mp3$/,
-      //   use: {
-      //     loader: 'file-loader',
-      //     options: {
-      //       name: '[hash].[ext]',
+      //   test: webpackIsomorphicToolsPlugin.regular_expression('images'),
+      //   use: [
+      //     {
+      //       loader: 'image-webpack-loader',
+      //       options: {
+      //         mozjpeg: {
+      //           progressive: true,
+      //         },
+      //         optipng: {
+      //           optimizationLevel: 7,
+      //         },
+      //         gifsicle: {
+      //           interlaced: false,
+      //         },
+      //         pngquant: {
+      //           quality: '65-90',
+      //           speed: 4,
+      //         },
+      //         svgo: {
+      //           plugins: [
+      //             {
+      //               removeViewBox: false,
+      //             }, {
+      //               removeEmptyAttrs: false,
+      //             },
+      //           ],
+      //         },
+      //       },
       //     },
-      //   },
+      //   ],
       // },
 
       {
         test: /\.woff2$/,
-        loader: 'url-loader',
+        loader: 'file-loader',
         options: {
           name: 'fonts/[hash].[ext]',
-          limit: 10000,
-          mimetype: 'application/font-woff',
         },
       },
 
@@ -159,7 +147,7 @@ module.exports = {
     }),
 
     new ExtractTextPlugin({
-      filename: 'app-[contenthash].css',
+      filename: 'styles/bundle-[contenthash].css',
       allChunks: true,
     }),
 

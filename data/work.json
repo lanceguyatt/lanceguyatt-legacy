@@ -1,7 +1,7 @@
 {
   "name": "Work",
   "description": "Work",
-  "url": "work/",
+  "url": "/work/",
   "parent": "/",
   "items": [
     {

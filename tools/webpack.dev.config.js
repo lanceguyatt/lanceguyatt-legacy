@@ -14,6 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: '[name].js',
+    libraryTarget: 'umd',
     publicPath: '/',
   },
   module: {
@@ -33,7 +34,6 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: {},
           }, {
             loader: 'css-loader',
             options: {
@@ -44,13 +44,12 @@ module.exports = {
             },
           }, {
             loader: 'postcss-loader',
-            options: {},
           },
         ],
       },
 
       {
-        test: /\.svg$/,
+        test: /\.(svg|png|woff2)$/,
         use: [
           {
             loader: 'url-loader',
@@ -61,14 +60,6 @@ module.exports = {
         ],
       },
 
-      {
-        test: /\.(png|jpg|gif|ico|mp3|woff2)$/,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
     ],
   },
   plugins: [
