@@ -5,21 +5,13 @@ import Helmet from 'react-helmet';
 
 import site from '../../../data/site.json';
 
-// const image = require('file-loader?name=[name].[ext]!../../assets/lanceguyatt.png');
-// const appleTouchIcon = require('file-loader?name=[name].[ext]!../../assets/apple-touch-icon.png');
-// const humans = require('file-loader?name=[name].[ext]!../../assets/humans.txt');
-// const favicon = require('file-loader?name=[name].[ext]!../../assets/favicon.ico');
-// const favicon32x32 = require('file-loader?name=[name].[ext]!../../assets/favicon-32x32.png');
-// const favicon16x16 = require('file-loader?name=[name].[ext]!../../assets/favicon-16x16.png');
-
-const image = require('../../assets/lanceguyatt.png');
+const logo = require('../../assets/logo.png');
 const appleTouchIcon = require('../../assets/apple-touch-icon.png');
 const favicon32x32 = require('../../assets/favicon-32x32.png');
 const favicon16x16 = require('../../assets/favicon-16x16.png');
 
 const humans = require('file-loader?name=[name].[ext]!../../assets/humans.txt');
 const favicon = require('file-loader?name=[name].[ext]!../../assets/favicon.ico');
-
 
 const Head = ({ data }) => (
   <Helmet
@@ -32,7 +24,7 @@ const Head = ({ data }) => (
       { property: 'og:title', content: data.name },
       { property: 'og:description', content: data.description },
       { property: 'og:url', content: `${site.url}${data.url}` },
-      { property: 'og:image', content: `${site.url}${image}` },
+      { property: 'og:image', content: `${site.url}${logo}` },
       { property: 'og:type', content: 'website' },
       { property: 'fb:app_id', content: site.appId },
       { name: 'apple-mobile-web-app-title', content: 'Lance Guyatt' },
