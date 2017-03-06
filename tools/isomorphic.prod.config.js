@@ -4,13 +4,16 @@ module.exports = {
       extensions: ['css'],
     },
     images: {
-      extensions: ['png', 'jpg', 'svg'],
+      extensions: ['png', 'jpg', 'svg', 'ico'],
     },
-    text: {
-      extensions: ['txt', 'ico'],
+    misc: {
+      extensions: ['txt'],
     },
     audio: {
       extensions: ['mp3'],
+    },
+    fonts: {
+      extensions: ['eot', 'woff2'],
     },
   },
 };

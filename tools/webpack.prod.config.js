@@ -12,18 +12,10 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // images etc. within Node when the static site is being rendered.
 var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
 
-// const vendorLibraries = [
-//   'react',
-//   'react-router',
-//   'react-dom',
-//   'react-fastclick',
-// ];
-
 module.exports = {
   devtool: false,
   entry: {
     bundle: './client/index.js',
-    // vendor: vendorLibraries,
   },
   output: {
     path: path.resolve(__dirname, '../build'),
@@ -69,19 +61,23 @@ module.exports = {
 
       {
         test: /\.svg$/,
-        loader: 'url-loader',
-        options: {
-          name: '[hash].[ext]',
-          limit: 2000,
-        },
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 2000,
+            },
+          },
+        ],
       },
 
       {
-        test: /\.(png|woff2)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[hash].[ext]',
-        },
+        test: /\.(png|woff2|eot|mp3)$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
 
       // {
@@ -119,10 +115,6 @@ module.exports = {
     ],
   },
   plugins: [
-
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    // }),
 
     new webpack.optimize.OccurrenceOrderPlugin(),
 

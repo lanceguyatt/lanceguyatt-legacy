@@ -21,7 +21,7 @@ const routes = (
         <Route path="/about/" component={Drawer} data={about} />
       </Route>
       <Route path="/kickstart/" component={KickStart} data={kickstart} />
-      <Route path="*" component={GuruMeditation} status={404} data={guruMeditation} />
+      <Route path="/guru-meditation/" component={GuruMeditation} status={404} data={guruMeditation} />
       <Route path="404" component={GuruMeditation} status={404} data={guruMeditation} />
     </Route>
   </div>

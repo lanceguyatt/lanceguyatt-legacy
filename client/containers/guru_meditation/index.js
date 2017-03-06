@@ -14,7 +14,7 @@ const alert = {
 
 const toastyMp3 = {
   id: 'js-toasty-audio',
-  src: require('file-loader!./toasty.mp3'),
+  src: require('./toasty.mp3'),
   type: 'audio/mp3',
 };
 

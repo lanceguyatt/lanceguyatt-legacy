@@ -49,13 +49,22 @@ module.exports = {
       },
 
       {
-        test: /\.(svg|png|woff2)$/,
+        test: /\.svg$/,
         use: [
           {
             loader: 'url-loader',
             options: {
-              limit: 10000,
+              limit: 20000,
             },
+          },
+        ],
+      },
+
+      {
+        test: /\.(png|woff2|eot|mp3)$/,
+        use: [
+          {
+            loader: 'file-loader',
           },
         ],
       },

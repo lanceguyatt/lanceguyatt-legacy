@@ -2,8 +2,11 @@
 
 @font-face {
   font-family: 'Topaz';
-  src: url('./topaz.woff2') format('woff2');
+  src: url('./topaz.eot');
+  src: url('./topaz.eot?#iefix') format('embedded-opentype'),
+       url('./topaz.woff2') format('woff2');
   font-weight: normal;
+  font-style: normal;
 }
 
 html {

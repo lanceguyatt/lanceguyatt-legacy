@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './style.css';
 
 const Zoom = ({ foo }) => (
-  <button className={styles.zoom} onClick={foo} />
+  <button className={styles.zoom} onClick={foo}>Zoom</button>
 );
 
 Zoom.propTypes = {
