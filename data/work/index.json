@@ -29,12 +29,6 @@
       "name": "Neon",
       "url": "https://www.neontv.co.nz",
       "type": "file"
-    }, {
-      "id": "6",
-      "name": "Good Food Guide",
-      "url": "https://www.neontv.co.nz",
-      "type": "file",
-      "hidden": true
     }
   ]
 }
