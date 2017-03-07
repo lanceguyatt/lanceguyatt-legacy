@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import React from 'react';
 
 import Head from '../../components/head/';
@@ -5,6 +7,8 @@ import Alert from '../../components/alert/';
 import Audio from '../../components/audio/';
 
 import styles from './style.css';
+
+import toast from './toasty.png';
 
 const alert = {
   name: 'Software Failure. Press left mouse button to continue.',
@@ -74,11 +78,20 @@ class GuruMeditation extends React.Component {
   render() {
     const { data } = this.props.route;
 
+
+    const image = {
+      backgroundImage: `url(${toast})`,
+    };
+
     return (
       <div className={styles.guruMeditation}>
         <Head data={data} />
         <Alert alert={alert} error />
-        <div className={!this.state.toasty ? styles.toasty1 : styles.toasty2} id="js-toasty-image" />
+        <div
+          className={!this.state.toasty ? styles.toasty1 : styles.toasty2}
+          id="js-toasty-image"
+          style={image}
+        />
         <Audio audio={toastyMp3} id="js-toasty-audio" />
       </div>
     );

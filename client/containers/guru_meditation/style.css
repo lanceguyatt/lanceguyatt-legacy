@@ -13,7 +13,6 @@
   }
 
   .toasty1 {
-    background-image: url(./toasty.png);
     background-size: 100%;
     position: absolute * -var(--toasty-width) 0 *;
     size: var(--toasty-width);

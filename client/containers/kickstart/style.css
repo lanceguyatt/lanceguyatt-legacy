@@ -42,7 +42,7 @@
   }
 
   .disk-drive {
-    background: url(./disk_drive.svg) no-repeat;
+    background: url('./disk_drive.svg') no-repeat;
     background-size: 100%;
     position: absolute 0 * * 0;
     size: 15.6rem 3.8rem;
@@ -50,7 +50,7 @@
 
   .floppy-disk {
     animation: insert-disk 1.5s forwards infinite;
-    background: url(./floppy_disk.svg) no-repeat;
+    background: url('./floppy_disk.svg') no-repeat;
     background-size: 100%;
     position: absolute * * 0 1.2rem;
     size: 13.4rem 12rem;

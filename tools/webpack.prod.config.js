@@ -4,7 +4,7 @@ var webpack = require('webpack');
 var path = require('path');
 var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var CompressionPlugin = require('compression-webpack-plugin');
 // var stylelint = require("stylelint");
 // Plugin that extracts and keeps track of the real paths to the assets,
 // saved within webpack-assets.json
@@ -27,11 +27,7 @@ module.exports = {
 
       {
         test: /\.js$/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
+        use: 'babel-loader',
       },
 
       {
@@ -60,7 +56,7 @@ module.exports = {
       },
 
       {
-        test: /\.svg$/,
+        test: webpackIsomorphicToolsPlugin.regular_expression('icons'),
         use: [
           {
             loader: 'url-loader',
@@ -72,46 +68,56 @@ module.exports = {
       },
 
       {
-        test: /\.(png|woff2|eot|mp3)$/,
+        test: webpackIsomorphicToolsPlugin.regular_expression('hashed'),
         use: [
           {
             loader: 'file-loader',
+            options: {},
           },
         ],
       },
 
-      // {
-      //   test: webpackIsomorphicToolsPlugin.regular_expression('images'),
-      //   use: [
-      //     {
-      //       loader: 'image-webpack-loader',
-      //       options: {
-      //         mozjpeg: {
-      //           progressive: true,
-      //         },
-      //         optipng: {
-      //           optimizationLevel: 7,
-      //         },
-      //         gifsicle: {
-      //           interlaced: false,
-      //         },
-      //         pngquant: {
-      //           quality: '65-90',
-      //           speed: 4,
-      //         },
-      //         svgo: {
-      //           plugins: [
-      //             {
-      //               removeViewBox: false,
-      //             }, {
-      //               removeEmptyAttrs: false,
-      //             },
-      //           ],
-      //         },
-      //       },
-      //     },
-      //   ],
-      // },
+      {
+        test: webpackIsomorphicToolsPlugin.regular_expression('named'),
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
+
+      {
+        test: webpackIsomorphicToolsPlugin.regular_expression('images'),
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]?[hash]',
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              // mozjpeg: {
+              //   progressive: true,
+              // },
+              optipng: {
+                optimizationLevel: 7,
+              },
+              // gifsicle: {
+              //   interlaced: false,
+              // },
+              pngquant: {
+                quality: '65-90',
+                speed: 4,
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -126,12 +132,24 @@ module.exports = {
 
     new webpack.optimize.UglifyJsPlugin({
       screw_ie8: true,
-      compressor: { warnings: false },
+      compressor: {
+        warnings: false,
+      },
     }),
+
+    new webpack.optimize.AggressiveMergingPlugin(), // Merge chunks
 
     new ExtractTextPlugin({
       filename: 'bundle-[contenthash].css',
       allChunks: true,
+    }),
+
+    new CompressionPlugin({ // <-- Add this
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
     }),
 
     webpackIsomorphicToolsPlugin,

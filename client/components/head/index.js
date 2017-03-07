@@ -1,19 +1,19 @@
-/* eslint-disable import/no-extraneous-dependencies,
-import/no-unresolved, import/no-webpack-loader-syntax, no-unused-vars */
+/* eslint-disable import/no-unresolved, import/no-webpack-loader-syntax, no-unused-vars */
 import React from 'react';
 import Helmet from 'react-helmet';
 
 import site from '../../../data/site.json';
 import author from '../../../data/author.json';
 
-const logo = require('../../assets/logo.png');
-const appleTouchIcon = require('../../assets/apple-touch-icon.png');
-const favicon32x32 = require('../../assets/favicon-32x32.png');
-const favicon16x16 = require('../../assets/favicon-16x16.png');
+// const manifest = require('file-loader?name=[name].[ext]!../../assets/manifest.json');
 
-const robots = require('file-loader?name=[name].[ext]!../../assets/robots.txt');
-const humans = require('file-loader?name=[name].[ext]!../../assets/humans.txt');
-const favicon = require('file-loader?name=[name].[ext]!../../assets/favicon.ico');
+import logo from '../../assets/logo.png';
+import appleTouchIcon from '../../assets/apple-touch-icon.png';
+import favicon32x32 from '../../assets/favicon-32x32.png';
+import favicon16x16 from '../../assets/favicon-16x16.png';
+import robots from '../../assets/robots.txt';
+import humans from '../../assets/humans.txt';
+import favicon from '../../assets/favicon.ico';
 
 const authorName = `${author.name.givenName} ${author.name.familyName}`;
 
@@ -54,6 +54,7 @@ const Head = ({ data }) => {
         { rel: 'shortcut icon', href: favicon32x32, sizes: '32x32' },
         { rel: 'apple-touch-icon', href: appleTouchIcon, sizes: '180x180' },
         { rel: 'author', href: humans, type: 'text/plain' },
+        // { rel: 'manifest', href: manifest },
       ]}
     />
   );

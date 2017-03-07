@@ -11,6 +11,12 @@ import { useScroll } from 'react-router-scroll';
 import ReactGA from 'react-ga';
 import routes from './routes';
 
+import './assets/myopenid-hosted-verification.html';
+import './assets/browserconfig.xml';
+import './assets/crossdomain.xml';
+import './assets/android-chrome-192x192.png';
+import './assets/android-chrome-512x512.png';
+
 ReactGA.initialize('UA-19641705-1');
 
 const logPageView = () => {

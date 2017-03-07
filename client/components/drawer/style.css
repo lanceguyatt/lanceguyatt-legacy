@@ -1,6 +1,6 @@
 @media (--breakpoint-md) {
 
-  .drawer {
+  :local(.drawer) {
     position: absolute 50% * * 50%;
     size: 40rem;
     transform: translate(-50%, -50%);

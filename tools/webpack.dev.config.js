@@ -22,11 +22,7 @@ module.exports = {
 
       {
         test: /\.js$/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
+        use: 'babel-loader',
       },
 
       {
@@ -61,10 +57,13 @@ module.exports = {
       },
 
       {
-        test: /\.(png|woff2|eot|mp3)$/,
+        test: /\.(png|woff2|eot|mp3|xml|txt|ico|html)$/,
         use: [
           {
             loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
           },
         ],
       },
