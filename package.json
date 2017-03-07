@@ -1,17 +1,15 @@
 {
   "name": "lanceguyatt",
   "version": "2.0.5",
-  "description": "Build fast static sites with React & CSS Modules.",
+  "description": "Personal Portfolio Site built with React, React Router, Webpack, PostCSS, CSS Modules, and Babel.",
   "license": "MIT",
-  "private": true,
   "keywords": [
-    "amiga",
     "react",
-    "static",
-    "site",
-    "boilerplate",
+    "react-router",
+    "webpack",
     "postcss",
-    "css modules"
+    "css modules",
+    "babel"
   ],
   "scripts": {
     "start:dev": "babel-node ./tools/dev_server.js",
@@ -89,6 +87,6 @@
   "author": "Lance Guyatt",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/lanceguyatt/lanceguyatt.git"
+    "url": "git@github.com:lanceguyatt/lanceguyatt.git"
   }
 }
