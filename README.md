@@ -3,6 +3,8 @@
 > Build static sites with React & CSS Modules to host on [Amazon S3](https://aws.amazon.com/s3/), [Github Pages](https://pages.github.com/), [Surge](https://surge.sh/) etc.
 > *React | React Router | Babel 6 | CSS Modules | PostCSS | Webpack*
 
+*
+
 The .info file contains the icon image and its spatial position within its parent window. The icon also specifies the type of the file, as used by Workbench. Workbench recognises five different file types:[4]
 
 * Tool: An executable program.
@@ -16,3 +18,15 @@ The .info file contains the icon image and its spatial position within its paren
 
 * https://github.com/gajus/react-css-modules
 * https://github.com/gajus/babel-plugin-react-css-modules
+
+* Node
+* Webpack
+* Babel
+* ES6
+* React
+* React router
+* Css Modules
+* PostCSS
+* SVG
+* webpack-isomorphic-tools
+* Komani code ;)

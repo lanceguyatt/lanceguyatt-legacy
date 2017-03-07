@@ -2,40 +2,37 @@ import React from 'react';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
-import Directory from '../../components/directory/';
+
+import Action from '../../gadgets/action/';
 
 import styles from './style.css';
 
-class Drawer extends React.Component {
+class Work extends React.Component {
   componentDidMount() {}
 
   render() {
     const { data } = this.props.route;
-
     return (
-      <div className={styles.drawer}>
+      <div className={styles.work}>
         <Head data={data} />
         <Window close={data.parent} zoom depth name={data.name}>
-          {data.items ? <Directory items={data.items} wrap /> : null}
+          <Action name="Launch" url="http://awin.com" />
         </Window>
-        {this.props.children}
       </div>
     );
   }
 }
 
-Drawer.propTypes = {
+Work.propTypes = {
   route: React.PropTypes.shape({
     data: React.PropTypes.shape(),
   }),
-  children: React.PropTypes.node,
 };
 
-Drawer.defaultProps = {
+Work.defaultProps = {
   route: {
     data: {},
   },
-  children: '',
 };
 
-export default Drawer;
+export default Work;

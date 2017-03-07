@@ -3,6 +3,7 @@
 :local {
 
   .window {
+    border: 1px solid red;
     border-image: url(./window-2.svg) 29 55 71 21 stretch;
     border-style: solid;
     border-width: 2.9rem 5.5rem 7.1rem 2.1rem;
@@ -41,8 +42,9 @@
   .window__main {
     background-color: var(--gray);
     overflow: scroll;
-    -webkit-overflow-scrolling: touch;
     position: absolute -.7rem -3.7rem -5.1rem -1.7rem;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
       display: none;

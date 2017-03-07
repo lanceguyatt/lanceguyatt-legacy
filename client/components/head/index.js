@@ -1,45 +1,63 @@
 /* eslint-disable import/no-extraneous-dependencies,
-import/no-unresolved, import/no-webpack-loader-syntax */
+import/no-unresolved, import/no-webpack-loader-syntax, no-unused-vars */
 import React from 'react';
 import Helmet from 'react-helmet';
 
 import site from '../../../data/site.json';
+import author from '../../../data/author.json';
 
 const logo = require('../../assets/logo.png');
 const appleTouchIcon = require('../../assets/apple-touch-icon.png');
 const favicon32x32 = require('../../assets/favicon-32x32.png');
 const favicon16x16 = require('../../assets/favicon-16x16.png');
 
+const robots = require('file-loader?name=[name].[ext]!../../assets/robots.txt');
 const humans = require('file-loader?name=[name].[ext]!../../assets/humans.txt');
 const favicon = require('file-loader?name=[name].[ext]!../../assets/favicon.ico');
 
-const Head = ({ data }) => (
-  <Helmet
-    htmlAttributes={{ lang: 'en' }}
-    defaultTitle={site.name}
-    titleTemplate="%s - Lance Guyatt, Web Developer"
-    title={data.name}
-    meta={[
-      { property: 'og:site_name', content: site.name },
-      { property: 'og:title', content: data.name },
-      { property: 'og:description', content: data.description },
-      { property: 'og:url', content: `${site.url}${data.url}` },
-      { property: 'og:image', content: `${site.url}${logo}` },
-      { property: 'og:type', content: 'website' },
-      { property: 'fb:app_id', content: site.appId },
-      { name: 'apple-mobile-web-app-title', content: 'Lance Guyatt' },
-      { name: 'application-name', content: 'Lance Guyatt' },
-      { name: 'theme-color', content: '#aaa' },
-    ]}
-    link={[
-      { rel: 'shortcut icon', href: `${favicon}` },
-      { rel: 'shortcut icon', href: `${favicon16x16}`, sizes: '16x16' },
-      { rel: 'shortcut icon', href: `${favicon32x32}`, sizes: '32x32' },
-      { rel: 'apple-touch-icon', href: `${appleTouchIcon}`, sizes: '180x180' },
-      { rel: 'author', href: `${humans}`, type: 'text/plain' },
-    ]}
-  />
-);
+const authorName = `${author.name.givenName} ${author.name.familyName}`;
+
+const Head = ({ data }) => {
+  const pageUrl = `${site.url}${data.url}`;
+  const pageImage = `${site.url}${logo}`;
+  const pageTitle = `${data.name} - ${site.name}`;
+
+  return (
+    <Helmet
+      htmlAttributes={{ lang: 'en' }}
+      defaultTitle={site.name}
+      titleTemplate="%s - Lance Guyatt, Web Developer"
+      title={data.name}
+      meta={[
+        { property: 'og:site_name', content: site.name },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: data.description },
+        { property: 'og:url', content: pageUrl },
+        { property: 'og:image', content: pageImage },
+        { property: 'og:type', content: 'website' },
+        { property: 'fb:app_id', content: site.appId },
+        { property: 'fb:admins', content: '781041907' },
+        { name: 'twitter:site', content: author.twitter },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: pageTitle },
+        { name: 'twitter:description', content: data.description },
+        { name: 'twitter:image:src', content: pageImage },
+        { name: 'twitter:url', content: pageUrl },
+        { name: 'apple-mobile-web-app-title', content: authorName },
+        { name: 'application-name', content: authorName },
+        { name: 'theme-color', content: '#aaaaaa' },
+        { name: 'google-site-verification', content: 'CXlRDD3qsGAOQzev-gtIxdWh06XdJYL0cdCmViVSEH8' },
+      ]}
+      link={[
+        { rel: 'shortcut icon', href: favicon },
+        { rel: 'shortcut icon', href: favicon16x16, sizes: '16x16' },
+        { rel: 'shortcut icon', href: favicon32x32, sizes: '32x32' },
+        { rel: 'apple-touch-icon', href: appleTouchIcon, sizes: '180x180' },
+        { rel: 'author', href: humans, type: 'text/plain' },
+      ]}
+    />
+  );
+};
 
 Head.propTypes = {
   data: React.PropTypes.shape({

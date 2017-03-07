@@ -11,11 +11,11 @@
 
 html {
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 10px;
 
-  @media (--breakpoint-md) {
+  /*@media (--breakpoint-md) {
     font-size: 10px;
-  }
+  }*/
 }
 
 *,

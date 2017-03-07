@@ -4,6 +4,5 @@ static/
 build/
 .tmp/
 nginx.conf
-npm-debug.log
 webpack-assets.json
-npm-debug.log
+npm-debug**
