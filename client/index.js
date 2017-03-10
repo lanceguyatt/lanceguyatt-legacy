@@ -3,6 +3,8 @@ import 'react-fastclick';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './styles/index.css';
+
 const rootEl = document.getElementById('react-root');
 
 let render = () => {
