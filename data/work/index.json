@@ -7,7 +7,7 @@
     {
       "id": "1",
       "name": "Awin",
-      "url": "/work/awin/",
+      "url": "https://www.awin.com",
       "type": "file"
     }, {
       "id": "2",
@@ -23,11 +23,6 @@
       "id": "4",
       "name": "Wilson Fletcher",
       "url": "https://www.wilsonfletcher.com",
-      "type": "file"
-    }, {
-      "id": "5",
-      "name": "Neon",
-      "url": "https://www.neontv.co.nz",
       "type": "file"
     }
   ]

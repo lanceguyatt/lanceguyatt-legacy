@@ -36,7 +36,7 @@ class Window extends React.Component {
   }
 
   render() {
-    const { name, children, close, zoom, depth } = this.props;
+    const { name, alternateHeadline, children, close, zoom, depth } = this.props;
 
     const className = this.state.isSelected ? styles.windowSelected : styles.windowUnselected;
 
@@ -44,7 +44,7 @@ class Window extends React.Component {
       <div className={className}>
         <div className={styles.windowHeader}>
           {close ? <Close url={close} /> : null}
-          <Titlebar isWindow name={name} />
+          <Titlebar isWindow name={name} alternateHeadline={alternateHeadline} />
           {zoom ? <Zoom foo={this.handleZoom} /> : null}
           {depth ? <Depth handleClick={this.handleDepth} /> : null}
         </div>
@@ -60,6 +60,7 @@ class Window extends React.Component {
 
 Window.propTypes = {
   name: React.PropTypes.string,
+  alternateHeadline: React.PropTypes.string,
   close: React.PropTypes.string,
   zoom: React.PropTypes.bool,
   depth: React.PropTypes.bool,
@@ -67,7 +68,8 @@ Window.propTypes = {
 };
 
 Window.defaultProps = {
-  name: 'Titlebar name',
+  name: '',
+  alternateHeadline: '',
   close: '',
   zoom: false,
   depth: false,

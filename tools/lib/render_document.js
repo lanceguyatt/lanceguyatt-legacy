@@ -26,6 +26,7 @@ const renderDocument = (props) => {
         {links}
         {scripts}
         {cssBundle && <link rel="stylesheet" href={cssBundle} />}
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body>
         <div id="react-root" dangerouslySetInnerHTML={{ __html: body }} />
