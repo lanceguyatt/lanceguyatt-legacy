@@ -23,6 +23,12 @@ module.exports = {
     filename: 'scripts/[name]-[hash].js',
     publicPath: '/',
   },
+  resolve: {
+    alias: {
+      react: 'react-lite',
+      'react-dom': 'react-lite',
+    },
+  },
   module: {
     rules: [
 

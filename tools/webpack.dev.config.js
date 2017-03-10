@@ -17,6 +17,12 @@ module.exports = {
     libraryTarget: 'umd',
     publicPath: '/',
   },
+  resolve: {
+    alias: {
+      react: 'react-lite',
+      'react-dom': 'react-lite',
+    },
+  },
   module: {
     rules: [
 
