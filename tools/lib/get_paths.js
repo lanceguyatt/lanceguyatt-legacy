@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import isArray from 'lodash/isArray';
 import flattenDeep from 'lodash/flattenDeep';
 

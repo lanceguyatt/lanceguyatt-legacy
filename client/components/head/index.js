@@ -9,8 +9,10 @@ import logo from '../../static/logo.png';
 import appleTouchIcon from '../../static/apple-touch-icon.png';
 import favicon32x32 from '../../static/favicon-32x32.png';
 import favicon16x16 from '../../static/favicon-16x16.png';
+
 import robots from '../../static/robots.txt';
 import humans from '../../static/humans.txt';
+
 import favicon from '../../static/favicon.ico';
 
 const authorName = `${author.name.givenName} ${author.name.familyName}`;
@@ -27,6 +29,7 @@ const Head = ({ data }) => {
       titleTemplate="%s - Lance Guyatt, Web Developer"
       title={data.name}
       meta={[
+        { name: 'description', content: data.description },
         { property: 'og:site_name', content: site.name },
         { property: 'og:title', content: pageTitle },
         { property: 'og:description', content: data.description },
@@ -52,7 +55,7 @@ const Head = ({ data }) => {
         { rel: 'shortcut icon', href: favicon32x32, sizes: '32x32' },
         { rel: 'apple-touch-icon', href: appleTouchIcon, sizes: '180x180' },
         { rel: 'author', href: humans, type: 'text/plain' },
-        // { rel: 'manifest', href: manifest },
+        { rel: 'canonical', href: pageUrl },
       ]}
     />
   );
