@@ -1,15 +1,15 @@
 .file {
-  composes: link from '../../styles/foo.css';
+  composes: link from '../../styles/components/_link.css';
 }
 
 .file__image {
-  composes: linkImage from '../../styles/foo.css';
+  composes: linkImage from '../../styles/components/_link.css';
   background-image: url('./file_unselected.svg');
   size: 4.6rem 6.2rem;
 }
 
 .file__name {
-  composes: linkName from '../../styles/foo.css';
+  composes: linkName from '../../styles/components/_link.css';
 }
 
 .file {

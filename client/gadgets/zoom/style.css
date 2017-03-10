@@ -1,7 +1,7 @@
 :local {
 
   .zoom {
-    composes: foo from '../../styles/foo.css';
+    composes: icon from '../../styles/components/_icon.css';
     background-image: url('./zoom_unselected.svg');
     size: 2.3rem 2.2rem;
 

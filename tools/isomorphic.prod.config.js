@@ -9,11 +9,14 @@ module.exports = {
     icons: {
       extensions: ['svg'],
     },
-    hashed: {
-      extensions: ['woff2', 'eot', 'mp3'],
-    },
     named: {
       extensions: ['txt', 'ico', 'xml', 'html'],
+    },
+    audio: {
+      extensions: ['mp3'],
+    },
+    fonts: {
+      extensions: ['woff2', 'eot'],
     },
   },
 };

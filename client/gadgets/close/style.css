@@ -1,7 +1,7 @@
 :local {
 
   .close {
-    composes: foo from '../../styles/foo.css';
+    composes: icon from '../../styles/components/_icon.css';
     background-image: url('./close_unselected.svg');
     size: 2rem 2.2rem;
 

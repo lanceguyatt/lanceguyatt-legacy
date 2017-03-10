@@ -1,14 +1,5 @@
 @import 'settings/_colors';
 
-@font-face {
-  font-family: 'Topaz';
-  src: url('../fonts/topaz.eot');
-  src: url('../fonts/topaz.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/topaz.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   box-sizing: border-box;
   font-size: 10px;
@@ -20,13 +11,6 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-}
-
-body,
-button,
-input,
-a {
-  cursor: url(../images/cursor.svg), default
 }
 
 html,
@@ -52,6 +36,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body,
+button,
+input,
+a {
+  cursor: url(../images/cursor.svg), default
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   line-height: inherit;
@@ -67,12 +58,8 @@ button,
 input {
   appearance: none;
   background-color: transparent;
-  border: 0;
   border-radius: 0;
-}
-
-input,
-button {
+  border: 0;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -86,9 +73,15 @@ input {
   outline: 0;
 }
 
+@font-face {
+  font-family: 'Topaz';
+  src: url('../fonts/topaz.eot');
+  src: url('../fonts/topaz.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/topaz.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --topaz: 'Topaz', sans-serif;
 }
-
-@custom-media --breakpoint-md (min-width: 481px);

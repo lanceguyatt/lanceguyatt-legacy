@@ -1,3 +1,5 @@
+@import '../../styles/settings/_media_queries';
+
 @media (--breakpoint-md) {
 
   :local(.drawer) {
@@ -5,10 +7,4 @@
     size: 40rem;
     transform: translate(-50%, -50%);
   }
-}
-
-@custom-media --breakpoint-md (min-width: 768px);
-
-.handle {
-  padding: 10px;
 }

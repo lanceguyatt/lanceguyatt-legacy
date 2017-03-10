@@ -20,7 +20,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../build'),
-    filename: '[name]-[hash].js',
+    filename: 'scripts/[name]-[hash].js',
     publicPath: '/',
   },
   module: {
@@ -28,6 +28,7 @@ module.exports = {
 
       {
         test: /\.js$/,
+        include: [path.resolve(__dirname, '../client')],
         use: 'babel-loader',
       },
 
@@ -69,11 +70,25 @@ module.exports = {
       },
 
       {
-        test: webpackIsomorphicToolsPlugin.regular_expression('hashed'),
+        test: webpackIsomorphicToolsPlugin.regular_expression('audio'),
         use: [
           {
             loader: 'file-loader',
-            // options: {},
+            options: {
+              name: 'audio/[name].[ext]',
+            },
+          },
+        ],
+      },
+
+      {
+        test: webpackIsomorphicToolsPlugin.regular_expression('fonts'),
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'fonts/[name].[ext]',
+            },
           },
         ],
       },
@@ -96,7 +111,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
+              name: 'images/[name].[ext]',
             },
           },
           {
@@ -124,17 +139,35 @@ module.exports = {
       },
     }),
 
+    // new webpack.optimize.UglifyJsPlugin({
+    //   screw_ie8: true,
+    //   compressor: {
+    //     warnings: false,
+    //   },
+    // }),
+
     new webpack.optimize.UglifyJsPlugin({
-      screw_ie8: true,
-      compressor: {
+      output: {
+        comments: false,
+      },
+      compress: {
         warnings: false,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true,
+        negate_iife: false,
       },
     }),
 
     new webpack.optimize.AggressiveMergingPlugin(),
 
     new ExtractTextPlugin({
-      filename: 'bundle-[contenthash].css',
+      filename: 'styles/bundle-[contenthash].css',
       allChunks: true,
     }),
 
@@ -147,8 +180,7 @@ module.exports = {
     }),
 
     new CopyWebpackPlugin([
-      { from: './client/assets/manifest.json', to: './' },
-      // { from: './favicon.ico', to: './' },
+      { from: './client/static/manifest.json', to: './' },
     ]),
 
     webpackIsomorphicToolsPlugin,

@@ -5,15 +5,13 @@ import Helmet from 'react-helmet';
 import site from '../../../data/site.json';
 import author from '../../../data/author.json';
 
-// const manifest = require('file-loader?name=[name].[ext]!../../assets/manifest.json');
-
-import logo from '../../assets/logo.png';
-import appleTouchIcon from '../../assets/apple-touch-icon.png';
-import favicon32x32 from '../../assets/favicon-32x32.png';
-import favicon16x16 from '../../assets/favicon-16x16.png';
-import robots from '../../assets/robots.txt';
-import humans from '../../assets/humans.txt';
-import favicon from '../../assets/favicon.ico';
+import logo from '../../static/logo.png';
+import appleTouchIcon from '../../static/apple-touch-icon.png';
+import favicon32x32 from '../../static/favicon-32x32.png';
+import favicon16x16 from '../../static/favicon-16x16.png';
+import robots from '../../static/robots.txt';
+import humans from '../../static/humans.txt';
+import favicon from '../../static/favicon.ico';
 
 const authorName = `${author.name.givenName} ${author.name.familyName}`;
 

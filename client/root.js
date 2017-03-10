@@ -11,11 +11,11 @@ import { useScroll } from 'react-router-scroll';
 import ReactGA from 'react-ga';
 import routes from './routes';
 
-import './assets/myopenid-hosted-verification.html';
-import './assets/browserconfig.xml';
-import './assets/crossdomain.xml';
-import './assets/android-chrome-192x192.png';
-import './assets/android-chrome-512x512.png';
+import './static/myopenid-hosted-verification.html';
+import './static/browserconfig.xml';
+import './static/crossdomain.xml';
+import './static/android-chrome-192x192.png';
+import './static/android-chrome-512x512.png';
 
 ReactGA.initialize('UA-19641705-1');
 

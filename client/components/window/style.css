@@ -3,7 +3,6 @@
 :local {
 
   .window {
-    border: 1px solid red;
     border-image: url(./window-2.svg) 29 55 71 21 stretch;
     border-style: solid;
     border-width: 2.9rem 5.5rem 7.1rem 2.1rem;
