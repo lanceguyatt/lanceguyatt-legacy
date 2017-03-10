@@ -14,9 +14,9 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
 
 module.exports = {
-  devtool: false,
+  devtool: 'source-map',
   entry: {
-    bundle: './client/index.js',
+    bundle: ['./client/index.js'],
   },
   output: {
     path: path.resolve(__dirname, '../build'),
@@ -96,24 +96,17 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]?[hash]',
+              name: '[name].[ext]',
             },
           },
           {
             loader: 'image-webpack-loader',
             options: {
-              // mozjpeg: {
-              //   progressive: true,
-              // },
+              mozjpeg: {
+                progressive: true,
+              },
               optipng: {
                 optimizationLevel: 7,
-              },
-              // gifsicle: {
-              //   interlaced: false,
-              // },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
               },
             },
           },
@@ -138,19 +131,19 @@ module.exports = {
       },
     }),
 
-    new webpack.optimize.AggressiveMergingPlugin(), // Merge chunks
+    new webpack.optimize.AggressiveMergingPlugin(),
 
     new ExtractTextPlugin({
       filename: 'bundle-[contenthash].css',
       allChunks: true,
     }),
 
-    new CompressionPlugin({ // <-- Add this
-      asset: "[path].gz[query]",
-      algorithm: "gzip",
+    new CompressionPlugin({
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
-      minRatio: 0.8
+      minRatio: 0.8,
     }),
 
     new CopyWebpackPlugin([

@@ -4,7 +4,7 @@ module.exports = {
       extensions: ['css'],
     },
     images: {
-      extensions: ['png'],
+      extensions: ['png', 'jpg', 'gif'],
     },
     icons: {
       extensions: ['svg'],

@@ -14,11 +14,11 @@
   "scripts": {
     "dev": "babel-node ./tools/dev_server.js",
     "start": "serve build -s -c 1",
+    "clean": "rimraf build",
     "prestart": "npm run build",
-    "build": "npm run clean && npm run build:bundle && npm run build:static",
     "build:bundle": "cross-env NODE_ENV=production webpack --config ./tools/webpack.prod.config.js",
     "build:static": "cross-env NODE_ENV=production babel-node ./tools/build_static_entry.js",
-    "clean": "rimraf build",
+    "build": "npm run clean && npm run build:bundle && npm run build:static",
     "deploy": "npm run build && surge -p build -d lanceguyatt.com"
   },
   "plate_config": {
@@ -28,7 +28,7 @@
     "node": ">=4.4"
   },
   "dependencies": {
-    "history": "^4.6.0",
+    "history": "^3.0.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-fastclick": "^3.0.1",

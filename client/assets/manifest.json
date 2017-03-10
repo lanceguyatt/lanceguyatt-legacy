@@ -1,5 +1,12 @@
 {
-  "name": "Lance Guyatt",
+  "name": "Lance Guyatt, Web Developer",
+  "short_name": "Lance Guyatt",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#aaa",
+  "theme_color": "#000",
+  "display": "standalone",
   "icons": [
     {
       "src": "\/android-chrome-192x192.png",
@@ -12,6 +19,4 @@
       "type": "image\/png"
     }
   ],
-  "theme_color": "#aaaaaa",
-  "display": "standalone"
 }
