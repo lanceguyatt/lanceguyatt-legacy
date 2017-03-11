@@ -1,7 +1,6 @@
 @import '../../styles/settings/_colors';
 
 :local {
-
   .guru-meditation {
     align-items: center;
     background-color: var(--black);
@@ -26,19 +25,19 @@
 
 @keyframes showToastyGuy {
   0% {
-    right: -var(--toasty-width)
+    right: -var(--toasty-width);
   }
 
   40% {
-    right: 0
+    right: 0;
   }
 
   60% {
-    right: 0
+    right: 0;
   }
 
   100% {
-    right: -var(--toasty-width)
+    right: -var(--toasty-width);
   }
 }
 

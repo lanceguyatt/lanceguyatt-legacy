@@ -1,5 +1,4 @@
 :local {
-
   .zoom {
     composes: icon from '../../styles/components/_icon.css';
     background-image: url('./zoom_unselected.svg');

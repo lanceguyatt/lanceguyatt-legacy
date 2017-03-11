@@ -1,5 +1,4 @@
 :local {
-
   .depth {
     composes: icon from '../../styles/components/_icon.css';
     background-image: url('./depth_unselected.svg');

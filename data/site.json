@@ -1,6 +1,8 @@
 {
   "name": "Lance Guyatt, Web Developer",
-  "description": "London based Web Developer with over 12 years professional experience in developing web applications.",
+  "description": "Web Developer with over 12 years professional experience.",
   "url": "http://lanceguyatt.com",
-  "appId": "148190791903784"
+  "appId": "148190791903784",
+  "themeColor": "#aaaaaa",
+  "googleSiteVerification": "CXlRDD3qsGAOQzev-gtIxdWh06XdJYL0cdCmViVSEH8"
 }

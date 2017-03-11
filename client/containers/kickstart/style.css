@@ -1,5 +1,4 @@
 :local {
-
   .kickstart {
     background-color: var(--purple);
     color: var(--tumbleweed);
@@ -57,7 +56,6 @@
   }
 
   @media (--breakpoint-md) {
-
     .kickstart {
       flex-direction: row;
       align-items: center;
@@ -81,7 +79,6 @@
 }
 
 @keyframes insert-disk {
-
   0% {
     transform-origin: 0% 0%;
   }

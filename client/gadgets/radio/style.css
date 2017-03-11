@@ -1,8 +1,7 @@
 :local {
-
   .radio {
     overflow: hidden;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   .radio__label {
@@ -16,7 +15,7 @@
     background-image: url('./radio_unselected.svg');
     background-size: 100%;
     float: left;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     size: 1.7rem 1.8rem;
 
     &:checked {

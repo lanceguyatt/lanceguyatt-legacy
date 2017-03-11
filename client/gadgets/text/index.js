@@ -48,4 +48,13 @@ Text.propTypes = {
   placeholder: React.PropTypes.string,
 };
 
+Text.defaultProps = {
+  type: '',
+  id: '',
+  name: '',
+  label: '',
+  value: '',
+  placeholder: '',
+};
+
 export default Text;
