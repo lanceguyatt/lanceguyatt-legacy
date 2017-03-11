@@ -1,4 +1,4 @@
-/* eslint-disable import/no-unresolved, import/no-webpack-loader-syntax, no-unused-vars */
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 import Helmet from 'react-helmet';
 
@@ -10,10 +10,19 @@ import appleTouchIcon from '../../static/apple-touch-icon.png';
 import favicon32x32 from '../../static/favicon-32x32.png';
 import favicon16x16 from '../../static/favicon-16x16.png';
 
-import robots from '../../static/robots.txt';
 import humans from '../../static/humans.txt';
 
 import favicon from '../../static/favicon.ico';
+
+import '../../static/android-chrome-192x192.png';
+import '../../static/android-chrome-512x512.png';
+
+import '../../static/robots.txt';
+
+import '../../static/myopenid-hosted-verification.html';
+
+import '../../static/browserconfig.xml';
+import '../../static/crossdomain.xml';
 
 const authorName = `${author.name.givenName} ${author.name.familyName}`;
 
@@ -46,8 +55,8 @@ const Head = ({ data }) => {
         { name: 'twitter:url', content: pageUrl },
         { name: 'apple-mobile-web-app-title', content: authorName },
         { name: 'application-name', content: authorName },
-        { name: 'theme-color', content: '#aaaaaa' },
-        { name: 'google-site-verification', content: 'CXlRDD3qsGAOQzev-gtIxdWh06XdJYL0cdCmViVSEH8' },
+        { name: 'theme-color', content: site.themeColor },
+        { name: 'google-site-verification', content: site.googleSiteVerification},
       ]}
       link={[
         { rel: 'shortcut icon', href: favicon },
