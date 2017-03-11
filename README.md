@@ -3,7 +3,7 @@
 
 > Personal site built with:
 
-* [React](https://github.com/facebook/react)
+* [React Lite](https://github.com/Lucifier129/react-lite)
 * [React Router](https://github.com/reacttraining/react-router)
 * [Webpack](https://github.com/webpack/webpack)
 * [PostCSS](https://github.com/postcss/postcss)
