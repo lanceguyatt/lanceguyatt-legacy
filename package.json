@@ -1,7 +1,7 @@
 {
   "name": "lanceguyatt",
   "version": "2.0.5",
-  "description": "Personal Portfolio Site built with React, React Router, Webpack, PostCSS, CSS Modules, and Babel.",
+  "description": "Personal site built with React Lite, React Router, Webpack, PostCSS, CSS Modules, and Babel.",
   "license": "MIT",
   "keywords": [
     "react",
