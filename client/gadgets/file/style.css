@@ -13,10 +13,8 @@
 }
 
 .file {
-
   &:focus,
   &:active {
-
     .file__image {
       background-image: url('./file_selected.svg');
     }

@@ -1,5 +1,4 @@
 :local {
-
   .close {
     composes: icon from '../../styles/components/_icon.css';
     background-image: url('./close_unselected.svg');

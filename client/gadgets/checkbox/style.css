@@ -1,8 +1,7 @@
 :local {
-
   .checkbox {
     overflow: hidden;
-    margin-bottom: .8rem;
+    margin-bottom: 0.8rem;
   }
 
   .checkbox__label {
@@ -15,7 +14,7 @@
     background-image: url('./checkbox_unselected.svg');
     background-size: 100%;
     float: left;
-    margin-right: .7rem;
+    margin-right: 0.7rem;
     size: 2.6rem 2.2rem;
 
     &:checked {

@@ -1,22 +1,21 @@
 :local {
-
   .text {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   .text__label {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     user-select: none;
   }
 
   .text__input {
     border-image: url(./text.svg) 4 stretch;
     border-style: solid;
-    border-width: .4rem;
+    border-width: 0.4rem;
     display: inline-block;
     height: 2.8rem;
     min-width: 0;
-    padding: * .3rem;
+    padding: * 0.3rem;
     text-align: left;
     width: auto;
   }
