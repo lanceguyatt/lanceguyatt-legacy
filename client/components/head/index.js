@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
 import Helmet from 'react-helmet';
 
@@ -56,7 +55,7 @@ const Head = ({ data }) => {
         { name: 'apple-mobile-web-app-title', content: authorName },
         { name: 'application-name', content: authorName },
         { name: 'theme-color', content: site.themeColor },
-        { name: 'google-site-verification', content: site.googleSiteVerification},
+        { name: 'google-site-verification', content: site.googleSiteVerification },
       ]}
       link={[
         { rel: 'shortcut icon', href: favicon },
