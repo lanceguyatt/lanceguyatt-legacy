@@ -1,6 +1,5 @@
 module.exports = (config) => {
   config.set({
-    // basePath: '../',
     browsers: ['Chrome'],
     singleRun: true,
     frameworks: ['mocha'],
@@ -13,9 +12,9 @@ module.exports = (config) => {
     preprocessors: {
       'tests.webpack.js': ['webpack'],
     },
-    reporters: ['dots'], // report results in this format
-    webpack: { // kind of a copy of your webpack config
-      devtool: 'inline-source-map', // just do inline source maps instead of the default
+    reporters: ['dots'],
+    webpack: {
+      devtool: 'inline-source-map',
       module: {
         rules: [
           {
