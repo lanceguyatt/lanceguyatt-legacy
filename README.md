@@ -1,5 +1,6 @@
 # Lance Guyatt
-[![Dependency Status](https://david-dm.org/lanceguyatt/lanceguyatt-kit.svg?style=flat-square)](https://david-dm.org/lanceguyatt/lanceguyatt) [![devDependency Status](https://david-dm.org/lanceguyatt/lanceguyatt/dev-status.svg?style=flat-square)](https://david-dm.org/lanceguyatt/lanceguyatt#info=devDependencies)
+[![dependencies Status](https://david-dm.org/lanceguyatt/lanceguyatt/status.svg)](https://david-dm.org/lanceguyatt/lanceguyatt)
+[![devDependency Status](https://david-dm.org/lanceguyatt/lanceguyatt/dev-status.svg?style=flat-square)](https://david-dm.org/lanceguyatt/lanceguyatt#info=devDependencies)
 
 > Personal site built with:
 
