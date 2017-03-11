@@ -5,3 +5,4 @@ build/
 nginx.conf
 webpack-assets.json
 npm-debug**
+.env
