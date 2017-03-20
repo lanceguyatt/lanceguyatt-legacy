@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import site from '../../../data/site.json';
 import author from '../../../data/author.json';
 
-import logo from '../../static/logo.png';
+import logo from '../../static/share.png';
 import appleTouchIcon from '../../static/apple-touch-icon.png';
 import favicon32x32 from '../../static/favicon-32x32.png';
 import favicon16x16 from '../../static/favicon-16x16.png';
@@ -22,6 +22,7 @@ import '../../static/myopenid-hosted-verification.html';
 
 import '../../static/browserconfig.xml';
 import '../../static/crossdomain.xml';
+import '../../static/loadtestertool.xml';
 
 const authorName = `${author.name.givenName} ${author.name.familyName}`;
 
@@ -43,11 +44,13 @@ const Head = ({ data }) => {
         { property: 'og:description', content: data.description },
         { property: 'og:url', content: pageUrl },
         { property: 'og:image', content: pageImage },
+        { property: 'og:image:width', content: 1200 },
+        { property: 'og:image:height', content: 630 },
         { property: 'og:type', content: 'website' },
-        { property: 'fb:app_id', content: site.appId },
-        { property: 'fb:admins', content: '781041907' },
-        { name: 'twitter:site', content: author.twitter },
+        { property: 'fb:app_id', content: site.fbAppId },
+        { property: 'fb:admins', content: site.fbAdmins },
         { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: author.twitter },
         { name: 'twitter:title', content: pageTitle },
         { name: 'twitter:description', content: data.description },
         { name: 'twitter:image:src', content: pageImage },
@@ -56,7 +59,9 @@ const Head = ({ data }) => {
         { name: 'application-name', content: authorName },
         { name: 'theme-color', content: site.themeColor },
         { name: 'google-site-verification', content: site.googleSiteVerification },
+        { name: 'msvalidate.01', content: site.msValidate },
       ]}
+
       link={[
         { rel: 'shortcut icon', href: favicon },
         { rel: 'shortcut icon', href: favicon16x16, sizes: '16x16' },
