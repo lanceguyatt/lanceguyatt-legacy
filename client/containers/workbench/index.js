@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import moment from 'moment';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
@@ -9,9 +8,7 @@ import Directory from '../../components/directory/';
 
 import styles from './style.css';
 
-import site from '../../../data/site.json';
-
-const copyrightYear = moment().format('YYYY');
+import site from '../../../data/site/';
 
 class WorkBench extends React.Component {
   constructor(props) {
@@ -35,7 +32,7 @@ class WorkBench extends React.Component {
     return (
       <div className={styles.workbench}>
         <Head data={data} />
-        <Titlebar name={`${site.name}. Copyright © 2000-${copyrightYear}. All Rights Reserved`} />
+        <Titlebar name={`${site.name}. Copyright © 2000-${site.copyrightYear}. All Rights Reserved`} />
         <Window close="/kickstart/" name={data.name} alternateHeadline={data.alternateHeadline} zoom depth>
           <Directory items={data.items} />
         </Window>

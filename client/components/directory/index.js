@@ -12,7 +12,7 @@ const DirectoryItem = ({ item }) => (
 );
 
 DirectoryItem.propTypes = {
-  item: React.PropTypes.object,
+  item: React.PropTypes.obj,
 };
 
 DirectoryItem.defaultProps = {

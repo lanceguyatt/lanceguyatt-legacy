@@ -1,6 +1,6 @@
 const work = {
   name: 'Work',
-  description: 'Work',
+  description: 'Work description',
   url: '/work',
   parent: '/',
   items: [

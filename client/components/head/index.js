@@ -1,8 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import site from '../../../data/site.json';
-import author from '../../../data/author.json';
+import site from '../../../data/site/';
+import author from '../../../data/author/';
 
 import logo from '../../static/share.png';
 import appleTouchIcon from '../../static/apple-touch-icon.png';
