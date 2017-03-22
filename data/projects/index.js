@@ -16,11 +16,6 @@ const projects = {
       name: 'Glup Starter',
       url: 'https://github.com/lanceguyatt/gulpstarter/',
       type: 'file',
-    }, {
-      id: 3,
-      name: 'CV',
-      url: 'https://github.com/lanceguyatt/cv/',
-      type: 'file',
     },
   ],
 };
