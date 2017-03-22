@@ -1,8 +1,10 @@
 const about = {
+  id: 3,
   name: 'About',
   description: 'About',
   url: '/about',
   parent: '/',
+  type: 'drawer',
   items: [
     {
       id: 1,
@@ -28,4 +30,4 @@ const about = {
   ],
 };
 
-module.exports = about;
+export default about;

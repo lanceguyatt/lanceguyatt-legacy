@@ -13,6 +13,11 @@ const workbench = {
       type: 'drawer',
     }, {
       id: '2',
+      name: 'Projects',
+      url: '/projects/',
+      type: 'drawer',
+    }, {
+      id: '3',
       name: 'About',
       url: '/about/',
       type: 'drawer',
@@ -20,4 +25,4 @@ const workbench = {
   ],
 };
 
-module.exports = workbench;
+export default workbench;

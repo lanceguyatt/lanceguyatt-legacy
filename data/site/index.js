@@ -13,4 +13,4 @@ const site = {
   msValidate: 'DC81176D37CD3A19110885AD38AF2C10',
 };
 
-module.exports = site;
+export default site;

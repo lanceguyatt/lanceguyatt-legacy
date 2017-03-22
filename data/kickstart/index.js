@@ -4,4 +4,4 @@ const kickstart = {
   url: '/kickstart',
 };
 
-module.exports = kickstart;
+export default kickstart;

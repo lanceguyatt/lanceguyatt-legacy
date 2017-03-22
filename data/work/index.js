@@ -1,8 +1,10 @@
 const work = {
+  id: 1,
   name: 'Work',
   description: 'Work description',
   url: '/work',
   parent: '/',
+  type: 'drawer',
   items: [
     {
       id: 1,
@@ -28,4 +30,4 @@ const work = {
   ],
 };
 
-module.exports = work;
+export default work;

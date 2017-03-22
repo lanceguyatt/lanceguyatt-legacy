@@ -4,4 +4,4 @@ const guruMeditation = {
   url: '/guru-meditation',
 };
 
-module.exports = guruMeditation;
+export default guruMeditation;
