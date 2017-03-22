@@ -1,9 +1,7 @@
-import { description } from '../site/';
-
 const workbench = {
   name: '',
   alternateHeadline: 'Workbench',
-  description,
+  description: 'Web developer with over 12 years of professional experience',
   url: '/',
   items: [
     {

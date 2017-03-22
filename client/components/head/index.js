@@ -16,11 +16,14 @@ import favicon from '../../static/favicon.ico';
 import '../../static/android-chrome-192x192.png';
 import '../../static/android-chrome-512x512.png';
 
+// import safariPinnedTab from '../../static/safari-pinned-tab.svg';
+// import manifest from '../../static/manifest.json';
+
 import '../../static/robots.txt';
 
 import '../../static/myopenid-hosted-verification.html';
 
-import '../../static/browserconfig.xml';
+import browserConfig from '../../static/browserconfig.xml';
 import '../../static/crossdomain.xml';
 import '../../static/loadtestertool.xml';
 
@@ -33,7 +36,7 @@ const Head = ({ data }) => {
 
   return (
     <Helmet
-      htmlAttributes={{ lang: 'en' }}
+      htmlAttributes
       defaultTitle={site.name}
       titleTemplate="%s - Lance Guyatt, Web Developer"
       title={data.name}
@@ -50,12 +53,16 @@ const Head = ({ data }) => {
         { property: 'fb:app_id', content: site.fbAppId },
         { property: 'fb:admins', content: site.fbAdmins },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:site', content: author.twitter },
+        { name: 'twitter:site', content: author.twitter.name },
         { name: 'twitter:title', content: pageTitle },
         { name: 'twitter:description', content: data.description },
         { name: 'twitter:image:src', content: pageImage },
         { name: 'twitter:url', content: pageUrl },
+        { itemprop: 'name', content: pageTitle },
+        { itemprop: 'description', content: data.description },
+        { itemprop: 'url', content: pageUrl },
         { name: 'apple-mobile-web-app-title', content: authorName },
+        { name: 'msapplication-config', content: browserConfig },
         { name: 'application-name', content: authorName },
         { name: 'theme-color', content: site.themeColor },
         { name: 'google-site-verification', content: site.googleSiteVerification },
@@ -67,6 +74,8 @@ const Head = ({ data }) => {
         { rel: 'shortcut icon', href: favicon16x16, sizes: '16x16' },
         { rel: 'shortcut icon', href: favicon32x32, sizes: '32x32' },
         { rel: 'apple-touch-icon', href: appleTouchIcon, sizes: '180x180' },
+        // { rel: 'manifest', href: '/manifest.json' },
+        // { rel: 'mask-icon', href: safariPinnedTab, color: site.themeColor },
         { rel: 'author', href: humans, type: 'text/plain' },
         { rel: 'canonical', href: pageUrl },
       ]}

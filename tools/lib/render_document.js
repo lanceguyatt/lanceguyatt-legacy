@@ -1,5 +1,9 @@
+/* eslint react/no-danger: 0 */
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+
+import site from '../../data/site/';
+import author from '../../data/author';
 
 /**
  * Render an html document from a template.
@@ -8,35 +12,52 @@ import { renderToStaticMarkup } from 'react-dom/server';
  */
 const renderDocument = (props) => {
   const Html = ({
-    Title = [<title key={1}>Title</title>],
+    title = [<title key={1}>{site.name}</title>],
     metas = [],
-    links = [<link key={1} rel="shortcut icon" href="#" />],
+    links = [],
     scripts,
     cssBundle,
     jsBundle = '/bundle.js',
     body = '',
   }) => (
-    <html lang="en">
+    <html lang={site.lang} itemScope itemType="http://schema.org/WebPage">
       <head>
         <meta charSet="utf-8" />
+        {title}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {Title}
         {metas}
         {links}
         {scripts}
         {cssBundle && <link rel="stylesheet" href={cssBundle} />}
-        <link rel="manifest" href="/manifest.json" />
+        { /* <link rel="manifest" href="/manifest.json" /> */ }
       </head>
       <body>
         <div id="react-root" dangerouslySetInnerHTML={{ __html: body }} />
         <script src={jsBundle} />
+        <meta itemProp="dateCreated" content={site.dateCreated} />
+        <meta itemProp="datePublished" content={site.datePublished} />
+        <meta itemProp="dateModified" content={site.dateModified} />
+        <meta itemProp="copyrightYear" content={site.copyrightYear} />
+        <div itemProp="author" itemScope itemType="http://schema.org/Person">
+          <div itemProp="name">
+            <meta itemProp="givenName" content={author.name.givenName} />
+            <meta itemProp="familyName" content={author.name.familyName} />
+          </div>
+          <meta itemProp="description" content={author.description} />
+          <meta itemProp="url" content={author.url} />
+          <meta itemProp="jobTitle" content={author.jobTitle} />
+          <div itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
+            <meta itemProp="addressLocality" content={author.address.addressLocality} />
+            <meta itemProp="addressCountry" content={author.address.addressCountry} />
+          </div>
+        </div>
       </body>
     </html>
   );
 
   Html.propTypes = {
-    Title: React.PropTypes.node,
+    title: React.PropTypes.node,
     metas: React.PropTypes.node,
     links: React.PropTypes.node,
     scripts: React.PropTypes.node,
@@ -55,7 +76,7 @@ const renderDocument = (props) => {
   //   body: '',
   // };
 
-  return `<!doctype html>${renderToStaticMarkup(<Html {...props} />)}`;
+  return `<!DOCTYPE html>${renderToStaticMarkup(<Html {...props} />)}`;
 };
 
 export default renderDocument;
