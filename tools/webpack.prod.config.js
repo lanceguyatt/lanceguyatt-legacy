@@ -100,7 +100,8 @@ module.exports = {
       },
 
       {
-        test: webpackIsomorphicToolsPlugin.regular_expression('named'),
+        test: webpackIsomorphicToolsPlugin.regular_expression('static'),
+        include: [path.resolve(__dirname, '../client/static')],
         use: [
           {
             loader: 'file-loader',

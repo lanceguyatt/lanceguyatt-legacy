@@ -9,7 +9,7 @@ module.exports = {
     icons: {
       extensions: ['svg'],
     },
-    named: {
+    static: {
       extensions: ['txt', 'ico', 'xml', 'html'],
     },
     audio: {
