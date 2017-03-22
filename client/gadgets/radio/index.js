@@ -40,4 +40,12 @@ Radio.propTypes = {
   checked: React.PropTypes.string,
 };
 
+Radio.defaultProps = {
+  id: '',
+  name: '',
+  value: '',
+  label: '',
+  checked: '',
+};
+
 export default Radio;

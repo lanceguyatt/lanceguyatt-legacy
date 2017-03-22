@@ -3,7 +3,7 @@
 .alert {
   animation: pulse 1.5s infinite ease-in-out;
   border-style: solid;
-  border-width: .6rem;
+  border-width: 0.6rem;
   line-height: 1.875;
   margin: 1rem;
   max-width: 64rem;

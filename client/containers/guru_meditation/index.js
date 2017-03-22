@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-
+/* eslint no-undef: 0 */
 import React from 'react';
 
 import Head from '../../components/head/';

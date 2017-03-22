@@ -1,7 +1,6 @@
 @import '../../styles/settings/_colors.css';
 
 :local {
-
   .window {
     border-image: url(./window-2.svg) 29 55 71 21 stretch;
     border-style: solid;

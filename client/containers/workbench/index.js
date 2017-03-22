@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint: import/no-extraneous-dependencie: 0 */
 import React from 'react';
 
 import Head from '../../components/head/';
