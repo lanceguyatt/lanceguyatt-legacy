@@ -1,4 +1,4 @@
-/* eslint-disxable */
+/* eslint no-undef: 0 */
 import React, { TestUtils } from 'react';
 // import TestUtils from 'react/lib/ReactTestUtils');
 import File from '../index';

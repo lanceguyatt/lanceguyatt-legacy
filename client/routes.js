@@ -7,17 +7,19 @@ import Drawer from './components/drawer/';
 import KickStart from './containers/kickstart/';
 import GuruMeditation from './containers/guru_meditation/';
 
-import workbench from '../data/index.json';
-import work from '../data/work/index.json';
-import about from '../data/about/index.json';
-import kickstart from '../data/kickstart/index.json';
-import guruMeditation from '../data/guru_meditation/index.json';
+import workbench from '../data/workbench/';
+import work from '../data/work/';
+import projects from '../data/projects/';
+import about from '../data/about/';
+import kickstart from '../data/kickstart/';
+import guruMeditation from '../data/guru_meditation/';
 
 const routes = (
   <div>
     <Route component={App}>
       <Route path="/" component={WorkBench} data={workbench}>
         <Route path="/work/" component={Drawer} data={work} />
+        <Route path="/projects/" component={Drawer} data={projects} />
         <Route path="/about/" component={Drawer} data={about} />
       </Route>
       <Route path="/kickstart/" component={KickStart} data={kickstart} />

@@ -1,12 +1,12 @@
 @import '../../styles/settings/_colors.css';
 
 .titlebar {
-  border-top: .2rem solid transparent;
-  border-bottom: .2rem solid transparent;
+  border-top: 0.2rem solid transparent;
+  border-bottom: 0.2rem solid transparent;
   line-height: 1.125;
   height: var(--titlebar-height);
   overflow: hidden;
-  padding: * .5rem;
+  padding: * 0.5rem;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;

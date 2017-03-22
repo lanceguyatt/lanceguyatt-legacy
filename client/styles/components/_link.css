@@ -1,6 +1,6 @@
 .link {
   display: block;
-  padding: .5rem;
+  padding: 0.5rem;
   user-select: none;
   width: 10rem;
   outline: 0;
@@ -10,7 +10,7 @@
   background-repeat: no-repeat;
   background-size: 100%;
   display: block;
-  margin: * auto .5rem;
+  margin: * auto 0.5rem;
 }
 
 .link__name {

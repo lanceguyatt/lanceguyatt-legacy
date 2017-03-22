@@ -50,4 +50,12 @@ Checkbox.propTypes = {
   checked: React.PropTypes.bool,
 };
 
+Checkbox.defaultProps = {
+  id: '',
+  name: '',
+  value: '',
+  label: '',
+  checked: '',
+};
+
 export default Checkbox;

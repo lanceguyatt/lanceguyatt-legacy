@@ -20,7 +20,7 @@ Drawer.propTypes = {
 Drawer.defaultProps = {
   item: {
     name: '',
-    url: '#',
+    url: '',
   },
 };
 

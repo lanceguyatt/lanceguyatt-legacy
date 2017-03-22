@@ -1,12 +1,10 @@
-/* eslint-disxable */
+/* eslint no-undef: 0 */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import expect from 'expect';
 import App from '../index';
 
-describe('App', function () {
-  it('loads without problems', function () {
-    require('../index');
-  });
+describe(App, () => {
+  it('loads without problems', () => require('../index'));
 });
