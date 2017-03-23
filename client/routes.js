@@ -2,30 +2,14 @@ import React from 'react';
 import { Route } from 'react-router';
 
 import App from './containers/app/';
-import WorkBench from './containers/workbench/';
-import Drawer from './components/drawer/';
-import KickStart from './containers/kickstart/';
-import GuruMeditation from './containers/guru_meditation/';
-
-import workbench from '../data/workbench/';
-import work from '../data/work/';
-import projects from '../data/projects/';
-import about from '../data/about/';
-import kickstart from '../data/kickstart/';
-import guruMeditation from '../data/guru_meditation/';
+import Home from './containers/home/';
+import Start from './containers/start/';
 
 const routes = (
   <div>
     <Route component={App}>
-      <Route path="/" component={WorkBench} data={workbench}>
-        <Route path="/work/" component={Drawer} data={work} />
-        <Route path="/projects/" component={Drawer} data={projects} />
-        <Route path="/about/" component={Drawer} data={about} />
-      </Route>
-      <Route path="/kickstart/" component={KickStart} data={kickstart} />
-      <Route path="/guru-meditation/" component={GuruMeditation} status={404} data={guruMeditation} />
-      <Route path="404" component={GuruMeditation} status={404} data={guruMeditation} />
-      <Route path="*" component={GuruMeditation} status={404} data={guruMeditation} />
+      <Route path="/" component={Home} />
+      <Route path="/signup/start" component={Start} />
     </Route>
   </div>
 );
