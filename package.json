@@ -1,7 +1,7 @@
 {
-  "name": "thechapar",
-  "version": "1.0.0",
-  "description": "Personal Styling For Men",
+  "name": "lanceguyatt",
+  "version": "2.0.5",
+  "description": "Personal site built with React Lite, React Router, Webpack, PostCSS, CSS Modules, and Babel.",
   "license": "MIT",
   "keywords": [
     "react",
@@ -19,7 +19,7 @@
     "build:bundle": "cross-env NODE_ENV=production webpack --config ./tools/webpack.prod.config.js",
     "build:static": "cross-env NODE_ENV=production babel-node ./tools/build_static_entry.js",
     "build": "npm run clean && npm run build:bundle && npm run build:static",
-    "deploy": "npm run build && surge -p build -d chapar.surge.com",
+    "deploy": "npm run build && surge -p build -d lanceguyatt.com",
     "test": "./node_modules/karma/bin/karma start ./test/karma.conf.js"
   },
   "plate_config": {
@@ -93,17 +93,9 @@
     "webpack-hot-middleware": "^2.13.2",
     "webpack-isomorphic-tools": "^3.0.0"
   },
-  "author": "Lance Guyatt <lance@lanceguyatt.com>",
+  "author": "Lance Guyatt",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/lanceguyatt/lanceguyatt.git"
-  },
-  "bugs": {
-    "url": "https://github.com/lanceguyatt/lanceguyatt/issues"
-  },
-  "homepage": "https://github.com/lanceguyatt/lanceguyatt#readme",
-  "main": "postcss.config.js",
-  "directories": {
-    "test": "test"
+    "url": "git@github.com:lanceguyatt/lanceguyatt.git"
   }
 }

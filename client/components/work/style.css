@@ -1,0 +1,11 @@
+@media (--breakpoint-md) {
+  :local {
+    .work {
+      position: absolute 50% * * 50%;
+      size: 30rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@custom-media --breakpoint-md (min-width: 768px);

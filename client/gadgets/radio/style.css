@@ -1,0 +1,25 @@
+:local {
+  .radio {
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+
+  .radio__label {
+    user-select: none;
+    line-height: 1.8rem;
+    float: left;
+  }
+
+  .radio__input {
+    appearance: none;
+    background-image: url('./radio_unselected.svg');
+    background-size: 100%;
+    float: left;
+    margin-right: 0.5rem;
+    size: 1.7rem 1.8rem;
+
+    &:checked {
+      background-image: url('./radio_selected.svg');
+    }
+  }
+}

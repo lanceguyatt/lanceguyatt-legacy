@@ -2,9 +2,9 @@
 const moment = require('moment');
 
 const site = {
-  name: 'The Chapar',
-  description: 'Personal Styling Service For Men. Great clothes, hand-picked for you, without the hassle of going shopping',
-  url: 'http://www.thechapar.com/',
+  name: 'Lance Guyatt, Web Developer',
+  description: 'Web developer with over 12 years of professional experience.',
+  url: 'http://lanceguyatt.com',
   fbAppId: '148190791903784',
   fbAdmins: '781041907',
   themeColor: '#aaa',

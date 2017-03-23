@@ -63,7 +63,7 @@ module.exports = {
       },
 
       {
-        test: /\.(png|woff2|eot|xml|txt|ico|html)$/,
+        test: /\.(png|woff2|eot|mp3|xml|txt|ico|html)$/,
         use: [
           {
             loader: 'file-loader',

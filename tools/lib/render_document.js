@@ -3,6 +3,7 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import site from '../../data/site/';
+import author from '../../data/author';
 
 /**
  * Render an html document from a template.
@@ -34,6 +35,23 @@ const renderDocument = (props) => {
       <body>
         <div id="react-root" dangerouslySetInnerHTML={{ __html: body }} />
         <script src={jsBundle} />
+        <meta itemProp="dateCreated" content={site.dateCreated} />
+        <meta itemProp="datePublished" content={site.datePublished} />
+        <meta itemProp="dateModified" content={site.dateModified} />
+        <meta itemProp="copyrightYear" content={site.copyrightYear} />
+        <div itemProp="author" itemScope itemType="http://schema.org/Person">
+          <div itemProp="name">
+            <meta itemProp="givenName" content={author.name.givenName} />
+            <meta itemProp="familyName" content={author.name.familyName} />
+          </div>
+          <meta itemProp="description" content={author.description} />
+          <meta itemProp="url" content={author.url} />
+          <meta itemProp="jobTitle" content={author.jobTitle} />
+          <div itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
+            <meta itemProp="addressLocality" content={author.address.addressLocality} />
+            <meta itemProp="addressCountry" content={author.address.addressCountry} />
+          </div>
+        </div>
       </body>
     </html>
   );
