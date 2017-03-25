@@ -1,7 +1,6 @@
 export default {
-  id: 2,
   name: 'Projects',
-  description: 'Projects description',
+  description: 'Side projects',
   url: '/projects',
   parent: '/',
   type: 'drawer',

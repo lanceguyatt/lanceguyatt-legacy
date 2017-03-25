@@ -21,7 +21,7 @@ DirectoryItem.defaultProps = {
 
 const Directory = ({ items, wrap }) => {
   const renderItems = items.map(item => (
-    <DirectoryItem item={item} key={item.id} /> : null),
+    <DirectoryItem item={item} key={item.url} /> : null),
   );
   return (
     <nav>

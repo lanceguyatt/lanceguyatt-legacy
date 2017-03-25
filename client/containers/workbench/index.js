@@ -29,8 +29,6 @@ export default class WorkBench extends Component {
 
     return (
       <ReactCSSTransitionGroup
-        className={styles.workbench}
-        component="div"
         transitionAppear
         transitionName={transitions}
         transitionAppearTimeout={300}

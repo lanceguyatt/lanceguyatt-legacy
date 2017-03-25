@@ -1,3 +1,5 @@
+@import '../../styles/settings/';
+
 :local {
   .kickstart {
     background-color: var(--purple);
@@ -98,5 +100,3 @@
   --purple: #401040;
   --tumbleweed: #e0a080;
 }
-
-@custom-media --breakpoint-md (min-width: 768px);

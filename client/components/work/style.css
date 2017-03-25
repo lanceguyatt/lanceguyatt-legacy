@@ -1,11 +1,12 @@
+@import '../../styles/settings/';
+
 @media (--breakpoint-md) {
   :local {
     .work {
       position: absolute 50% * * 50%;
-      size: 30rem;
+      size: 60rem 40rem;
       transform: translate(-50%, -50%);
+      min-height: 100%;
     }
   }
 }
-
-@custom-media --breakpoint-md (min-width: 768px);

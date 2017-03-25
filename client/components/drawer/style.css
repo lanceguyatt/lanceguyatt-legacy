@@ -1,4 +1,4 @@
-@import '../../styles/settings/_media_queries';
+@import '../../styles/settings/';
 
 @media (--breakpoint-md) {
   :local {

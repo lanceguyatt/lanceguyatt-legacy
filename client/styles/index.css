@@ -1,91 +1,11 @@
-@import 'settings/_colors';
+@import 'settings/';
+@import 'generic/';
+@import 'elements/';
+@import 'objects/';
+@import 'components/';
+@import 'utilities/';
 
-html {
-  box-sizing: border-box;
-  font-size: 10px;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  height: 100%;
-  min-height: 100%;
-
-  > div {
-    height: 100%;
-  }
-}
-
-body {
-  background-color: var(--gray);
-  color: var(--black);
-  font-family: var(--topaz);
-  font-size: 1.6rem;
-  line-height: 1.25;
-  overflow: hidden;
-  text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-body,
-button,
-input,
-a {
-  cursor: url(../images/cursor.svg), default;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: inherit;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input {
-  appearance: none;
-  background-color: transparent;
-  border-radius: 0;
-  border: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-button {
-  user-select: none;
-}
-
-input {
-  outline: 0;
-}
-
-@font-face {
-  font-family: 'Topaz';
-  src: url('../fonts/topaz.eot');
-  src: url('../fonts/topaz.eot?#iefix') format('embedded-opentype'), url('../fonts/topaz.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-:root {
-  --topaz: 'Topaz', sans-serif;
+:global {
+  #react-root { height: 100%; }
+  .u-h100 { height: 100%; }
 }

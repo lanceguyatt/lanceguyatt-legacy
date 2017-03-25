@@ -1,9 +1,9 @@
 .drawer {
-  composes: link from '../../styles/components/_link.css';
+  composes: link from '../../styles/components/link.css';
 }
 
 .drawer__image {
-  composes: linkImage from '../../styles/components/_link.css';
+  composes: linkImage from '../../styles/components/link.css';
   background-image: url('./drawer_unselected.svg');
   size: 6.5rem 3.8rem;
 }
@@ -15,5 +15,5 @@
 }
 
 .drawer__name {
-  composes: linkName from '../../styles/components/_link.css';
+  composes: linkName from '../../styles/components/link.css';
 }
