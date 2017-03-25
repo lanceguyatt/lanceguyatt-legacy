@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
@@ -6,16 +6,32 @@ import Directory from '../../components/directory/';
 
 import styles from './style.css';
 
-class Drawer extends React.Component {
+export default class Drawer extends Component {
+
+  static propTypes = {
+    route: PropTypes.shape({
+      data: PropTypes.shape(),
+    }),
+    children: PropTypes.node,
+  };
+
+  static defaultProps = {
+    route: {
+      data: {},
+    },
+    children: '',
+  };
+
   componentDidMount() {}
 
   render() {
     const { data } = this.props.route;
+    const { name, parent } = data;
 
     return (
       <div className={styles.drawer}>
         <Head data={data} />
-        <Window close={data.parent} zoom depth name={data.name}>
+        <Window close={parent} name={name} transition>
           {data.items ? <Directory items={data.items} wrap /> : null}
         </Window>
         {this.props.children}
@@ -23,19 +39,3 @@ class Drawer extends React.Component {
     );
   }
 }
-
-Drawer.propTypes = {
-  route: React.PropTypes.shape({
-    data: React.PropTypes.shape(),
-  }),
-  children: React.PropTypes.node,
-};
-
-Drawer.defaultProps = {
-  route: {
-    data: {},
-  },
-  children: '',
-};
-
-export default Drawer;

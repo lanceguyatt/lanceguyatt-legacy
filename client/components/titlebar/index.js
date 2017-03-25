@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import styles from './style.css';
 
@@ -10,9 +10,9 @@ const Titlebar = ({ name, alternateHeadline, isWindow }) => {
 };
 
 Titlebar.propTypes = {
-  name: React.PropTypes.string,
-  alternateHeadline: React.PropTypes.string,
-  isWindow: React.PropTypes.bool,
+  name: PropTypes.string,
+  alternateHeadline: PropTypes.string,
+  isWindow: PropTypes.bool,
 };
 
 Titlebar.defaultProps = {

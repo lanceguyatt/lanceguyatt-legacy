@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
@@ -7,7 +7,20 @@ import Action from '../../gadgets/action/';
 
 import styles from './style.css';
 
-class Work extends React.Component {
+export default class Work extends Component {
+
+  static propTypes = {
+    route: PropTypes.shape({
+      data: PropTypes.shape(),
+    }),
+  };
+
+  static defaultProps = {
+    route: {
+      data: {},
+    },
+  };
+
   componentDidMount() {}
 
   render() {
@@ -22,17 +35,3 @@ class Work extends React.Component {
     );
   }
 }
-
-Work.propTypes = {
-  route: React.PropTypes.shape({
-    data: React.PropTypes.shape(),
-  }),
-};
-
-Work.defaultProps = {
-  route: {
-    data: {},
-  },
-};
-
-export default Work;

@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import Head from '../../components/head/';
 
+import site from '../../../data/site/';
+import author from '../../../data/author/';
+
 import styles from './style.css';
 
-class KickStart extends React.Component {
+export default class KickStart extends Component {
+
+  static propTypes = {
+    route: PropTypes.shape(),
+  };
+
+  static defaultProps = {
+    route: {},
+  };
 
   componentDidMount() {}
 
@@ -21,9 +32,9 @@ class KickStart extends React.Component {
             <p>
               2.0 Roms (37.350)
               <br />
-              Copyright &copy; 2000-2017
+              Copyright &copy; {site.dateCreated.substr(0, 4)}-{site.copyrightYear}
               <br />
-              Lance Guyatt, Inc.
+              {author.name.givenName} {author.name.familyName}, Inc.
               <br />
               All Rights Reserved
             </p>
@@ -38,13 +49,3 @@ class KickStart extends React.Component {
     );
   }
 }
-
-KickStart.propTypes = {
-  route: React.PropTypes.shape(),
-};
-
-KickStart.defaultProps = {
-  route: {},
-};
-
-export default KickStart;

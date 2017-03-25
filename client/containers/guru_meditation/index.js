@@ -1,5 +1,5 @@
 /* eslint no-undef: 0 */
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Head from '../../components/head/';
 import Alert from '../../components/alert/';
@@ -21,7 +21,15 @@ const toastyMp3 = {
   type: 'audio/mp3',
 };
 
-class GuruMeditation extends React.Component {
+export default class GuruMeditation extends Component {
+  static propTypes = {
+    route: PropTypes.shape(),
+  };
+
+  static defaultProps = {
+    route: {},
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -56,7 +64,6 @@ class GuruMeditation extends React.Component {
 
   whichAnimationEvent() {
     const el = document.createElement('fakeelement');
-
     const animations = {
       animation: 'animationend',
       OAnimation: 'oAnimationEnd',
@@ -73,14 +80,9 @@ class GuruMeditation extends React.Component {
     }
   }
 
-
   render() {
     const { data } = this.props.route;
-
-
-    const image = {
-      backgroundImage: `url(${toast})`,
-    };
+    const image = { backgroundImage: `url(${toast})` };
 
     return (
       <div className={styles.guruMeditation}>
@@ -96,13 +98,3 @@ class GuruMeditation extends React.Component {
     );
   }
 }
-
-GuruMeditation.propTypes = {
-  route: React.PropTypes.shape(),
-};
-
-GuruMeditation.defaultProps = {
-  route: {},
-};
-
-export default GuruMeditation;

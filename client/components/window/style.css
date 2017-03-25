@@ -40,7 +40,7 @@
   .window__main {
     background-color: var(--gray);
     overflow: scroll;
-    position: absolute -.7rem -3.7rem -5.1rem -1.7rem;
+    position: absolute -0.7rem -3.7rem -5.1rem -1.7rem;
     -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
 

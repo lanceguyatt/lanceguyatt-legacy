@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import styles from './style.css';
@@ -12,10 +12,10 @@ const Alert = ({ alert }) => (
 );
 
 Alert.propTypes = {
-  alert: React.PropTypes.shape({
-    name: React.PropTypes.string,
-    description: React.PropTypes.string,
-    url: React.PropTypes.string,
+  alert: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    url: PropTypes.string,
   }),
 };
 

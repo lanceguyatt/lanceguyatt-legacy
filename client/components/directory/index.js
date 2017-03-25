@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import File from '../../gadgets/file/';
 import Drawer from '../../gadgets/drawer/';
@@ -12,7 +12,7 @@ const DirectoryItem = ({ item }) => (
 );
 
 DirectoryItem.propTypes = {
-  item: React.PropTypes.obj,
+  item: PropTypes.obj,
 };
 
 DirectoryItem.defaultProps = {
@@ -33,8 +33,8 @@ const Directory = ({ items, wrap }) => {
 };
 
 Directory.propTypes = {
-  items: React.PropTypes.arrayOf(React.PropTypes.object),
-  wrap: React.PropTypes.bool,
+  items: PropTypes.arrayOf(React.PropTypes.object),
+  wrap: PropTypes.bool,
 };
 
 Directory.defaultProps = {

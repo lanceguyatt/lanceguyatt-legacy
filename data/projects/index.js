@@ -1,4 +1,4 @@
-const projects = {
+export default {
   id: 2,
   name: 'Projects',
   description: 'Projects description',
@@ -19,5 +19,3 @@ const projects = {
     },
   ],
 };
-
-export default projects;

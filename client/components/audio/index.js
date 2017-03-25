@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const Audio = ({ audio }) => (
   <audio id={audio.id}>
@@ -7,10 +7,10 @@ const Audio = ({ audio }) => (
 );
 
 Audio.propTypes = {
-  audio: React.PropTypes.shape({
-    id: React.PropTypes.string.isRequired,
-    src: React.PropTypes.string.isRequired,
-    type: React.PropTypes.string.isRequired,
+  audio: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    src: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
   }),
 };
 

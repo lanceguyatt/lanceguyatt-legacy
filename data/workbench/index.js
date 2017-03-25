@@ -1,4 +1,4 @@
-const workbench = {
+export default {
   name: '',
   alternateHeadline: 'Workbench',
   description: 'Web developer with over 12 years of professional experience',
@@ -22,5 +22,3 @@ const workbench = {
     },
   ],
 };
-
-export default workbench;

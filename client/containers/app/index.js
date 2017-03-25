@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import styles from './style.css';
 
@@ -9,7 +9,7 @@ const App = ({ children }) => (
 );
 
 App.propTypes = {
-  children: React.PropTypes.node,
+  children: PropTypes.node,
 };
 
 App.defaultProps = {

@@ -1,5 +1,5 @@
-/* eslint: import/no-extraneous-dependencie: 0 */
-import React from 'react';
+/* eslint import/no-extraneous-dependencies: 0 */
+import React, { Component, PropTypes } from 'react';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
@@ -10,21 +10,18 @@ import styles from './style.css';
 
 import site from '../../../data/site/';
 
-class WorkBench extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-    };
-  }
+export default class WorkBench extends Component {
+  static propTypes = {
+    route: PropTypes.shape(),
+    children: PropTypes.node,
+  };
 
-  componentWillMount() {
-    this.setState({ active: true });
-  }
+  static defaultProps = {
+    route: {},
+    children: null,
+  };
 
-  componentWillUnmount() {
-    this.setState({ active: false });
-  }
+  componentDidMount() {}
 
   render() {
     const { data } = this.props.route;
@@ -32,7 +29,7 @@ class WorkBench extends React.Component {
     return (
       <div className={styles.workbench}>
         <Head data={data} />
-        <Titlebar name={`${site.name}. Copyright © 2000-${site.copyrightYear}. All Rights Reserved`} />
+        <Titlebar name={`${site.name}. Copyright © ${site.dateCreated.substr(0, 4)}-${site.copyrightYear}. All Rights Reserved`} />
         <Window close="/kickstart/" name={data.name} alternateHeadline={data.alternateHeadline} zoom depth>
           <Directory items={data.items} />
         </Window>
@@ -41,15 +38,3 @@ class WorkBench extends React.Component {
     );
   }
 }
-
-WorkBench.propTypes = {
-  route: React.PropTypes.shape(),
-  children: React.PropTypes.node,
-};
-
-WorkBench.defaultProps = {
-  route: {},
-  children: null,
-};
-
-export default WorkBench;

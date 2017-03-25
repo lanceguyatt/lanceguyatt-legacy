@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Helmet from 'react-helmet';
 
 import site from '../../../data/site/';
@@ -84,11 +84,11 @@ const Head = ({ data }) => {
 };
 
 Head.propTypes = {
-  data: React.PropTypes.shape({
-    name: React.PropTypes.string,
-    description: React.PropTypes.string,
-    url: React.PropTypes.string,
-    image: React.PropTypes.string,
+  data: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    url: PropTypes.string,
+    image: PropTypes.string,
   }),
 };
 

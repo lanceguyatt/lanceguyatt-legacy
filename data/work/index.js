@@ -1,4 +1,4 @@
-const work = {
+export default {
   id: 1,
   name: 'Work',
   description: 'Work description',
@@ -39,5 +39,3 @@ const work = {
     },
   ],
 };
-
-export default work;

@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 const moment = require('moment');
 
-const site = {
+export default {
   name: 'Lance Guyatt, Web Developer',
   description: 'Web developer with over 12 years of professional experience.',
   url: 'http://lanceguyatt.com',
@@ -16,5 +16,3 @@ const site = {
   msValidate: 'DC81176D37CD3A19110885AD38AF2C10',
   lang: 'en',
 };
-
-export default site;
