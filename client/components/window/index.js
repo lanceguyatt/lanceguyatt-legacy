@@ -66,8 +66,8 @@ export default class Window extends Component {
       <ReactCSSTransitionGroup
         transitionAppear
         transitionName={transition ? transitions : ''}
-        transitionAppearTimeout={500}
-        transitionEnterTimeout={500}
+        transitionAppearTimeout={300}
+        transitionEnterTimeout={300}
         transitionLeaveTimeout={300}
       >
         <div className={className}>

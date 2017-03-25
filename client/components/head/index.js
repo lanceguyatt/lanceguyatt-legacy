@@ -27,7 +27,7 @@ import browserConfig from '../../static/browserconfig.xml';
 import '../../static/crossdomain.xml';
 import '../../static/loadtestertool.xml';
 
-const authorName = `${author.name.givenName} ${author.name.familyName}`;
+const appTitle = `${author.name.givenName} ${author.name.familyName}`;
 
 const Head = ({ data }) => {
   const pageUrl = `${site.url}${data.url}`;
@@ -61,9 +61,9 @@ const Head = ({ data }) => {
         { itemprop: 'name', content: pageTitle },
         { itemprop: 'description', content: data.description },
         { itemprop: 'url', content: pageUrl },
-        { name: 'apple-mobile-web-app-title', content: authorName },
+        { name: 'apple-mobile-web-app-title', content: appTitle },
         { name: 'msapplication-config', content: browserConfig },
-        { name: 'application-name', content: authorName },
+        { name: 'application-name', content: appTitle },
         { name: 'theme-color', content: site.themeColor },
         { name: 'google-site-verification', content: site.googleSiteVerification },
         { name: 'msvalidate.01', content: site.msValidate },
@@ -74,8 +74,8 @@ const Head = ({ data }) => {
         { rel: 'shortcut icon', href: favicon16x16, sizes: '16x16' },
         { rel: 'shortcut icon', href: favicon32x32, sizes: '32x32' },
         { rel: 'apple-touch-icon', href: appleTouchIcon, sizes: '180x180' },
-        // { rel: 'manifest', href: '/manifest.json' },
-        // { rel: 'mask-icon', href: safariPinnedTab, color: site.themeColor },
+        { rel: 'manifest', href: '/manifest.json' },
+        /* { rel: 'mask-icon', href: safariPinnedTab, color: site.themeColor }, */
         { rel: 'author', href: humans, type: 'text/plain' },
         { rel: 'canonical', href: pageUrl },
       ]}
@@ -96,7 +96,7 @@ Head.defaultProps = {
   data: {
     name: site.name,
     description: site.description,
-    url: site.url,
+    url: '',
     image: `${site.url}logo.png`,
   },
 };

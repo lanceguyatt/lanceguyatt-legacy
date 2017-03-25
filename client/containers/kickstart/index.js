@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 
 import Head from '../../components/head/';
@@ -7,6 +8,7 @@ import site from '../../../data/site/';
 import author from '../../../data/author/';
 
 import styles from './style.css';
+import transitions from '../../styles/transitions/index.css';
 
 export default class KickStart extends Component {
 
@@ -24,7 +26,15 @@ export default class KickStart extends Component {
     const { data } = this.props.route;
 
     return (
-      <div className={styles.kickstart}>
+      <ReactCSSTransitionGroup
+        className={styles.kickstart}
+        component="div"
+        transitionAppear
+        transitionName={transitions}
+        transitionAppearTimeout={300}
+        transitionEnterTimeout={300}
+        transitionLeaveTimeout={300}
+      >
         <Head data={data} />
         <div className={styles.copyright}>
           <Link to="/">
@@ -45,7 +55,7 @@ export default class KickStart extends Component {
           <div className={styles.diskDrive} />
           <div className={styles.floppyDisk} />
         </Link>
-      </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }
