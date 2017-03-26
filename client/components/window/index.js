@@ -8,7 +8,6 @@ import Zoom from '../../gadgets/zoom';
 import Depth from '../../gadgets/depth';
 
 import styles from './style.css';
-// import transitions from '../../styles/transitions/index.css';
 
 export default class Window extends Component {
 
@@ -19,7 +18,6 @@ export default class Window extends Component {
     zoom: PropTypes.bool,
     depth: PropTypes.bool,
     children: PropTypes.node,
-    transition: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -29,7 +27,6 @@ export default class Window extends Component {
     zoom: false,
     depth: false,
     children: '',
-    transition: false,
   };
 
   constructor(props) {
@@ -58,7 +55,7 @@ export default class Window extends Component {
   }
 
   render() {
-    const { name, alternateHeadline, children, close, zoom, depth, transition } = this.props;
+    const { name, alternateHeadline, children, close, zoom, depth } = this.props;
 
     const className = this.state.isSelected ? styles.windowSelected : styles.windowUnselected;
 
