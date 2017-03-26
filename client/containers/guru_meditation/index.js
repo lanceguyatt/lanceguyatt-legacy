@@ -1,14 +1,12 @@
 /* eslint no-undef: 0 */
 import React, { Component, PropTypes } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import Fader from '../../components/fader/';
 import Head from '../../components/head/';
 import Alert from '../../components/alert/';
 import Audio from '../../components/audio/';
 
 import styles from './style.css';
-import transitions from '../../styles/transitions/index.css';
-
 import toast from './toasty.png';
 
 const alert = {
@@ -87,16 +85,10 @@ export default class GuruMeditation extends Component {
     const image = { backgroundImage: `url(${toast})` };
 
     return (
-      <ReactCSSTransitionGroup
-        className={styles.guruMeditation}
-        component="div"
-        transitionAppear
-        transitionName={transitions}
-        transitionAppearTimeout={300}
-        transitionEnterTimeout={300}
-        transitionLeaveTimeout={300}
-      >
+      <Fader className={styles.guruMeditation} transitionAppear active>
+
         <Head data={data} />
+
         <Alert alert={alert} error />
         <div
           className={!this.state.toasty ? styles.toasty1 : styles.toasty2}
@@ -104,7 +96,7 @@ export default class GuruMeditation extends Component {
           style={image}
         />
         <Audio audio={toastyMp3} id="js-toasty-audio" />
-      </ReactCSSTransitionGroup>
+      </Fader>
     );
   }
 }

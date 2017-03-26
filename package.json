@@ -36,7 +36,7 @@
   "dependencies": {
     "history": "^3.0.0",
     "react": "^15.3.2",
-    "react-addons-css-transition-group": "^15.4.2",
+    "react-css-transition": "^0.7.4",
     "react-dom": "^15.3.2",
     "react-fastclick": "^3.0.1",
     "react-ga": "^2.1.2",

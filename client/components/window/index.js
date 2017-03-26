@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+import Fader from '../fader/';
 import Titlebar from '../titlebar/';
 
 import Close from '../../gadgets/close';
@@ -8,7 +8,7 @@ import Zoom from '../../gadgets/zoom';
 import Depth from '../../gadgets/depth';
 
 import styles from './style.css';
-import transitions from '../../styles/transitions/index.css';
+// import transitions from '../../styles/transitions/index.css';
 
 export default class Window extends Component {
 
@@ -63,13 +63,7 @@ export default class Window extends Component {
     const className = this.state.isSelected ? styles.windowSelected : styles.windowUnselected;
 
     return (
-      <ReactCSSTransitionGroup
-        transitionAppear
-        transitionName={transition ? transitions : ''}
-        transitionAppearTimeout={300}
-        transitionEnterTimeout={300}
-        transitionLeaveTimeout={300}
-      >
+      <Fader transitionAppear active>
         <div className={className}>
           <div className={styles.windowHeader}>
             {close ? <Close url={close} /> : null}
@@ -83,7 +77,7 @@ export default class Window extends Component {
             </div>
           </div>
         </div>
-      </ReactCSSTransitionGroup>
+      </Fader>
     );
   }
 }

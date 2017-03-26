@@ -13,6 +13,8 @@
     justify-content: center;
     min-height: min-content;
 
+    span[style] { display: none; }
+
     a {
       display: block;
       outline: 0;
@@ -62,6 +64,10 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+
+      span {
+        display: none;
+      }
     }
 
     .copyright {
