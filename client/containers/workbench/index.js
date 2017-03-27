@@ -21,7 +21,10 @@ export default class WorkBench extends Component {
     children: null,
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    document.body.className = '';
+    document.body.classList.add('u-bg-gray');
+  }
 
   render() {
     const { data } = this.props.route;

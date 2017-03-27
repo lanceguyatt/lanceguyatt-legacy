@@ -18,7 +18,6 @@ body {
 }
 
 body {
-  background-color: var(--gray);
   color: var(--black);
   font-family: var(--topaz);
   font-size: 1.6rem;

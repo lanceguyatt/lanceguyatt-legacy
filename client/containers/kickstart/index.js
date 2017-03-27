@@ -1,3 +1,4 @@
+/* eslint no-undef: 0 */
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
@@ -19,7 +20,10 @@ export default class KickStart extends Component {
     route: {},
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    document.body.className = '';
+    document.body.classList.add('u-bg-purple');
+  }
 
   render() {
     const { data } = this.props.route;

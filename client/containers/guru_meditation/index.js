@@ -1,5 +1,6 @@
 /* eslint no-undef: 0 */
 import React, { Component, PropTypes } from 'react';
+import { CSSTransition, transit } from 'react-css-transition';
 
 import Fader from '../../components/fader/';
 import Head from '../../components/head/';
@@ -7,7 +8,7 @@ import Alert from '../../components/alert/';
 import Audio from '../../components/audio/';
 
 import styles from './style.css';
-import toast from './toasty.png';
+import toastyImage from './toasty.png';
 
 const alert = {
   name: 'Software Failure. Press left mouse button to continue.',
@@ -40,10 +41,10 @@ export default class GuruMeditation extends Component {
   componentDidMount() {
     let konamiCodeArray = [];
     const konamiCodeKey = '38,38,40,40,37,39,37,39,66,65';
-    const konamiClass = 'konami';
     const toastyAudio = document.getElementById('js-toasty-audio');
-    const toastyImage = document.getElementById('js-toasty-image');
-    const animationEvent = this.whichAnimationEvent();
+
+    document.body.className = '';
+    document.body.classList.add('u-bg-black');
 
     document.addEventListener('keydown', (e) => {
       konamiCodeArray.push(e.keyCode);
@@ -51,38 +52,14 @@ export default class GuruMeditation extends Component {
       if (konamiCodeArray.toString().indexOf(konamiCodeKey) >= 0) {
         toastyAudio.load();
         toastyAudio.play();
-        this.setState({ toasty: true });
-        toastyImage.classList.add(konamiClass);
         konamiCodeArray = [];
+        this.setState({ toasty: true });
       }
     });
-
-    animationEvent && toastyImage.addEventListener(animationEvent, () => {
-      this.setState({ toasty: false });
-    });
-  }
-
-  whichAnimationEvent() {
-    const el = document.createElement('fakeelement');
-    const animations = {
-      animation: 'animationend',
-      OAnimation: 'oAnimationEnd',
-      MozAnimation: 'Animationend',
-      WebkitAnimation: 'webkitAnimationEnd',
-    };
-
-    let a = null;
-
-    for (a in animations) {
-      if (el.style[a] !== undefined) {
-        return animations[a];
-      }
-    }
   }
 
   render() {
     const { data } = this.props.route;
-    const image = { backgroundImage: `url(${toast})` };
 
     return (
       <Fader className={styles.guruMeditation} transitionAppear active>
@@ -90,12 +67,21 @@ export default class GuruMeditation extends Component {
         <Head data={data} />
 
         <Alert alert={alert} error />
-        <div
-          className={!this.state.toasty ? styles.toasty1 : styles.toasty2}
-          id="js-toasty-image"
-          style={image}
+
+        <CSSTransition
+          className={styles.toasty}
+          defaultStyle={{ transform: 'translate(200px, 0)' }}
+          enterStyle={{ transform: transit('translate(0, 0)', 400, 'ease-in-out') }}
+          leaveStyle={{ transform: transit('translate(200px, 0)', 300, 'ease-in-out') }}
+          activeStyle={{ transform: 'translate(0, 0)' }}
+          transitionDelay={{ enter: 0, leave: 100 }}
+          onTransitionComplete={() => this.setState({ toasty: false })}
+          active={this.state.toasty}
+          style={{ backgroundImage: `url(${toastyImage})` }}
         />
+
         <Audio audio={toastyMp3} id="js-toasty-audio" />
+
       </Fader>
     );
   }

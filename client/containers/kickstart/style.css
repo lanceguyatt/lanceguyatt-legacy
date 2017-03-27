@@ -1,5 +1,11 @@
 @import '../../styles/settings/';
 
+:global {
+  .u-bg-purple {
+    background-color: var(--purple);
+  }
+}
+
 :local {
   .kickstart {
     background-color: var(--purple);

@@ -11,33 +11,10 @@
     position: relative;
   }
 
-  .toasty1 {
+  .toasty {
     background-size: 100%;
-    position: absolute * -var(--toasty-width) 0 *;
+    position: absolute * 0 0 *;
     size: var(--toasty-width);
-  }
-
-  .toasty2 {
-    composes: toasty1;
-    animation: showToastyGuy 1s;
-  }
-}
-
-@keyframes showToastyGuy {
-  0% {
-    right: -var(--toasty-width);
-  }
-
-  40% {
-    right: 0;
-  }
-
-  60% {
-    right: 0;
-  }
-
-  100% {
-    right: -var(--toasty-width);
   }
 }
 
