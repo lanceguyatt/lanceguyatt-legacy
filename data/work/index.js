@@ -22,6 +22,10 @@ export default {
       url: '/work/wilson-fletcher/',
       type: 'drawer',
     }, {
+      name: 'Bauer Media',
+      url: '/work/bauer-media/',
+      type: 'drawer',
+    }, {
       name: 'NZZ',
       url: 'https://abo.nzz.ch/',
       type: 'file',

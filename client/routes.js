@@ -17,6 +17,7 @@ import associatedPress from '../data/work/associated_press/';
 import awin from '../data/work/awin/';
 import mq from '../data/work/mq/';
 import wilsonFletcher from '../data/work/wilson_fletcher/';
+import bauerMedia from '../data/work/bauer_media/';
 
 import projects from '../data/projects/';
 
@@ -35,6 +36,7 @@ const routes = (
           <Route path="/work/awin/" component={Work} data={awin} />
           <Route path="/work/mq/" component={Work} data={mq} />
           <Route path="/work/wilson-fletcher/" component={Work} data={wilsonFletcher} />
+          <Route path="/work/bauer-media/" component={Work} data={bauerMedia} />
         </Route>
         <Route path="/projects/" component={Drawer} data={projects} />
         <Route path="/about/" component={Drawer} data={about} />
