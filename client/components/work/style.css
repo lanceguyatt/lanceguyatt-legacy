@@ -3,9 +3,8 @@
 @media (--breakpoint-md) {
   :local {
     .work {
-      position: absolute 50% * * 50%;
+      position: absolute 10rem * * 10rem;
       size: 60rem 40rem;
-      transform: translate(-50%, -50%);
       min-height: 100%;
     }
   }

@@ -57,11 +57,9 @@ export default class Window extends Component {
   render() {
     const { name, alternateHeadline, children, close, zoom, depth } = this.props;
 
-    const className = this.state.isSelected ? styles.windowSelected : styles.windowUnselected;
-
     return (
       <Fader transitionAppear active>
-        <div className={className}>
+        <div className={this.state.isSelected ? styles.windowSelected : styles.windowUnselected}>
           <div className={styles.windowHeader}>
             {close ? <Close url={close} /> : null}
             <Titlebar isWindow name={name} alternateHeadline={alternateHeadline} />

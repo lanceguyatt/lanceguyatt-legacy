@@ -5,7 +5,7 @@
     .drawer {
       position: absolute 50% * * 50%;
       size: 60rem 40rem;
-      transform: translate(-50%, -50%);
+      transform: translate(calc(-50% - 5rem), calc(-50% - 5rem));
     }
   }
 }
