@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 import React, { Component, PropTypes } from 'react';
 
 import Fader from '../fader/';
@@ -32,26 +33,28 @@ export default class Window extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSelected: false,
+      select: false,
+      zoom: false,
+      depth: false,
     };
-    this.handleZoom = this.handleZoom.bind(this);
-    this.handleDepth = this.handleDepth.bind(this);
+    this.toggleZoom = this.toggleZoom.bind(this);
+    this.toggleDepth = this.toggleDepth.bind(this);
   }
 
   componentWillMount() {
-    this.setState({ isSelected: true });
+    this.setState({ select: true });
   }
 
   componentWillUnMount() {
-    this.setState({ isSelected: false });
+    this.setState({ select: false });
   }
 
-  handleZoom() {
-    this.setState({ isZoom: false });
+  toggleZoom() {
+    this.setState({ zoom: !this.state.zoom });
   }
 
-  handleDepth() {
-    this.setState({ isSelected: false });
+  toggleDepth() {
+    this.setState({ depth: !this.state.depth });
   }
 
   render() {
@@ -59,12 +62,12 @@ export default class Window extends Component {
 
     return (
       <Fader transitionAppear active>
-        <div className={this.state.isSelected ? styles.windowSelected : styles.windowUnselected}>
+        <div className={this.state.select ? styles.windowSelected : styles.windowUnSelected}>
           <div className={styles.windowHeader}>
             {close ? <Close url={close} /> : null}
             <Titlebar isWindow name={name} alternateHeadline={alternateHeadline} />
-            {zoom ? <Zoom foo={this.handleZoom} /> : null}
-            {depth ? <Depth handleClick={this.handleDepth} /> : null}
+            {zoom ? <Zoom action={this.toggleZoom} /> : null}
+            {depth ? <Depth action={this.toggleDepth} /> : null}
           </div>
           <div className={styles.windowMain}>
             <div className={styles.windowMainInner}>

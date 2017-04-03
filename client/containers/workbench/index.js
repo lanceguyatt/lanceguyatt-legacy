@@ -1,3 +1,4 @@
+/* eslint no-undef: 0 */
 import React, { Component, PropTypes } from 'react';
 
 import Fader from '../../components/fader/';
@@ -36,7 +37,13 @@ export default class WorkBench extends Component {
 
         <Titlebar name={`${site.name}. Copyright © ${site.dateCreated.substr(0, 4)}-${site.copyrightYear}. All Rights Reserved`} />
 
-        <Window close="/kickstart/" name={data.name} alternateHeadline={data.alternateHeadline}>
+        <Window
+          close="/kickstart/"
+          name={data.name}
+          alternateHeadline={data.alternateHeadline}
+          depth
+          zoom
+        >
           <Directory items={data.items} />
         </Window>
         {this.props.children}

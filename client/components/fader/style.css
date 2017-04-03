@@ -1,0 +1,15 @@
+:global {
+  .default-class { opacity: 0; }
+
+  .enter-class {
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .leave-class {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .active-class { opacity: 1; }
+}

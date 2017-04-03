@@ -1,6 +1,8 @@
 import React from 'react';
 import { CSSTransition, transit } from 'react-css-transition';
 
+// import styles from './style.css';
+
 const Fader = props => (
   <CSSTransition
     {...props}
@@ -12,3 +14,8 @@ const Fader = props => (
 );
 
 export default Fader;
+
+// defaultClassName={styles.default}
+// enterClassName={styles.enter}
+// leaveClassName={styles.leave}
+// activeClassName={styles.active}

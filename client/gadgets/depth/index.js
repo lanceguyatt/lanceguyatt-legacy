@@ -2,16 +2,16 @@ import React from 'react';
 
 import styles from './style.css';
 
-const Depth = ({ handleClick }) => (
-  <button className={styles.depth} onClick={handleClick}>Depth</button>
+const Depth = ({ action }) => (
+  <button className={styles.depth} onClick={action}>Zoom</button>
 );
 
 Depth.propTypes = {
-  handleClick: React.PropTypes.func,
+  action: React.PropTypes.func,
 };
 
 Depth.defaultProps = {
-  handleClick: null,
+  action: null,
 };
 
 export default Depth;

@@ -31,7 +31,7 @@ export default class Drawer extends Component {
     return (
       <div className={styles.drawer}>
         <Head data={data} />
-        <Window close={parent} name={name} transition>
+        <Window close={parent} name={name} transition depth zoom>
           {data.items ? <Directory items={data.items} wrap /> : null}
         </Window>
         {this.props.children}

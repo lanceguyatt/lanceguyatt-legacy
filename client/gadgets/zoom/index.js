@@ -2,16 +2,16 @@ import React from 'react';
 
 import styles from './style.css';
 
-const Zoom = ({ foo }) => (
-  <button className={styles.zoom} onClick={foo}>Zoom</button>
+const Zoom = ({ action }) => (
+  <button className={styles.zoom} onClick={action}>Zoom</button>
 );
 
 Zoom.propTypes = {
-  foo: React.PropTypes.func,
+  action: React.PropTypes.func,
 };
 
 Zoom.defaultProps = {
-  foo: '',
+  action: null,
 };
 
 export default Zoom;
