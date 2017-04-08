@@ -2,7 +2,7 @@ import image from '../../../client/images/work/wf.png';
 
 export default {
   name: 'Wilson Fletcher',
-  descripton: 'Wilson Fletcher website',
+  description: 'Wilson Fletcher website',
   url: '/work/wilson-fletcher',
   parent: '/work/',
   image: {

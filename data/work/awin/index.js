@@ -2,7 +2,7 @@ import image from '../../../client/images/work/awin.png';
 
 export default {
   name: 'Awin',
-  descripton: 'Awin website',
+  description: 'Awin website',
   url: '/work/awin',
   parent: '/work/',
   image: {

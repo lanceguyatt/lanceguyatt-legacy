@@ -2,7 +2,7 @@ import image from '../../../client/images/work/mq.png';
 
 export default {
   name: 'MQ',
-  descripton: 'MQ website',
+  description: 'MQ website',
   url: '/work/mq',
   parent: '/work/',
   image: {

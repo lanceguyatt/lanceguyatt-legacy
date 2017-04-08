@@ -2,7 +2,7 @@ import image from '../../../client/images/work/ap.png';
 
 export default {
   name: 'Associated Press',
-  descripton: 'Associated Press front-end code',
+  description: 'Associated Press front-end code',
   url: '/work/associated-press',
   parent: '/work/',
   image: {

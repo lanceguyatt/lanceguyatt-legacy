@@ -2,7 +2,7 @@ import image from '../../../client/images/work/bauer.png';
 
 export default {
   name: 'Bauer Media',
-  descripton: 'Bauer Media website',
+  description: 'Bauer Media website',
   url: '/work/bauer-media',
   parent: '/work/',
   image: {
