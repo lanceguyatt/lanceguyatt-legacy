@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import File from '../../gadgets/file/';
 import Drawer from '../../gadgets/drawer/';

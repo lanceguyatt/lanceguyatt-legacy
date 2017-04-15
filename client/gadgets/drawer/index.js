@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
 import styles from './style.css';
@@ -11,9 +12,9 @@ const Drawer = ({ item }) => (
 );
 
 Drawer.propTypes = {
-  item: React.PropTypes.shape({
-    name: React.PropTypes.string,
-    url: React.PropTypes.string,
+  item: PropTypes.shape({
+    name: PropTypes.string,
+    url: PropTypes.string,
   }),
 };
 

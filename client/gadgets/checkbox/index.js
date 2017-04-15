@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './style.css';
 
-class Checkbox extends React.Component {
+export default class Checkbox extends Component {
+
+  static propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string,
+    value: PropTypes.string,
+    label: PropTypes.string,
+    checked: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    id: '',
+    name: '',
+    value: '',
+    label: '',
+    checked: '',
+  };
 
   constructor(props) {
     super(props);
@@ -41,21 +58,3 @@ class Checkbox extends React.Component {
     );
   }
 }
-
-Checkbox.propTypes = {
-  id: React.PropTypes.string,
-  name: React.PropTypes.string,
-  value: React.PropTypes.string,
-  label: React.PropTypes.string,
-  checked: React.PropTypes.bool,
-};
-
-Checkbox.defaultProps = {
-  id: '',
-  name: '',
-  value: '',
-  label: '',
-  checked: '',
-};
-
-export default Checkbox;

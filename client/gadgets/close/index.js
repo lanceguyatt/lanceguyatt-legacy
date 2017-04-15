@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
 import styles from './style.css';
@@ -8,7 +9,7 @@ const Close = ({ url }) => (
 );
 
 Close.propTypes = {
-  url: React.PropTypes.string,
+  url: PropTypes.string,
 };
 
 Close.defaultProps = {

@@ -1,5 +1,6 @@
 /* eslint no-console: 0 */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Fader from '../fader/';
 import Titlebar from '../titlebar/';

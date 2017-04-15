@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './style.css';
 
@@ -10,9 +11,9 @@ const File = ({ item }) => (
 );
 
 File.propTypes = {
-  item: React.PropTypes.shape({
-    name: React.PropTypes.string,
-    url: React.PropTypes.string,
+  item: PropTypes.shape({
+    name: PropTypes.string,
+    url: PropTypes.string,
   }),
 };
 

@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './style.css';
 
-class Text extends React.Component {
+export default class Text extends Component {
+
+  static propTypes = {
+    type: PropTypes.oneOf(['text', 'email']),
+    id: PropTypes.string,
+    name: PropTypes.string,
+    label: PropTypes.string,
+    value: PropTypes.string,
+    placeholder: PropTypes.string,
+  };
+
+  static defaultProps = {
+    type: '',
+    id: '',
+    name: '',
+    label: '',
+    value: '',
+    placeholder: '',
+  };
 
   constructor(props) {
     super(props);
@@ -38,23 +57,3 @@ class Text extends React.Component {
     );
   }
 }
-
-Text.propTypes = {
-  type: React.PropTypes.oneOf(['text', 'email']),
-  id: React.PropTypes.string,
-  name: React.PropTypes.string,
-  label: React.PropTypes.string,
-  value: React.PropTypes.string,
-  placeholder: React.PropTypes.string,
-};
-
-Text.defaultProps = {
-  type: '',
-  id: '',
-  name: '',
-  label: '',
-  value: '',
-  placeholder: '',
-};
-
-export default Text;

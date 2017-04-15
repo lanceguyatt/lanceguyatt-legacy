@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './style.css';
 
@@ -7,7 +8,7 @@ const Depth = ({ action }) => (
 );
 
 Depth.propTypes = {
-  action: React.PropTypes.func,
+  action: PropTypes.func,
 };
 
 Depth.defaultProps = {
