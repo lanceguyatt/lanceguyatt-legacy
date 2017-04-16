@@ -1,7 +1,9 @@
 /* eslint-disable no-undef */
 import React from 'react';
-import { Router, browserHistory, applyRouterMiddleware } from 'react-router';
-import { useScroll } from 'react-router-scroll';
+import Router from 'react-router/lib/Router';
+import browserHistory from 'react-router/lib/browserHistory';
+import applyRouterMiddleware from 'react-router/lib/applyRouterMiddleware';
+import useScroll from 'react-router-scroll/lib/useScroll';
 import ReactGA from 'react-ga';
 import routes from './routes';
 

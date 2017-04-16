@@ -1,3 +1,4 @@
+/* eslint import/no-extraneous-dependencies: 0 */
 import path from 'path';
 import mkdirp from 'mkdirp';
 import { writeFileSync } from 'fs';

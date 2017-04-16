@@ -1,5 +1,5 @@
-/* eslint-disable no-var, prefer-template, object-shorthand, func-names,
-  import/no-extraneous-dependencies */
+/* eslint no-var: 0, prefer-template: 0, object-shorthand: 0, func-names: 0,
+  import/no-extraneous-dependencies: 0 */
 var webpack = require('webpack');
 var path = require('path');
 

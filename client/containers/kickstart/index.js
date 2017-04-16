@@ -2,8 +2,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router';
-
 import Fader from '../../components/fader/';
 import Head from '../../components/head/';
 
@@ -40,7 +38,7 @@ export default class KickStart extends Component {
         <Head data={data} />
 
         <div className={styles.copyright}>
-          <Link to="/">
+          <a href="/">
             <div className={styles.tick} />
             <p>
               2.0 Roms (37.350)
@@ -51,13 +49,13 @@ export default class KickStart extends Component {
               <br />
               All Rights Reserved
             </p>
-          </Link>
+          </a>
         </div>
 
-        <Link to="/" className={styles.group}>
+        <a href="/" className={styles.group}>
           <div className={styles.diskDrive} />
           <div className={styles.floppyDisk} />
-        </Link>
+        </a>
       </Fader>
     );
   }

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
 
 import styles from './style.css';
 
@@ -8,7 +7,7 @@ const Alert = ({ alert }) => (
   <div className={styles.alertError} role="dialog">
     <h2>{alert.name}</h2>
     <p>{alert.description}</p>
-    <Link to={alert.url} className={styles.alertLink}>{alert.name}</Link>
+    <a href={alert.url} className={styles.alertLink}>{alert.name}</a>
   </div>
 );
 

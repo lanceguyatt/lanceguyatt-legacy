@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router';
 
 import styles from './style.css';
 
 const Drawer = ({ item }) => (
-  <Link className={styles.drawer} to={item.url} activeClassName={styles.drawerActive}>
+  <a href={item.url} className={styles.drawer} activeClassName={styles.drawerActive}>
     <span className={styles.drawerImage} />
     <span className={styles.drawerName}>{item.name}</span>
-  </Link>
+  </a>
 );
 
 Drawer.propTypes = {
