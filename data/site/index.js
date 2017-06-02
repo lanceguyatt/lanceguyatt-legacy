@@ -1,5 +1,5 @@
 /* eslint import/no-extraneous-dependencies: 0 */
-const moment = require('moment');
+import moment from 'moment';
 
 export default {
   name: 'Lance Guyatt, Web Developer',

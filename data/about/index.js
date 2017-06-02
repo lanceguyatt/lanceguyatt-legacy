@@ -2,7 +2,7 @@ export default {
   id: 3,
   name: 'About',
   description: 'About',
-  url: '/about',
+  url: '/about/',
   parent: '/',
   type: 'drawer',
   items: [

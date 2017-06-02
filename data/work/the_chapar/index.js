@@ -1,9 +1,9 @@
 import image from '../../../client/images/work/mq.png';
 
 export default {
-  name: 'MQ',
-  description: 'MQ website',
-  url: '/work/mq/',
+  name: 'The Chapar',
+  description: 'The Chapar website',
+  url: '/work/the-chapar/',
   parent: '/work/',
   image: {
     url: image,
@@ -12,8 +12,9 @@ export default {
     'HTML5', 'CSS3', 'Microdata', 'Open Graph',
   ],
   components: [
-    'KeystoneJS', 'gulp.js', 'Pug', 'webpack', 'PostCSS',
+    'Angular JS', 'gulp.js', 'PostCSS',
   ],
-  website: 'http://mqmentalhealth.org',
+  datePublished: '2017-06-01',
+  website: 'http://thechapar.com',
   type: 'drawer',
 };

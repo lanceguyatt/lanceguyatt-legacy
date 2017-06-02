@@ -3,7 +3,7 @@ import image from '../../../client/images/work/wf.png';
 export default {
   name: 'Wilson Fletcher',
   description: 'Wilson Fletcher website',
-  url: '/work/wilson-fletcher',
+  url: '/work/wilson-fletcher/',
   parent: '/work/',
   image: {
     url: image,
@@ -16,4 +16,5 @@ export default {
   ],
   website: 'http://wilsonfletcher.com',
   datePublished: '2013-10-12',
+  type: 'drawer',
 };

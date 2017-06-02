@@ -1,31 +1,25 @@
+import associatedPress from './associated_press/';
+import awin from './awin/';
+import bauerMedia from './bauer_media/';
+import mq from './mq/';
+// import theChapar from './the_chapar/';
+import wilsonFletcher from './wilson_fletcher/';
+
 export default {
+  id: 1,
   name: 'Work',
   description: 'Work description',
-  url: '/work',
+  url: '/work/',
   parent: '/',
   type: 'drawer',
   items: [
+    // theChapar,
+    awin,
+    associatedPress,
+    mq,
+    wilsonFletcher,
+    bauerMedia,
     {
-      name: 'Awin',
-      url: '/work/awin/',
-      type: 'drawer',
-    }, {
-      name: 'Associated Press',
-      url: '/work/associated-press/',
-      type: 'drawer',
-    }, {
-      name: 'MQ',
-      url: '/work/mq/',
-      type: 'drawer',
-    }, {
-      name: 'Wilson Fletcher',
-      url: '/work/wilson-fletcher/',
-      type: 'drawer',
-    }, {
-      name: 'Bauer Media',
-      url: '/work/bauer-media/',
-      type: 'drawer',
-    }, {
       name: 'NZZ',
       url: 'https://abo.nzz.ch/',
       type: 'file',

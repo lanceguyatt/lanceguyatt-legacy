@@ -3,7 +3,7 @@ import image from '../../../client/images/work/awin.png';
 export default {
   name: 'Awin',
   description: 'Awin website',
-  url: '/work/awin',
+  url: '/work/awin/',
   parent: '/work/',
   image: {
     url: image,
@@ -15,4 +15,5 @@ export default {
     'KeystoneJS', 'gulp.js', 'Pug', 'webpack', 'PostCSS',
   ],
   website: 'http://awin.com',
+  type: 'drawer',
 };
