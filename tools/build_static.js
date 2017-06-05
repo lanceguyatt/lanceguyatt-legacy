@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import Helmet from 'react-helmet';
 
@@ -34,7 +34,7 @@ const buildStatic = ({ jsBundle, cssBundle }) => {
       if (error) throw error;
 
       if (renderProps) {
-        const body = renderToString(<RouterContext {...renderProps} />);
+        const body = renderToStaticMarkup(<RouterContext {...renderProps} />);
         const { title, meta, link, script } = Helmet.rewind();
 
         let fileName = path === '/*'

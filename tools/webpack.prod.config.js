@@ -5,18 +5,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-// var stylelint = require("stylelint");
-// Plugin that extracts and keeps track of the real paths to the assets,
-// saved within webpack-assets.json
-// Reason is to have Wepback's require() like behaviour when requiring
-// images etc. within Node when the static site is being rendered.
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
 
 const base = require('./webpack.config');
 
 module.exports = Object.assign({}, base, {
-
-  // devtool: 'source-map',
 
   entry: {
     bundle: [
@@ -137,6 +130,7 @@ module.exports = Object.assign({}, base, {
       },
     ],
   },
+
   plugins: [
 
     new webpack.optimize.OccurrenceOrderPlugin(),

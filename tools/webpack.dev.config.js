@@ -1,9 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
-
-const base = require('./webpack.config.js');
+const base = require('./webpack.config');
 
 module.exports = Object.assign({}, base, {
 
@@ -77,7 +75,8 @@ module.exports = Object.assign({}, base, {
 
     ],
   },
+
   plugins: [
-    hotModuleReplacementPlugin,
+    new webpack.HotModuleReplacementPlugin(),
   ],
 });
