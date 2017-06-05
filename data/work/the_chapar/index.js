@@ -1,4 +1,4 @@
-import image from '../../../client/images/work/mq.png';
+import image from '../../../client/images/work/the_chapar.png';
 
 export default {
   name: 'The Chapar',

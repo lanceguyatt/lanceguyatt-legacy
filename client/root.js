@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint no-undef: 0 */
 import React from 'react';
 import Router from 'react-router/lib/Router';
 import browserHistory from 'react-router/lib/browserHistory';
