@@ -1,7 +1,6 @@
-/* eslint no-var: 0, prefer-template: 0, object-shorthand: 0, func-names: 0,
-  import/no-extraneous-dependencies: 0 */
-var webpack = require('webpack');
-var path = require('path');
+/* eslint import/no-extraneous-dependencies: 0 */
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   devtool: 'eval-source-map',

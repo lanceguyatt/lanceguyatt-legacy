@@ -1,4 +1,4 @@
-/* eslint no-console: 0, import/no-extraneous-dependencies: 0 */
+/* eslint no-console: 1, import/no-extraneous-dependencies: 0 */
 import express from 'express';
 import webpack from 'webpack';
 

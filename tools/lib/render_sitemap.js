@@ -8,7 +8,7 @@ import Sitemap from 'sitemap';
  * @return {String}          Sitemap
  */
 const renderSitemap = ({ paths, hostname }) => {
-  const urls = paths.map(path => {
+  const urls = paths.map((path) => {
     const depth = (path.match(/\//g) || []).length;
     // '/' === 1, '/foo' === 0.5, '/foo/bar' === 0.33
     const priority = path === '/' ? 1 : 1 / (depth + 1);

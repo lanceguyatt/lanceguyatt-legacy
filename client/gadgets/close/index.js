@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 
 import styles from './style.css';
 
 const Close = ({ url }) => (
-  <a href={url} className={styles.close}>Close</a>
+  <Link to={url} className={styles.close}>Close</Link>
 );
 
 Close.propTypes = {

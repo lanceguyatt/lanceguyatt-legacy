@@ -1,5 +1,6 @@
 /* eslint react/no-danger: 0 */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import site from '../../data/site/';
@@ -57,13 +58,13 @@ const renderDocument = (props) => {
   );
 
   Html.propTypes = {
-    title: React.PropTypes.node,
-    metas: React.PropTypes.node,
-    links: React.PropTypes.node,
-    scripts: React.PropTypes.node,
-    cssBundle: React.PropTypes.string,
-    jsBundle: React.PropTypes.string,
-    body: React.PropTypes.string,
+    title: PropTypes.node,
+    metas: PropTypes.node,
+    links: PropTypes.node,
+    scripts: PropTypes.node,
+    cssBundle: PropTypes.string,
+    jsBundle: PropTypes.string,
+    body: PropTypes.string,
   };
 
   // Html.defaultProps = {

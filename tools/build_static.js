@@ -29,7 +29,7 @@ const buildStatic = ({ jsBundle, cssBundle }) => {
     content: sitemap,
   });
 
-  paths.forEach(path => {
+  paths.forEach((path) => {
     match({ routes, location: path }, (error, redirectLocation, renderProps) => {
       if (error) throw error;
 

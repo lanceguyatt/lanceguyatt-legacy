@@ -3,28 +3,22 @@ import { Route } from 'react-router';
 
 import App from './containers/app/';
 import WorkBench from './containers/workbench/';
+import KickStart from './containers/kickstart/';
+import GuruMeditation from './containers/guru_meditation/';
+
 import Drawer from './components/drawer/';
 import Work from './components/work/';
 
-import KickStart from './containers/kickstart/';
-
-import GuruMeditation from './containers/guru_meditation/';
-
 import workbench from '../data/workbench/';
-
 import work from '../data/work/';
 import associatedPress from '../data/work/associated_press/';
 import awin from '../data/work/awin/';
 import mq from '../data/work/mq/';
 import wilsonFletcher from '../data/work/wilson_fletcher/';
 import bauerMedia from '../data/work/bauer_media/';
-
 import projects from '../data/projects/';
-
 import about from '../data/about/';
-
 import kickstart from '../data/kickstart/';
-
 import guruMeditation from '../data/guru_meditation/';
 
 const routes = (

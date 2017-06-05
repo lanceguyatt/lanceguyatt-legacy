@@ -1,17 +1,16 @@
-/* eslint-disable no-var, prefer-template, object-shorthand, func-names,
-  import/no-extraneous-dependencies */
-var webpack = require('webpack');
-var path = require('path');
-var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var CompressionPlugin = require('compression-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+/* eslint-disable import/no-extraneous-dependencies */
+const webpack = require('webpack');
+const path = require('path');
+const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 // var stylelint = require("stylelint");
 // Plugin that extracts and keeps track of the real paths to the assets,
 // saved within webpack-assets.json
 // Reason is to have Wepback's require() like behaviour when requiring
 // images etc. within Node when the static site is being rendered.
-var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
+const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
 
 module.exports = {
   devtool: 'source-map',

@@ -7,7 +7,7 @@ import flattenDeep from 'lodash/flattenDeep';
  * @param  {String} value
  * @return {Array}
  */
-const wrapInArray = (value) =>
+const wrapInArray = value =>
   // make sure there are no [undefined] arrays.
   (value ? [value] : []);
 
@@ -29,7 +29,7 @@ const getFullPath = (prefix, path) => {
  * @param  {String} path Path with or without trailing slash
  * @return {String}      Path with trailing slash
  */
-const addTrailingSlash = (path) =>
+const addTrailingSlash = path =>
   (path.slice(-1) === '/' ? path : `${path}/`);
 
 /**
