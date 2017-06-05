@@ -4,6 +4,7 @@ const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 // var stylelint = require("stylelint");
 // Plugin that extracts and keeps track of the real paths to the assets,
 // saved within webpack-assets.json
@@ -11,22 +12,24 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 // images etc. within Node when the static site is being rendered.
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
 
-module.exports = {
-  devtool: 'source-map',
+const base = require('./webpack.config');
+
+module.exports = Object.assign({}, base, {
+
+  // devtool: 'source-map',
+
   entry: {
-    bundle: ['./client/index.js'],
+    bundle: [
+      './client/index.js',
+    ],
   },
+
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: 'scripts/[name]-[hash].js',
     publicPath: '/',
   },
-  resolve: {
-    alias: {
-      react: 'react-lite',
-      'react-dom': 'react-lite',
-    },
-  },
+
   module: {
     rules: [
 
@@ -185,9 +188,12 @@ module.exports = {
     }),
 
     new CopyWebpackPlugin([
-      { from: './client/static/manifest.json', to: './' },
+      {
+        from: './client/static/manifest.json',
+        to: './',
+      },
     ]),
 
     webpackIsomorphicToolsPlugin,
   ],
-};
+});

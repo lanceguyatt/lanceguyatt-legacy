@@ -1,31 +1,34 @@
-import webpack from 'webpack';
-import path from 'path';
+const webpack = require('webpack');
+const path = require('path');
 
-export default {
+const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
+
+const base = require('./webpack.config.js');
+
+module.exports = Object.assign({}, base, {
+
   devtool: 'eval-source-map',
+
   entry: {
     bundle: [
       'webpack-hot-middleware/client?path=/__webpack_hmr',
       './client/index.js',
     ],
   },
+
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: '[name].js',
     libraryTarget: 'umd',
     publicPath: '/',
   },
-  resolve: {
-    alias: {
-      react: 'react-lite',
-      'react-dom': 'react-lite',
-    },
-  },
+
   module: {
     rules: [
 
       {
         test: /\.js$/,
+        include: [path.resolve(__dirname, '../client')],
         use: 'babel-loader',
       },
 
@@ -75,6 +78,6 @@ export default {
     ],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    hotModuleReplacementPlugin,
   ],
-};
+});
