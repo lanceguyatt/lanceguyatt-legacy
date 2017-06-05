@@ -22,7 +22,11 @@ const buildStatic = ({ jsBundle, cssBundle }) => {
   // make sure the not found route is not part of the sitemap.
   const sitemapPaths = paths.filter(value => value !== '/*');
 
-  const sitemap = renderSitemap({ paths: sitemapPaths, hostname: website });
+  const sitemap = renderSitemap({
+    paths: sitemapPaths,
+    hostname: website,
+  });
+
   writeFile({
     dir: webpackConfig.output.path,
     fileName: '/sitemap.xml',
@@ -45,7 +49,7 @@ const buildStatic = ({ jsBundle, cssBundle }) => {
         fileName = `${fileName}.html`;
 
         const html = renderDocument({
-          Title: title.toComponent(),
+          title: title.toComponent(),
           metas: meta.toComponent(),
           links: link.toComponent(),
           scripts: script.toComponent(),

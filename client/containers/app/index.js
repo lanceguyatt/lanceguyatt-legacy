@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './style.css';
+
 const App = ({ children }) => (
-  <div className="u-h100">
+  <div className={styles.app}>
     {children}
   </div>
 );
