@@ -68,9 +68,9 @@ const renderDocument = (props) => {
   };
 
   // Html.defaultProps = {
-  //   Title: '',
-  //   metas: '',
-  //   links: '',
+  //   title: [],
+  //   metas: [],
+  //   links: [],
   //   scripts: '',
   //   cssBundle: '',
   //   jsBundle: '',

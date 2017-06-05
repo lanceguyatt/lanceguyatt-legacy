@@ -1,4 +1,3 @@
-/* eslint import/no-extraneous-dependencies: 0 */
 import path from 'path';
 import WebpackIsomorphicTools from 'webpack-isomorphic-tools';
 import isomorphicConfig from './isomorphic.prod.config';

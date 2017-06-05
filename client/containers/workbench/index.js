@@ -11,6 +11,7 @@ import Directory from '../../components/directory/';
 import styles from './style.css';
 
 import site from '../../../data/site/';
+import kickstart from '../../../data/kickstart/';
 
 export default class WorkBench extends Component {
   static propTypes = {
@@ -39,7 +40,7 @@ export default class WorkBench extends Component {
         <Titlebar name={`${site.name}. Copyright © ${site.dateCreated.substr(0, 4)}-${site.copyrightYear}. All Rights Reserved`} />
 
         <Window
-          close="/kickstart/"
+          close={kickstart.url}
           name={data.name}
           alternateHeadline={data.alternateHeadline}
           depth

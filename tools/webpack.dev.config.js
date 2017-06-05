@@ -1,8 +1,7 @@
-/* eslint import/no-extraneous-dependencies: 0 */
-const webpack = require('webpack');
-const path = require('path');
+import webpack from 'webpack';
+import path from 'path';
 
-module.exports = {
+export default {
   devtool: 'eval-source-map',
   entry: {
     bundle: [

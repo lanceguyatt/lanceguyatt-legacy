@@ -5,7 +5,6 @@ import App from './containers/app/';
 import WorkBench from './containers/workbench/';
 import KickStart from './containers/kickstart/';
 import GuruMeditation from './containers/guru_meditation/';
-
 import Drawer from './components/drawer/';
 import Work from './components/work/';
 
@@ -24,19 +23,24 @@ import guruMeditation from '../data/guru_meditation/';
 const routes = (
   <div>
     <Route component={App}>
-      <Route path="/" component={WorkBench} data={workbench}>
-        <Route path="/work/" component={Drawer} data={work}>
-          <Route path="/work/associated-press/" component={Work} data={associatedPress} />
-          <Route path="/work/awin/" component={Work} data={awin} />
-          <Route path="/work/mq/" component={Work} data={mq} />
-          <Route path="/work/wilson-fletcher/" component={Work} data={wilsonFletcher} />
-          <Route path="/work/bauer-media/" component={Work} data={bauerMedia} />
+      <Route path={workbench.url} component={WorkBench} data={workbench}>
+        <Route path={work.url} component={Drawer} data={work}>
+          <Route path={associatedPress.url} data={associatedPress} component={Work} />
+          <Route path={awin.url} data={awin} component={Work} />
+          <Route path={mq.url} data={mq} component={Work} />
+          <Route path={wilsonFletcher.url} data={wilsonFletcher} component={Work} />
+          <Route path={bauerMedia.url} data={bauerMedia} component={Work} />
         </Route>
-        <Route path="/projects/" component={Drawer} data={projects} />
-        <Route path="/about/" component={Drawer} data={about} />
+        <Route path={projects.url} data={projects} component={Drawer} />
+        <Route path={about.url} data={about} component={Drawer} />
       </Route>
-      <Route path="/kickstart/" component={KickStart} data={kickstart} />
-      <Route path="/guru-meditation/" component={GuruMeditation} status={404} data={guruMeditation} />
+      <Route path={kickstart.url} data={kickstart} component={KickStart} />
+      <Route
+        path={guruMeditation.url}
+        data={guruMeditation}
+        status={404}
+        component={GuruMeditation}
+      />
       <Route path="404" component={GuruMeditation} status={404} data={guruMeditation} />
       <Route path="*" component={GuruMeditation} status={404} data={guruMeditation} />
     </Route>

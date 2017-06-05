@@ -1,17 +1,18 @@
 /* eslint no-undef: 0 */
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 
 import Fader from '../../components/fader/';
 import Head from '../../components/head/';
 
+import workbench from '../../../data/workbench/';
 import site from '../../../data/site/';
 import author from '../../../data/author/';
 
 import styles from './style.css';
 
 export default class KickStart extends Component {
-
   static propTypes = {
     route: PropTypes.shape(),
   };
@@ -38,7 +39,7 @@ export default class KickStart extends Component {
         <Head data={data} />
 
         <div className={styles.copyright}>
-          <a href="/">
+          <Link to={workbench.url}>
             <div className={styles.tick} />
             <p>
               2.0 Roms (37.350)
@@ -49,13 +50,13 @@ export default class KickStart extends Component {
               <br />
               All Rights Reserved
             </p>
-          </a>
+          </Link>
         </div>
 
-        <a href="/" className={styles.group}>
+        <Link to={workbench.url} className={styles.group}>
           <div className={styles.diskDrive} />
           <div className={styles.floppyDisk} />
-        </a>
+        </Link>
       </Fader>
     );
   }

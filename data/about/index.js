@@ -9,7 +9,7 @@ export default {
     {
       id: 1,
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/lanceguyatt/',
+      url: 'https://www.linkedin.com/in/lanceguyatt',
       type: 'file',
     }, {
       id: 2,
