@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import Head from '../../components/head/';
 import Window from '../../components/window/';
 import Action from '../../gadgets/action/';
+import Box from '../../gadgets/box/';
 
 import styles from './style.css';
 
@@ -20,28 +21,30 @@ Dl.defaultProps = {
   children: '',
 };
 
-const Dt = ({ name }) => (
-  <dt className={styles.dt}>{name}</dt>
+const Dt = ({ children }) => (
+  <dt className={styles.dt}>{children}</dt>
 );
 
 Dt.propTypes = {
-  name: PropTypes.string,
+  children: PropTypes.node,
 };
 
 Dt.defaultProps = {
-  name: '',
+  children: '',
 };
 
-const Dd = ({ description }) => (
-  <dd className={`${styles.dd} c-border`}>{description}</dd>
+const Dd = ({ children }) => (
+  <dd className={`${styles.dd}`}>
+    <Box>{children}</Box>
+  </dd>
 );
 
 Dd.propTypes = {
-  description: PropTypes.string,
+  children: PropTypes.node,
 };
 
 Dd.defaultProps = {
-  description: '',
+  children: '',
 };
 
 export default class Work extends Component {
@@ -85,34 +88,37 @@ export default class Work extends Component {
             <div className="u-p2 u-flex-md">
 
               <div className="u-mb2 u-col-4-md u-pr2-md">
-                <img src={data.image.url} alt="" className="c-border u-block u-mx-auto" />
+                <Box>
+                  <img src={data.image.url} alt="" className="u-block u-mx-auto" />
+                </Box>
               </div>
 
               <div className="u-col-8-md">
 
                 <Dl>
-                  <Dt name="Name:" />
-                  <Dd description={data.name} itemprop="name" />
+                  <Dt>Name:</Dt>
+                  <Dd itemprop="name">{data.name}</Dd>
                 </Dl>
 
                 <Dl>
-                  <Dt name="URL:" />
-                  <Dd description={data.website} />
+                  <Dt>URL:</Dt>
+                  <Dd>{data.website}</Dd>
                 </Dl>
 
-                <dl className="u-items-center u-mb2 u-flex-sm">
-                  <dt className="u-white u-col-3-sm u-pr2-sm">Standards:</dt>
-                  <dd className="c-border u-flex-auto">
+                <Dl>
+                  <Dt>Standards:</Dt>
+                  <Dd>
                     <ul className="u-list-reset">{standards}</ul>
-                  </dd>
-                </dl>
+                  </Dd>
+                </Dl>
 
-                <dl className="u-items-center u-mb2 u-flex-sm">
-                  <dt className="u-white u-col-3-sm u-pr2-sm">Components:</dt>
-                  <dd className="c-border u-flex-auto">
+                <Dl>
+                  <Dt>Components:</Dt>
+                  <Dd>
                     <ul className="u-list-reset">{components}</ul>
-                  </dd>
-                </dl>
+                  </Dd>
+                </Dl>
+
               </div>
             </div>
 
