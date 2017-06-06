@@ -10,10 +10,15 @@ export default {
     url: image,
   },
   standards: [
-    'HTML5', 'CSS3',
+    { id: 1, name: 'HTML5' },
+    { id: 2, name: 'CSS3' },
   ],
   components: [
-    'KeystoneJS', 'gulp.js', 'Jade', 'Sass', 'CoffeeScript',
+    { id: 1, name: 'KeystoneJS' },
+    { id: 2, name: 'gulp.js' },
+    { id: 3, name: 'Jade' },
+    { id: 4, name: 'Sass' },
+    { id: 5, name: 'CoffeeScript' },
   ],
   website: 'https://www.bauermedia.co.uk/',
   datePublished: '2013-10-12',

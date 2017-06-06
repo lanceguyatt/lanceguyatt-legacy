@@ -66,12 +66,12 @@ export default class Work extends Component {
   render() {
     const { data } = this.props.route;
 
-    const standards = data.standards.map((item, i) => (
-      <li key={i}>{item}</li>
+    const standards = data.standards.map(item => (
+      <li key={item.id}>{item.name}</li>
     ));
 
-    const components = data.components.map((item, i) => (
-      <li key={i}>{item}</li>
+    const components = data.components.map(item => (
+      <li key={item.id}>{item.name}</li>
     ));
 
     return (

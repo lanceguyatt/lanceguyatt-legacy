@@ -7,13 +7,21 @@ export default {
   url: '/work/awin/',
   parent: '/work/',
   image: {
+    alt: 'Awin image',
     url: image,
   },
   standards: [
-    'HTML5', 'CSS3', 'Microdata', 'Open Graph',
+    { id: 1, name: 'HTML5' },
+    { id: 2, name: 'CSS3' },
+    { id: 3, name: 'Microdata' },
+    { id: 4, name: 'Open Graph' },
   ],
   components: [
-    'KeystoneJS', 'gulp.js', 'Pug', 'webpack', 'PostCSS',
+    { id: 1, name: 'KeystoneJS' },
+    { id: 2, name: 'gulp.js' },
+    { id: 3, name: 'Pug' },
+    { id: 4, name: 'webpack' },
+    { id: 5, name: 'PostCSS' },
   ],
   website: 'http://awin.com',
   type: 'drawer',

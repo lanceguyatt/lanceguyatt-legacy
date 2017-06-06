@@ -5,8 +5,9 @@ import App from './containers/app/';
 import WorkBench from './containers/workbench/';
 import KickStart from './containers/kickstart/';
 import GuruMeditation from './containers/guru_meditation/';
+import Work from './containers/work/';
+
 import Drawer from './components/drawer/';
-import Work from './components/work/';
 
 import workbench from '../data/workbench/';
 

@@ -10,10 +10,13 @@ export default {
     url: image,
   },
   standards: [
-    'HTML5', 'CSS3', 'Microdata', 'Open Graph',
+    { id: 1, name: 'HTML5' },
+    { id: 2, name: 'CSS3' },
   ],
   components: [
-    'Angular JS', 'gulp.js', 'PostCSS',
+    { id: 1, name: 'Angular JS' },
+    { id: 2, name: 'gulp.js' },
+    { id: 3, name: 'PostCSS' },
   ],
   datePublished: '2017-06-01',
   website: 'http://thechapar.com',

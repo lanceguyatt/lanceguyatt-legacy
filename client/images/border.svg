@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="68px" height="28px" viewBox="0 0 68 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <title>border</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="border">
-            <g id="Group">
-                <path d="M1,26 L68,26 L68,28 L1,28 L1,26 Z M66,2 L68,2 L68,26 L66,26 L66,2 Z M67,0 L68,0 L68,2 L67,2 L67,0 Z M2,2 L65,2 L65,4 L2,4 L2,2 Z M2,4 L4,4 L4,24 L2,24 L2,4 Z M2,24 L3,24 L3,26 L2,26 L2,24 Z" id="Combined-Shape" fill="#000000"></path>
-                <path d="M0,0 L67,0 L67,2 L0,2 L0,0 Z M0,2 L2,2 L2,26 L0,26 L0,2 Z M0,26 L1,26 L1,28 L0,28 L0,26 Z M3,24 L66,24 L66,26 L3,26 L3,24 Z M64,4 L66,4 L66,24 L64,24 L64,4 Z M65,2 L66,2 L66,4 L65,4 L65,2 Z" id="Combined-Shape" fill="#FFFFFF"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="68" height="28" viewBox="0 0 68 28" xmlns="http://www.w3.org/2000/svg"><title>border</title><g fill="none" fill-rule="evenodd"><path d="M1 26h67v2H1v-2zM66 2h2v24h-2V2zm1-2h1v2h-1V0zM2 2h63v2H2V2zm0 2h2v20H2V4zm0 20h1v2H2v-2z" fill="#000"/><path d="M0 0h67v2H0V0zm0 2h2v24H0V2zm0 24h1v2H0v-2zm3-2h63v2H3v-2zM64 4h2v20h-2V4zm1-2h1v2h-1V2z" fill="#FFF"/></g></svg>
