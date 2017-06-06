@@ -1,6 +1,7 @@
 import image from '../../../client/images/work/awin.png';
 
 export default {
+  id: 7,
   name: 'Awin',
   description: 'Awin website',
   url: '/work/awin/',

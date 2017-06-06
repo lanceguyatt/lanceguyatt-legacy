@@ -1,6 +1,7 @@
 import image from '../../../client/images/work/the_chapar.png';
 
 export default {
+  id: 8,
   name: 'The Chapar',
   description: 'The Chapar website',
   url: '/work/the-chapar/',

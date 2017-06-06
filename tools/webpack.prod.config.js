@@ -5,11 +5,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./isomorphic.prod.config'));
+const isomorphicProdConfig = require('./isomorphic.prod.config');
+const webpackBase = require('./webpack.config');
 
-const base = require('./webpack.config');
+const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(isomorphicProdConfig);
 
-module.exports = Object.assign({}, base, {
+module.exports = Object.assign({}, webpackBase, {
 
   entry: {
     bundle: [
@@ -19,8 +20,15 @@ module.exports = Object.assign({}, base, {
 
   output: {
     path: path.resolve(__dirname, '../build'),
-    filename: 'scripts/[name]-[hash].js',
+    filename: 'assets/scripts/[name]-[hash].js',
     publicPath: '/',
+  },
+
+  resolve: {
+    alias: {
+      react: 'react-lite',
+      'react-dom': 'react-lite',
+    },
   },
 
   module: {
@@ -75,7 +83,7 @@ module.exports = Object.assign({}, base, {
           {
             loader: 'file-loader',
             options: {
-              name: 'audio/[name].[ext]',
+              name: 'assets/audio/[name].[ext]',
             },
           },
         ],
@@ -87,7 +95,7 @@ module.exports = Object.assign({}, base, {
           {
             loader: 'file-loader',
             options: {
-              name: 'fonts/[name].[ext]',
+              name: 'assets/fonts/[name].[ext]',
             },
           },
         ],
@@ -112,7 +120,7 @@ module.exports = Object.assign({}, base, {
           {
             loader: 'file-loader',
             options: {
-              name: 'images/[name].[ext]',
+              name: 'assets/images/[name].[ext]',
             },
           },
           {
@@ -169,7 +177,7 @@ module.exports = Object.assign({}, base, {
     new webpack.optimize.AggressiveMergingPlugin(),
 
     new ExtractTextPlugin({
-      filename: 'styles/bundle-[contenthash].css',
+      filename: 'assets/styles/bundle-[contenthash].css',
       allChunks: true,
     }),
 

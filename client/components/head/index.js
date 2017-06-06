@@ -37,7 +37,6 @@ const Head = ({ data }) => {
 
   return (
     <Helmet
-      htmlAttributes
       defaultTitle={site.name}
       titleTemplate="%s - Lance Guyatt, Web Developer"
       title={data.name}
@@ -89,7 +88,7 @@ Head.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     url: PropTypes.string,
-    image: PropTypes.string,
+    image: PropTypes.object,
   }),
 };
 

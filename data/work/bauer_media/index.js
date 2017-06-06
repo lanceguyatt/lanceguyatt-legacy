@@ -1,6 +1,7 @@
 import image from '../../../client/images/work/bauer.png';
 
 export default {
+  id: 3,
   name: 'Bauer Media',
   description: 'Bauer Media website',
   url: '/work/bauer-media/',

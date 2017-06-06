@@ -1,6 +1,7 @@
 import image from '../../../client/images/work/wf.png';
 
 export default {
+  id: 4,
   name: 'Wilson Fletcher',
   description: 'Wilson Fletcher website',
   url: '/work/wilson-fletcher/',

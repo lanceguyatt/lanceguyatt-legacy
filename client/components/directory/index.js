@@ -13,7 +13,7 @@ const DirectoryItem = ({ item }) => (
 );
 
 DirectoryItem.propTypes = {
-  item: PropTypes.obj,
+  item: PropTypes.object,
 };
 
 DirectoryItem.defaultProps = {
@@ -22,8 +22,9 @@ DirectoryItem.defaultProps = {
 
 const Directory = ({ items, wrap }) => {
   const renderItems = items.map(item => (
-    <DirectoryItem item={item} key={item.url} /> : null),
+    <DirectoryItem item={item} key={item.id} /> : null),
   );
+
   return (
     <nav>
       <ul className={wrap ? styles.directoryRow : styles.directory}>
@@ -34,7 +35,7 @@ const Directory = ({ items, wrap }) => {
 };
 
 Directory.propTypes = {
-  items: PropTypes.arrayOf(React.PropTypes.object),
+  items: PropTypes.arrayOf(PropTypes.object),
   wrap: PropTypes.bool,
 };
 

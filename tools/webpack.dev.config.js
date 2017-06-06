@@ -32,6 +32,7 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.css$/,
+        include: [path.resolve(__dirname, '../client')],
         use: [
           {
             loader: 'style-loader',
@@ -51,6 +52,7 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.svg$/,
+        include: [path.resolve(__dirname, '../client')],
         use: [
           {
             loader: 'url-loader',
@@ -63,6 +65,7 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.(png|woff2|eot|mp3|xml|txt|ico|html)$/,
+        include: [path.resolve(__dirname, '../client')],
         use: [
           {
             loader: 'file-loader',

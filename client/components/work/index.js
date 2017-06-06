@@ -4,10 +4,45 @@ import { Link } from 'react-router';
 
 import Head from '../../components/head/';
 import Window from '../../components/window/';
-
 import Action from '../../gadgets/action/';
 
 import styles from './style.css';
+
+const Dl = ({ children }) => (
+  <dl className={styles.dl}>{children}</dl>
+);
+
+Dl.propTypes = {
+  children: PropTypes.node,
+};
+
+Dl.defaultProps = {
+  children: '',
+};
+
+const Dt = ({ name }) => (
+  <dt className={styles.dt}>{name}</dt>
+);
+
+Dt.propTypes = {
+  name: PropTypes.string,
+};
+
+Dt.defaultProps = {
+  name: '',
+};
+
+const Dd = ({ description }) => (
+  <dd className={`${styles.dd} c-border`}>{description}</dd>
+);
+
+Dd.propTypes = {
+  description: PropTypes.string,
+};
+
+Dd.defaultProps = {
+  description: '',
+};
 
 export default class Work extends Component {
 
@@ -28,12 +63,12 @@ export default class Work extends Component {
   render() {
     const { data } = this.props.route;
 
-    const standards = data.standards.map(item => (
-      <li>{item}</li>
+    const standards = data.standards.map((item, i) => (
+      <li key={i}>{item}</li>
     ));
 
-    const components = data.components.map(item => (
-      <li>{item}</li>
+    const components = data.components.map((item, i) => (
+      <li key={i}>{item}</li>
     ));
 
     return (
@@ -43,7 +78,8 @@ export default class Work extends Component {
         itemType="http://schema.org/CreativeWork"
       >
         <Head data={data} />
-        <Window close={data.parent} name={data.name} transition>
+
+        <Window close={data.parent} name={data.name}>
 
           <div className="">
             <div className="u-p2 u-flex-md">
@@ -54,15 +90,15 @@ export default class Work extends Component {
 
               <div className="u-col-8-md">
 
-                <dl className="u-items-center u-mb2 u-flex-sm ">
-                  <dt className="u-white u-col-3-sm u-pr2-sm">Name:</dt>
-                  <dd className="c-border u-flex-auto" itemProp="name">{data.name}</dd>
-                </dl>
+                <Dl>
+                  <Dt name="Name:" />
+                  <Dd description={data.name} itemprop="name" />
+                </Dl>
 
-                <dl className="u-items-center u-mb2 u-flex-sm">
-                  <dt className="u-white u-col-3-sm u-pr2-sm">URL:</dt>
-                  <dd className="c-border u-flex-auto" itemProp="url">{data.website}</dd>
-                </dl>
+                <Dl>
+                  <Dt name="URL:" />
+                  <Dd description={data.website} />
+                </Dl>
 
                 <dl className="u-items-center u-mb2 u-flex-sm">
                   <dt className="u-white u-col-3-sm u-pr2-sm">Standards:</dt>

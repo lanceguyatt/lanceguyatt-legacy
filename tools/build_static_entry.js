@@ -9,7 +9,6 @@ const projectBasePath = path.resolve(__dirname, '..');
 const webpackIsomorphicTools = new WebpackIsomorphicTools(isomorphicConfig)
   .server(projectBasePath, () => {
     const { javascript, styles } = webpackIsomorphicTools.assets();
-
     const buildStatic = require('./build_static.js').default;
 
     buildStatic({

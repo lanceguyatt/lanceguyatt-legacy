@@ -7,7 +7,6 @@ import getPaths from './lib/get_paths';
 import renderSitemap from './lib/render_sitemap';
 import writeFile from './lib/write_file';
 import renderDocument from './lib/render_document';
-
 import config from '../package.json';
 import webpackConfig from './webpack.prod.config';
 import routes from '../client/routes';

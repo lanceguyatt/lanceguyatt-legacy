@@ -1,6 +1,8 @@
 /* eslint no-console: 1 */
 import express from 'express';
 import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddlware from 'webpack-hot-middleware';
 
 import renderDocument from './lib/render_document';
 import webpackConfig from './webpack.dev.config';
@@ -8,12 +10,12 @@ import webpackConfig from './webpack.dev.config';
 const app = express();
 const compiler = webpack(webpackConfig);
 
-app.use(require('webpack-dev-middleware')(compiler, {
+app.use(webpackDevMiddleware(compiler, {
   noInfo: true,
   publicPath: webpackConfig.output.publicPath,
 }));
 
-app.use(require('webpack-hot-middleware')(compiler));
+app.use(webpackHotMiddlware(compiler));
 
 app.get('*', (req, res) => {
   const html = renderDocument({

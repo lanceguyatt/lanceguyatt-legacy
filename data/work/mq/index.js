@@ -1,6 +1,7 @@
 import image from '../../../client/images/work/mq.png';
 
 export default {
+  id: 5,
   name: 'MQ',
   description: 'MQ website',
   url: '/work/mq/',
