@@ -1,6 +1,6 @@
 import image from '../../../client/images/work/wf.png';
 
-export default {
+const wilsonFletcher = {
   id: 4,
   name: 'Wilson Fletcher',
   description: 'Wilson Fletcher website',
@@ -26,3 +26,5 @@ export default {
   datePublished: '2013-10-12',
   type: 'drawer',
 };
+
+export default wilsonFletcher;

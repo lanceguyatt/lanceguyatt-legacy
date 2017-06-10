@@ -1,6 +1,6 @@
 import image from '../../../client/images/work/ap.png';
 
-export default {
+const associatedPress = {
   id: 6,
   name: 'Associated Press',
   description: 'Associated Press website',
@@ -23,3 +23,5 @@ export default {
   website: 'http://ap.org',
   type: 'drawer',
 };
+
+export default associatedPress;

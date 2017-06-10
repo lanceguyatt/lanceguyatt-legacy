@@ -15,7 +15,6 @@ import associatedPress from '../data/work/associated_press/';
 import awin from '../data/work/awin/';
 import bauerMedia from '../data/work/bauer_media/';
 import mq from '../data/work/mq/';
-import theChapar from '../data/work/the_chapar/';
 import wilsonFletcher from '../data/work/wilson_fletcher/';
 import work from '../data/work/';
 
@@ -36,7 +35,6 @@ const routes = (
           <Route path={awin.url} data={awin} component={Work} />
           <Route path={bauerMedia.url} data={bauerMedia} component={Work} />
           <Route path={mq.url} data={mq} component={Work} />
-          <Route path={theChapar.url} data={theChapar} component={Work} />
           <Route path={wilsonFletcher.url} data={wilsonFletcher} component={Work} />
         </Route>
         <Route path={projects.url} data={projects} component={Drawer} />

@@ -1,4 +1,4 @@
-export default {
+const author = {
   name: {
     givenName: 'Lance',
     familyName: 'Guyatt',
@@ -15,3 +15,5 @@ export default {
     addressCountry: 'United Kingdom',
   },
 };
+
+export default author;

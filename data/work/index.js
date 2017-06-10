@@ -1,4 +1,3 @@
-import theChapar from './the_chapar/';
 import associatedPress from './associated_press/';
 import awin from './awin/';
 import bauerMedia from './bauer_media/';
@@ -7,7 +6,7 @@ import wilsonFletcher from './wilson_fletcher/';
 import nzz from './nzz/';
 import interislander from './interislander/';
 
-export default {
+const work = {
   id: 1,
   name: 'Work',
   description: 'Work description',
@@ -15,7 +14,6 @@ export default {
   parent: '/',
   type: 'drawer',
   items: [
-    theChapar,
     awin,
     associatedPress,
     mq,
@@ -25,3 +23,5 @@ export default {
     interislander,
   ],
 };
+
+export default work;

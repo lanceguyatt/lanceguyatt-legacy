@@ -1,6 +1,6 @@
 import image from '../../../client/images/work/mq.png';
 
-export default {
+const mq = {
   id: 5,
   name: 'MQ',
   description: 'MQ website',
@@ -25,3 +25,5 @@ export default {
   website: 'http://mqmentalhealth.org',
   type: 'drawer',
 };
+
+export default mq;

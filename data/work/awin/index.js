@@ -1,6 +1,6 @@
 import image from '../../../client/images/work/awin.png';
 
-export default {
+const awin = {
   id: 7,
   name: 'Awin',
   description: 'Awin website',
@@ -26,3 +26,5 @@ export default {
   website: 'http://awin.com',
   type: 'drawer',
 };
+
+export default awin;

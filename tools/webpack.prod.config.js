@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const path = require('path');
+const { resolve } = require('path');
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -19,7 +19,7 @@ module.exports = Object.assign({}, webpackBase, {
   },
 
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: resolve(__dirname, '../build'),
     filename: 'assets/scripts/[name]-[hash].js',
     publicPath: '/',
   },
@@ -36,7 +36,7 @@ module.exports = Object.assign({}, webpackBase, {
 
       {
         test: /\.js$/,
-        include: [path.resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../client')],
         use: 'babel-loader',
       },
 
@@ -103,7 +103,7 @@ module.exports = Object.assign({}, webpackBase, {
 
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('static'),
-        include: [path.resolve(__dirname, '../client/static')],
+        include: [resolve(__dirname, '../client/static')],
         use: [
           {
             loader: 'file-loader',

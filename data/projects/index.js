@@ -1,4 +1,7 @@
-export default {
+import lanceguyatt from './lanceguyatt/';
+import fronter from './fronter/';
+
+const projects = {
   id: 2,
   name: 'Projects',
   description: 'Side projects',
@@ -6,16 +9,9 @@ export default {
   parent: '/',
   type: 'drawer',
   items: [
-    {
-      id: 1,
-      name: 'Lance Guyatt',
-      url: 'https://github.com/lanceguyatt/lanceguyatt/',
-      type: 'file',
-    }, {
-      id: 2,
-      name: 'Glup Starter',
-      url: 'https://github.com/lanceguyatt/gulpstarter/',
-      type: 'file',
-    },
+    lanceguyatt,
+    fronter,
   ],
 };
+
+export default projects;

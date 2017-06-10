@@ -1,6 +1,6 @@
 import image from '../../../client/images/work/bauer.png';
 
-export default {
+const bauerMedia = {
   id: 3,
   name: 'Bauer Media',
   description: 'Bauer Media website',
@@ -24,3 +24,5 @@ export default {
   datePublished: '2013-10-12',
   type: 'drawer',
 };
+
+export default bauerMedia;

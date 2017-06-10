@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const path = require('path');
+const { resolve } = require('path');
 
 const base = require('./webpack.config');
 
@@ -15,7 +15,7 @@ module.exports = Object.assign({}, base, {
   },
 
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: resolve(__dirname, '../build'),
     filename: '[name].js',
     libraryTarget: 'umd',
     publicPath: '/',
@@ -26,13 +26,13 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.js$/,
-        include: [path.resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../client')],
         use: 'babel-loader',
       },
 
       {
         test: /\.css$/,
-        include: [path.resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../client')],
         use: [
           {
             loader: 'style-loader',
@@ -52,7 +52,7 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.svg$/,
-        include: [path.resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../client')],
         use: [
           {
             loader: 'url-loader',
@@ -65,7 +65,7 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.(png|woff2|eot|mp3|xml|txt|ico|html)$/,
-        include: [path.resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../client')],
         use: [
           {
             loader: 'file-loader',
