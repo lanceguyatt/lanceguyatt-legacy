@@ -5,7 +5,7 @@ import { Flex } from 'grid-styled';
 import { color, removeProps } from 'styled-system';
 // import { borderWidth, borderStyle } from 'polished';
 
-const BaseWrapper = props => {
+const BaseWrapper = (props) => {
   const next = removeProps(props);
   return <Flex {...next} />;
 };
@@ -23,33 +23,30 @@ const Wrapper = styled(BaseWrapper)`
 }
 `;
 
-const TitleBar = props => {
-  const { children } = props;
-  return (
-    <Wrapper
-      flex={'none'}
-      px={1}
-      bg={props.bg}
-      color={props.color}
-      className={props.className}
-    >
-      {children}
-    </Wrapper>
-  );
-};
+const TitleBar = props => (
+  <Wrapper
+    flex={'none'}
+    px={1}
+    bg={props.bg}
+    color={props.color}
+    className={props.className}
+  >
+    {props.children}
+  </Wrapper>
+);
 
 TitleBar.propTypes = {
   bg: PropTypes.string,
   children: PropTypes.string,
   color: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 TitleBar.defaultProps = {
   bg: '',
   children: '',
   color: '',
-  className: ''
+  className: '',
 };
 
 export default TitleBar;

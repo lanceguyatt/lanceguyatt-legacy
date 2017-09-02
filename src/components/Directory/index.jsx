@@ -38,7 +38,7 @@ const WrapperList = styled(Flex)`
   }
 `;
 
-const Directory = props => {
+const Directory = (props) => {
   const { item } = props;
   return (
     <Wrapper is={'nav'} m={3}>
@@ -58,12 +58,12 @@ const Directory = props => {
 
 Directory.propTypes = {
   item: PropTypes.shape(),
-  column: PropTypes.boolean
+  column: PropTypes.boolean,
 };
 
 Directory.defaultProps = {
   item: '',
-  column: false
+  column: false,
 };
 
 export default Directory;

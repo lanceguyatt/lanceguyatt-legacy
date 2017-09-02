@@ -12,12 +12,12 @@ Audio.propTypes = {
   audio: PropTypes.shape({
     id: PropTypes.string.isRequired,
     src: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired
-  })
+    type: PropTypes.string.isRequired,
+  }),
 };
 
 Audio.defaultProps = {
-  audio: {}
+  audio: {},
 };
 
 export default Audio;

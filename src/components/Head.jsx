@@ -4,7 +4,8 @@ import Helmet from 'react-helmet';
 
 import { site } from '../data';
 
-const Head = ({ item }) => {
+const Head = (props) => {
+  const { item } = props;
   const pageUrl = `${site.url}${item.url}`;
   const pageImage = `${site.url}/logo.png`;
   const pageTitle = `${item.name} - ${site.name}`;
@@ -32,18 +33,18 @@ const Head = ({ item }) => {
         { name: 'twitter:url', content: pageUrl },
         { itemprop: 'name', content: pageTitle },
         { itemprop: 'description', content: item.description },
-        { itemprop: 'url', content: pageUrl }
+        { itemprop: 'url', content: pageUrl },
       ]}
     />
   );
 };
 
 Head.propTypes = {
-  item: PropTypes.shape()
+  item: PropTypes.shape(),
 };
 
 Head.defaultProps = {
-  item: {}
+  item: {},
 };
 
 export default Head;

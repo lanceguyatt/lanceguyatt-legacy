@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { position } from 'polished';
 
@@ -15,7 +15,7 @@ class Window extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: false
+      active: false,
     };
   }
 
@@ -24,28 +24,28 @@ class Window extends Component {
   }
 
   render() {
-    const { name } = this.props.item;
+    const { item, children, flex } = this.props;
     return (
-      <Wrapper active={this.state.active} {...this.props}>
-        <Header>{name}</Header>
+      <Wrapper flex={flex}>
+        <Header>{item.name}</Header>
         <Foo>
-          <Bar>{this.props.children}</Bar>
+          <Bar>{children}</Bar>
         </Foo>
       </Wrapper>
     );
   }
 }
 
-Window.propTypes = {
-  item: PropTypes.shape(),
-  children: PropTypes.shape(),
-  flex: PropTypes.string
-};
-
-Window.defaultProps = {
-  item: {},
-  children: '',
-  flex: ''
-};
+// Window.propTypes = {
+//   item: PropTypes.shape(),
+//   children: PropTypes.shape(),
+//   flex: PropTypes.string,
+// };
+//
+// Window.defaultProps = {
+//   item: '',
+//   children: '',
+//   flex: '',
+// };
 
 export default Window;

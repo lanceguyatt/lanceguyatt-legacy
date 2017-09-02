@@ -7,7 +7,7 @@ import { position, size } from 'polished';
 
 import window2 from './window-2.svg';
 
-const BaseWrapper = props => {
+const BaseWrapper = (props) => {
   const next = removeProps(props);
   return <Flex {...next} />;
 };
@@ -31,7 +31,7 @@ export const Foo = styled.div`
     '-7px',
     '-37px',
     '-51px',
-    '-17px'
+    '-17px',
   )} &::-webkit-scrollbar {
     display: none;
   }

@@ -11,15 +11,15 @@ import TitleBar from '../../components/TitleBar';
 import Drawer from '../../components/drawer';
 import Window from '../../components/Window';
 import Directory from '../../components/Directory';
-import { Button } from '../../components/Gadgets';
+import { Action } from '../../components/gadgets';
 
 const navPrimary = {
   name: 'Primary navigation',
   items: [
     { id: 'work', name: 'Work', url: '/work/' },
     { id: 'projects', name: 'Projects', url: '/projects/' },
-    { id: 'about', name: 'About', url: '/about/' }
-  ]
+    { id: 'about', name: 'About', url: '/about/' },
+  ],
 };
 
 const Wrapper = styled(Flex)`
@@ -31,11 +31,11 @@ const Wrapper = styled(Flex)`
   position: relative;
 `;
 
-export default class WorkBench extends Component {
+class WorkBench extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: false
+      active: false,
     };
   }
 
@@ -54,9 +54,9 @@ export default class WorkBench extends Component {
             Reserved
           </TitleBar>
           <Flex direction={['column', 'row']} flex={'auto'}>
-            <Window item={{ name: 'First' }} flex={1}>
+            <Window item={{ name: 'First' }} flex={'1'}>
               <Directory item={navPrimary} />
-              <Button>Button</Button>
+              <Action name={'Link'} />
             </Window>
 
             <Router>
@@ -76,13 +76,11 @@ export default class WorkBench extends Component {
 }
 
 WorkBench.propTypes = {
-  item: PropTypes.shape()
+  item: PropTypes.shape(),
 };
 
 WorkBench.defaultProps = {
-  item: {}
+  item: '',
 };
 
-// <Switch>
-//   <Route path={about.url} exact render={() => <About item={about} />} />
-// </Switch>
+export default WorkBench;

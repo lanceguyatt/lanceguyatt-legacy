@@ -56,22 +56,22 @@ Alert.propTypes = {
   item: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
-    url: PropTypes.string
+    url: PropTypes.string,
   }),
   error: PropTypes.boolean,
   animate: PropTypes.boolean,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 Alert.defaultProps = {
   item: {
     name: 'Alert name',
     description: 'Alert description',
-    url: '#'
+    url: '#',
   },
   error: false,
   animate: false,
-  className: ''
+  className: '',
 };
 
 export default Alert;

@@ -7,21 +7,19 @@ import diskDrive from './disk-drive.svg';
 const Wrapper = styled.div`
   width: 156px;
   height: 38px;
+  background-image: url(${diskDrive});
 `;
 
-export default function DiskDrive(props) {
-  return (
-    <Wrapper
-      style={{ backgroundImage: `url(${diskDrive})` }}
-      className={props.className}
-    />
-  );
-}
+const DiskDrive = props => (
+  <Wrapper className={props.className} />
+);
 
 DiskDrive.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 DiskDrive.defaultProps = {
-  className: ''
+  className: '',
 };
+
+export default DiskDrive;
