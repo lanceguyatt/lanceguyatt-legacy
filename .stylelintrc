@@ -1,13 +1,6 @@
 {
+  "processors": ["stylelint-processor-styled-components"],
   "extends": "stylelint-config-standard",
-  "rules": {
-    "property-no-unknown": [
-      true,
-      "ignoreProperties": "composes"
-    ],
-    "selector-pseudo-class-no-unknown": [
-      true,
-      "ignorePseudoClasses": ["local", "global"]
-    ]
-  }
+  "syntax": "scss",
+  "ignoreFiles": "src/index.css"
 }

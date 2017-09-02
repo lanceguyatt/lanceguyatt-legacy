@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-twitter" viewBox="0 0 20 20">
+    <path d="M3.822 11.302a3.49 3.49 0 0 0 1.572-.098c-1.535-.223-2.708-1.45-2.708-2.93v-.07c.47.247.997.38 1.536.386-.951-.533-1.534-1.494-1.536-2.533 0-.556.165-1.076.454-1.522 1.634 1.806 4.031 3 6.733 3.163a2.834 2.834 0 0 1-.075-.652C9.798 5.365 11.274 4 13.097 4c.952 0 1.81.372 2.411.968a5.457 5.457 0 0 0 2.048-.736 2.927 2.927 0 0 1-1.403 1.665A5.907 5.907 0 0 0 18 5.428a5.253 5.253 0 0 1-1.606 1.551l.001.067v.347c0 4.753-4.173 8.607-9.319 8.607A9.838 9.838 0 0 1 2 14.613c.26.027.523.042.791.042a7.137 7.137 0 0 0 4.123-1.287c-1.464 0-2.679-.868-3.092-2.066z" fill="currentColor" fill-rule="evenodd"/>
+  </symbol>
+  <symbol id="i-drawer" viewBox="0 0 65 38"><g fill="none" fill-rule="evenodd"><path fill="#AAA" d="M0 0h65v38H0z"/><path d="M0 2h1v36H0V2zm0-2h65v2H0V0zM6 6h51v22H6z" fill="#FFF"/><path fill="#000" d="M27 14h3v4h-3zM30 14h6v2h-6zM31 16h1v2h-1zM33 16h1v2h-1zM35 16h1v2h-1zM38 14h1v6h-1zM24 14h1v6h-1zM25 20h13v2H25zM11 24h44v2H11zM54 12h1v12h-1zM8 8h47v2H8V8zm0 2h2v2H8v-2zm0 2h1v14H8V12zM57 8h1v22h-1z"/><path fill="#000" d="M8 28h50v2H8z"/><path d="M64.5 38h.5V2h-1v34H1v2h63.5z" fill="#000"/></g></symbol>
+</svg>

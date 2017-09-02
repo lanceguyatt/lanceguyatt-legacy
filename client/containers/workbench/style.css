@@ -1,7 +1,0 @@
-@import '../../styles/settings/';
-
-:local {
-  .workbench {
-    height: 100%;
-  }
-}
