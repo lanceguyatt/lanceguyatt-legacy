@@ -12,6 +12,7 @@ injectGlobal`
   * {
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -37,6 +38,15 @@ injectGlobal`
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  input,
+  button {
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0;
+    border: 0;
+    outline: 0;
   }
 
   body,

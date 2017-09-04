@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
-import Fader from '../../components/Fader';
+import { Fader } from '../../components/common';
 import Head from '../../components/Head';
 
 import DiskDrive from '../../components/DiskDrive';

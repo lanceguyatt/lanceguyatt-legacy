@@ -5,22 +5,21 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex } from 'grid-styled';
 
-import Fader from '../../components/Fader';
+import { Action, Close, Fader, Depth, Box, File, Checkbox, Radio } from '../../components/common';
 import Head from '../../components/Head';
 import TitleBar from '../../components/TitleBar';
-import Drawer from '../../components/drawer';
+import Drawer from '../../components/Drawer';
 import Window from '../../components/Window';
-import Directory from '../../components/Directory';
-import { Action } from '../../components/gadgets';
+// import Directory from '../../components/Directory';
 
-const navPrimary = {
-  name: 'Primary navigation',
-  items: [
-    { id: 'work', name: 'Work', url: '/work/' },
-    { id: 'projects', name: 'Projects', url: '/projects/' },
-    { id: 'about', name: 'About', url: '/about/' },
-  ],
-};
+// const navPrimary = {
+//   name: 'Primary navigation',
+//   items: [
+//     { id: 'work', name: 'Work', url: '/work/' },
+//     { id: 'projects', name: 'Projects', url: '/projects/' },
+//     { id: 'about', name: 'About', url: '/about/' },
+//   ],
+// };
 
 const Wrapper = styled(Flex)`
   background-color: #aaa;
@@ -42,7 +41,6 @@ class WorkBench extends Component {
   componentWillMount() {
     this.setState({ active: true });
   }
-
   render() {
     const { item } = this.props;
     return (
@@ -55,8 +53,24 @@ class WorkBench extends Component {
           </TitleBar>
           <Flex direction={['column', 'row']} flex={'auto'}>
             <Window item={{ name: 'First' }} flex={'1'}>
-              <Directory item={navPrimary} />
-              <Action name={'Link'} />
+              <Action name={'Link'} to={'/123'} />
+              <Action name={'Button'} onClick={() => { alert('Button clicked'); }} />
+              <Close url={'/'} />
+              <Depth onClick={() => { alert('Depth clicked'); }} />
+              <Box>sdsdsdsd</Box>
+              <Flex wrap style={{ border: '1px solid red' }}>
+                <File item={{ name: 'File', url: 'http://lanceguyatt.com' }} external />
+                <File item={{ name: 'File name that is long', url: 'http://lanceguyatt.com' }} />
+                <File item={{ name: 'File', url: 'http://lanceguyatt.com' }} />
+                <File item={{ name: 'File', url: 'http://lanceguyatt.com' }} />
+                <File item={{ name: 'File', url: 'http://lanceguyatt.com' }} />
+              </Flex>
+              <Flex align={'center'} mb={1}>
+                <Checkbox name={'test'} id={'foo'} />
+                <label htmlFor={'foo'}>Checkbox</label>
+              </Flex>
+              <Radio name={'test'} />
+
             </Window>
 
             <Router>
@@ -84,3 +98,5 @@ WorkBench.defaultProps = {
 };
 
 export default WorkBench;
+
+// <Directory item={navPrimary} />

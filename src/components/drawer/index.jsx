@@ -7,7 +7,7 @@ import Window from '../Window';
 
 const Wrapper = styled.div`border: 1px solid red;`;
 
-const Drawer = item => {
+const Drawer = (item) => {
   const { name } = item;
   return (
     <Wrapper>

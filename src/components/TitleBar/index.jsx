@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex } from 'grid-styled';
 import { color, removeProps } from 'styled-system';
-// import { borderWidth, borderStyle } from 'polished';
 
 const BaseWrapper = (props) => {
   const next = removeProps(props);

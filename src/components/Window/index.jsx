@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { position } from 'polished';
 
 import TitleBar from '../TitleBar';
-import Wrapper, { Foo, Bar } from './style';
+import { Wrapper, Foo } from './style';
 
 const Header = styled(TitleBar)`
   ${position('absolute', '-29px', '-55px', null, '-21px')};
@@ -28,9 +28,7 @@ class Window extends Component {
     return (
       <Wrapper flex={flex}>
         <Header>{item.name}</Header>
-        <Foo>
-          <Bar>{children}</Bar>
-        </Foo>
+        <Foo>{children}</Foo>
       </Wrapper>
     );
   }

@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Flex } from 'grid-styled';
 import { removeProps } from 'styled-system';
-import { position, size } from 'polished';
+import { position } from 'polished';
 
 import window2 from './window-2.svg';
 
@@ -21,7 +21,7 @@ const Wrapper = styled(BaseWrapper)`
   position: relative;
 `;
 
-export const Foo = styled.div`
+const Foo = styled.div`
   background-color: ${props => props.theme.colors.secondary};
   overflow: scroll;
   -ms-overflow-style: none;
@@ -37,9 +37,12 @@ export const Foo = styled.div`
   }
 `;
 
-export const Bar = styled.div`
-  ${size('101%')};
-  ${position('absolute', 0)};
-`;
+// export const Bar = styled.div`
+//   ${size('100%')};
+//   ${position('absolute', 0)};
+// `;
 
-export default Wrapper;
+export {
+  Wrapper,
+  Foo,
+};

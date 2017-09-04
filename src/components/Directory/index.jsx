@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex, Box } from 'grid-styled';
 
-import Icon from '../Icon';
+import { Icon } from '../common';
 
 const Wrapper = styled(Box)`background: orange;`;
 
@@ -17,11 +17,11 @@ const WrapperList = styled(Flex)`
     margin-bottom: 10px;
     text-align: center;
     ${props =>
-      props.column
-        ? `
+    props.column
+      ? `
     background: red;
     `
-        : `
+      : `
     background: green;
     margin-right: 10px;
     `};

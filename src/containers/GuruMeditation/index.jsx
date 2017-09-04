@@ -5,10 +5,8 @@ import styled from 'styled-components';
 import { Flex } from 'grid-styled';
 import { position, size } from 'polished';
 
-import Fader from '../../components/Fader';
+import { Alert, Audio, Fader } from '../../components/common';
 import Head from '../../components/Head';
-import Alert from '../../components/alert';
-import Audio from '../../components/Audio';
 
 import toastyImage from './toasty.png';
 import mp3 from './toasty.mp3';
@@ -16,7 +14,7 @@ import mp3 from './toasty.mp3';
 const toastyMp3 = {
   id: 'js-toasty-audio',
   src: mp3,
-  type: 'audio/mp3'
+  type: 'audio/mp3',
 };
 
 const Wrapper = styled(Flex)`
@@ -35,7 +33,7 @@ const Toasty = styled(CSSTransition)`
 const message = {
   name: 'Software Failure. Press left mouse button to continue.',
   description: 'Guru Meditation #00004040.00004040',
-  url: '/'
+  url: '/',
 };
 
 class GuruMeditation extends Component {
@@ -43,7 +41,7 @@ class GuruMeditation extends Component {
     super(props);
     this.state = {
       active: false,
-      toasty: false
+      toasty: false,
     };
   }
 
@@ -56,7 +54,7 @@ class GuruMeditation extends Component {
     const konamiCodeKey = '38,38,40,40,37,39,37,39,66,65';
     const toastyAudio = document.getElementById('js-toasty-audio');
 
-    document.addEventListener('keydown', e => {
+    document.addEventListener('keydown', (e) => {
       konamiCodeArray.push(e.keyCode);
 
       if (konamiCodeArray.toString().indexOf(konamiCodeKey) >= 0) {
@@ -79,10 +77,10 @@ class GuruMeditation extends Component {
           <Toasty
             defaultStyle={{ transform: 'translate(200px, 0)' }}
             enterStyle={{
-              transform: transit('translate(0, 0)', 400, 'ease-in-out')
+              transform: transit('translate(0, 0)', 400, 'ease-in-out'),
             }}
             leaveStyle={{
-              transform: transit('translate(200px, 0)', 300, 'ease-in-out')
+              transform: transit('translate(200px, 0)', 300, 'ease-in-out'),
             }}
             activeStyle={{ transform: 'translate(0, 0)' }}
             transitionDelay={{ enter: 0, leave: 100 }}
@@ -98,11 +96,11 @@ class GuruMeditation extends Component {
 }
 
 GuruMeditation.propTypes = {
-  item: PropTypes.shape()
+  item: PropTypes.shape(),
 };
 
 GuruMeditation.defaultProps = {
-  item: {}
+  item: {},
 };
 
 export default GuruMeditation;
