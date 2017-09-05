@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { margin, size } from 'polished';
-// import { Box } from 'grid-styled';
+import { size, margin } from 'polished';
 
 import unSelected from './unselected.svg';
 import selected from './selected.svg';
 
-const Wrapper = styled.a.attrs({
-  target: props => props.external ? '_blank' : null,
-  rel: props => props.external ? 'noopener noreferrer' : null,
-})`
+const Wrapper = styled(Link)`
   text-align: center;
   user-select: none;
   width: 100px;
@@ -20,40 +17,40 @@ const Wrapper = styled.a.attrs({
   > div {
     background-image: url(${unSelected});
     ${margin(null, 'auto', '5px')};
-    ${size('62px', '46px')}
+    ${size('38px', '65px')};
   }
 
   &:focus,
   &:active {
     outline: 0;
 
-    > div {
-      background-image: url(${selected});
+    > {
+      div {
+        background-image: url(${selected});
+      }
     }
   }
 `;
 
-const File = ({ item, external }) => (
-  <Wrapper href={item.url} external={external}>
+const Drawer = ({ item }) => (
+  <Wrapper to={item.url}>
     <div />
     {item.name}
   </Wrapper>
 );
 
-File.propTypes = {
+Drawer.propTypes = {
   item: PropTypes.shape({
     name: PropTypes.string,
     url: PropTypes.string,
   }),
-  external: PropTypes.bool,
 };
 
-File.defaultProps = {
+Drawer.defaultProps = {
   item: {
     name: '',
     url: '',
   },
-  external: false,
 };
 
-export { File };
+export { Drawer };

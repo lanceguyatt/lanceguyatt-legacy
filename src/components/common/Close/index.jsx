@@ -21,14 +21,16 @@ const Wrapper = styled(Link)`
 }
 `;
 
-const Close = ({ url }) => <Wrapper to={url}>Close</Wrapper>;
+const Close = ({ url, className }) => <Wrapper to={url} className={className}>Close</Wrapper>;
 
 Close.propTypes = {
   url: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Close.defaultProps = {
   url: '',
+  className: '',
 };
 
 export { Close };

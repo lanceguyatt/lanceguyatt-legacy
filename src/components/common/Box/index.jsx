@@ -10,12 +10,11 @@ const Wrapper = styled(Foo)`
   border-style: solid;
   border-width: 4px;
   padding: 2px;
-  line-height: 1;
-  xwidth: calc(100% - 4px);
+  background-color: orange;
 `;
 
 const Box = props => (
-  <Wrapper>
+  <Wrapper flex={props.flex}>
     {props.children}
   </Wrapper>
 );

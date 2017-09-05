@@ -5,7 +5,7 @@ import { Flex } from 'grid-styled';
 import { removeProps } from 'styled-system';
 import { position } from 'polished';
 
-import window2 from './window-2.svg';
+import window from './window-2.svg';
 
 const BaseWrapper = (props) => {
   const next = removeProps(props);
@@ -13,17 +13,17 @@ const BaseWrapper = (props) => {
 };
 
 const Wrapper = styled(BaseWrapper)`
-  border-image: url(${window2}) 29 55 71 21 stretch;
+  border-image: url(${window}) 29 55 71 21 stretch;
   border-style: solid;
   border-width: 29px 55px 71px 21px;
-  background-color: ${props =>
-    props.active ? props.theme.colors.primary : props.theme.colors.secondary};
+  background-color: ${props => props.active ? props.theme.colors.primary : props.theme.colors.secondary};
   position: relative;
 `;
 
-const Foo = styled.div`
+const Foo = styled(Flex)`
   background-color: ${props => props.theme.colors.secondary};
   overflow: scroll;
+  border: 5px solid purple;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
   ${position(
@@ -32,15 +32,12 @@ const Foo = styled.div`
     '-37px',
     '-51px',
     '-17px',
-  )} &::-webkit-scrollbar {
+  )}
+
+  &::-webkit-scrollbar {
     display: none;
   }
 `;
-
-// export const Bar = styled.div`
-//   ${size('100%')};
-//   ${position('absolute', 0)};
-// `;
 
 export {
   Wrapper,

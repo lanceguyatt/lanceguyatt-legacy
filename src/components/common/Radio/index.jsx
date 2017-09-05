@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { size } from 'polished';
 import styled from 'styled-components';
 
-import imageUnSelected from './radio_unselected.svg';
-import imageSelected from './radio_selected.svg';
+import unSelected from './unselected.svg';
+import selected from './selected.svg';
 
 const Wrapper = styled.input`
-  background-image: url(${imageUnSelected});
+  background-image: url(${unSelected});
+  margin-right: 5px;
   ${size('18px', '17px')};
 
   &:checked {
-    background-image: url(${imageSelected});
+    background-image: url(${selected});
   }
 `;
 
