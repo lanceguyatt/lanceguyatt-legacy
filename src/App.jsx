@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import theme from './constants/theme';
+import { theme } from './constants';
 
 import WorkBench from './containers/WorkBench';
 import KickStart from './containers/KickStart';
