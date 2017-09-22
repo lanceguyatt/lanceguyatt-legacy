@@ -8,6 +8,7 @@ export * from './Depth';
 export * from './Drawer';
 export * from './Fader';
 export * from './File';
+export * from './Flex';
 export * from './Icon';
 export * from './Label';
 export * from './Radio';

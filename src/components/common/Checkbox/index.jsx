@@ -7,6 +7,7 @@ import unSelected from './checkbox-unselected.svg';
 import selected from './checkbox-selected.svg';
 
 const Wrapper = styled.input`
+  background-color: ${props => props.theme.colors.white};
   background-image: url(${unSelected});
   ${size('22px', '26px')};
   margin-right: 5px;
@@ -27,6 +28,7 @@ class Checkbox extends Component {
 
   handleChange() {
     this.setState({ checked: !this.state.checked });
+    alert('Changed');
   }
 
   render() {
