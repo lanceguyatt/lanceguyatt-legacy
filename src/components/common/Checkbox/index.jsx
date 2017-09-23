@@ -7,55 +7,51 @@ import unSelected from './checkbox-unselected.svg';
 import selected from './checkbox-selected.svg';
 
 const Wrapper = styled.input`
-  background-color: ${props => props.theme.colors.white};
-  background-image: url(${unSelected});
+  appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  background-image: ${props => props.checked ? `url(${selected})` : `url(${unSelected})`};
   ${size('22px', '26px')};
-  margin-right: 5px;
 
-  &:checked {
-    background-image: url(${selected});
+  &:focus {
+    outline: 0;
   }
 `;
 
 class Checkbox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: false,
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
+  static propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string,
+  };
+
+  static defaultProps = {
+    id: '',
+    name: '',
+  };
+
+  state = {
+    checked: false,
+  };
 
   handleChange() {
-    this.setState({ checked: !this.state.checked });
-    alert('Changed');
+    this.setState({
+      checked: !this.state.checked,
+    });
   }
 
   render() {
-    const { id, name, value } = this.props;
+    const { id, name } = this.props;
     return (
       <Wrapper
         type={'checkbox'}
         id={id}
         name={name}
-        value={value}
         checked={this.state.checked}
-        onChange={this.handleChange}
+        onChange={() => { this.handleChange(); }}
       />
     );
   }
 }
-
-Checkbox.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
-};
-
-Checkbox.defaultProps = {
-  id: '',
-  name: '',
-  value: '',
-};
 
 export { Checkbox };

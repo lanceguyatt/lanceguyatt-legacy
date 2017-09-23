@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { setAddon, storiesOf, addDecorator } from '@storybook/react';
-// import { WithNotes } from '@storybook/addon-notes';
+// import { withNotes } from '@storybook/addon-notes';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import JSXAddon from 'storybook-addon-jsx';
@@ -12,10 +12,14 @@ import JSXAddon from 'storybook-addon-jsx';
 
 import {
   Action,
+  Alert,
   Box,
   Flex,
   Checkbox,
+  Close,
 } from '../components/common';
+
+import Window from '../components/Window';
 
 import '../styles/global';
 
@@ -46,9 +50,32 @@ storiesOf('Action', module)
       <Action onClick={action('clicked')} name={'Button'} />,
     ));
 
+storiesOf('Alerts', module)
+  .addWithJSX('Alert primary',
+    withInfo({ text: 'Info' })(() => (
+      <Alert
+        primary
+        item={{ name: 'Name', description: 'Description' }}
+      />
+    )));
+
+// withNotes('A very simple component')(() =>
+// <Alert primary item={{ name: 'Test', description: 'Description' }} // />));
+
+storiesOf('Window', module)
+  .addWithJSX('1', () => <Window w={300} />);
+
 storiesOf('Box', module)
   .addWithJSX('Default box', () => <Box>Box component</Box>);
 
+storiesOf('Box 1', module)
+  .addWithJSX('Close', () => <Close />);
+
 storiesOf('Checkbox', module)
-  .addWithJSX('Checkbox 1', () => <Checkbox onClick={action('clicked')} />)
-  .add('Checkbox 2', () => <Checkbox onClick={action('clicked')} />);
+  .addWithJSX('Checkbox 1', () => (
+    <div>
+      <Checkbox id={'terms'} name={'Terms accepted'} />
+      <Checkbox />
+      <Checkbox />
+    </div>
+  ));

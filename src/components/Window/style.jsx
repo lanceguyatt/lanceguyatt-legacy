@@ -20,7 +20,7 @@ const Wrapper = styled(BaseWrapper)`
   position: relative;
 `;
 
-const Foo = styled(Flex)`
+const Foo = styled(BaseWrapper)`
   background-color: ${props => props.theme.colors.secondary};
   overflow: scroll;
   border: 5px solid purple;

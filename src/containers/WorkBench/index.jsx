@@ -3,19 +3,20 @@ import React, { Component } from 'react';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Flex } from 'grid-styled';
+// import { Flex } from 'grid-styled';
 
 import {
   Action,
   Box,
-  Checkbox,
+  // Checkbox,
   Close,
   Depth,
   Drawer,
   Fader,
+  Flex,
   File,
-  Label,
-  Radio,
+  // Label,
+  // Radio,
 } from '../../components/common';
 
 import Head from '../../components/Head';
@@ -41,13 +42,18 @@ const Wrapper = styled(Flex)`
   position: relative;
 `;
 
-class WorkBench extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-    };
-  }
+export default class WorkBench extends Component {
+  static propTypes = {
+    item: PropTypes.shape(),
+  };
+
+  static defaultProps = {
+    item: '',
+  };
+
+  state = {
+    active: false,
+  };
 
   componentWillMount() {
     this.setState({ active: true });
@@ -56,13 +62,16 @@ class WorkBench extends Component {
     const { item } = this.props;
     return (
       <Fader transitionAppear active={this.state.active}>
+
         <Head item={item} />
+
         <Wrapper direction={'column'}>
           <TitleBar bg={'black'} color={'#aaa'} flex={'none'}>
             Lance Guyatt, Web Developer. Copyright © 2000-2017. All Rights
             Reserved
           </TitleBar>
-          <Flex direction={['column', 'row']} flex={'auto'}>
+
+          <Flex direction={['column', 'row']} flex={'auto'} primary p={2}>
             <Window item={{ name: 'First' }} flex={1}>
               <Flex
                 align={'flex-start'}
@@ -106,16 +115,6 @@ class WorkBench extends Component {
     );
   }
 }
-
-WorkBench.propTypes = {
-  item: PropTypes.shape(),
-};
-
-WorkBench.defaultProps = {
-  item: '',
-};
-
-export default WorkBench;
 
 // <Directory item={navPrimary} />
 

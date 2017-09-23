@@ -17,12 +17,21 @@ const WindowClose = styled(Close)`
   ${position('absolute', '-2px', null, null, '0')};
 `;
 
-class Window extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-    };
+export default class Window extends Component {
+  static propTypes = {
+    item: PropTypes.shape(),
+    children: PropTypes.shape(),
+    flex: PropTypes.string,
+  };
+
+  static defaultProps = {
+    item: '',
+    children: '',
+    flex: '',
+  };
+
+  state = {
+    active: false,
   }
 
   componentWillMount() {
@@ -32,9 +41,8 @@ class Window extends Component {
   render() {
     const { item, children, flex } = this.props;
     return (
-      <Wrapper flex={flex} active={this.state.active}>
+      <Wrapper flex={flex} active={this.state.active} {...this.props}>
         <Header>
-          <WindowClose to={'/'} />
           {item.name}
         </Header>
         <Foo>{children}</Foo>
@@ -42,17 +50,3 @@ class Window extends Component {
     );
   }
 }
-
-Window.propTypes = {
-  item: PropTypes.shape(),
-  children: PropTypes.shape(),
-  flex: PropTypes.string,
-};
-
-Window.defaultProps = {
-  item: '',
-  children: '',
-  flex: '',
-};
-
-export default Window;

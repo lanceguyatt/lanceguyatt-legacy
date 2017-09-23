@@ -27,7 +27,8 @@ const Wrapper = styled(Flex)`
 
 const Toasty = styled(CSSTransition)`
   background: url(${toastyImage});
-  ${position('absolute', null, '0', '0', null)} ${size('200px')};
+  ${position('absolute', null, '0', '0', null)};
+  ${size('200px')};
 `;
 
 const message = {
@@ -36,14 +37,19 @@ const message = {
   url: '/',
 };
 
-class GuruMeditation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-      toasty: false,
-    };
-  }
+export default class GuruMeditation extends Component {
+  static propTypes = {
+    item: PropTypes.shape(),
+  };
+
+  static defaultProps = {
+    item: {},
+  };
+
+  state = {
+    active: false,
+    toasty: false,
+  };
 
   componentWillMount() {
     this.setState({ active: true });
@@ -70,9 +76,10 @@ class GuruMeditation extends Component {
     return (
       <Fader active={this.state.active} transitionAppear>
         <Wrapper direction={'column'} align={'center'} justify={'center'}>
+
           <Head item={this.props.item} />
 
-          <Alert error animate item={message} />
+          <Alert danger animate item={message} />
 
           <Toasty
             defaultStyle={{ transform: 'translate(200px, 0)' }}
@@ -94,13 +101,3 @@ class GuruMeditation extends Component {
     );
   }
 }
-
-GuruMeditation.propTypes = {
-  item: PropTypes.shape(),
-};
-
-GuruMeditation.defaultProps = {
-  item: {},
-};
-
-export default GuruMeditation;

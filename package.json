@@ -25,6 +25,7 @@
     "@storybook/addon-links": "^3.2.6",
     "@storybook/addon-notes": "^3.2.7",
     "@storybook/react": "^3.2.8",
+    "babel-preset-env": "^1.6.0",
     "eslint": "^4.7.2",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
@@ -43,8 +44,13 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint:css": "stylelint './src/**/*.js'",
-    "deploy": "npm run build && npm run build-storybook && surge -p build -d empty-hate.surge.sh",
+    "deploy": "npm run build && surge -p build -d empty-hate.surge.sh",
     "storybook": "start-storybook -p 9009 -s build",
     "build-storybook": "build-storybook -c .storybook -o build/storybook"
+  },
+  "reactSnapshot": {
+    "include": [
+      "/storybook"
+    ]
   }
 }
