@@ -1,7 +1,6 @@
 export * from './Action';
 export * from './Alert';
 export * from './Audio';
-// export * from './BaseFlex';
 export * from './Box';
 export * from './Checkbox';
 export * from './Close';
@@ -12,4 +11,5 @@ export * from './File';
 export * from './Flex';
 export * from './Icon';
 export * from './Label';
+export * from './Link';
 export * from './Radio';

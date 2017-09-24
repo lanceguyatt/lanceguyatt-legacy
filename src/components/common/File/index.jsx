@@ -2,43 +2,56 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { margin, size } from 'polished';
-// import { Box } from 'grid-styled';
 
-import unSelected from './unselected.svg';
-import selected from './selected.svg';
+import unSelected from './images/unselected.svg';
+import selected from './images/selected.svg';
+
+const Name = styled.div`
+  background: orange;
+`;
+
+const Icon = styled.div`
+  background-image: url(${unSelected});
+  ${size('62px', '46px')};
+`;
 
 const Wrapper = styled.a.attrs({
   target: props => props.external ? '_blank' : null,
   rel: props => props.external ? 'noopener noreferrer' : null,
 })`
+  background-color: lime;
+  padding: 5px;
   text-align: center;
   user-select: none;
   width: 100px;
-  background: lime;
-  padding: 5px;
 
-  > div {
-    background-image: url(${unSelected});
+  ${Icon} {
     ${margin(null, 'auto', '5px')};
-    ${size('62px', '46px')}
   }
 
   &:focus,
   &:active {
     outline: 0;
 
-    > div {
+    ${Icon} {
       background-image: url(${selected});
     }
   }
 `;
 
-const File = ({ item, external }) => (
-  <Wrapper href={item.url} external={external}>
-    <div />
-    {item.name}
-  </Wrapper>
-);
+const File = (props) => {
+  const { external, item } = props;
+  const { name, url } = item;
+  return (
+    <Wrapper
+      href={url}
+      external={external}
+    >
+      <Icon />
+      <Name>{name}</Name>
+    </Wrapper>
+  );
+};
 
 File.propTypes = {
   item: PropTypes.shape({
@@ -50,7 +63,7 @@ File.propTypes = {
 
 File.defaultProps = {
   item: {
-    name: '',
+    name: 'File name really really long',
     url: '',
   },
   external: false,

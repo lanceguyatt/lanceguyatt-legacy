@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Flex } from 'grid-styled';
-import { color, removeProps } from 'styled-system';
+import { Box } from 'grid-styled';
+import { color, space, removeProps } from 'styled-system';
 
 const BaseWrapper = (props) => {
   const next = removeProps(props);
-  return <Flex {...next} />;
+  return <Box {...next} />;
 };
 
 const Wrapper = styled(BaseWrapper)`
@@ -19,12 +19,12 @@ const Wrapper = styled(BaseWrapper)`
   user-select: none;
   white-space: nowrap;
   ${color}
+  ${space};
 }
 `;
 
 const TitleBar = props => (
   <Wrapper
-    flex={'none'}
     px={1}
     bg={props.bg}
     color={props.color}
@@ -36,7 +36,7 @@ const TitleBar = props => (
 
 TitleBar.propTypes = {
   bg: PropTypes.string,
-  children: PropTypes.string,
+  children: PropTypes.node,
   color: PropTypes.string,
   className: PropTypes.string,
 };

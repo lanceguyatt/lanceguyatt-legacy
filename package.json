@@ -20,11 +20,11 @@
     "styled-system": "^1.0.0-15"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.2.6",
-    "@storybook/addon-info": "^3.2.9",
-    "@storybook/addon-links": "^3.2.6",
-    "@storybook/addon-notes": "^3.2.7",
-    "@storybook/react": "^3.2.8",
+    "@storybook/addon-actions": "^3.2.10",
+    "@storybook/addon-info": "^3.2.10",
+    "@storybook/addon-links": "^3.2.10",
+    "@storybook/addon-notes": "^3.2.10",
+    "@storybook/react": "^3.2.10",
     "babel-preset-env": "^1.6.0",
     "eslint": "^4.7.2",
     "eslint-config-airbnb": "^15.1.0",
@@ -33,7 +33,8 @@
     "eslint-plugin-react": "^7.3.0",
     "react-scripts": "1.0.13",
     "storybook-addon-jsx": "^4.1.1",
-    "stylelint": "^8.0.0",
+    "storybook-router": "^0.2.9",
+    "stylelint": "^8.1.1",
     "stylelint-config-standard": "^17.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.0.0"

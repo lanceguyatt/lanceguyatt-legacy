@@ -7,7 +7,6 @@ import { Close } from '../common';
 import TitleBar from '../TitleBar';
 import { Wrapper, Foo } from './style';
 
-
 const Header = styled(TitleBar)`
   ${position('absolute', '-29px', '-55px', null, '-21px')};
   padding: 0 5px 0 24px;
@@ -20,32 +19,42 @@ const WindowClose = styled(Close)`
 export default class Window extends Component {
   static propTypes = {
     item: PropTypes.shape(),
-    children: PropTypes.shape(),
-    flex: PropTypes.string,
+    children: PropTypes.node,
   };
 
   static defaultProps = {
-    item: '',
+    item: {
+      name: 'Window name',
+    },
     children: '',
-    flex: '',
   };
 
   state = {
     active: false,
-  }
+  };
 
   componentWillMount() {
     this.setState({ active: true });
   }
 
+  componentWillUnount() {
+    this.setState({ active: false });
+  }
+
   render() {
-    const { item, children, flex } = this.props;
+    const { item, children } = this.props;
+    const { to, name } = item;
     return (
-      <Wrapper flex={flex} active={this.state.active} {...this.props}>
+      <Wrapper
+        {...this.props}
+        item={item}
+        bg={this.state.active ? 'primary' : 'secondary'}
+      >
         <Header>
-          {item.name}
+          {to ? <WindowClose url={to} /> : null}
+          {name}
         </Header>
-        <Foo>{children}</Foo>
+        <Foo p={2} bg={'secondary'}>{children}</Foo>
       </Wrapper>
     );
   }
