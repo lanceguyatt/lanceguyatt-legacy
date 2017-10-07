@@ -4,7 +4,7 @@ import { injectGlobal } from 'styled-components';
 injectGlobal`
   @font-face {
     font-family: Topaz;
-    src: url(../fonts/topaz.woff2) format("woff2");
+    src: url(/fonts/topaz.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
   }
@@ -32,6 +32,7 @@ injectGlobal`
   h5,
   h6 {
     font-size: inherit;
+    font-weight: normal;
     line-height: inherit;
   }
 

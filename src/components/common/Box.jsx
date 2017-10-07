@@ -2,14 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Box as BaseBox } from 'grid-styled';
-import { space, width, fontSize, color, removeProps } from 'styled-system';
+import { space, width, fontSize, color } from 'styled-system';
 
-const BaseWrapper = (props) => {
-  const next = removeProps(props);
-  return <BaseBox {...next} />;
-};
-
-const Wrapper = styled(BaseWrapper)`
+const Wrapper = styled(({ danger, primary, animate, ...rest }) => <BaseBox {...rest} />)`
   ${space}
   ${width}
   ${fontSize}

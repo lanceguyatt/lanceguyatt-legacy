@@ -48,17 +48,12 @@ const Floppy = styled(FloppyDisk)`
 `;
 
 export default class KickStart extends Component {
-  static propTypes = {
-    item: PropTypes.shape(),
-  };
-
-  static defaultProps = {
-    item: {},
-  };
-
-  state = {
-    active: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false,
+    };
+  }
 
   componentWillMount() {
     this.setState({ active: true });
@@ -97,3 +92,11 @@ export default class KickStart extends Component {
     );
   }
 }
+
+KickStart.propTypes = {
+  item: PropTypes.shape(),
+};
+
+KickStart.defaultProps = {
+  item: null,
+};

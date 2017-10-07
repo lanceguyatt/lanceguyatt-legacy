@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './constants';
 
 import WorkBench from './containers/WorkBench';
+import Work from './containers/Work';
 import KickStart from './containers/KickStart';
 import GuruMeditation from './containers/GuruMeditation';
 
@@ -15,11 +16,8 @@ export default function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <Switch>
-          <Route
-            path={workbench.url}
-            exact
-            render={() => <WorkBench item={workbench} />}
-          />
+          <Route path={workbench.url} exact render={() => <WorkBench data={workbench} />} />
+          <Route path={'/work/:id'} exact component={Work} />
           <Route
             path={kickstart.url}
             exact

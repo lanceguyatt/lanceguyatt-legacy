@@ -7,8 +7,6 @@ import App from './App';
 import './styles/global';
 import registerServiceWorker from './registerServiceWorker';
 
-registerServiceWorker();
-
 const rootEl = document.getElementById('root');
 
 render(<App />, rootEl);
@@ -19,3 +17,5 @@ if (module.hot) {
     ReactDOM.render(<NextApp />, rootEl);
   });
 }
+
+registerServiceWorker();

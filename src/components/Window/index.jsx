@@ -17,21 +17,12 @@ const WindowClose = styled(Close)`
 `;
 
 export default class Window extends Component {
-  static propTypes = {
-    item: PropTypes.shape(),
-    children: PropTypes.node,
-  };
-
-  static defaultProps = {
-    item: {
-      name: 'Window name',
-    },
-    children: '',
-  };
-
-  state = {
-    active: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false,
+    };
+  }
 
   componentWillMount() {
     this.setState({ active: true });
@@ -59,3 +50,15 @@ export default class Window extends Component {
     );
   }
 }
+
+Window.propTypes = {
+  item: PropTypes.shape(),
+  children: PropTypes.node,
+};
+
+Window.defaultProps = {
+  item: {
+    name: 'Window name',
+  },
+  children: '',
+};

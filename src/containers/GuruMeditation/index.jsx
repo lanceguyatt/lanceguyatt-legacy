@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, transit } from 'react-css-transition';
 import styled from 'styled-components';
-import { Flex } from 'grid-styled';
 import { position, size } from 'polished';
 
-import { Alert, Audio, Fader } from '../../components/common';
+import { Alert, Audio, Fader, Flex } from '../../components/common';
 import Head from '../../components/Head';
 
 import toastyImage from './toasty.png';
@@ -18,7 +17,6 @@ const toastyMp3 = {
 };
 
 const Wrapper = styled(Flex)`
-  background-color: #000;
   height: 100vh;
   min-height: min-content;
   overflow: hidden;
@@ -38,18 +36,13 @@ const message = {
 };
 
 export default class GuruMeditation extends Component {
-  static propTypes = {
-    item: PropTypes.shape(),
-  };
-
-  static defaultProps = {
-    item: {},
-  };
-
-  state = {
-    active: false,
-    toasty: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false,
+      toasty: false,
+    };
+  }
 
   componentWillMount() {
     this.setState({ active: true });
@@ -75,7 +68,12 @@ export default class GuruMeditation extends Component {
   render() {
     return (
       <Fader active={this.state.active} transitionAppear>
-        <Wrapper direction={'column'} align={'center'} justify={'center'}>
+        <Wrapper
+          bg={'dark'}
+          direction={'column'}
+          align={'center'}
+          justify={'center'}
+        >
 
           <Head item={this.props.item} />
 
@@ -101,3 +99,11 @@ export default class GuruMeditation extends Component {
     );
   }
 }
+
+GuruMeditation.propTypes = {
+  item: PropTypes.shape(),
+};
+
+GuruMeditation.defaultProps = {
+  item: null,
+};

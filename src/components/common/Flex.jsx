@@ -2,14 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex as BaseFlex } from 'grid-styled';
-import { space, width, fontSize, color, removeProps } from 'styled-system';
+import { space, width, fontSize, color } from 'styled-system';
 
-const BaseWrapper = (props) => {
-  const next = removeProps(props);
-  return <BaseFlex {...next} />;
-};
-
-const Wrapper = styled(BaseWrapper)`
+const Wrapper = styled(({ bg, item, danger, animate, ...rest }) => <BaseFlex {...rest} />)`
   ${space}
   ${width}
   ${fontSize}
