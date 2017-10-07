@@ -20,19 +20,12 @@ const Wrapper = styled.input`
 `;
 
 class Checkbox extends Component {
-  static propTypes = {
-    id: PropTypes.string,
-    name: PropTypes.string,
-  };
-
-  static defaultProps = {
-    id: '',
-    name: '',
-  };
-
-  state = {
-    checked: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      checked: false,
+    };
+  }
 
   handleChange() {
     this.setState({
@@ -53,5 +46,15 @@ class Checkbox extends Component {
     );
   }
 }
+
+Checkbox.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+};
+
+Checkbox.defaultProps = {
+  id: '',
+  name: '',
+};
 
 export { Checkbox };

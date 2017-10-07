@@ -1,20 +1,24 @@
-/* eslint no-confusing-arrow: 0 */
 import React from 'react';
 import styled from 'styled-components';
 import { position } from 'polished';
 
-import { Flex, Box } from '../common';
+import { Flex } from '../common';
 
 import window from './window-2.svg';
 
-const Wrapper = styled(({ item, ...rest }) => <Flex {...rest} />)`
+const Wrapper = styled(({ item, close, ...rest }) => <Flex {...rest} />)`
   border-image: url(${window}) 29 55 71 21 stretch;
   border-style: solid;
   border-width: 29px 55px 71px 21px;
   position: relative;
 `;
 
-const Foo = styled(Box)`
+const Foo = styled(Flex).attrs({
+  direction: 'column',
+  flex: 1,
+  p: 2,
+  bg: 'secondary',
+})`
   overflow: scroll;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;

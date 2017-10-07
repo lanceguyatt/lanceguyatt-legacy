@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Flex as BaseFlex } from 'grid-styled';
 import { space, width, fontSize, color } from 'styled-system';
 
-const Wrapper = styled(({ bg, item, danger, animate, ...rest }) => <BaseFlex {...rest} />)`
+const Wrapper = styled(({ bg, ...rest }) => <BaseFlex {...rest} />)`
   ${space}
   ${width}
   ${fontSize}

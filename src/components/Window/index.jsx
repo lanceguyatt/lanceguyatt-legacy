@@ -33,8 +33,8 @@ export default class Window extends Component {
   }
 
   render() {
-    const { item, children } = this.props;
-    const { to, name } = item;
+    const { item, children, close } = this.props;
+    const { name } = item;
     return (
       <Wrapper
         {...this.props}
@@ -42,10 +42,10 @@ export default class Window extends Component {
         bg={this.state.active ? 'primary' : 'secondary'}
       >
         <Header>
-          {to ? <WindowClose url={to} /> : null}
+          {close ? <WindowClose url={close} /> : null}
           {name}
         </Header>
-        <Foo p={2} bg={'secondary'}>{children}</Foo>
+        <Foo>{children}</Foo>
       </Wrapper>
     );
   }

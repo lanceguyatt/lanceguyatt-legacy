@@ -16,7 +16,7 @@ const pulse = keyframes`
   }
 `;
 
-const Wrapper = styled(Box)`
+const Wrapper = styled(({ danger, primary, animate, ...rest }) => <Box {...rest} />)`
   border-style: solid;
   border-width: 6px;
   line-height: 1.875;

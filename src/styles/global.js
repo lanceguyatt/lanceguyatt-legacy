@@ -25,6 +25,14 @@ injectGlobal`
     -webkit-font-smoothing: antialiased;
   }
 
+  #root {
+    height: 100vh;
+    height: 100vh;
+    min-height: min-content;
+    overflow: hidden;
+    position: relative;
+  }
+
   h1,
   h2,
   h3,

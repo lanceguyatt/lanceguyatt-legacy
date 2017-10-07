@@ -9,6 +9,7 @@
     "moment": "^2.18.1",
     "polished": "^1.7.0",
     "prop-types": "^15.6.0",
+    "ramda": "^0.24.1",
     "react": "^16.0.0",
     "react-css-transition": "^0.7.4",
     "react-dom": "^16.0.0",
@@ -45,7 +46,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint:css": "stylelint './src/**/*.js'",
-    "deploy": "npm run build && surge -p build -d empty-hate.surge.sh",
+    "deploy": "npm run build && npm run build-storybook && surge -p build -d empty-hate.surge.sh",
     "storybook": "start-storybook -p 9009 -s build",
     "build-storybook": "build-storybook -c .storybook -o build/storybook"
   },

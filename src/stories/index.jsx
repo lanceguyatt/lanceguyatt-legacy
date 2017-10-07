@@ -57,10 +57,10 @@ storiesOf('Action', module)
 storiesOf('Alerts', module)
   .add('Alert primary',
     withInfo({ text: 'Info' })(() => (
-      <Alert
-        primary
-        item={{ name: 'Name', description: 'Description' }}
-      />
+      <Flex>
+        <Alert primary />
+        <Alert danger />
+      </Flex>
     )));
 
 // withNotes('A very simple component')(() =>

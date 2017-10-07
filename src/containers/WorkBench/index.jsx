@@ -1,6 +1,5 @@
 /* eslint no-undef: 0 */
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -12,6 +11,13 @@ import {
 import Head from '../../components/Head';
 import TitleBar from '../../components/TitleBar';
 import Window from '../../components/Window';
+import Directory from '../../components/Directory';
+
+const foo = [
+  { id: 1, name: 'Awin', url: '/work/1oC2G4ZjgUSakaWauSkEYA' },
+  { id: 2, name: 'Projects', url: '/projects/' },
+  { id: 3, name: 'About', url: '/about/' },
+];
 
 const Wrapper = styled(Flex)`
   height: 100vh;
@@ -45,9 +51,10 @@ export default class WorkBench extends Component {
             Reserved
           </TitleBar>
 
-          <Flex direction={['column', 'row']} style={{ flex: 1 }}>
-            <Window item={{ name: 'Work' }} style={{ flex: 1 }}>
-              <Link to={'/work/1oC2G4ZjgUSakaWauSkEYA'}>Awin</Link>
+          <Flex direction={['column', 'row']} flex={1}>
+            <Window item={{ name: 'Work' }} flex={1} close={'/kickStart'}>
+              <Directory items={foo} direction={['column', 'row']} />
+              <Directory items={foo} direction={'column'} />
             </Window>
           </Flex>
         </Wrapper>

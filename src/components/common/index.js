@@ -2,6 +2,7 @@ export * from './Action';
 export * from './Alert';
 export * from './Audio';
 export * from './Box';
+export * from './Box1';
 export * from './Checkbox';
 export * from './Close';
 export * from './Depth';

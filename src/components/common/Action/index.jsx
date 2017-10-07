@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { Button, Link } from './style';
 
 const Action = (props) => {
-  const { name, to, onClick } = props;
+  const { name, to, onClick, external } = props;
   return (
-    to ? <Link to={to}>{name}</Link> : <Button onClick={onClick}>{name}</Button>
+    to ? <Link to={to} external={external}>{name}</Link> : <Button onClick={onClick}>{name}</Button>
   );
 };
 

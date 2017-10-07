@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Flex, Box } from 'grid-styled';
+import { position } from 'polished';
 
-import { Fader } from '../../components/common';
+import { Fader, Flex, Box } from '../../components/common';
 import Head from '../../components/Head';
 
 import DiskDrive from '../../components/DiskDrive';
@@ -23,7 +23,7 @@ const Wrapper = styled(Flex)`
 
 const Copyright = styled(Box)`line-height: 1.5;`;
 
-const Tick = styled(Box)`
+const Tick = styled.img`
   background-size: 100%;
   height: 150px;
   display: block;
@@ -36,16 +36,15 @@ const Loading = styled(Box)`
 `;
 
 const Disk = styled(DiskDrive)`
+  ${position('absolute', null, null, '0', '12px')}
   position: absolute;
   top: 0;
   left: 0;
 `;
 
-const Floppy = styled(FloppyDisk)`
-  position: absolute;
-  bottom: 0;
-  left: 12px;
-`;
+// const Floppy = styled(FloppyDisk)`
+//   ${position('absolute', null, null, '0', '12px')}
+// `;
 
 export default class KickStart extends Component {
   constructor(props) {
@@ -84,7 +83,7 @@ export default class KickStart extends Component {
           <Loading mr={[0, 0, 4]} mb={[0, 0, 4]}>
             <Link to={'/'}>
               <Disk />
-              <Floppy animate />
+              <FloppyDisk animate style={{ ...position('absolute', null, null, '0px', '12px') }} />
             </Link>
           </Loading>
         </Wrapper>
