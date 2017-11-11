@@ -1,14 +1,35 @@
+/* eslint no-shadow: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { borderColor, borderWidth, color, fontSize, space, width, responsiveStyle } from 'styled-system';
 import { Flex as BaseFlex } from 'grid-styled';
-import { space, width, fontSize, color } from 'styled-system';
 
-const Wrapper = styled(({ bg, ...rest }) => <BaseFlex {...rest} />)`
+const height = responsiveStyle({
+  prop: 'height',
+  cssProperty: 'height',
+});
+
+const Wrapper = styled(({
+  bg,
+  borderBottom,
+  borderColor,
+  borderTop,
+  borderWidth,
+  color,
+  fontSize,
+  height,
+  space,
+  width,
+  ...rest
+}) => <BaseFlex {...rest} />)`
+  ${borderColor}
+  ${borderWidth}
+  ${color}
+  ${height}
+  ${fontSize}
   ${space}
   ${width}
-  ${fontSize}
-  ${color}
 `;
 
 const Flex = (props) => {

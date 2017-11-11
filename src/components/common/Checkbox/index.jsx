@@ -11,50 +11,37 @@ const Wrapper = styled.input`
   background-color: transparent;
   border-radius: 0;
   border: 0;
-  background-image: ${props => props.checked ? `url(${selected})` : `url(${unSelected})`};
+  background-image: url(${unSelected});
   ${size('22px', '26px')};
+
+  &:checked {
+    background-image: url(${selected});
+  }
 
   &:focus {
     outline: 0;
   }
 `;
 
-class Checkbox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: false,
-    };
-  }
+export class Checkbox extends Component {
+  static propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string,
+  };
 
-  handleChange() {
-    this.setState({
-      checked: !this.state.checked,
-    });
-  }
+  static defaultProps = {
+    id: '',
+    name: '',
+  };
 
   render() {
     const { id, name } = this.props;
     return (
       <Wrapper
-        type={'checkbox'}
+        type="checkbox"
         id={id}
         name={name}
-        checked={this.state.checked}
-        onChange={() => { this.handleChange(); }}
       />
     );
   }
 }
-
-Checkbox.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-};
-
-Checkbox.defaultProps = {
-  id: '',
-  name: '',
-};
-
-export { Checkbox };

@@ -1,28 +1,59 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { position } from 'polished';
+import { theme } from 'styled-system';
+import { borderWidth } from 'polished';
 
-import { Close } from '../common';
-import TitleBar from '../TitleBar';
-import { Wrapper, Foo } from './style';
+import { Box, Close, Flex } from '../common';
 
-const Header = styled(TitleBar)`
-  ${position('absolute', '-29px', '-55px', null, '-21px')};
-  padding: 0 5px 0 24px;
+const Wrapper = styled(({ item, close, ...rest }) => <Flex {...rest} />).attrs({
+  bg: 'secondary',
+})`
+  min-height: min-content;
 `;
 
-const WindowClose = styled(Close)`
-  ${position('absolute', '-2px', null, null, '0')};
+const Head = styled(Flex)`
+  height: 22px;
+  ${borderWidth(null, theme('borderWidths.0'))}
+`;
+
+const Main = styled(Flex)`
+  border-right: 1px solid ${theme('colors.dark')};
+  border-left: 1px solid ${theme('colors.light')};
+  overflow: scroll;
+  min-height: min-content;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const Bar = styled(Box)`
+  line-height: 1.125;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
 `;
 
 export default class Window extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-    };
-  }
+  static propTypes = {
+    item: PropTypes.shape(),
+    children: PropTypes.node,
+  };
+
+  static defaultProps = {
+    item: {
+      name: 'Window name',
+    },
+    children: '',
+  };
+
+  state = {
+    active: false,
+  };
 
   componentWillMount() {
     this.setState({ active: true });
@@ -39,26 +70,31 @@ export default class Window extends Component {
       <Wrapper
         {...this.props}
         item={item}
-        bg={this.state.active ? 'primary' : 'secondary'}
+        column
+        borderWidth={1}
+        borderTop
+        borderColor="light"
       >
-        <Header>
-          {close ? <WindowClose url={close} /> : null}
-          {name}
-        </Header>
-        <Foo>{children}</Foo>
+        <Head
+          bg={this.state.active ? 'primary' : 'secondary'}
+          align="center"
+          borderWidth={1}
+          borderBottom
+        >
+          {close ? <Close url={close} /> : null}
+          <Bar mx="2px" bg="danger" flex={1}>{name}</Bar>
+          <Close url={close} />
+          <Close url={close} />
+        </Head>
+        <Main
+          bg="secondary"
+          column
+          flex={1}
+          p={2}
+        >
+          {children}
+        </Main>
       </Wrapper>
     );
   }
 }
-
-Window.propTypes = {
-  item: PropTypes.shape(),
-  children: PropTypes.node,
-};
-
-Window.defaultProps = {
-  item: {
-    name: 'Window name',
-  },
-  children: '',
-};

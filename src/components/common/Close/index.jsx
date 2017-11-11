@@ -8,21 +8,22 @@ import closeUnSelected from './close-unselected.svg';
 import closeSelected from './close-selected.svg';
 
 const Wrapper = styled(Link)`
-  background-image: url(${closeUnSelected});
-  display: inline-block;
+  background-color: lime;
+  xbackground-image: url(${closeUnSelected});
+  display: block;
   overflow: hidden;
   text-indent: -999999px;
-  ${size('22px', '20px')};
+  ${size(null, '20px')};
 
   &:focus,
   &:active {
-    background-image: url(${closeSelected});
+    xbackground-image: url(${closeSelected});
   }
 }
 `;
 
-const Close = ({ url, className }) => (
-  <Wrapper to={url} className={className}>
+const Close = props => (
+  <Wrapper to={props.url} className={props.className}>
     Close
   </Wrapper>
 );

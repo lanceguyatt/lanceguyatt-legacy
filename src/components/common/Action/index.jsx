@@ -1,24 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button, Link } from './style';
+import { Button, A } from './style';
 
 const Action = (props) => {
-  const { name, to, onClick, external } = props;
+  const {
+    name, href, onClick, external,
+  } = props;
   return (
-    to ? <Link to={to} external={external}>{name}</Link> : <Button onClick={onClick}>{name}</Button>
+    href
+      ? <A href={href} external={external} {...props}>{name}</A>
+      : <Button onClick={onClick} {...props}>{name}</Button>
   );
 };
 
 Action.propTypes = {
-  name: PropTypes.string.isRequired,
-  to: PropTypes.string,
+  name: PropTypes.string,
+  href: PropTypes.string,
   onClick: PropTypes.func,
 };
 
 Action.defaultProps = {
   name: 'Action name',
-  to: '',
+  href: '',
   onClick: null,
 };
 

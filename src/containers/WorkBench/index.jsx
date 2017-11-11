@@ -1,12 +1,10 @@
-/* eslint no-undef: 0 */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import {
-  Fader,
-  Flex,
-} from '../../components/common';
+import { Fader, Flex } from '../../components/common';
+
+import { site } from '../../data';
 
 import Head from '../../components/Head';
 import TitleBar from '../../components/TitleBar';
@@ -27,12 +25,17 @@ const Wrapper = styled(Flex)`
 `;
 
 export default class WorkBench extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-    };
-  }
+  static propTypes = {
+    data: PropTypes.shape(),
+  };
+
+  static defaultProps = {
+    data: null,
+  };
+
+  state = {
+    active: false,
+  };
 
   componentWillMount() {
     this.setState({ active: true });
@@ -44,17 +47,18 @@ export default class WorkBench extends Component {
 
         <Head item={data} />
 
-        <Wrapper direction={'column'} bg={'secondary'}>
+        <Wrapper column bg="secondary">
 
-          <TitleBar bg={'dark'} color={'secondary'}>
-            Lance Guyatt, Web Developer. Copyright © 2000-2017. All Rights
-            Reserved
-          </TitleBar>
+          <TitleBar
+            bg="dark"
+            color="secondary"
+            name={`Lance Guyatt, Web Developer. Copyright © 2000-${site.copyrightYear}. All Rights Reserved`}
+          />
 
           <Flex direction={['column', 'row']} flex={1}>
-            <Window item={{ name: 'Work' }} flex={1} close={'/kickStart'}>
+            <Window item={{ name: 'Work' }} flex={1} close="kickstart">
               <Directory items={foo} direction={['column', 'row']} />
-              <Directory items={foo} direction={'column'} />
+              <Directory items={foo} column />
             </Window>
           </Flex>
         </Wrapper>
@@ -62,11 +66,3 @@ export default class WorkBench extends Component {
     );
   }
 }
-
-WorkBench.propTypes = {
-  data: PropTypes.shape(),
-};
-
-WorkBench.defaultProps = {
-  data: null,
-};

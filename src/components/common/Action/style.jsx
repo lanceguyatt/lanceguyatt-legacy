@@ -1,16 +1,14 @@
-import { Link as Foo } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Box } from '../Box';
 import actionUnselected from './action-unselected.svg';
 import actionSelected from './action-selected.svg';
 
-const Wrapper = styled(Box).attrs({
-  target: props => props.external ? '_blank' : null,
-  rel: props => props.external ? 'noopener noreferrer' : null,
+const Wrapper = styled(({ external, color, ...rest }) => <Box {...rest} />).attrs({
   px: 4,
   color: 'dark',
-  bg: 'primary',
+  bg: 'secondary',
 })`
   border-image: url(${actionUnselected}) 2 stretch;
   border-style: solid;
@@ -32,19 +30,17 @@ const Wrapper = styled(Box).attrs({
   &:active {
     background-color: ${props => props.theme.colors.primary};
     border-image: url(${actionSelected}) 2 stretch;
-    box-shadow: none;
   }
 `;
 
-const Button = styled(Wrapper).attrs({
+export const Button = styled(Wrapper).attrs({
   is: 'button',
 })`
   appearance: none;
 `;
 
-const Link = Wrapper.withComponent(Foo);
-
-export {
-  Button,
-  Link,
-};
+export const A = styled(Wrapper).attrs({
+  is: 'a',
+  target: props => props.external ? '_blank' : null,
+  rel: props => props.external ? 'noopener noreferrer' : null,
+})``;

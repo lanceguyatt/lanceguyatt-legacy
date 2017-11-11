@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { Box } from '../Box';
@@ -14,22 +13,12 @@ const Wrapper = styled(Box)`
 `;
 
 const Box1 = (props) => {
-  const { children, flex } = props;
+  const { children } = props;
   return (
     <Wrapper {...props}>
       {children}
     </Wrapper>
   );
 };
-
-// Box1.propTypes = {
-//   // children: PropTypes.shape(),
-//   flex: PropTypes.string,
-// };
-//
-// Box1.defaultProps = {
-//   // children: ,
-//   flex: '',
-// };
 
 export { Box1 };

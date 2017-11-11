@@ -1,25 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { space, color } from 'styled-system';
 import styled from 'styled-components';
 
-const Wrapper = styled.label`
+const Wrapper = styled(({ bg, p, ...rest }) => <label {...rest} />)`
   user-select: none;
+  ${space};
+  ${color};
 `;
 
-const Label = ({ children, htmlFor }) => (
-  <Wrapper htmlFor={htmlFor}>
-    {children}
-  </Wrapper>
-);
+export const Label = (props) => {
+  const { htmlFor, children } = props;
+  return (
+    <Wrapper htmlFor={htmlFor} bg="danger" p={3} {...props}>
+      {children}
+    </Wrapper>
+  );
+};
 
 Label.propTypes = {
-  children: PropTypes.shape(),
+  children: PropTypes.node,
   htmlFor: PropTypes.string,
 };
 
 Label.defaultProps = {
-  children: '',
+  children: null,
   htmlFor: '',
 };
-
-export { Label };

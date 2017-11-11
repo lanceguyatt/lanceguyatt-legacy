@@ -16,7 +16,9 @@ const pulse = keyframes`
   }
 `;
 
-const Wrapper = styled(({ danger, primary, animate, ...rest }) => <Box {...rest} />)`
+const Wrapper = styled(({
+  danger, primary, animate, ...rest
+}) => <Box {...rest} />)`
   border-style: solid;
   border-width: 6px;
   line-height: 1.875;
@@ -32,10 +34,12 @@ const Wrapper = styled(({ danger, primary, animate, ...rest }) => <Box {...rest}
 `;
 
 const Alert = (props) => {
-  const { animate, primary, danger, item } = props;
+  const {
+    animate, primary, danger, item,
+  } = props;
   return (
     <Wrapper
-      role={'dialog'}
+      role="dialog"
       danger={danger}
       animate={animate}
       primary={primary}

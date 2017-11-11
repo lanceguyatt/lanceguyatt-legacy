@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { CSSTransition, transit } from 'react-css-transition';
 import styled from 'styled-components';
 import { position, size } from 'polished';
-
-import { Alert, Audio, Fader, Flex } from '../../components/common';
+import { removeProps } from 'styled-system';
+import { Alert, Audio, Fader } from '../../components/common';
 import Head from '../../components/Head';
 
 import toastyImage from './toasty.png';
@@ -16,7 +16,12 @@ const toastyMp3 = {
   type: 'audio/mp3',
 };
 
-const Wrapper = styled(Flex)`
+const BaseComponent = (props) => {
+  const next = removeProps(props);
+  return <div {...next} />;
+};
+
+const Wrapper = styled(BaseComponent)`
   height: 100vh;
   min-height: min-content;
   overflow: hidden;
@@ -36,13 +41,18 @@ const message = {
 };
 
 export default class GuruMeditation extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-      toasty: false,
-    };
-  }
+  static propTypes = {
+    item: PropTypes.shape(),
+  };
+
+  static defaultProps = {
+    item: null,
+  };
+
+  state = {
+    active: false,
+    toasty: false,
+  };
 
   componentWillMount() {
     this.setState({ active: true });
@@ -69,10 +79,10 @@ export default class GuruMeditation extends Component {
     return (
       <Fader active={this.state.active} transitionAppear>
         <Wrapper
-          bg={'dark'}
-          direction={'column'}
-          align={'center'}
-          justify={'center'}
+          bg="dark"
+          column
+          align="center"
+          justify="center"
         >
 
           <Head item={this.props.item} />
@@ -93,17 +103,9 @@ export default class GuruMeditation extends Component {
             active={this.state.toasty}
           />
 
-          <Audio audio={toastyMp3} id={'js-toasty-audio'} />
+          <Audio audio={toastyMp3} id="js-toasty-audio" />
         </Wrapper>
       </Fader>
     );
   }
 }
-
-GuruMeditation.propTypes = {
-  item: PropTypes.shape(),
-};
-
-GuruMeditation.defaultProps = {
-  item: null,
-};

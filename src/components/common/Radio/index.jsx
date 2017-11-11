@@ -1,60 +1,48 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { size } from 'polished';
+import { space } from 'styled-system';
 import styled from 'styled-components';
 
 import unSelected from './unselected.svg';
 import selected from './selected.svg';
 
 const Wrapper = styled.input`
+  appearance: none;
   background-image: url(${unSelected});
-  margin-right: 5px;
   ${size('18px', '17px')};
+  ${space};
+  outline: 0;
 
   &:checked {
     background-image: url(${selected});
   }
 `;
 
-class Radio extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: false,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+export class Radio extends Component {
+  static propTypes = {
+    id: PropTypes.string,
+    name: PropTypes.string,
+    value: PropTypes.string,
+  };
 
-  handleClick() {
-    this.setState({ checked: !this.state.checked });
-  }
+  static defaultProps = {
+    id: '',
+    name: '',
+    value: '',
+  };
 
   render() {
     const { id, name, value } = this.props;
 
     return (
       <Wrapper
-        type={'radio'}
+        type="radio"
         id={id}
         name={name}
         value={value}
-        onClick={this.handleClick}
-        checked={this.state.checked}
+        {...this.props}
       />
     );
   }
 }
-
-Radio.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
-};
-
-Radio.defaultProps = {
-  id: '',
-  name: '',
-  value: '',
-};
-
-export { Radio };

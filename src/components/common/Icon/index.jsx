@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Svg = styled.svg`display: block;`;
+const Svg = styled.svg`
+  display: block;
+`;
 
-const Icon = ({ name, width, height }) => (
-  <Svg width={width} height={height}>
-    <use xlinkHref={`/images/icons.svg#i-${name}`} />
-  </Svg>
-);
+const Icon = (props) => {
+  const { width, height, name } = props;
+  return (
+    <Svg width={width} height={height} {...props}>
+      <use xlinkHref={`/images/icons.svg#i-${name}`} />
+    </Svg>
+  );
+};
 
 Icon.propTypes = {
   name: PropTypes.string,

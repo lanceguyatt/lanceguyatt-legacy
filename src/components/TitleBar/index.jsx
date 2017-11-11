@@ -1,51 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Box } from 'grid-styled';
-import { color, space, removeProps } from 'styled-system';
 
-const BaseWrapper = (props) => {
-  const next = removeProps(props);
-  return <Box {...next} />;
-};
+import { Box, Flex } from '../common';
 
-const Wrapper = styled(BaseWrapper)`
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-  line-height: 1.125;
+const Wrapper = styled(({ name, ...rest }) => <Flex {...rest} />).attrs({
+})`
   height: 22px;
+  align-items: center;
+}`;
+
+const Inner = styled(({ fontSize, ...rest }) => <Box {...rest} />).attrs({
+  fontSize: 2,
+})`
+  flex: 1;
+  line-height: 1.125;
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
   white-space: nowrap;
-  ${color}
-  ${space};
-}
 `;
 
-const TitleBar = props => (
-  <Wrapper
-    px={1}
-    bg={props.bg}
-    color={props.color}
-    className={props.className}
-  >
-    {props.children}
-  </Wrapper>
-);
+const TitleBar = (props) => {
+  const { name } = props;
+  return (
+    <Wrapper {...props}>
+      <Inner>{name}</Inner>
+      <button>tab</button>
+    </Wrapper>
+  );
+};
 
 TitleBar.propTypes = {
-  bg: PropTypes.string,
-  children: PropTypes.node,
-  color: PropTypes.string,
-  className: PropTypes.string,
+  name: PropTypes.string,
 };
 
 TitleBar.defaultProps = {
-  bg: '',
-  children: '',
-  color: '',
-  className: '',
+  name: '',
 };
 
 export default TitleBar;
