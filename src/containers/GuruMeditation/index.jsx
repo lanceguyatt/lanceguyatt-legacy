@@ -4,7 +4,7 @@ import { CSSTransition, transit } from 'react-css-transition';
 import styled from 'styled-components';
 import { position, size } from 'polished';
 import { removeProps } from 'styled-system';
-import { Alert, Audio, Fader } from '../../components/common';
+import { Alert, Audio } from '../../components/common';
 import Head from '../../components/Head';
 
 import toastyImage from './toasty.png';
@@ -22,7 +22,6 @@ const BaseComponent = (props) => {
 };
 
 const Wrapper = styled(BaseComponent)`
-  height: 100vh;
   min-height: min-content;
   overflow: hidden;
   position: relative;
@@ -77,10 +76,10 @@ export default class GuruMeditation extends Component {
 
   render() {
     return (
-      <Fader active={this.state.active} transitionAppear>
+      <div active={this.state.active}>
         <Wrapper
           bg="dark"
-          column
+          flexDirection="column"
           align="center"
           justify="center"
         >
@@ -105,7 +104,7 @@ export default class GuruMeditation extends Component {
 
           <Audio audio={toastyMp3} id="js-toasty-audio" />
         </Wrapper>
-      </Fader>
+      </div>
     );
   }
 }

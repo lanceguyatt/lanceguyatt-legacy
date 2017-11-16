@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Fader, Flex } from '../../components/common';
+import { Flex } from '../../components/common';
 
 import { site } from '../../data';
 
@@ -33,21 +33,17 @@ export default class WorkBench extends Component {
     data: null,
   };
 
-  state = {
-    active: false,
-  };
-
-  componentWillMount() {
-    this.setState({ active: true });
-  }
   render() {
     const { data } = this.props;
     return (
-      <Fader transitionAppear active={this.state.active}>
+      <div>
 
         <Head item={data} />
 
-        <Wrapper column bg="secondary">
+        <Wrapper
+          flexDirection="column"
+          bg="secondary"
+        >
 
           <TitleBar
             bg="dark"
@@ -55,14 +51,13 @@ export default class WorkBench extends Component {
             name={`Lance Guyatt, Web Developer. Copyright © 2000-${site.copyrightYear}. All Rights Reserved`}
           />
 
-          <Flex direction={['column', 'row']} flex={1}>
-            <Window item={{ name: 'Work' }} flex={1} close="kickstart">
-              <Directory items={foo} direction={['column', 'row']} />
-              <Directory items={foo} column />
+          <Flex flexDirection={['column', 'row']} flex={1}>
+            <Window item={{ name: 'Work' }} close="kickstart" flex={1}>
+              <Directory items={foo} flexDirection={['column', 'row']} />
             </Window>
           </Flex>
         </Wrapper>
-      </Fader>
+      </div>
     );
   }
 }

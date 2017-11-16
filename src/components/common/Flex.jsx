@@ -2,32 +2,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { borderColor, borderWidth, color, fontSize, space, width, responsiveStyle } from 'styled-system';
-import { Flex as BaseFlex } from 'grid-styled';
+import {
+  alignItems,
+  borderColor,
+  borderWidth,
+  color,
+  flexDirection,
+  flex,
+  flexWrap,
+  fontSize,
+  justifyContent,
+  removeProps,
+  responsiveStyle,
+  space,
+  width,
+} from 'styled-system';
+
+const BaseComponent = (props) => {
+  const next = removeProps(props);
+  return <div {...next} />;
+};
 
 const height = responsiveStyle({
   prop: 'height',
   cssProperty: 'height',
 });
 
-const Wrapper = styled(({
-  bg,
-  borderBottom,
-  borderColor,
-  borderTop,
-  borderWidth,
-  color,
-  fontSize,
-  height,
-  space,
-  width,
-  ...rest
-}) => <BaseFlex {...rest} />)`
+const Wrapper = styled(({ borderColor, height, ...rest }) => <BaseComponent {...rest} />)`
+  display: flex;
+  ${alignItems}
   ${borderColor}
   ${borderWidth}
   ${color}
-  ${height}
+  ${flex}
+  ${flexDirection}
+  ${flexWrap}
   ${fontSize}
+  ${height}
+  ${justifyContent}
   ${space}
   ${width}
 `;

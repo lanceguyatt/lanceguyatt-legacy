@@ -1,4 +1,3 @@
-/* eslint global-require: 0, react/jsx-filename-extension: 0 */
 import React from 'react';
 import { render } from 'react-snapshot';
 import ReactDOM from 'react-dom';

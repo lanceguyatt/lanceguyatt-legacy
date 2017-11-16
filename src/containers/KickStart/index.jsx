@@ -1,59 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {
-  alignItems,
-  color,
-  flexDirection,
-  justifyContent,
-  removeProps,
-  space,
-  width,
-} from 'styled-system';
 import styled, { keyframes } from 'styled-components';
 
-import { Fader, Icon } from '../../components/common';
+import { Box, Flex, Icon } from '../../components/common';
 import Head from '../../components/Head';
 import tick from './tick.png';
 
-const BaseComponent = (props) => {
-  const next = removeProps(props);
-  return <div {...next} />;
-};
-
-const Wrapper = styled(BaseComponent)`
-  display: flex;
-  height: 100vh;
+const Wrapper = styled(Flex)`
   min-height: min-content;
-  overflow: hidden;
-  position: relative;
-  ${alignItems}
-  ${color}
-  ${flexDirection}
-  ${justifyContent}
-`;
-
-const Copyright = styled(BaseComponent)`
-  line-height: 1.5;
-  ${space}
-  ${color}
-  ${width}
-`;
-
-const Tick = styled.img`
-  background-size: 100%;
-  display: block;
-  height: 150px;
-  ${space}
-  ${width}
-`;
-
-const Loading = styled(BaseComponent)`
-  height: 169px;
-  position: relative;
-  ${color}
-  ${space}
-  ${width}
 `;
 
 const DiskDrive = styled(Icon).attrs({
@@ -102,32 +57,50 @@ export default class KickStart extends Component {
     item: null,
   };
 
-  state = {
-    active: false,
-  };
-
-  componentWillMount() {
-    this.setState({ active: true });
-  }
+  // state = {
+  //   active: false,
+  // };
+  //
+  // componentWillMount() {
+  //   this.setState({ active: true });
+  // }
 
   render() {
     return (
-      <Fader transitionAppear active={this.state.active}>
+      <div>
         <Head item={this.props.item} />
         <Wrapper
+          height="100vh"
+          borderWidth={2}
+          borderColor="primary"
           bg="purple"
+          p={3}
           color="tumbleWeed"
           flexDirection={['column', null, 'row']}
           align={['center', null, 'flex-end']}
           justify={['center', null, 'space-between']}
         >
-          <Copyright
+          <Box
+            bg="danger"
             w={180}
             ml={[null, null, 4]}
             mb={[3, null, 4]}
+            lineHeight={0}
           >
             <Link to="/" href="/">
-              <Tick src={tick} alt="" width={165} mb={3} mx="auto" />
+
+              <Box
+                bg="secondary"
+                height="150px"
+                width={165}
+                mb={3}
+                mx="auto"
+                style={{
+                  backgroundImage: `url(${tick})`,
+                  backgroundSize: 'cover',
+                }}
+              />
+
               2.0 Roms (37.350)
               <br />
               Copyright &copy; 2000-2017
@@ -136,12 +109,15 @@ export default class KickStart extends Component {
               <br />
               All Rights Reserved
             </Link>
-          </Copyright>
+          </Box>
 
-          <Loading
+          <Box
+            bg="primary"
+            height="169px"
             w={156}
             mr={[null, null, 4]}
             mb={[null, null, 4]}
+            position="relative"
           >
             <Link
               to="/"
@@ -150,9 +126,9 @@ export default class KickStart extends Component {
               <DiskDrive />
               <FloppyDisk />
             </Link>
-          </Loading>
+          </Box>
         </Wrapper>
-      </Fader>
+      </div>
     );
   }
 }

@@ -6,12 +6,7 @@ import { compose, map, prop } from 'ramda';
 
 import { Icon, Box, Flex } from '../common';
 
-const WrapperList = styled(Flex)`
-  list-style: none;
-`;
-
 const ListItem = styled(Box).attrs({
-  is: 'li',
   m: 1,
 })`
   text-align: center;
@@ -35,9 +30,9 @@ const Nav = children => (
 );
 
 const List = children => (
-  <WrapperList>
+  <Flex borderColor="primary" borderWidth={3} p={3}>
     {children}
-  </WrapperList>
+  </Flex>
 );
 
 const Item = ({ id, name, url }) => (

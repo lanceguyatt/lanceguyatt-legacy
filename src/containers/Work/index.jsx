@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
-import { Action, Fader, Flex, Box, Box1, Radio, Checkbox, Label } from '../../components/common';
+import { Action, Flex, Box, Box1, Radio, Checkbox, Label } from '../../components/common';
 import Window from '../../components/Window';
 
 const rootUrl = `https://cdn.contentful.com/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}`;
@@ -97,11 +97,9 @@ export default class Work extends Component {
 
   render() {
     return (
-      <Fader transitionAppear active={this.state.active} style={{ height: '100%' }}>
-        <Flex bg="secondary" flex={1} style={{ height: '100%' }}>
-          {this.state.work ? this.renderWork() : 'Loading'}
-        </Flex>
-      </Fader>
+      <Flex bg="secondary" flex={1} style={{ height: '100%' }}>
+        {this.state.work ? this.renderWork() : 'Loading'}
+      </Flex>
     );
   }
 }

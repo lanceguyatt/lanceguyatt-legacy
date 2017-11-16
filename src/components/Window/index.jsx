@@ -70,7 +70,7 @@ export default class Window extends Component {
       <Wrapper
         {...this.props}
         item={item}
-        column
+        flexDirection="column"
         borderWidth={1}
         borderTop
         borderColor="light"
@@ -84,11 +84,10 @@ export default class Window extends Component {
           {close ? <Close url={close} /> : null}
           <Bar mx="2px" bg="danger" flex={1}>{name}</Bar>
           <Close url={close} />
-          <Close url={close} />
         </Head>
         <Main
           bg="secondary"
-          column
+          flexDirection="column"
           flex={1}
           p={2}
         >

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { CSSTransition, transit } from 'react-css-transition';
 
 const Fader = props => (
@@ -10,5 +11,13 @@ const Fader = props => (
     activeStyle={{ opacity: 1 }}
   />
 );
+
+Fader.propTypes = {
+  children: PropTypes.shape(),
+};
+
+Fader.defaultProps = {
+  children: ''
+};
 
 export { Fader };
