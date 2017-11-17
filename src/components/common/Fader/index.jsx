@@ -1,9 +1,20 @@
+/* eslint no-shadow: 0 */
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { CSSTransition, transit } from 'react-css-transition';
+import styled from 'styled-components';
+import { flex, flexDirection } from 'styled-system';
+
+CSSTransition.childContextTypes = {};
+
+const Wrapper = styled(({ flexDirection, ...props }) => <CSSTransition {...props} />)`
+  display: flex;
+  ${flex}
+  ${flexDirection}
+`;
 
 const Fader = props => (
-  <CSSTransition
+  <Wrapper
     {...props}
     defaultStyle={{ opacity: 0 }}
     enterStyle={{ opacity: transit(1, 300, 'ease-in-out') }}
@@ -12,12 +23,12 @@ const Fader = props => (
   />
 );
 
-Fader.propTypes = {
-  children: PropTypes.shape(),
-};
-
-Fader.defaultProps = {
-  children: ''
-};
+// Fader.propTypes = {
+//   children: PropTypes.node,
+// };
+//
+// Fader.defaultProps = {
+//   children: '',
+// };
 
 export { Fader };

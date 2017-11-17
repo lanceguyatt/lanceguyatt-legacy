@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, transit } from 'react-css-transition';
 import styled from 'styled-components';
-import { position, size } from 'polished';
-import { removeProps } from 'styled-system';
-import { Alert, Audio } from '../../components/common';
+import { Alert, Audio, Flex, Fader } from '../../components/common';
 import Head from '../../components/Head';
 
 import toastyImage from './toasty.png';
@@ -16,21 +14,19 @@ const toastyMp3 = {
   type: 'audio/mp3',
 };
 
-const BaseComponent = (props) => {
-  const next = removeProps(props);
-  return <div {...next} />;
+const style = {
+  minHeight: 'min-content',
+  overflow: 'hidden',
+  position: 'relative',
 };
 
-const Wrapper = styled(BaseComponent)`
-  min-height: min-content;
-  overflow: hidden;
-  position: relative;
-`;
-
 const Toasty = styled(CSSTransition)`
-  background: url(${toastyImage});
-  ${position('absolute', null, '0', '0', null)};
-  ${size('200px')};
+  background-image: url(${toastyImage});
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
 `;
 
 const message = {
@@ -41,11 +37,11 @@ const message = {
 
 export default class GuruMeditation extends Component {
   static propTypes = {
-    item: PropTypes.shape(),
+    data: PropTypes.shape(),
   };
 
   static defaultProps = {
-    item: null,
+    data: null,
   };
 
   state = {
@@ -75,18 +71,26 @@ export default class GuruMeditation extends Component {
   }
 
   render() {
+    const { data } = this.props;
     return (
-      <div active={this.state.active}>
-        <Wrapper
+      <Fader
+        active={this.state.active}
+        transitionAppear
+        flex={1}
+        flexDirection="column"
+      >
+        <Flex
           bg="dark"
           flexDirection="column"
           align="center"
           justify="center"
+          flex={1}
+          style={style}
         >
 
-          <Head item={this.props.item} />
+          <Head data={data} />
 
-          <Alert danger animate item={message} />
+          <Alert animate data={message} />
 
           <Toasty
             defaultStyle={{ transform: 'translate(200px, 0)' }}
@@ -103,8 +107,8 @@ export default class GuruMeditation extends Component {
           />
 
           <Audio audio={toastyMp3} id="js-toasty-audio" />
-        </Wrapper>
-      </div>
+        </Flex>
+      </Fader>
     );
   }
 }

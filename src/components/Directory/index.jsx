@@ -24,7 +24,7 @@ const ListItem = styled(Box).attrs({
 `;
 
 const Nav = children => (
-  <Box is="nav">
+  <Box>
     {children}
   </Box>
 );

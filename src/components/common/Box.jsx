@@ -2,16 +2,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import { Box as BaseBox } from 'grid-styled';
+
 import {
+  alignSelf,
+  borderRadius,
   borderColor,
   borderWidth,
   color,
   flex,
+  fontWeight,
   fontSize,
   removeProps,
   responsiveStyle,
   space,
+  textAlign,
   width,
 } from 'styled-system';
 
@@ -41,17 +45,23 @@ const Wrapper = styled(({
   height,
   lineHeight,
   position,
+  textAlign,
   ...rest
 }) => <BaseComponent {...rest} />)`
+  box-sizing: border-box;
+  ${alignSelf}
   ${borderColor}
+  ${borderRadius}
   ${borderWidth}
   ${color}
   ${flex}
   ${fontSize}
+  ${fontWeight}
   ${height}
   ${lineHeight}
   ${position}
   ${space}
+  ${textAlign}
   ${width}
 `;
 

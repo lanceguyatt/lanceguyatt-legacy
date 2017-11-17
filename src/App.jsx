@@ -21,11 +21,11 @@ export default function App() {
           <Route
             path={kickstart.url}
             exact
-            render={() => <KickStart item={kickstart} />}
+            render={() => <KickStart data={kickstart} />}
           />
           <Route
             path="*"
-            render={() => <GuruMeditation item={guruMeditation} />}
+            render={() => <GuruMeditation data={guruMeditation} />}
           />
         </Switch>
       </ThemeProvider>

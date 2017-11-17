@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { space } from 'styled-system';
 import styled, { keyframes } from 'styled-components';
 
-import { Box, Flex, Icon } from '../../components/common';
+import { Box, Flex, Icon, Fader } from '../../components/common';
 import Head from '../../components/Head';
 import tick from './tick.png';
 
-const Wrapper = styled(Flex)`
-  min-height: min-content;
+const Tick = styled.img`
+  ${space}
 `;
 
 const DiskDrive = styled(Icon).attrs({
@@ -50,56 +51,49 @@ const FloppyDisk = styled(Icon).attrs({
 
 export default class KickStart extends Component {
   static propTypes = {
-    item: PropTypes.shape(),
-  };
+    data: PropTypes.shape(),
+  }
 
   static defaultProps = {
-    item: null,
+    data: {},
+  }
+
+  state = {
+    active: false,
   };
 
-  // state = {
-  //   active: false,
-  // };
-  //
-  // componentWillMount() {
-  //   this.setState({ active: true });
-  // }
+  componentWillMount() {
+    this.setState({ active: true });
+  }
 
   render() {
+    const { data } = this.props.data;
     return (
-      <div>
-        <Head item={this.props.item} />
-        <Wrapper
-          height="100vh"
-          borderWidth={2}
-          borderColor="primary"
+      <Fader
+        active={this.state.active}
+        transitionAppear
+        flex={1}
+        flexDirection="column"
+      >
+        <Head data={data} />
+        <Flex
           bg="purple"
           p={3}
           color="tumbleWeed"
+          flex={1}
           flexDirection={['column', null, 'row']}
           align={['center', null, 'flex-end']}
           justify={['center', null, 'space-between']}
         >
           <Box
-            bg="danger"
             w={180}
             ml={[null, null, 4]}
             mb={[3, null, 4]}
             lineHeight={0}
           >
-            <Link to="/" href="/">
+            <Link to="/">
 
-              <Box
-                bg="secondary"
-                height="150px"
-                width={165}
-                mb={3}
-                mx="auto"
-                style={{
-                  backgroundImage: `url(${tick})`,
-                  backgroundSize: 'cover',
-                }}
-              />
+              <Tick src={tick} height={150} width={165} mb={3} mx="auto" />
 
               2.0 Roms (37.350)
               <br />
@@ -112,12 +106,12 @@ export default class KickStart extends Component {
           </Box>
 
           <Box
-            bg="primary"
             height="169px"
             w={156}
             mr={[null, null, 4]}
             mb={[null, null, 4]}
             position="relative"
+            flex="none"
           >
             <Link
               to="/"
@@ -127,8 +121,8 @@ export default class KickStart extends Component {
               <FloppyDisk />
             </Link>
           </Box>
-        </Wrapper>
-      </div>
+        </Flex>
+      </Fader>
     );
   }
 }

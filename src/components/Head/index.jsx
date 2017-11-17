@@ -5,21 +5,21 @@ import Helmet from 'react-helmet';
 import { site } from '../../data';
 
 const Head = (props) => {
-  const { item } = props;
-  const pageUrl = `${site.url}${item.url}`;
+  const { data } = props;
+  const pageUrl = `${site.url}${data.url}`;
   const pageImage = `${site.url}/logo.png`;
-  const pageTitle = `${item.name} - ${site.name}`;
+  const pageTitle = `${data.name} - ${site.name}`;
 
   return (
     <Helmet
       defaultTitle={site.name}
       titleTemplate="%s Lance Guyatt, Web Developer"
-      title={item.name}
+      title={data.name}
       meta={[
-        { name: 'description', content: item.description },
+        { name: 'description', content: data.description },
         { property: 'og:site_name', content: site.name },
         { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: item.description },
+        { property: 'og:description', content: data.description },
         { property: 'og:url', content: pageUrl },
         { property: 'og:image', content: pageImage },
         { property: 'og:image:width', content: 1200 },
@@ -28,23 +28,23 @@ const Head = (props) => {
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@lanceguyatt' },
         { name: 'twitter:title', content: pageTitle },
-        { name: 'twitter:description', content: item.description },
+        { name: 'twitter:description', content: data.description },
         { name: 'twitter:image:src', content: pageImage },
         { name: 'twitter:url', content: pageUrl },
-        { itemprop: 'name', content: pageTitle },
-        { itemprop: 'description', content: item.description },
-        { itemprop: 'url', content: pageUrl },
+        { dataprop: 'name', content: pageTitle },
+        { dataprop: 'description', content: data.description },
+        { dataprop: 'url', content: pageUrl },
       ]}
     />
   );
 };
 
 Head.propTypes = {
-  item: PropTypes.shape(),
+  data: PropTypes.shape(),
 };
 
 Head.defaultProps = {
-  item: {},
+  data: {},
 };
 
 export default Head;

@@ -29,6 +29,7 @@ const height = responsiveStyle({
 });
 
 const Wrapper = styled(({ borderColor, height, ...rest }) => <BaseComponent {...rest} />)`
+  box-sizing: border-box;
   display: flex;
   ${alignItems}
   ${borderColor}

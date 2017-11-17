@@ -1,6 +1,6 @@
 /* eslint no-confusing-arrow: 0 */
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
@@ -17,42 +17,38 @@ const pulse = keyframes`
 `;
 
 const Wrapper = styled(({
-  danger, primary, animate, ...rest
-}) => <Box {...rest} />)`
-  border-style: solid;
-  border-width: 6px;
-  line-height: 1.875;
+  animate,
+  data,
+  ...props
+}) => <Box {...props} />).attrs({
+  align: 'center',
+  borderColor: 'danger',
+  borderWidth: '6px',
+  color: 'danger',
+  m: 3,
+  p: 3,
+  role: 'dialog',
+})`
   max-width: 640px;
-  text-align: center;
   user-select: none;
   ${props => props.animate ? `animation: ${pulse} 1.5s infinite ease-in-out` : null};
-  ${props => props.primary ? `border-color: ${props.theme.colors.primary}; color: ${props.theme.colors.primary};` : null};
-  ${props => props.secondary ? `border-color: ${props.theme.colors.secondary}; color: ${props.theme.colors.secondary};` : null};
-  ${props => props.dark ? `border-color: ${props.theme.colors.dark}; color: ${props.theme.colors.dark};` : null};
-  ${props => props.light ? `border-color: ${props.theme.colors.light}; color: ${props.theme.colors.light};` : null};
-  ${props => props.danger ? `border-color: ${props.theme.colors.danger}; color: ${props.theme.colors.danger};` : null};
 `;
 
 const Alert = (props) => {
-  const {
-    animate, primary, danger, item,
-  } = props;
+  const { data } = props;
+  const { name, description, url } = data;
   return (
     <Wrapper
-      role="dialog"
-      danger={danger}
-      animate={animate}
-      primary={primary}
-      p={3}
+      {...props}
     >
-      <h2>{item.name}</h2>
-      <a href={item.url}>{item.description}</a>
+      <h2>{name}</h2>
+      <Link to={url} href={url}>{description}</Link>
     </Wrapper>
   );
 };
 
 Alert.propTypes = {
-  item: PropTypes.shape({
+  data: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     url: PropTypes.string,
@@ -61,7 +57,7 @@ Alert.propTypes = {
 };
 
 Alert.defaultProps = {
-  item: {
+  data: {
     name: 'Alert name',
     description: 'Alert description',
     url: null,
@@ -70,3 +66,9 @@ Alert.defaultProps = {
 };
 
 export { Alert };
+
+// ${props => props.primary ? `border-color: ${props.theme.colors.primary}; color: ${props.theme.colors.primary};` : null};
+// ${props => props.secondary ? `border-color: ${props.theme.colors.secondary}; color: ${props.theme.colors.secondary};` : null};
+// ${props => props.dark ? `border-color: ${props.theme.colors.dark}; color: ${props.theme.colors.dark};` : null};
+// ${props => props.light ? `border-color: ${props.theme.colors.light}; color: ${props.theme.colors.light};` : null};
+// ${props => props.danger ? `border-color: ${props.theme.colors.danger}; color: ${props.theme.colors.danger};` : null};
