@@ -54,7 +54,6 @@ injectGlobal`
     flex-direction: column;
     height: 100vh;
     min-height: min-content;
-    overflow: hidden;
   }
 `;
 

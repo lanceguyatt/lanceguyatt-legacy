@@ -7,7 +7,11 @@ import { flex, flexDirection } from 'styled-system';
 
 CSSTransition.childContextTypes = {};
 
-const Wrapper = styled(({ flexDirection, ...props }) => <CSSTransition {...props} />)`
+const Wrapper = styled(({
+  flex,
+  flexDirection,
+  ...props
+}) => <CSSTransition {...props} />)`
   display: flex;
   ${flex}
   ${flexDirection}

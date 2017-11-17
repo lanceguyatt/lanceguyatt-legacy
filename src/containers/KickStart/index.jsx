@@ -12,16 +12,6 @@ const Tick = styled.img`
   ${space}
 `;
 
-const DiskDrive = styled(Icon).attrs({
-  name: 'disk-drive',
-  width: 156,
-  height: 38,
-})`
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
-
 const insertDisk = keyframes`
   0% {
     transform-origin: 0% 0%;
@@ -76,6 +66,7 @@ export default class KickStart extends Component {
         flexDirection="column"
       >
         <Head data={data} />
+
         <Flex
           bg="purple"
           p={3}
@@ -84,6 +75,7 @@ export default class KickStart extends Component {
           flexDirection={['column', null, 'row']}
           align={['center', null, 'flex-end']}
           justify={['center', null, 'space-between']}
+          minHeight="min-content"
         >
           <Box
             w={180}
@@ -113,11 +105,8 @@ export default class KickStart extends Component {
             position="relative"
             flex="none"
           >
-            <Link
-              to="/"
-              href="/"
-            >
-              <DiskDrive />
+            <Link to="/" href="/">
+              <Icon name="disk-drive" width={156} height={38} />
               <FloppyDisk />
             </Link>
           </Box>

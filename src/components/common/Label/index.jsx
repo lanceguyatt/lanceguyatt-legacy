@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { space, color } from 'styled-system';
+import { space, color, removeProps } from 'styled-system';
 import styled from 'styled-components';
 
-const Wrapper = styled(({ bg, p, ...rest }) => <label {...rest} />)`
+const BaseComponent = (props) => {
+  const next = removeProps(props);
+  return <label {...next} />;
+};
+
+const Wrapper = styled(BaseComponent)`
   user-select: none;
-  ${space};
-  ${color};
+  ${color}
+  ${space}
 `;
 
 export const Label = (props) => {
   const { htmlFor, children } = props;
   return (
-    <Wrapper htmlFor={htmlFor} bg="danger" p={3} {...props}>
+    <Wrapper htmlFor={htmlFor} {...props}>
       {children}
     </Wrapper>
   );

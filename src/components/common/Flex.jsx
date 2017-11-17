@@ -10,7 +10,6 @@ import {
   flexDirection,
   flex,
   flexWrap,
-  fontSize,
   justifyContent,
   removeProps,
   responsiveStyle,
@@ -28,8 +27,17 @@ const height = responsiveStyle({
   cssProperty: 'height',
 });
 
-const Wrapper = styled(({ borderColor, height, ...rest }) => <BaseComponent {...rest} />)`
-  box-sizing: border-box;
+const minHeight = responsiveStyle({
+  prop: 'minHeight',
+  cssProperty: 'minHeight',
+});
+
+const Wrapper = styled(({
+  borderColor,
+  height,
+  minHeight,
+  ...rest
+}) => <BaseComponent {...rest} />)`
   display: flex;
   ${alignItems}
   ${borderColor}
@@ -38,9 +46,9 @@ const Wrapper = styled(({ borderColor, height, ...rest }) => <BaseComponent {...
   ${flex}
   ${flexDirection}
   ${flexWrap}
-  ${fontSize}
   ${height}
   ${justifyContent}
+  ${minHeight}
   ${space}
   ${width}
 `;

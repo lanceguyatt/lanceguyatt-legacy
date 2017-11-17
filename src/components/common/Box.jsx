@@ -48,7 +48,6 @@ const Wrapper = styled(({
   textAlign,
   ...rest
 }) => <BaseComponent {...rest} />)`
-  box-sizing: border-box;
   ${alignSelf}
   ${borderColor}
   ${borderRadius}

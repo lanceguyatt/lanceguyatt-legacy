@@ -9,24 +9,18 @@ const rootUrl = `https://cdn.contentful.com/spaces/${process.env.REACT_APP_CONTE
 const accessToken = `&access_token=${process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN}`;
 
 const Dl = styled(Flex).attrs({
-  is: 'dl',
-  bg: 'primary',
-  direction: ['column', 'row'],
+  flexDirection: ['column', 'row'],
   align: [null, 'center'],
   wrap: 'wrap',
   mb: 2,
 })``;
 
 const Dt = styled(Box).attrs({
-  is: 'dt',
-  color: 'light',
-  bg: 'danger',
-  mb: [0, 1],
+  mb: 1,
   flex: [null, '1 0 25%'],
 })``;
 
 const Dd = styled(Box1).attrs({
-  is: 'dd',
   mb: 1,
   flex: [null, '1 0 75%'],
 })``;
@@ -56,15 +50,18 @@ export default class Work extends Component {
     return (
       <Window
         flex={1}
-        item={{ name, description: 'Test' }}
+        data={{ name, description: 'Test' }}
         close="/"
         justify={[null, 'space-between']}
       >
-        <Flex flex={1} column>
+        <Flex
+          flex={1}
+          flexDirection="column"
+        >
           <Dl>
-            <Dt>Name:</Dt>
+            <Dt color="light">Name:</Dt>
             <Dd>{name}</Dd>
-            <Dt>URL:</Dt>
+            <Dt color="light">URL:</Dt>
             <Dd>{url}</Dd>
           </Dl>
           <Label htmlFor="foo">
