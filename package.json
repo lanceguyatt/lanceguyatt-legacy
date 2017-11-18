@@ -1,5 +1,6 @@
 {
   "name": "lanceguyatt",
+  "homepage": "https://spooky-bun.surge.sh",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,11 +9,11 @@
     "@storybook/addon-links": "^3.2.16",
     "@storybook/addon-notes": "^3.2.16",
     "@storybook/react": "^3.2.16",
-    "axios": "^0.16.2",
+    "axios": "^0.17.1",
     "moment": "^2.18.1",
     "polished": "^1.7.0",
     "prop-types": "^15.6.0",
-    "ramda": "^0.24.1",
+    "ramda": "^0.25.0",
     "react": "^16.0.0",
     "react-css-transition": "^0.7.4",
     "react-dom": "^16.0.0",
@@ -54,7 +55,8 @@
   },
   "reactSnapshot": {
     "include": [
-      "/storybook"
+      "/storybook/",
+      "/guru-meditation/"
     ]
   },
   "lint-staged": {

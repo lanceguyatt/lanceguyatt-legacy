@@ -4,15 +4,7 @@ import styled from 'styled-components';
 
 import { Box, Flex } from '../common';
 
-const Wrapper = styled(({ name, ...rest }) => <Flex {...rest} />).attrs({
-})`
-  height: 22px;
-  align-items: center;
-}`;
-
-const Inner = styled(({ fontSize, ...rest }) => <Box {...rest} />).attrs({
-  fontSize: 2,
-})`
+const Inner = styled(Box)`
   flex: 1;
   line-height: 1.125;
   overflow: hidden;
@@ -24,10 +16,9 @@ const Inner = styled(({ fontSize, ...rest }) => <Box {...rest} />).attrs({
 const TitleBar = (props) => {
   const { name } = props;
   return (
-    <Wrapper {...props}>
+    <Flex height="22px" align="center" {...props}>
       <Inner>{name}</Inner>
-      <button>tab</button>
-    </Wrapper>
+    </Flex>
   );
 };
 

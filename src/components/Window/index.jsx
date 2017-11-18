@@ -19,12 +19,12 @@ const Head = styled(Flex).attrs({
 `;
 
 const Main = styled(Flex)`
-  border-right: 1px solid ${theme('colors.dark')};
-  border-left: 1px solid ${theme('colors.light')};
-  overflow: scroll;
-  min-height: min-content;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
 
   &::-webkit-scrollbar {
     display: none;
@@ -71,7 +71,6 @@ export default class Window extends Component {
       <Wrapper
         {...this.props}
         data={data}
-        flex={1}
         flexDirection="column"
         bg="secondary"
         minHeight="min-content"
@@ -85,13 +84,13 @@ export default class Window extends Component {
         >
           {close ? <Close url={close} /> : null}
           <Bar mx="2px" flex={1}>{name}</Bar>
-          <Close url={close} />
         </Head>
+
         <Main
           bg="secondary"
-          flexDirection="column"
-          flex={1}
+          borderWidth={2}
           p={2}
+          flex="auto"
         >
           {children}
         </Main>

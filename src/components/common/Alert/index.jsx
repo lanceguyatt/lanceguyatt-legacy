@@ -1,10 +1,16 @@
-/* eslint no-confusing-arrow: 0 */
+/* eslint no-confusing-arrow: 0, no-shadow: 0 */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-
-import { Box } from '../Box';
+import {
+  borderColor,
+  borderWidth,
+  color,
+  removeProps,
+  space,
+  textAlign,
+} from 'styled-system';
 
 const pulse = keyframes`
   0% {
@@ -16,19 +22,30 @@ const pulse = keyframes`
   }
 `;
 
+const BaseComponent = (props) => {
+  const next = removeProps(props);
+  return <Link {...next} />;
+};
+
 const Wrapper = styled(({
   animate,
+  borderColor,
   data,
   ...props
-}) => <Box {...props} />).attrs({
+}) => <BaseComponent {...props} />).attrs({
   align: 'center',
-  borderColor: 'danger',
+  borderColor: 'primary',
   borderWidth: '6px',
   color: 'danger',
   m: 3,
   p: 3,
   role: 'dialog',
 })`
+  ${borderColor}
+  ${borderWidth}
+  ${color}
+  ${space}
+  ${textAlign}
   max-width: 640px;
   user-select: none;
   ${props => props.animate ? `animation: ${pulse} 1.5s infinite ease-in-out` : null};
@@ -38,11 +55,9 @@ const Alert = (props) => {
   const { data } = props;
   const { name, description, url } = data;
   return (
-    <Wrapper
-      {...props}
-    >
+    <Wrapper to={url} href={url} {...props}>
       <h2>{name}</h2>
-      <Link to={url} href={url}>{description}</Link>
+      <p>{description}</p>
     </Wrapper>
   );
 };

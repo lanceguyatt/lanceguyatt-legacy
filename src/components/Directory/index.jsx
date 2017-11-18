@@ -11,7 +11,6 @@ const ListItem = styled(Box).attrs({
 })`
   text-align: center;
   max-width: 100px;
-  border: 1px solid red;
 
   a {
     display: block;
@@ -30,7 +29,7 @@ const Nav = children => (
 );
 
 const List = children => (
-  <Flex borderColor="primary" borderWidth={3} p={3}>
+  <Flex>
     {children}
   </Flex>
 );
