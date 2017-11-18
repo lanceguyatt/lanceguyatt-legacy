@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-// import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
 
 import { Fader, Flex } from '../../components/common';
 import Head from '../../components/Head';
 import TitleBar from '../../components/TitleBar';
-// import Work from '../../containers/Work';
 import Window from '../../components/Window';
 import Directory from '../../components/Directory';
-import { about, site, kickstart, projects, workbench, work } from '../../data';
+import { site, kickstart, workbench } from '../../data';
 
-export default class WorkBench extends Component {
+export default class Drawer extends Component {
   static propTypes = {
     data: PropTypes.shape(),
   }
@@ -55,11 +52,19 @@ export default class WorkBench extends Component {
 
           <Window data={workbench} close={kickstart.url} flex={1}>
 
-            <Directory
-              data={workbench.items}
-              flexDirection="column"
-            />
+            <Flex
+              bg="danger"
+            >
+              <Directory
+                data={workbench.items}
+                flexDirection="column"
+              />
 
+              <Window data={data} close={data.parent}>
+                <Directory data={data.items} />
+              </Window>
+
+            </Flex>
           </Window>
         </Flex>
       </Fader>

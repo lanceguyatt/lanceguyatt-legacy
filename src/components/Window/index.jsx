@@ -1,30 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { theme } from 'styled-system';
-import { borderWidth } from 'polished';
+// import { theme } from 'styled-system';
+// import { borderWidth } from 'polished';
 
 import { Box, Close, Flex } from '../common';
 
-const Wrapper = styled(({
-  data,
-  close,
-  ...rest
-}) => <Flex {...rest} />).attrs({
-})``;
-
-const Head = styled(Flex).attrs({
-})`
-  ${borderWidth(null, theme('borderWidths.0'))}
-`;
-
 const Main = styled(Flex)`
   overflow: hidden;
-  hyphens: auto;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-all;
 
   &::-webkit-scrollbar {
     display: none;
@@ -68,33 +51,37 @@ export default class Window extends Component {
     const { data, children, close } = this.props;
     const { name } = data;
     return (
-      <Wrapper
+      <Flex
         {...this.props}
-        data={data}
         flexDirection="column"
         bg="secondary"
         minHeight="min-content"
+        style={{ overflow: 'hidden' }}
+        borderWidth={1}
       >
-        <Head
+        <Flex
           bg={this.state.active ? 'primary' : 'secondary'}
           align="center"
           borderWidth={1}
           borderBottom
+          borderColor="dark"
           height="22px"
         >
           {close ? <Close url={close} /> : null}
           <Bar mx="2px" flex={1}>{name}</Bar>
-        </Head>
+        </Flex>
 
         <Main
-          bg="secondary"
-          borderWidth={2}
+          borderColor="light"
+          borderTop
+          borderLeft
+          borderWidth={1}
+          flex={1}
           p={2}
-          flex="auto"
         >
           {children}
         </Main>
-      </Wrapper>
+      </Flex>
     );
   }
 }

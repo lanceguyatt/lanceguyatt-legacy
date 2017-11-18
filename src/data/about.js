@@ -1,7 +1,7 @@
 export const about = {
-  id: 3,
+  id: 'about',
   name: 'About',
-  description: 'About',
+  description: 'About description',
   url: '/about/',
   parent: '/',
   type: 'drawer',
@@ -11,24 +11,28 @@ export const about = {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/lanceguyatt',
       type: 'file',
+      external: true,
     },
     {
       id: 2,
       name: 'Github',
       url: 'http://github.com/lanceguyatt',
       type: 'file',
+      external: true,
     },
     {
       id: 3,
       name: 'Twitter',
       url: 'http://twitter.com/lanceguyatt',
       type: 'file',
+      external: true,
     },
     {
       id: 4,
       name: 'Instagram',
       url: 'http://instagram.com/lanceguyatt',
       type: 'file',
+      external: true,
     },
   ],
 };

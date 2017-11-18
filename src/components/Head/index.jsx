@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import { site } from '../../data';
 
-const Head = (props) => {
+export default function Head(props) {
   const { data } = props;
   const pageUrl = `${site.url}${data.url}`;
   const pageImage = `${site.url}/logo.png`;
@@ -14,7 +14,7 @@ const Head = (props) => {
     <Helmet
       defaultTitle={site.name}
       titleTemplate="%s Lance Guyatt, Web Developer"
-      title={data.name}
+      title={pageTitle}
       meta={[
         { name: 'description', content: data.description },
         { property: 'og:site_name', content: site.name },
@@ -37,7 +37,7 @@ const Head = (props) => {
       ]}
     />
   );
-};
+}
 
 Head.propTypes = {
   data: PropTypes.shape(),
@@ -46,5 +46,3 @@ Head.propTypes = {
 Head.defaultProps = {
   data: {},
 };
-
-export default Head;

@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { space } from 'styled-system';
 
 const Svg = styled(({ name, ...props }) => <svg {...props} />)`
   display: block;
+  ${space}
 `;
 
 const Icon = (props) => {

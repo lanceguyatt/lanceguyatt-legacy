@@ -12,7 +12,7 @@ Location: London, United Kingdom
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS4, ES6
-Components: React Lite, React Router, Webpack, PostCSS, CSS Modules, Babel
+Components: React, React Router, Webpack, PostCSS, Styled Components
 Software: Atom, Sketch
 
 /* THANKS */
