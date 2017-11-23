@@ -1,6 +1,5 @@
 /* eslint no-shadow: 0 */
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { CSSTransition, transit } from 'react-css-transition';
 import styled from 'styled-components';
 import { flex, flexDirection } from 'styled-system';
@@ -26,13 +25,5 @@ const Fader = props => (
     activeStyle={{ opacity: 1 }}
   />
 );
-
-// Fader.propTypes = {
-//   children: PropTypes.node,
-// };
-//
-// Fader.defaultProps = {
-//   children: '',
-// };
 
 export { Fader };

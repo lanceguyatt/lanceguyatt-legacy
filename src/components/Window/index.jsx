@@ -4,7 +4,13 @@ import styled from 'styled-components';
 // import { theme } from 'styled-system';
 // import { borderWidth } from 'polished';
 
-import { Box, Close, Flex } from '../common';
+import {
+  Box,
+  Close,
+  Depth,
+  Flex,
+  Zoom,
+} from '../common';
 
 const Main = styled(Flex)`
   overflow: hidden;
@@ -53,32 +59,29 @@ export default class Window extends Component {
     return (
       <Flex
         {...this.props}
-        flexDirection="column"
         bg="secondary"
+        borderWidth={2}
+        borderTop
+        borderColor="light"
+        flexDirection="column"
         minHeight="min-content"
         style={{ overflow: 'hidden' }}
-        borderWidth={1}
       >
         <Flex
           bg={this.state.active ? 'primary' : 'secondary'}
           align="center"
-          borderWidth={1}
+          borderWidth={2}
           borderBottom
           borderColor="dark"
-          height="22px"
+          height="20px"
         >
           {close ? <Close url={close} /> : null}
-          <Bar mx="2px" flex={1}>{name}</Bar>
+          <Bar mx={1} flex={1}>{name}</Bar>
+          <Zoom />
+          <Depth />
         </Flex>
 
-        <Main
-          borderColor="light"
-          borderTop
-          borderLeft
-          borderWidth={1}
-          flex={1}
-          p={2}
-        >
+        <Main flex={1}>
           {children}
         </Main>
       </Flex>

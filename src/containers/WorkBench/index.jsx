@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
-// import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import styled from 'styled-components';
 
-import { Fader, Flex } from '../../components/common';
+import {
+  Action,
+  Checkbox,
+  Close,
+  Depth,
+  Fader,
+  Flex,
+  Text,
+  Zoom,
+} from '../../components/common';
 import Head from '../../components/Head';
 import TitleBar from '../../components/TitleBar';
-// import Work from '../../containers/Work';
 import Window from '../../components/Window';
 import Directory from '../../components/Directory';
-import { about, site, kickstart, projects, workbench, work } from '../../data';
+import { site, kickstart, workbench } from '../../data';
 
 export default class WorkBench extends Component {
   static propTypes = {
@@ -51,15 +57,34 @@ export default class WorkBench extends Component {
             bg="dark"
             color="secondary"
             name={`Lance Guyatt, Web Developer. Copyright © 2000-${site.copyrightYear}. All Rights Reserved`}
-          />
+          >
+            <Depth />
+          </TitleBar>
 
-          <Window data={workbench} close={kickstart.url} flex={1}>
+          <Window
+            data={workbench}
+            close={kickstart.url}
+            flex={1}
+          >
+            <Flex wrap p={3} align="flex-start">
 
-            <Directory
-              data={workbench.items}
-              flexDirection="column"
-            />
+              <Flex align="center">
+                <Action />
+                <Text type="text" placeholder="Placeholder" />
+                <Zoom />
+                <Depth />
+                <Close />
+                <Checkbox />
+                <Checkbox />
 
+              </Flex>
+
+              <Directory
+                data={workbench.items}
+                flexDirection="row"
+              />
+
+            </Flex>
           </Window>
         </Flex>
       </Fader>

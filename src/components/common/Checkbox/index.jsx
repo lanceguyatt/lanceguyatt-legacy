@@ -1,25 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { size } from 'polished';
 
-import unSelected from './checkbox-unselected.svg';
-import selected from './checkbox-selected.svg';
+import selected from './selected.svg';
+import unSelected from './unselected.svg';
 
 const Wrapper = styled.input`
   appearance: none;
-  background-color: transparent;
-  border-radius: 0;
-  border: 0;
-  background-image: url(${unSelected});
-  ${size('22px', '26px')};
+  background: transparent url(${unSelected}) no-repeat center center;
+  height: 22px;
+  width: 26px;
+  outline: 0;
 
   &:checked {
     background-image: url(${selected});
-  }
-
-  &:focus {
-    outline: 0;
   }
 `;
 

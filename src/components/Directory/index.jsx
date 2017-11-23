@@ -18,13 +18,20 @@ const ListItem = styled(Box).attrs({
 `;
 
 export default function Directory(props) {
+  const { data } = props;
   return (
     <Flex {...props}>
-      {props.data.map(item => (
+      {data.map(item => (
         <ListItem key={item.id}>
           <Link to={item.url} href={item.url} target={item.external ? '_blank' : null}>
-            <Icon name="drawer" width={65} height={38} mb={5} mx="auto" />
-            {item.name}
+            <Box mb={1}>
+              {item.type === 'file' ?
+                <Icon name="file" width={46} height={62} mb={1} mx="auto" />
+                :
+                <Icon name="drawer" width={65} height={38} mb={1} mx="auto" />
+              }
+              {item.name}
+            </Box>
           </Link>
         </ListItem>
       ))}

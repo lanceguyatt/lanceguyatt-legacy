@@ -57,7 +57,7 @@ export default class KickStart extends Component {
   }
 
   render() {
-    const { data } = this.props.data;
+    const { data } = this.props;
     return (
       <Fader
         active={this.state.active}

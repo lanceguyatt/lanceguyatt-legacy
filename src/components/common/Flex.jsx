@@ -34,6 +34,7 @@ const minHeight = responsiveStyle({
 
 const Wrapper = styled(({
   borderColor,
+  data,
   height,
   minHeight,
   ...rest

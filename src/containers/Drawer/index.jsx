@@ -54,15 +54,18 @@ export default class Drawer extends Component {
 
             <Flex
               bg="danger"
+              flex={1}
+              flexDirection={['column', 'row']}
+              p={3}
             >
               <Directory
                 data={workbench.items}
-                flexDirection="column"
+                flexDirection={['row', 'column']}
               />
 
-              <Window data={data} close={data.parent}>
-                <Directory data={data.items} />
-              </Window>
+            <Window data={data} close={data.parent} flex={1}>
+              <Directory data={data.items} m={3} />
+            </Window>
 
             </Flex>
           </Window>

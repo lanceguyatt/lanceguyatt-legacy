@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { size } from 'polished';
-import { space } from 'styled-system';
 import styled from 'styled-components';
 
 import unSelected from './unselected.svg';
@@ -9,9 +7,9 @@ import selected from './selected.svg';
 
 const Wrapper = styled.input`
   appearance: none;
-  background-image: url(${unSelected});
-  ${size('18px', '17px')};
-  ${space};
+  background: no-repeat url(${unSelected}) center center;
+  width: 18px;
+  height: 17px;
   outline: 0;
 
   &:checked {
