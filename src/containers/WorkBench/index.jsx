@@ -8,6 +8,7 @@ import {
   Depth,
   Fader,
   Flex,
+  Radio,
   Text,
   Zoom,
 } from '../../components/common';
@@ -76,6 +77,8 @@ export default class WorkBench extends Component {
                 <Close />
                 <Checkbox />
                 <Checkbox />
+                <Radio name="foo" />
+                <Radio name="foo" />
 
               </Flex>
 

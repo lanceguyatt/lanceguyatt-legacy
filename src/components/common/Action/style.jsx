@@ -34,13 +34,11 @@ const Wrapper = styled(({ external, color, ...rest }) => <Box {...rest} />).attr
 `;
 
 export const Button = styled(Wrapper).attrs({
-  is: 'button',
 })`
   appearance: none;
 `;
 
 export const A = styled(Wrapper).attrs({
-  is: 'a',
   target: props => props.external ? '_blank' : null,
   rel: props => props.external ? 'noopener noreferrer' : null,
 })``;
