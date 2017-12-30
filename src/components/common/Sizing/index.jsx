@@ -4,21 +4,22 @@ import styled from 'styled-components';
 const Wrapper = styled.button`
   appearance: none;
   background-color: transparent;
-  background-image: url(${require('./depth.svg')});
+  background-image: url(${require('./sizing.svg')});
   border-radius: 0;
   border: 0;
-  height: 22px;
+  display: block;
+  height: 20px;
   outline: 0;
-  width: 23px;
   user-select: none;
+  width: 18px;
 
   &:active {
-    background-position: -23px 0;
+    background-position: -18px 0;
   }
 `;
 
-const Depth = props => (
-  <Wrapper {...props} title="Depth" />
+const Sizing = props => (
+  <Wrapper {...props} title="Sizing" />
 );
 
-export { Depth };
+export { Sizing };

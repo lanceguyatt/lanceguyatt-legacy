@@ -3,24 +3,22 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import selected from './selected.svg';
-import unSelected from './unselected.svg';
-
 const Wrapper = styled(Link)`
-  background-image: url(${unSelected});
+  background-color: transparent;
+  background-image: url(${require('./close.svg')});
   display: block;
   height: 22px;
   user-select: none;
   width: 20px;
 
   &:active {
-    background-image: url(${selected});
+    background-position: -20px 0;
   }
 }
 `;
 
 const Close = props => (
-  <Wrapper to={props.url} {...props} />
+  <Wrapper to={props.url} {...props} title="Close" />
 );
 
 Close.propTypes = {

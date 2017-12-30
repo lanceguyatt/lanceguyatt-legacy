@@ -1,41 +1,28 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
-
-import selected from './selected.svg';
-import unSelected from './unselected.svg';
 
 const Wrapper = styled.input`
   appearance: none;
-  background: transparent url(${unSelected}) no-repeat center center;
+  background-color: transparent;
+  background-image: url(${require('./checkbox.svg')});
   height: 22px;
   width: 26px;
   outline: 0;
 
   &:checked {
-    background-image: url(${selected});
+    background-position: -26px 0;
   }
 `;
 
-export class Checkbox extends Component {
-  static propTypes = {
-    id: PropTypes.string,
-    name: PropTypes.string,
-  };
+const Checkbox = (props) => {
+  const { id, name } = props;
+  return (
+    <Wrapper
+      type="checkbox"
+      id={id}
+      name={name}
+    />
+  );
+};
 
-  static defaultProps = {
-    id: '',
-    name: '',
-  };
-
-  render() {
-    const { id, name } = this.props;
-    return (
-      <Wrapper
-        type="checkbox"
-        id={id}
-        name={name}
-      />
-    );
-  }
-}
+export { Checkbox };
