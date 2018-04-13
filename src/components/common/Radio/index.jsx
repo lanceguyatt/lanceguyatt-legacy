@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from 'react';
 
-import radio from './radio.svg';
+import { Box } from '../Box';
 
-const Wrapper = styled.input`
+const Component = Box.extend.attrs({
+  is: 'input',
+  type: 'radio',
+  bg: 'transparent',
+  backgroundImage: require('./radio.svg'),
+  width: 18,
+  height: 17,
+})`
   appearance: none;
-  background-color: transparent;
-  background-image: url(${radio});
-  width: 18px;
-  height: 17px;
   outline: 0;
 
   &:checked {
@@ -17,30 +18,6 @@ const Wrapper = styled.input`
   }
 `;
 
-export class Radio extends Component {
-  static propTypes = {
-    id: PropTypes.string,
-    name: PropTypes.string,
-    value: PropTypes.string,
-  };
+const Radio = props => <Component {...props} />;
 
-  static defaultProps = {
-    id: '',
-    name: '',
-    value: '',
-  };
-
-  render() {
-    const { id, name, value } = this.props;
-
-    return (
-      <Wrapper
-        type="radio"
-        id={id}
-        name={name}
-        value={value}
-        {...this.props}
-      />
-    );
-  }
-}
+export { Radio };

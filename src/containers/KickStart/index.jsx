@@ -73,17 +73,16 @@ export default class KickStart extends Component {
           color="tumbleWeed"
           flex={1}
           flexDirection={['column', null, 'row']}
-          align={['center', null, 'flex-end']}
-          justify={['center', null, 'space-between']}
+          alignItems={['center', null, 'flex-end']}
+          justifyContent={['center', null, 'space-between']}
           minHeight="min-content"
         >
           <Box
             w={180}
             ml={[null, null, 4]}
             mb={[3, null, 4]}
-            lineHeight={0}
           >
-            <Link to="/">
+            <Link to="/" href="/">
 
               <Tick src={tick} height={150} width={165} mb={3} mx="auto" />
 

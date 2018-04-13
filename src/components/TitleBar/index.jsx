@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-import { Box, Depth, Flex } from '../common';
+import { Flex, Box } from '../common';
 
-const Inner = styled(Box)`
-  line-height: 1.125;
+const Inner = Box.extend`
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
@@ -15,11 +13,18 @@ const Inner = styled(Box)`
 const TitleBar = (props) => {
   const { name } = props;
   return (
-    <Flex height="22px" align="center" {...props}>
-      <Inner mx={1} flex={1}>
+    <Flex
+      height={22}
+      alignItems="center"
+      {...props}
+    >
+      <Inner
+        mx={1}
+        flex={1}
+        lineHeight={1}
+      >
         {name}
       </Inner>
-      <Depth bg="light" />
     </Flex>
   );
 };

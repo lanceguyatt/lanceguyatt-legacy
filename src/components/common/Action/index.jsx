@@ -1,29 +1,31 @@
 /* eslint no-shadow: 0, jsx-a11y/anchor-has-content: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { space, color } from 'styled-system';
 import styled from 'styled-components';
+import { Box } from '../Box';
 
 import selected from './selected.svg';
 import unselected from './unselected.svg';
 
 const Wrapper = styled(({
   external,
-  color,
-  ...rest
-}) => <a {...rest} />).attrs({
+  name,
+  ...props
+}) => <Box {...props} />).attrs({
   px: 4,
+  display: 'inline-block',
   color: 'dark',
   bg: 'secondary',
+  border: 2,
+  fontWeight: 'normal',
+  fontSize: 2,
+  lineHeight: 2,
+  buttonStyle: 'primary',
+  active: {
+    borderImage: `url(${selected}) 2 stretch`,
+  },
 })`
   border-image: url(${unselected}) 2 stretch;
-  border-style: solid;
-  border-width: 2px;
-  display: inline-block;
-  font-family: inherit;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 1.25;
   outline: 0;
   overflow: hidden;
   text-align: center;
@@ -31,35 +33,31 @@ const Wrapper = styled(({
   user-select: none;
   vertical-align: top;
   white-space: nowrap;
-  ${color}
-  ${space}
-
-  &:focus,
-  &:active {
-    background-color: ${props => props.theme.colors.primary};
-    border-image: url(${selected}) 2 stretch;
-  }
 `;
 
-export const Button = styled(Wrapper).attrs({
-})`
-  appearance: none;
-`;
-
-export const A = styled(Wrapper).attrs({
-  target: props => props.external ? '_blank' : null,
-  rel: props => props.external ? 'noopener noreferrer' : null,
-})``;
-
+// export const Button = styled(Wrapper).attrs({
+// })`
+//   appearance: none;
+// `;
+//
+// export const A = styled(Wrapper).attrs({
+//   target: props => props.external ? '_blank' : null,
+//   rel: props => props.external ? 'noopener noreferrer' : null,
+// })``;
 
 const Action = (props) => {
   const {
-    name, href, onClick, external,
+    name, href, external,
   } = props;
   return (
-    href
-      ? <A href={href} external={external} {...props}>{name}</A>
-      : <Button onClick={onClick} {...props}>{name}</Button>
+    <Wrapper
+      is={href ? 'a' : 'button'}
+      href={href ? href : null}
+      external={external}
+      {...props}
+    >
+      {name}
+    </Wrapper>
   );
 };
 
@@ -70,7 +68,7 @@ Action.propTypes = {
 };
 
 Action.defaultProps = {
-  name: 'Action name',
+  name: 'Action name !',
   href: '',
   onClick: null,
 };

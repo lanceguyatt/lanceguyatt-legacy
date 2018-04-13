@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Wrapper = styled(Link)`
+const Wrapper = styled(({
+  url,
+  ...props
+}) => (<Link {...props} />))`
   background-color: transparent;
   background-image: url(${require('./close.svg')});
   display: block;
@@ -17,15 +20,23 @@ const Wrapper = styled(Link)`
 }
 `;
 
-const Close = props => (
-  <Wrapper to={props.url} {...props} title="Close" />
-);
+const Close = (props) => {
+  const url = props;
+  return (
+    <Wrapper
+      to={url}
+      {...props}
+    />
+  );
+};
 
 Close.propTypes = {
+  name: PropTypes.string,
   url: PropTypes.string,
 };
 
 Close.defaultProps = {
+  name: 'Close',
   url: '',
 };
 

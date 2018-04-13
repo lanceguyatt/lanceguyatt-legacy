@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import { theme } from 'styled-system';
-// import { borderWidth } from 'polished';
 
 import {
   Box,
@@ -12,6 +10,10 @@ import {
   Zoom,
 } from '../common';
 
+const Wrapper = Flex.extend`
+  overflow: hidden;
+`;
+
 const Main = styled(Flex)`
   overflow: hidden;
 
@@ -20,8 +22,9 @@ const Main = styled(Flex)`
   }
 `;
 
-const Bar = styled(Box)`
-  line-height: 1.125;
+const Bar = Box.extend.attrs({
+  lineHeight: 1,
+})`
   overflow: hidden;
   text-overflow: ellipsis;
   user-select: none;
@@ -57,23 +60,20 @@ export default class Window extends Component {
     const { data, children, close } = this.props;
     const { name } = data;
     return (
-      <Flex
-        {...this.props}
+      <Wrapper
         bg="secondary"
-        borderWidth={2}
-        borderTop
+        borderTop={2}
         borderColor="light"
         flexDirection="column"
         minHeight="min-content"
-        style={{ overflow: 'hidden' }}
+        {...this.props}
       >
         <Flex
           bg={this.state.active ? 'primary' : 'secondary'}
-          align="center"
-          borderWidth={2}
-          borderBottom
+          alignItems="center"
+          borderBottom={2}
           borderColor="dark"
-          height="20px"
+          height={20}
         >
           {close ? <Close url={close} /> : null}
           <Bar mx={1} flex={1}>{name}</Bar>
@@ -84,7 +84,7 @@ export default class Window extends Component {
         <Main flex={1}>
           {children}
         </Main>
-      </Flex>
+      </Wrapper>
     );
   }
 }

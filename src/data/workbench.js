@@ -2,7 +2,7 @@ import { work } from './work';
 import { projects } from './projects';
 import { about } from './about';
 
-export const workbench = {
+const workbench = {
   id: 'workbench',
   name: 'Workbench',
   alternateHeadline: 'Workbench',
@@ -26,3 +26,5 @@ export const workbench = {
     },
   ],
 };
+
+export { workbench };

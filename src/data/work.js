@@ -1,4 +1,4 @@
-export const work = {
+const work = {
   id: 'work',
   name: 'Work',
   description: 'Work description',
@@ -15,3 +15,5 @@ export const work = {
     },
   ],
 };
+
+export { work };

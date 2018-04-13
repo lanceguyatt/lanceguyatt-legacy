@@ -1,27 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransition, transit } from 'react-css-transition';
 import styled from 'styled-components';
-import { Alert, Audio, Flex, Fader } from '../../components/common';
-import Head from '../../components/Head';
+import { CSSTransition, transit } from 'react-css-transition';
+import {
+  Alert,
+  Audio,
+  Flex,
+  Fader,
+} from '../../components/common';
 
-import toastyImage from './toasty.png';
-import mp3 from './toasty.mp3';
+import Head from '../../components/Head';
 
 const toastyMp3 = {
   id: 'js-toasty-audio',
-  src: mp3,
+  src: require('./toasty.mp3'),
   type: 'audio/mp3',
 };
 
-const style = {
+const Wrapper = Flex.extend.attrs({
+  flex: 1,
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  bg: 'dark',
   minHeight: 'min-content',
-  overflow: 'hidden',
+  p: 3,
   position: 'relative',
-};
+})`
+  overflow: hidden;
+`;
 
 const Toasty = styled(CSSTransition)`
-  background-image: url(${toastyImage});
+  background-image: url(${require('./toasty.png')});
   position: absolute;
   right: 0;
   bottom: 0;
@@ -79,18 +89,11 @@ export default class GuruMeditation extends Component {
         flex={1}
         flexDirection="column"
       >
-        <Flex
-          bg="dark"
-          flexDirection="column"
-          align="center"
-          justify="center"
-          flex={1}
-          style={style}
-        >
+        <Wrapper>
 
           <Head data={data} />
 
-          <Alert animate data={message} />
+          <Alert animate data={message} colors="alert.danger" />
 
           <Toasty
             defaultStyle={{ transform: 'translate(200px, 0)' }}
@@ -107,7 +110,7 @@ export default class GuruMeditation extends Component {
           />
 
           <Audio audio={toastyMp3} id="js-toasty-audio" />
-        </Flex>
+        </Wrapper>
       </Fader>
     );
   }

@@ -1,24 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Wrapper = styled.button`
-  appearance: none;
-  background-color: transparent;
-  background-image: url(${require('./depth.svg')});
-  border-radius: 0;
-  border: 0;
-  height: 22px;
-  outline: 0;
-  width: 23px;
-  user-select: none;
+import { Box } from '../Box';
 
-  &:active {
-    background-position: -23px 0;
-  }
-`;
+const Wrapper = Box.extend.attrs({
+  is: 'button',
+  bg: 'transparent',
+  backgroundImage: require('./depth.svg'),
+  borderRadius: 0,
+  border: 0,
+  width: 23,
+  height: 22,
+  focus: {
+    outline: 0,
+  },
+  active: {
+    backgroundPosition: '-23px 0',
+  },
+})``;
 
-const Depth = props => (
-  <Wrapper {...props} title="Depth" />
-);
+const Depth = props => <Wrapper {...props} />;
 
 export { Depth };

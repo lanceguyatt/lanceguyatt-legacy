@@ -36,6 +36,10 @@ export default class WorkBench extends Component {
     this.setState({ active: true });
   }
 
+  handleClick(e) {
+    alert('Clicked');
+  }
+
   render() {
     const { data } = this.props;
     return (
@@ -68,28 +72,28 @@ export default class WorkBench extends Component {
             close={kickstart.url}
             flex={1}
           >
-            <Flex wrap p={3} align="flex-start">
-
-              <Flex align="center">
-                <Action />
-                <Text type="text" placeholder="Placeholder" />
-                <Zoom />
-                <Depth />
-                <Close />
-                <Sizing />
-                <Checkbox />
-                <Checkbox />
-                <Radio name="foo" />
-                <Radio name="foo" />
-
-              </Flex>
-
+            <Flex
+              flexWrap="wrap"
+              p={3}
+              alignItems="flex-start"
+            >
+              <Action name="A" href="#foo" />
+              <Action name="Button" />
+              <Text name="Test" defaultValue="Value" />
+              <Zoom />
+              <Depth />
+              <Close name="sdsdsd" />
+              <Sizing />
+              <Checkbox />
+              <Checkbox />
+              <Radio name="foo" onClick={() => { this.handleClick(); }} />
+              <Radio name="foo" />
               <Directory
                 data={workbench.items}
                 flexDirection="row"
               />
-
             </Flex>
+
           </Window>
         </Flex>
       </Fader>

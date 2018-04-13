@@ -1,84 +1,58 @@
-/* eslint no-shadow: 0 */
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import system from 'system-components';
 
-import {
-  alignSelf,
-  borderRadius,
-  borderColor,
-  borderWidth,
-  color,
-  flex,
-  fontWeight,
-  fontSize,
-  removeProps,
-  responsiveStyle,
-  space,
-  textAlign,
-  width,
-} from 'styled-system';
+export const Box = system(
+  'space',
+  'width',
+  'fontSize',
+  'color',
 
-const height = responsiveStyle({
-  prop: 'height',
-  cssProperty: 'height',
-});
+  'textAlign',
+  'lineHeight',
+  'fontWeight',
+  'letterSpacing',
 
-const position = responsiveStyle({
-  prop: 'position',
-  cssProperty: 'position',
-});
+  'display',
+  'maxWidth',
+  'minWidth',
+  'height',
+  'maxHeight',
+  'minHeight',
+  'size',
+  // 'ratio',
 
-const lineHeight = responsiveStyle({
-  key: 'lineHeights',
-  prop: 'lineHeight',
-  cssProperty: 'lineHeight',
-});
+  'alignItems',
+  'justifyContent',
+  'flexWrap',
+  'flexDirection',
+  'flex',
+  'alignContent',
+  'justifySelf',
+  'order',
+  'flexBasis',
 
-const BaseComponent = (props) => {
-  const next = removeProps(props);
-  return <div {...next} />;
-};
+  'borderRadius',
+  'borders',
+  'borderColor',
+  'boxShadow',
 
-const Wrapper = styled(({
-  borderColor,
-  height,
-  lineHeight,
-  position,
-  textAlign,
-  ...rest
-}) => <BaseComponent {...rest} />)`
-  ${alignSelf}
-  ${borderColor}
-  ${borderRadius}
-  ${borderWidth}
-  ${color}
-  ${flex}
-  ${fontSize}
-  ${fontWeight}
-  ${height}
-  ${lineHeight}
-  ${position}
-  ${space}
-  ${textAlign}
-  ${width}
-`;
+  'position',
+  'zIndex',
+  'top',
+  'right',
+  'bottom',
+  'left',
 
-const Box = (props) => {
-  const { children } = props;
-  return (
-    <Wrapper {...props}>
-      {children}
-    </Wrapper>
-  );
-};
+  'hover',
+  'focus',
+  'active',
+  'disabled',
 
-Box.propTypes = {
-  children: PropTypes.node,
-};
+  'backgroundImage',
+  'backgroundSize',
+  'backgroundRepeat',
+  'backgroundPosition',
 
-Box.defaultProps = {
-  children: '',
-};
-
-export { Box };
+  'textStyle',
+  'colorStyle',
+  'buttonStyle',
+);

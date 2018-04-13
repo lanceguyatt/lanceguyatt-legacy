@@ -1,24 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Box } from '../Box';
+
 import text from './text.svg';
 
-const Wrapper = styled.input`
+const Wrapper = styled(Box).attrs({
+  bg: 'transparent',
+  py: 0,
+  px: '3px',
+  height: '28px',
+  border: 3,
+  focus: {
+    outline: 0,
+  },
+})`
   border-image: url(${text}) 4 stretch;
-  border-style: solid;
-  border-width: 4px;
-  height: 28px;
-  padding: 0 3px;
 `;
 
-export function Text(props) {
+const Text = (props) => {
+  const { name } = props;
   return (
     <Wrapper
-      type="text"
-      id={id}
+      is="input"
       name={name}
-      placeholder={placeholder}
+      type="text"
       {...props}
     />
   );
-}
+};
+
+export { Text };

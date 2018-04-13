@@ -9,6 +9,7 @@ export * from './Depth';
 export * from './Fader';
 export * from './File';
 export * from './Flex';
+export * from './Foo';
 export * from './Icon';
 export * from './Label';
 export * from './Link';

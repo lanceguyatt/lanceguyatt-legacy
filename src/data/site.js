@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { homepage } from '../../package.json';
 
-export const site = {
+const site = {
   name: 'Lance Guyatt, Web Developer',
   description: 'Web developer with over 12 years of professional experience.',
   url: homepage,
@@ -12,3 +12,5 @@ export const site = {
   dateModified: moment().format(),
   lang: 'en',
 };
+
+export { site };
