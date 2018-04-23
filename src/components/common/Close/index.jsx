@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled(({
+  name,
   url,
   ...props
 }) => (<Link {...props} />))`
@@ -21,11 +22,12 @@ const Wrapper = styled(({
 `;
 
 const Close = (props) => {
-  const url = props;
+  const { name, url } = props;
   return (
     <Wrapper
       to={url}
       {...props}
+      title={name}
     />
   );
 };
@@ -37,7 +39,7 @@ Close.propTypes = {
 
 Close.defaultProps = {
   name: 'Close',
-  url: '',
+  url: '/',
 };
 
 export { Close };

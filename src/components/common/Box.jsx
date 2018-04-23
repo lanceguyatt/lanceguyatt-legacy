@@ -55,4 +55,6 @@ export const Box = system(
   'textStyle',
   'colorStyle',
   'buttonStyle',
+
+  'fontFamily',
 );

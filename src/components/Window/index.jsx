@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import window3 from './window-3.svg';
+
 import {
   Box,
   Close,
@@ -10,12 +12,22 @@ import {
   Zoom,
 } from '../common';
 
-const Wrapper = Flex.extend`
+const Wrapper = styled(({
+  close,
+  data,
+  ...props
+}) => <Flex {...props} />)`
   overflow: hidden;
 `;
 
-const Main = styled(Flex)`
-  overflow: hidden;
+const Main = Flex.extend.attrs({
+  flex: 1,
+  borderTop: 28,
+  borderRight: 54,
+  borderBottom: 70,
+  borderLeft: 5,
+})`
+  border-image: url(${window3}) 28 54 70 5 stretch;
 
   &::-webkit-scrollbar {
     display: none;
@@ -61,15 +73,15 @@ export default class Window extends Component {
     const { name } = data;
     return (
       <Wrapper
-        bg="secondary"
+        bg={this.state.active ? 'primary' : 'secondary'}
         borderTop={2}
+        flex={1}
         borderColor="light"
         flexDirection="column"
         minHeight="min-content"
         {...this.props}
       >
         <Flex
-          bg={this.state.active ? 'primary' : 'secondary'}
           alignItems="center"
           borderBottom={2}
           borderColor="dark"
@@ -77,12 +89,17 @@ export default class Window extends Component {
         >
           {close ? <Close url={close} /> : null}
           <Bar mx={1} flex={1}>{name}</Bar>
-          <Zoom />
+          <Zoom title="Zoom!!!" />
           <Depth />
         </Flex>
 
-        <Main flex={1}>
-          {children}
+        <Main>
+          <Flex
+            bg="secondary"
+            flex={1}
+          >
+            {children}
+          </Flex>
         </Main>
       </Wrapper>
     );

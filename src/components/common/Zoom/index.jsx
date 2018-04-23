@@ -1,26 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Wrapper = styled.button`
-  appearance: none;
-  background-color: transparent;
-  background-image: url(${require('./zoom.svg')});
-  border-radius: 0;
-  border: 0;
-  display: block;
-  height: 22px;
-  outline: 0;
-  user-select: none;
-  width: 23px;
+import { Box } from '../Box';
 
-  &:active {
-    background-position: -23px 0;
-  }
-`;
+const Wrapper = Box.extend.attrs({
+  is: 'button',
+  bg: 'transparent',
+  backgroundImage: require('./zoom.svg'),
+  borderRadius: 0,
+  border: 0,
+  height: 22,
+  width: 23,
+  focus: {
+    outline: 0,
+  },
+  active: {
+    backgroundPosition: '-23px 0',
+  },
+})``;
 
-
-const Zoom = props => (
-  <Wrapper {...props} title="Zoom" />
-);
+const Zoom = props => <Wrapper {...props} />;
 
 export { Zoom };

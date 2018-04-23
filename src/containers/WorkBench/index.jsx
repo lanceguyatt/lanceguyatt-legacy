@@ -71,18 +71,18 @@ export default class WorkBench extends Component {
             data={workbench}
             close={kickstart.url}
             flex={1}
+            m={4}
           >
             <Flex
               flexWrap="wrap"
               p={3}
-              alignItems="flex-start"
             >
               <Action name="A" href="#foo" />
               <Action name="Button" />
               <Text name="Test" defaultValue="Value" />
               <Zoom />
               <Depth />
-              <Close name="sdsdsd" />
+              <Close name="Close this window" />
               <Sizing />
               <Checkbox />
               <Checkbox />

@@ -1,25 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Wrapper = styled.button`
-  appearance: none;
-  background-color: transparent;
-  background-image: url(${require('./sizing.svg')});
-  border-radius: 0;
-  border: 0;
-  display: block;
-  height: 20px;
-  outline: 0;
-  user-select: none;
-  width: 18px;
+import { Box } from '../Box';
 
-  &:active {
-    background-position: -18px 0;
-  }
-`;
+const Wrapper = Box.extend.attrs({
+  is: 'button',
+  bg: 'transparent',
+  backgroundImage: require('./sizing.svg'),
+  borderRadius: 0,
+  border: 0,
+  width: 18,
+  height: 20,
+  focus: {
+    outline: 0,
+  },
+  active: {
+    backgroundPosition: '-18px 0',
+  },
+})``;
 
-const Sizing = props => (
-  <Wrapper {...props} title="Sizing" />
-);
-
-export { Sizing };
+export const Sizing = props => <Wrapper {...props} title="Sizing" />;

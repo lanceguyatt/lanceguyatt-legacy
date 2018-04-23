@@ -50,7 +50,11 @@ export default class Drawer extends Component {
             name={`Lance Guyatt, Web Developer. Copyright © 2000-${site.copyrightYear}. All Rights Reserved`}
           />
 
-          <Window data={workbench} close={kickstart.url} flex={1}>
+          <Window
+            data={workbench}
+            close={kickstart.url}
+            flex={1}
+          >
 
             <Flex
               bg="danger"
@@ -63,9 +67,15 @@ export default class Drawer extends Component {
                 flexDirection={['row', 'column']}
               />
 
-            <Window data={data} close={data.parent} flex={1}>
-              <Directory data={data.items} m={3} />
-            </Window>
+              <Window
+                data={data}
+                close={data.parent}
+              >
+                <Directory
+                  data={data.items}
+                  m={3}
+                />
+              </Window>
 
             </Flex>
           </Window>

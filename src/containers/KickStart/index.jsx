@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { space } from 'styled-system';
 import styled, { keyframes } from 'styled-components';
 
 import { Box, Flex, Icon, Fader } from '../../components/common';
 import Head from '../../components/Head';
-import tick from './tick.png';
-
-const Tick = styled.img`
-  ${space}
-`;
+import { site } from '../../data';
 
 const insertDisk = keyframes`
   0% {
@@ -84,11 +79,18 @@ export default class KickStart extends Component {
           >
             <Link to="/" href="/">
 
-              <Tick src={tick} height={150} width={165} mb={3} mx="auto" />
+              <Box
+                is="img"
+                src={require('./tick.png')}
+                height={150}
+                width={165}
+                mb={3}
+                mx="auto"
+              />
 
               2.0 Roms (37.350)
               <br />
-              Copyright &copy; 2000-2017
+              {`Copyright © 2000-${site.copyrightYear}`}
               <br />
               Lance Guyatt, Inc.
               <br />
@@ -97,7 +99,7 @@ export default class KickStart extends Component {
           </Box>
 
           <Box
-            height="169px"
+            height={169}
             w={156}
             mr={[null, null, 4]}
             mb={[null, null, 4]}
@@ -105,7 +107,11 @@ export default class KickStart extends Component {
             flex="none"
           >
             <Link to="/" href="/">
-              <Icon name="disk-drive" width={156} height={38} />
+              <Icon
+                name="disk-drive"
+                width={156}
+                height={38}
+              />
               <FloppyDisk />
             </Link>
           </Box>

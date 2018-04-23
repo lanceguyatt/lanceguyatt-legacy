@@ -31,6 +31,7 @@ const lineHeights = [
 ];
 
 const fontWeights = {
+  regular: 400,
   medium: 500,
   heavy: 600,
 };
@@ -83,11 +84,16 @@ const colorStyles = {
 };
 
 const buttons = {
-  primary: {
-    color: 'dark',
-    backgroundColor: 'transparent',
-    '&:hover': {
-      backgroundColor: 'primary',
+  action: {
+    primary: {
+      backgroundColor: 'transparent',
+      color: `${colors.dark}`,
+      '&:focus': {
+        backgroundColor: `${colors.primary}`,
+      },
+      '&:active': {
+        backgroundColor: `${colors.primary}`,
+      },
     },
   },
 };
