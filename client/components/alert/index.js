@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 
 import styles from './style.css';
 
-const Alert = ({ alert }) => (
-  <div className={styles.alertError} role="dialog">
-    <h2>{alert.name}</h2>
-    <p>{alert.description}</p>
-    <Link to={alert.url} className={styles.alertLink}>
-      {alert.name}
-    </Link>
-  </div>
-);
+export default function Alert({ alert }) {
+  return (
+    <div className={styles.alertError} role="dialog">
+      <h2>{alert.name}</h2>
+      <p>{alert.description}</p>
+      <Link to={alert.url} className={styles.alertLink}>
+        {alert.name}
+      </Link>
+    </div>
+  );
+}
 
 Alert.propTypes = {
   alert: PropTypes.shape({
@@ -29,5 +31,3 @@ Alert.defaultProps = {
     url: '#',
   },
 };
-
-export default Alert;

@@ -10,20 +10,15 @@ import Work from './containers/work/';
 import Drawer from './components/drawer/';
 
 import workbench from '../data/workbench/';
-
 import associatedPress from '../data/work/associated_press/';
 import awin from '../data/work/awin/';
 import bauerMedia from '../data/work/bauer_media/';
 import mq from '../data/work/mq/';
 import wilsonFletcher from '../data/work/wilson_fletcher/';
 import work from '../data/work/';
-
 import projects from '../data/projects/';
-
 import about from '../data/about/';
-
 import kickstart from '../data/kickstart/';
-
 import guruMeditation from '../data/guru_meditation/';
 
 const routes = (
