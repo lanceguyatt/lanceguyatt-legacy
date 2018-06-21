@@ -25,9 +25,9 @@ const Close = (props) => {
   const { name, url } = props;
   return (
     <Wrapper
+      title={name}
       to={url}
       {...props}
-      title={name}
     />
   );
 };

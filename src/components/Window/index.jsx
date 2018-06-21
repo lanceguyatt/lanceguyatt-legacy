@@ -26,16 +26,17 @@ const Main = Flex.extend.attrs({
   borderRight: 54,
   borderBottom: 70,
   borderLeft: 5,
+  position: 'relative',
 })`
   border-image: url(${window3}) 28 54 70 5 stretch;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow: hidden;
 `;
 
-const Bar = Box.extend.attrs({
+const Name = Box.extend.attrs({
   lineHeight: 1,
+  bg: 'yellow',
+  px: 1,
+  flex: 1,
 })`
   overflow: hidden;
   text-overflow: ellipsis;
@@ -47,13 +48,15 @@ export default class Window extends Component {
   static propTypes = {
     data: PropTypes.shape(),
     children: PropTypes.node,
+    close: PropTypes.string,
   };
 
   static defaultProps = {
     data: {
-      name: 'Window name',
+      name: 'Window',
     },
     children: '',
+    close: '/',
   };
 
   state = {
@@ -87,16 +90,20 @@ export default class Window extends Component {
           borderColor="dark"
           height={20}
         >
-          {close ? <Close url={close} /> : null}
-          <Bar mx={1} flex={1}>{name}</Bar>
-          <Zoom title="Zoom!!!" />
+          <Close url={close} />
+          <Name>{name}</Name>
+          <Zoom />
           <Depth />
         </Flex>
 
         <Main>
           <Flex
-            bg="secondary"
             flex={1}
+            bg="lime"
+            top={-26}
+            right={-54}
+            bottom={-70}
+            left={-5}
           >
             {children}
           </Flex>

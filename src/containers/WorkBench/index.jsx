@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import {
   Action,
+  Box,
   Checkbox,
   Close,
   Depth,
@@ -18,6 +19,29 @@ import TitleBar from '../../components/TitleBar';
 import Window from '../../components/Window';
 import Directory from '../../components/Directory';
 import { site, kickstart, workbench } from '../../data';
+
+// import text from '../../components/common/Text/text.svg';
+
+const Dl = Flex.extend.attrs({
+  is: 'dl',
+})`
+  background: pink;
+`;
+
+const Dt = Box.extend.attrs({
+  is: 'dt',
+  bg: 'purple',
+  pr: 1,
+})`
+`;
+
+const Dd = Box.extend.attrs({
+  is: 'dd',
+  bg: 'orange',
+  border: 3,
+})`
+  border-image: url(${require('../../components/common/Text/text.svg')}) 4 stretch;
+`;
 
 export default class WorkBench extends Component {
   static propTypes = {
@@ -67,34 +91,63 @@ export default class WorkBench extends Component {
             <Depth />
           </TitleBar>
 
-          <Window
-            data={workbench}
-            close={kickstart.url}
+          <Flex
+            flexDirection={['column', 'row']}
+            flexFlow="wrap row"
             flex={1}
-            m={4}
           >
-            <Flex
-              flexWrap="wrap"
-              p={3}
+            <Window
+              data={{ name: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }}
+              flex={1}
+            />
+            <Window
+              data={{ name: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }}
+              flex={1}
+            />
+            <Window
+              data={{ name: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }}
+              flex={1}
             >
-              <Action name="A" href="#foo" />
-              <Action name="Button" />
-              <Text name="Test" defaultValue="Value" />
-              <Zoom />
-              <Depth />
-              <Close name="Close this window" />
-              <Sizing />
-              <Checkbox />
-              <Checkbox />
-              <Radio name="foo" onClick={() => { this.handleClick(); }} />
-              <Radio name="foo" />
-              <Directory
-                data={workbench.items}
-                flexDirection="row"
-              />
-            </Flex>
+              <Box
+                m={3}
+                flex={1}
+              >
+                <Dl flexDirection={['column', 'row']} flex={1} flexWrap="wrap">
+                  <Dt color="light" flex={1}>Name:</Dt>
+                  <Dd flex={1}>Awin</Dd>
+                  <Dt color="light" flex={1}>Name:</Dt>
+                  <Dd flex={1}>Awin</Dd>
+                </Dl>
+              </Box>
+            </Window>
+            <Window
+              data={workbench}
+              close={kickstart.url}
+              flex={1}
+            >
+              <Flex
+                flexWrap="wrap"
+                p={3}
+              >
+                <Action name="A" href="#foo" />
+                <Action name="Button" />
+                <Text name="Test" defaultValue="Value" />
+                <Zoom />
+                <Depth />
+                <Close name="Close this window" />
+                <Sizing />
+                <Checkbox />
+                <Checkbox />
+                <Radio name="foo" onClick={() => { this.handleClick(); }} />
+                <Radio name="foo" />
+                <Directory
+                  data={workbench.items}
+                  flexDirection="row"
+                />
+              </Flex>
 
-          </Window>
+            </Window>
+          </Flex>
         </Flex>
       </Fader>
     );
