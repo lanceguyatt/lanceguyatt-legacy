@@ -4,7 +4,12 @@ import PropTypes from 'prop-types';
 import styles from './style.css';
 
 const File = ({ item }) => (
-  <a className={styles.file} href={item.url} target="_blank" rel="noopener noreferrer">
+  <a
+    className={styles.file}
+    href={item.url}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <span className={styles.fileImage} />
     <span className={styles.fileName}>{item.name}</span>
   </a>

@@ -9,10 +9,7 @@ const bauerMedia = {
   image: {
     url: image,
   },
-  standards: [
-    { id: 1, name: 'HTML5' },
-    { id: 2, name: 'CSS3' },
-  ],
+  standards: [{ id: 1, name: 'HTML5' }, { id: 2, name: 'CSS3' }],
   components: [
     { id: 1, name: 'KeystoneJS' },
     { id: 2, name: 'gulp.js' },

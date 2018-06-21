@@ -30,12 +30,7 @@ export default class KickStart extends Component {
     const { data } = this.props.route;
 
     return (
-      <Fader
-        className={styles.kickstart}
-        transitionAppear
-        active
-      >
-
+      <Fader className={styles.kickstart} transitionAppear active>
         <Head data={data} />
 
         <div className={styles.copyright}>
@@ -44,7 +39,9 @@ export default class KickStart extends Component {
             <p>
               2.0 Roms (37.350)
               <br />
-              Copyright &copy; {site.dateCreated.substr(0, 4)}-{site.copyrightYear}
+              Copyright &copy; {site.dateCreated.substr(0, 4)}-{
+                site.copyrightYear
+              }
               <br />
               {author.name.givenName} {author.name.familyName}, Inc.
               <br />

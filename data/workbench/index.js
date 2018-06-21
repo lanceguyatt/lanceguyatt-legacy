@@ -7,9 +7,5 @@ export default {
   alternateHeadline: 'Workbench',
   description: 'Web developer with over 12 years of professional experience',
   url: '/',
-  items: [
-    work,
-    projects,
-    about,
-  ],
+  items: [work, projects, about],
 };

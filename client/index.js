@@ -10,10 +10,7 @@ const rootEl = document.getElementById('react-root');
 let render = () => {
   const Root = require('./root.js').default;
 
-  ReactDOM.render(
-    <Root />,
-    rootEl,
-  );
+  ReactDOM.render(<Root />, rootEl);
 };
 
 // manually rerender on hot reloads and show errors in development.
@@ -23,10 +20,7 @@ if (module.hot) {
   const renderError = (error) => {
     const RedBox = require('redbox-react').default;
 
-    ReactDOM.render(
-      <RedBox error={error} />,
-      rootEl,
-    );
+    ReactDOM.render(<RedBox error={error} />, rootEl);
   };
 
   render = () => {

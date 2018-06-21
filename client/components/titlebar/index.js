@@ -6,7 +6,9 @@ import styles from './style.css';
 const Titlebar = ({ name, alternateHeadline, isWindow }) => {
   const title = name !== '' ? name : alternateHeadline;
   return (
-    <div className={isWindow ? styles.titlebarWindow : styles.titlebarDefault}>{title}</div>
+    <div className={isWindow ? styles.titlebarWindow : styles.titlebarDefault}>
+      {title}
+    </div>
   );
 };
 

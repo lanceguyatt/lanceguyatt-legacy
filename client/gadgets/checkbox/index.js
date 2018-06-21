@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styles from './style.css';
 
 export default class Checkbox extends Component {
-
   static propTypes = {
     id: PropTypes.string,
     name: PropTypes.string,

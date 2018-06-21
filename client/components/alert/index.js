@@ -8,7 +8,9 @@ const Alert = ({ alert }) => (
   <div className={styles.alertError} role="dialog">
     <h2>{alert.name}</h2>
     <p>{alert.description}</p>
-    <Link to={alert.url} className={styles.alertLink}>{alert.name}</Link>
+    <Link to={alert.url} className={styles.alertLink}>
+      {alert.name}
+    </Link>
   </div>
 );
 

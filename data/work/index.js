@@ -3,8 +3,6 @@ import awin from './awin/';
 import bauerMedia from './bauer_media/';
 import mq from './mq/';
 import wilsonFletcher from './wilson_fletcher/';
-import nzz from './nzz/';
-import interislander from './interislander/';
 
 const work = {
   id: 1,
@@ -13,15 +11,7 @@ const work = {
   url: '/work/',
   parent: '/',
   type: 'drawer',
-  items: [
-    awin,
-    associatedPress,
-    mq,
-    wilsonFletcher,
-    bauerMedia,
-    nzz,
-    interislander,
-  ],
+  items: [awin, associatedPress, mq, wilsonFletcher, bauerMedia],
 };
 
 export default work;

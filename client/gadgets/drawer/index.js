@@ -5,7 +5,11 @@ import { Link } from 'react-router';
 import styles from './style.css';
 
 const Drawer = ({ item }) => (
-  <Link to={item.url} className={styles.drawer} activeClassName={styles.drawerActive}>
+  <Link
+    to={item.url}
+    className={styles.drawer}
+    activeClassName={styles.drawerActive}
+  >
     <span className={styles.drawerImage} />
     <span className={styles.drawerName}>{item.name}</span>
   </Link>

@@ -65,7 +65,6 @@ export default class GuruMeditation extends Component {
 
     return (
       <Fader className={styles.guruMeditation} transitionAppear active>
-
         <Head data={data} />
 
         <Alert alert={alert} error />
@@ -73,8 +72,12 @@ export default class GuruMeditation extends Component {
         <CSSTransition
           className={styles.toasty}
           defaultStyle={{ transform: 'translate(200px, 0)' }}
-          enterStyle={{ transform: transit('translate(0, 0)', 400, 'ease-in-out') }}
-          leaveStyle={{ transform: transit('translate(200px, 0)', 300, 'ease-in-out') }}
+          enterStyle={{
+            transform: transit('translate(0, 0)', 400, 'ease-in-out'),
+          }}
+          leaveStyle={{
+            transform: transit('translate(200px, 0)', 300, 'ease-in-out'),
+          }}
           activeStyle={{ transform: 'translate(0, 0)' }}
           transitionDelay={{ enter: 0, leave: 100 }}
           onTransitionComplete={() => this.setState({ toasty: false })}
@@ -83,7 +86,6 @@ export default class GuruMeditation extends Component {
         />
 
         <Audio audio={toastyMp3} id="js-toasty-audio" />
-
       </Fader>
     );
   }

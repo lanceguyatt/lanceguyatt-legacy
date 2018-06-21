@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import styles from './style.css';
 
 const Depth = ({ action }) => (
-  <button className={styles.depth} onClick={action}>Zoom</button>
+  <button className={styles.depth} onClick={action}>
+    Zoom
+  </button>
 );
 
 Depth.propTypes = {

@@ -3,7 +3,7 @@ import { CSSTransition, transit } from 'react-css-transition';
 
 // import styles from './style.css';
 
-const Fader = props => (
+const Fader = (props) => (
   <CSSTransition
     {...props}
     defaultStyle={{ opacity: 0 }}

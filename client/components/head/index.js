@@ -65,10 +65,12 @@ const Head = ({ data }) => {
         { name: 'msapplication-config', content: browserConfig },
         { name: 'application-name', content: appTitle },
         { name: 'theme-color', content: site.themeColor },
-        { name: 'google-site-verification', content: site.googleSiteVerification },
+        {
+          name: 'google-site-verification',
+          content: site.googleSiteVerification,
+        },
         { name: 'msvalidate.01', content: site.msValidate },
       ]}
-
       link={[
         { rel: 'shortcut icon', href: favicon },
         { rel: 'shortcut icon', href: favicon16x16, sizes: '16x16' },

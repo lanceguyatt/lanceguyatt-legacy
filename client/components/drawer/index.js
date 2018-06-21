@@ -8,7 +8,6 @@ import Directory from '../../components/directory/';
 import styles from './style.css';
 
 export default class Drawer extends Component {
-
   static propTypes = {
     route: PropTypes.shape({
       data: PropTypes.shape(),

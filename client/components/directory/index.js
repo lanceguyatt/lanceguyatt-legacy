@@ -9,12 +9,12 @@ import styles from './style.css';
 
 const DirectoryItem = ({ item }) => (
   <li className={styles.directoryItem}>
-    { item.type === 'file' ? <File item={item} /> : <Drawer item={item} /> }
+    {item.type === 'file' ? <File item={item} /> : <Drawer item={item} />}
   </li>
 );
 
 DirectoryItem.propTypes = {
-  item: PropTypes.object,
+  item: PropTypes.shape,
 };
 
 DirectoryItem.defaultProps = {
@@ -22,8 +22,8 @@ DirectoryItem.defaultProps = {
 };
 
 const Directory = ({ items, wrap }) => {
-  const renderItems = items.map(item => (
-    <DirectoryItem item={item} key={item.id} /> : null),
+  const renderItems = items.map(
+    (item) => (<DirectoryItem item={item} key={item.id} />: null),
   );
 
   return (

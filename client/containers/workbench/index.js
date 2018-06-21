@@ -34,10 +34,13 @@ export default class WorkBench extends Component {
 
     return (
       <Fader className={styles.guruMeditation} transitionAppear active>
-
         <Head data={data} />
 
-        <Titlebar name={`${site.name}. Copyright © ${site.dateCreated.substr(0, 4)}-${site.copyrightYear}. All Rights Reserved`} />
+        <Titlebar
+          name={`${site.name}. Copyright © ${site.dateCreated.substr(0, 4)}-${
+            site.copyrightYear
+          }. All Rights Reserved`}
+        />
 
         <Window
           close={kickstart.url}
@@ -49,7 +52,6 @@ export default class WorkBench extends Component {
           <Directory items={data.items} />
         </Window>
         {this.props.children}
-
       </Fader>
     );
   }

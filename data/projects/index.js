@@ -8,10 +8,7 @@ const projects = {
   url: '/projects/',
   parent: '/',
   type: 'drawer',
-  items: [
-    lanceguyatt,
-    fronter,
-  ],
+  items: [lanceguyatt, fronter],
 };
 
 export default projects;

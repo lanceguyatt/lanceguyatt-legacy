@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styles from './style.css';
 
 export default class Text extends Component {
-
   static propTypes = {
     type: PropTypes.oneOf(['text', 'email']),
     id: PropTypes.string,
@@ -42,7 +41,8 @@ export default class Text extends Component {
 
     return (
       <div className={styles.text}>
-        <label htmlFor={id} className={styles.textLabel}>{label}
+        <label htmlFor={id} className={styles.textLabel}>
+          {label}
           <input
             type={type}
             id={id}

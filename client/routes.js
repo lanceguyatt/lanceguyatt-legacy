@@ -31,11 +31,19 @@ const routes = (
     <Route component={App}>
       <Route path={workbench.url} component={WorkBench} data={workbench}>
         <Route path={work.url} data={work} component={Drawer}>
-          <Route path={associatedPress.url} data={associatedPress} component={Work} />
+          <Route
+            path={associatedPress.url}
+            data={associatedPress}
+            component={Work}
+          />
           <Route path={awin.url} data={awin} component={Work} />
           <Route path={bauerMedia.url} data={bauerMedia} component={Work} />
           <Route path={mq.url} data={mq} component={Work} />
-          <Route path={wilsonFletcher.url} data={wilsonFletcher} component={Work} />
+          <Route
+            path={wilsonFletcher.url}
+            data={wilsonFletcher}
+            component={Work}
+          />
         </Route>
         <Route path={projects.url} data={projects} component={Drawer} />
         <Route path={about.url} data={about} component={Drawer} />
@@ -47,8 +55,18 @@ const routes = (
         component={GuruMeditation}
         status={404}
       />
-      <Route path="404" component={GuruMeditation} data={guruMeditation} status={404} />
-      <Route path="*" component={GuruMeditation} data={guruMeditation} status={404} />
+      <Route
+        path="404"
+        component={GuruMeditation}
+        data={guruMeditation}
+        status={404}
+      />
+      <Route
+        path="*"
+        component={GuruMeditation}
+        data={guruMeditation}
+        status={404}
+      />
     </Route>
   </div>
 );
