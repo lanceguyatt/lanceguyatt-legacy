@@ -6,6 +6,9 @@
 @import 'utilities/';
 
 :global {
-  #react-root { height: 100%; }
+  #react-root {
+    height: 100vh;
+  }
+
   .u-h100 { height: 100%; }
 }

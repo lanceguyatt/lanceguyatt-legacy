@@ -1,5 +1,16 @@
-import lanceguyatt from './lanceguyatt/';
-import fronter from './fronter/';
+const lanceguyatt = {
+  id: 1,
+  name: 'Lance Guyatt',
+  url: 'https://github.com/lanceguyatt/lanceguyatt/',
+  type: 'file',
+};
+
+const fronter = {
+  id: 2,
+  name: 'Fronter',
+  url: 'https://github.com/lanceguyatt/fronter/',
+  type: 'file',
+};
 
 const projects = {
   id: 2,
@@ -10,5 +21,7 @@ const projects = {
   type: 'drawer',
   items: [lanceguyatt, fronter],
 };
+
+export { fronter, lanceguyatt };
 
 export default projects;

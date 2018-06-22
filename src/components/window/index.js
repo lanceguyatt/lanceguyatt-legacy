@@ -31,9 +31,9 @@ export default class Window extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      depth: false,
       select: false,
       zoom: false,
-      depth: false,
     };
     this.toggleZoom = this.toggleZoom.bind(this);
     this.toggleDepth = this.toggleDepth.bind(this);

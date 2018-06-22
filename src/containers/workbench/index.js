@@ -31,13 +31,14 @@ export default class WorkBench extends Component {
 
   render() {
     const { data } = this.props.route;
+    const copyrightYear = site.dateCreated.substr(0, 4);
 
     return (
       <Fader className={styles.guruMeditation} transitionAppear active>
         <Head data={data} />
 
         <Titlebar
-          name={`${site.name}. Copyright © ${site.dateCreated.substr(0, 4)}-${
+          name={`${site.name}. Copyright © ${copyrightYear}-${
             site.copyrightYear
           }. All Rights Reserved`}
         />

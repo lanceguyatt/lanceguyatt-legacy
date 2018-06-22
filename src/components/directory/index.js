@@ -20,7 +20,7 @@ DirectoryItem.defaultProps = {
   item: {},
 };
 
-const Directory = ({ items, wrap }) => {
+export default function Directory({ items, wrap }) {
   const renderItems = items.map(
     (item) => (<DirectoryItem item={item} key={item.id} />: null),
   );
@@ -32,7 +32,7 @@ const Directory = ({ items, wrap }) => {
       </ul>
     </nav>
   );
-};
+}
 
 Directory.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object),
@@ -43,5 +43,3 @@ Directory.defaultProps = {
   items: {},
   wrap: false,
 };
-
-export default Directory;

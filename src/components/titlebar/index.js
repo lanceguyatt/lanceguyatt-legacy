@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import styles from './style.css';
 
-const Titlebar = ({ name, alternateHeadline, isWindow }) => {
+export default function Titlebar({ name, alternateHeadline, isWindow }) {
   const title = name !== '' ? name : alternateHeadline;
   return (
     <div className={isWindow ? styles.titlebarWindow : styles.titlebarDefault}>
       {title}
     </div>
   );
-};
+}
 
 Titlebar.propTypes = {
   name: PropTypes.string,
@@ -23,5 +23,3 @@ Titlebar.defaultProps = {
   alternateHeadline: '',
   isWindow: false,
 };
-
-export default Titlebar;

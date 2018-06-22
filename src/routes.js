@@ -21,7 +21,7 @@ import work, {
 import projects from '../data/projects';
 import about from '../data/about';
 import kickstart from '../data/kickstart';
-import guruMeditation from '../data/guru_meditation';
+import guruMeditation from '../data/guru-meditation';
 
 const routes = (
   <div>
