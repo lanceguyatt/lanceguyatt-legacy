@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Head from '../../components/head/';
-import Window from '../../components/window/';
-import Directory from '../../components/directory/';
+import Head from '../../components/Head';
+import Window from '../../components/Window';
+import Directory from '../../components/Directory';
 
 import styles from './style.css';
 

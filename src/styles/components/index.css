@@ -2,7 +2,7 @@
 
 :global {
   .c-border {
-    border-image: url(../images/border.svg) 4 stretch;
+    border-image: url(../../static/images/border.svg) 4 stretch;
     border-style: solid;
     border-width: 0.4rem;
     padding: 2px;

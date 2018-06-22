@@ -2,8 +2,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Fader from '../fader/';
-import Titlebar from '../titlebar/';
+import Fader from '../Fader';
+import Titlebar from '../Titlebar';
 
 import { Close, Depth, Zoom } from '../common';
 
@@ -43,7 +43,7 @@ export default class Window extends Component {
     this.setState({ select: true });
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     this.setState({ select: false });
   }
 

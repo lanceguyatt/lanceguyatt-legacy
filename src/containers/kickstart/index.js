@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 
-import Fader from '../../components/fader/';
-import Head from '../../components/head/';
+import Fader from '../../components/Fader';
+import Head from '../../components/Head';
 
 import workbench from '../../../data/workbench/';
 import site from '../../../data/site/';

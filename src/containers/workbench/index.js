@@ -2,16 +2,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Fader from '../../components/fader/';
-import Head from '../../components/head/';
-import Window from '../../components/window/';
-import Titlebar from '../../components/titlebar';
-import Directory from '../../components/directory/';
+import Fader from '../../components/Fader';
+import Head from '../../components/Head';
+import Window from '../../components/Window';
+import Titlebar from '../../components/Titlebar';
+import Directory from '../../components/Directory';
 
 import styles from './style.css';
 
-import site from '../../../data/site/';
-import kickstart from '../../../data/kickstart/';
+import site from '../../../data/site';
+import kickstart from '../../../data/kickstart';
 
 export default class WorkBench extends Component {
   static propTypes = {

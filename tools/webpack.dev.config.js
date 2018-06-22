@@ -52,7 +52,10 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.svg$/,
-        include: [resolve(__dirname, '../src')],
+        include: [
+          resolve(__dirname, '../src'),
+          resolve(__dirname, '../static'),
+        ],
         use: [
           {
             loader: 'url-loader',
@@ -65,7 +68,10 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.(png|woff2|eot|mp3|xml|txt|ico|html)$/,
-        include: [resolve(__dirname, '../src')],
+        include: [
+          resolve(__dirname, '../src'),
+          resolve(__dirname, '../static'),
+        ],
         use: [
           {
             loader: 'file-loader',

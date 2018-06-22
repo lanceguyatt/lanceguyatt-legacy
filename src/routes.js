@@ -1,36 +1,34 @@
 import React from 'react';
 import { Route } from 'react-router';
 
-import App from './containers/app/';
-import WorkBench from './containers/workbench/';
-import KickStart from './containers/kickstart/';
-import GuruMeditation from './containers/guru_meditation/';
-import Work from './containers/work/';
+import App from './containers/App';
+import WorkBench from './containers/Workbench';
+import KickStart from './containers/Kickstart';
+import GuruMeditation from './containers/GuruMeditation';
+import Work from './containers/Work';
 
-import Drawer from './components/drawer/';
+import Drawer from './components/Drawer';
 
-import workbench from '../data/workbench/';
-import associatedPress from '../data/work/associated_press/';
-import awin from '../data/work/awin/';
-import bauerMedia from '../data/work/bauer_media/';
-import mq from '../data/work/mq/';
-import wilsonFletcher from '../data/work/wilson_fletcher/';
-import work, { novagraaf } from '../data/work';
-import projects from '../data/projects/';
-import about from '../data/about/';
-import kickstart from '../data/kickstart/';
-import guruMeditation from '../data/guru_meditation/';
+import workbench from '../data/workbench';
+import work, {
+  ap,
+  awin,
+  bauerMedia,
+  mq,
+  novagraaf,
+  wilsonFletcher,
+} from '../data/work';
+import projects from '../data/projects';
+import about from '../data/about';
+import kickstart from '../data/kickstart';
+import guruMeditation from '../data/guru_meditation';
 
 const routes = (
   <div>
     <Route component={App}>
       <Route path={workbench.url} component={WorkBench} data={workbench}>
         <Route path={work.url} data={work} component={Drawer}>
-          <Route
-            path={associatedPress.url}
-            data={associatedPress}
-            component={Work}
-          />
+          <Route path={ap.url} data={ap} component={Work} />
           <Route path={novagraaf.url} data={novagraaf} component={Work} />
           <Route path={awin.url} data={awin} component={Work} />
           <Route path={bauerMedia.url} data={bauerMedia} component={Work} />

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import styles from './style.css';
 
-export const Action = ({ name, url, external, onClick }) =>
-  external ? (
+export function Action({ name, url, external, onClick }) {
+  return external ? (
     <Link className={styles.action} to={url} target="_blank">
       {name}
     </Link>
@@ -13,6 +13,7 @@ export const Action = ({ name, url, external, onClick }) =>
       {name}
     </button>
   );
+}
 
 Action.propTypes = {
   name: PropTypes.string,

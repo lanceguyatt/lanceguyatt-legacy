@@ -1,6 +1,6 @@
-import image from '../../../src/images/work/ap.png';
+import image from '../../static/images/work/ap.png';
 
-const associatedPress = {
+export const ap = {
   id: 6,
   name: 'Associated Press',
   description: 'Associated Press website',
@@ -23,5 +23,3 @@ const associatedPress = {
   website: 'http://ap.org',
   type: 'drawer',
 };
-
-export default associatedPress;

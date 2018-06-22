@@ -1,6 +1,6 @@
-import image from '../../../src/images/work/bauer.png';
+import image from '../../static/images/work/bauer.png';
 
-const bauerMedia = {
+export const bauerMedia = {
   id: 3,
   name: 'Bauer Media',
   description: 'Bauer Media website',
@@ -21,5 +21,3 @@ const bauerMedia = {
   datePublished: '2013-10-12',
   type: 'drawer',
 };
-
-export default bauerMedia;

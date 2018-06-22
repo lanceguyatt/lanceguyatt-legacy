@@ -1,7 +1,7 @@
-import image from '../../src/images/work/novagraaf.svg';
+import image from '../../static/images/work/novagraaf.svg';
 
 export const novagraaf = {
-  id: 7,
+  id: 8,
   name: 'Novagraaf',
   description: 'Associated Press website',
   url: '/work/novagraaf/',

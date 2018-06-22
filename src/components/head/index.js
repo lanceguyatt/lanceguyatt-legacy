@@ -5,28 +5,28 @@ import Helmet from 'react-helmet';
 import site from '../../../data/site/';
 import author from '../../../data/author/';
 
-import logo from '../../static/share.png';
-import appleTouchIcon from '../../static/apple-touch-icon.png';
-import favicon32x32 from '../../static/favicon-32x32.png';
-import favicon16x16 from '../../static/favicon-16x16.png';
+import logo from '../../../static/share.png';
+import appleTouchIcon from '../../../static/apple-touch-icon.png';
+import favicon32x32 from '../../../static/favicon-32x32.png';
+import favicon16x16 from '../../../static/favicon-16x16.png';
 
-import humans from '../../static/humans.txt';
+import humans from '../../../static/humans.txt';
 
-import favicon from '../../static/favicon.ico';
+import favicon from '../../../static/favicon.ico';
 
-import '../../static/android-chrome-192x192.png';
-import '../../static/android-chrome-512x512.png';
+import '../../../static/android-chrome-192x192.png';
+import '../../../static/android-chrome-512x512.png';
 
-// import safariPinnedTab from '../../static/safari-pinned-tab.svg';
-// import manifest from '../../static/manifest.json';
+// import safariPinnedTab from '../../../static/safari-pinned-tab.svg';
+// import manifest from '../../../static/manifest.json';
 
-import '../../static/robots.txt';
+import '../../../static/robots.txt';
 
-import '../../static/myopenid-hosted-verification.html';
+import '../../../static/myopenid-hosted-verification.html';
 
-import browserConfig from '../../static/browserconfig.xml';
-import '../../static/crossdomain.xml';
-import '../../static/loadtestertool.xml';
+import browserConfig from '../../../static/browserconfig.xml';
+import '../../../static/crossdomain.xml';
+import '../../../static/loadtestertool.xml';
 
 const appTitle = `${author.name.givenName} ${author.name.familyName}`;
 

@@ -34,7 +34,7 @@ body,
 button,
 input,
 a {
-  cursor: url(../images/cursor.svg), default;
+  cursor: url(../../static/images/cursor.svg), default;
 }
 
 a {
@@ -68,8 +68,8 @@ img {
 
 @font-face {
   font-family: 'Topaz';
-  src: url('../fonts/topaz.eot');
-  src: url('../fonts/topaz.eot?#iefix') format('embedded-opentype'), url('../fonts/topaz.woff2') format('woff2');
+  src: url('../../static/fonts/topaz.eot');
+  src: url('../../static/fonts/topaz.eot?#iefix') format('embedded-opentype'), url('../../static/fonts/topaz.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
-import Head from '../../components/head/';
-import Window from '../../components/window/';
+import Head from '../../components/Head';
+import Window from '../../components/Window';
 import { Action, Box } from '../../components/common';
 
 import styles from './style.css';

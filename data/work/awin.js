@@ -1,12 +1,13 @@
-import image from '../../../src/images/work/wf.png';
+import image from '../../static/images/work/awin.png';
 
-const wilsonFletcher = {
-  id: 4,
-  name: 'Wilson Fletcher',
-  description: 'Wilson Fletcher website',
-  url: '/work/wilson-fletcher/',
+export const awin = {
+  id: 7,
+  name: 'Awin',
+  description: 'Awin website',
+  url: '/work/awin/',
   parent: '/work/',
   image: {
+    alt: 'Awin image',
     url: image,
   },
   standards: [
@@ -22,9 +23,6 @@ const wilsonFletcher = {
     { id: 4, name: 'webpack' },
     { id: 5, name: 'PostCSS' },
   ],
-  website: 'http://wilsonfletcher.com',
-  datePublished: '2013-10-12',
+  website: 'http://awin.com',
   type: 'drawer',
 };
-
-export default wilsonFletcher;

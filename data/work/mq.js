@@ -1,13 +1,12 @@
-import image from '../../../src/images/work/awin.png';
+import image from '../../static/images/work/mq.png';
 
-const awin = {
-  id: 7,
-  name: 'Awin',
-  description: 'Awin website',
-  url: '/work/awin/',
+export const mq = {
+  id: 5,
+  name: 'MQ',
+  description: 'MQ website',
+  url: '/work/mq/',
   parent: '/work/',
   image: {
-    alt: 'Awin image',
     url: image,
   },
   standards: [
@@ -23,8 +22,6 @@ const awin = {
     { id: 4, name: 'webpack' },
     { id: 5, name: 'PostCSS' },
   ],
-  website: 'http://awin.com',
+  website: 'http://mqmentalhealth.org',
   type: 'drawer',
 };
-
-export default awin;

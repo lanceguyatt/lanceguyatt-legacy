@@ -103,7 +103,7 @@ module.exports = Object.assign({}, webpackBase, {
 
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('static'),
-        include: [resolve(__dirname, '../src/static')],
+        include: [resolve(__dirname, '../static')],
         use: [
           {
             loader: 'file-loader',
@@ -191,7 +191,7 @@ module.exports = Object.assign({}, webpackBase, {
 
     new CopyWebpackPlugin([
       {
-        from: './src/static/manifest.json',
+        from: './static/manifest.json',
         to: './',
       },
     ]),

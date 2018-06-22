@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import { CSSTransition, transit } from 'react-css-transition';
 
-import Fader from '../../components/fader/';
-import Head from '../../components/head/';
-import Alert from '../../components/alert/';
-import Audio from '../../components/audio/';
+import Fader from '../../components/Fader';
+import Head from '../../components/Head';
+import Alert from '../../components/Alert';
+import Audio from '../../components/Audio';
 
 import styles from './style.css';
 import toastyImage from './toasty.png';

@@ -1,6 +1,6 @@
 :global {
   .c-btn {
-    border-image: url(../images/action_unselected.svg) 2 stretch;
+    border-image: url(../../static/images/action_unselected.svg) 2 stretch;
     border-style: solid;
     border-width: 0.2rem;
     color: var(--black);
@@ -18,7 +18,7 @@
 
     &:active {
       background-color: var(--blue);
-      border-image: url(../images/action_selected.svg) 2 stretch;
+      border-image: url(../../static/images/action_selected.svg) 2 stretch;
       box-shadow: none;
     }
   }

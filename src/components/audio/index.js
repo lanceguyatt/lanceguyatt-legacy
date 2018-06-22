@@ -2,11 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Audio = ({ audio }) => (
-  <audio id={audio.id}>
-    <source src={audio.src} type={audio.type} />
-  </audio>
-);
+export default function Audio({ audio }) {
+  return (
+    <audio id={audio.id}>
+      <source src={audio.src} type={audio.type} />
+    </audio>
+  );
+}
 
 Audio.propTypes = {
   audio: PropTypes.shape({
@@ -19,5 +21,3 @@ Audio.propTypes = {
 Audio.defaultProps = {
   audio: {},
 };
-
-export default Audio;

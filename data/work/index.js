@@ -1,11 +1,16 @@
-import associatedPress from './associated_press';
-import awin from './awin';
-import bauerMedia from './bauer_media';
-import mq from './mq';
-import wilsonFletcher from './wilson_fletcher';
+import { ap } from './ap';
+import { awin } from './awin';
+import { bauerMedia } from './bauermedia';
+import { mq } from './mq';
 import { novagraaf } from './novagraaf';
+import { wilsonFletcher } from './wilsonfletcher';
 
+export * from './ap';
+export * from './awin';
+export * from './bauermedia';
+export * from './mq';
 export * from './novagraaf';
+export * from './wilsonfletcher';
 
 const work = {
   id: 1,
@@ -14,7 +19,7 @@ const work = {
   url: '/work/',
   parent: '/',
   type: 'drawer',
-  items: [novagraaf, awin, associatedPress, mq, wilsonFletcher, bauerMedia],
+  items: [novagraaf, bauerMedia, ap, awin, mq, wilsonFletcher],
 };
 
 export default work;
