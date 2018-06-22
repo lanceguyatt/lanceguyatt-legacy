@@ -1,4 +1,4 @@
-import image from '../../../client/images/work/awin.png';
+import image from '../../../src/images/work/awin.png';
 
 const awin = {
   id: 7,

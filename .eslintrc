@@ -12,10 +12,11 @@
       2,
       "never"
     ],
+    "global-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
     "new-cap": 0,
     "prettier/prettier": "error",
-    "import/no-extraneous-dependencies": 0,
-    "global-require": 0,
     "react/require-extension": 0,
     "react/jsx-filename-extension": [
       1,

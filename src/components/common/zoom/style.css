@@ -1,0 +1,20 @@
+@import '../../../styles/settings/';
+
+:local {
+  .zoom {
+    composes: icon from '../../../styles/components/icon.css';
+    background-image: url('./zoom_unselected.svg');
+    size: 2.3rem 2.2rem;
+    opacity: 0;
+
+    &:active {
+      background-image: url('./zoom_selected.svg');
+    }
+  }
+
+  @media (--breakpoint-md) {
+    .zoom {
+      opacity: 1;
+    }
+  }
+}

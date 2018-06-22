@@ -1,4 +1,4 @@
-import image from '../../../client/images/work/mq.png';
+import image from '../../../src/images/work/mq.png';
 
 const mq = {
   id: 5,

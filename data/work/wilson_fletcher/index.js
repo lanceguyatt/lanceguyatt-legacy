@@ -1,4 +1,4 @@
-import image from '../../../client/images/work/wf.png';
+import image from '../../../src/images/work/wf.png';
 
 const wilsonFletcher = {
   id: 4,

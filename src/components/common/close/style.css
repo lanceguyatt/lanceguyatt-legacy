@@ -1,0 +1,13 @@
+@import '../../../styles/settings/';
+
+:local {
+  .close {
+    composes: icon from '../../../styles/components/icon.css';
+    background-image: url('./close_unselected.svg');
+    size: 2rem 2.2rem;
+
+    &:active {
+      background-image: url('./close_selected.svg');
+    }
+  }
+}

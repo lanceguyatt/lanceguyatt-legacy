@@ -1,0 +1,20 @@
+@import '../../../styles/settings/';
+
+:local {
+  .depth {
+    composes: icon from '../../../styles/components/icon.css';
+    background-image: url('./depth_unselected.svg');
+    size: 2.3rem 2.2rem;
+    opacity: 0;
+
+    &:active {
+      background-image: url('./depth_selected.svg');
+    }
+  }
+
+  @media (--breakpoint-md) {
+    .depth {
+      opacity: 1;
+    }
+  }
+}

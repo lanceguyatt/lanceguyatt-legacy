@@ -1,10 +1,10 @@
-import image from '../../../src/images/work/ap.png';
+import image from '../../src/images/work/novagraaf.svg';
 
-const associatedPress = {
-  id: 6,
-  name: 'Associated Press',
+export const novagraaf = {
+  id: 7,
+  name: 'Novagraaf',
   description: 'Associated Press website',
-  url: '/work/associated-press/',
+  url: '/work/novagraaf/',
   parent: '/work/',
   image: {
     url: image,
@@ -16,12 +16,10 @@ const associatedPress = {
     { id: 4, name: 'Open Graph' },
   ],
   components: [
-    { id: 1, name: 'gulp.js' },
-    { id: 2, name: 'Jade' },
+    { id: 1, name: 'Drupal 8' },
+    { id: 2, name: 'Webpack' },
     { id: 3, name: 'PostCSS' },
   ],
-  website: 'http://ap.org',
+  website: 'http://www.novagraaf.com',
   type: 'drawer',
 };
-
-export default associatedPress;

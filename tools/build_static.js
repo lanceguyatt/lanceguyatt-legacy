@@ -9,7 +9,7 @@ import writeFile from './lib/write_file';
 import renderDocument from './lib/render_document';
 import config from '../package.json';
 import webpackConfig from './webpack.prod.config';
-import routes from '../client/routes';
+import routes from '../src/routes';
 
 /**
  * Build a site by rendering every route into it's own file.

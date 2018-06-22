@@ -1,4 +1,4 @@
-import image from '../../../client/images/work/bauer.png';
+import image from '../../../src/images/work/bauer.png';
 
 const bauerMedia = {
   id: 3,

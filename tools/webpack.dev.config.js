@@ -10,7 +10,7 @@ module.exports = Object.assign({}, base, {
   entry: {
     bundle: [
       'webpack-hot-middleware/client?path=/__webpack_hmr',
-      './client/index.js',
+      './src/index.js',
     ],
   },
 
@@ -26,13 +26,13 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.js$/,
-        include: [resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../src')],
         use: 'babel-loader',
       },
 
       {
         test: /\.css$/,
-        include: [resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../src')],
         use: [
           {
             loader: 'style-loader',
@@ -52,7 +52,7 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.svg$/,
-        include: [resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../src')],
         use: [
           {
             loader: 'url-loader',
@@ -65,7 +65,7 @@ module.exports = Object.assign({}, base, {
 
       {
         test: /\.(png|woff2|eot|mp3|xml|txt|ico|html)$/,
-        include: [resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../src')],
         use: [
           {
             loader: 'file-loader',

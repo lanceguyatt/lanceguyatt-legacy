@@ -14,7 +14,7 @@ module.exports = Object.assign({}, webpackBase, {
 
   entry: {
     bundle: [
-      './client/index.js',
+      './src/index.js',
     ],
   },
 
@@ -36,7 +36,7 @@ module.exports = Object.assign({}, webpackBase, {
 
       {
         test: /\.js$/,
-        include: [resolve(__dirname, '../client')],
+        include: [resolve(__dirname, '../src')],
         use: 'babel-loader',
       },
 
@@ -103,7 +103,7 @@ module.exports = Object.assign({}, webpackBase, {
 
       {
         test: webpackIsomorphicToolsPlugin.regular_expression('static'),
-        include: [resolve(__dirname, '../client/static')],
+        include: [resolve(__dirname, '../src/static')],
         use: [
           {
             loader: 'file-loader',
@@ -191,7 +191,7 @@ module.exports = Object.assign({}, webpackBase, {
 
     new CopyWebpackPlugin([
       {
-        from: './client/static/manifest.json',
+        from: './src/static/manifest.json',
         to: './',
       },
     ]),
