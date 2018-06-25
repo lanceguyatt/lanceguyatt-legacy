@@ -13,7 +13,7 @@ const DirectoryItem = ({ item }) => (
 );
 
 DirectoryItem.propTypes = {
-  item: PropTypes.shape,
+  item: PropTypes.shape(),
 };
 
 DirectoryItem.defaultProps = {
@@ -35,11 +35,11 @@ export default function Directory({ items, wrap }) {
 }
 
 Directory.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  items: PropTypes.array,
   wrap: PropTypes.bool,
 };
 
 Directory.defaultProps = {
-  items: {},
+  items: [],
   wrap: false,
 };

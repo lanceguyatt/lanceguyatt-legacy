@@ -1,4 +1,4 @@
-@import '../../styles/settings/';
+@import '../../styles/settings';
 
 :global {
   .u-bg-purple {
@@ -12,6 +12,7 @@
     color: var(--tumbleweed);
     position: relative;
     height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +40,7 @@
     background: url('./tick.png') no-repeat;
     background-size: 100%;
     size: 16.5rem 15rem;
-    margin: * auto 2rem;
+    margin: * auto var(--space-3);
   }
 
   .group {
@@ -47,7 +48,7 @@
     position: relative;
     flex: none;
     size: 15.6rem 16.9rem;
-    margin: 1rem * 2rem;
+    margin: 1rem * var(--space-3);
   }
 
   .disk-drive {

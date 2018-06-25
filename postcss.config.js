@@ -1,3 +1,5 @@
+const postCSSCustomProperties = require('postcss-custom-properties');
+
 module.exports = {
   plugins: [
     require('postcss-import'),
@@ -5,7 +7,11 @@ module.exports = {
     require('postcss-short'),
     require('postcss-calc'),
     require('postcss-custom-media'),
-    require('postcss-custom-properties'),
+    postCSSCustomProperties({
+      strict: false,
+      preserve: false,
+      warnings: true,
+    }),
     require('postcss-custom-selectors'),
     require('autoprefixer'),
   ],

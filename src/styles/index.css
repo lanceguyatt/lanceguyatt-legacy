@@ -1,9 +1,9 @@
-@import 'settings/';
-@import 'generic/';
-@import 'elements/';
-@import 'objects/';
-@import 'components/';
-@import 'utilities/';
+@import 'settings';
+@import 'generic';
+@import 'elements';
+@import 'objects';
+@import 'components';
+@import 'utilities';
 
 :global {
   #react-root {

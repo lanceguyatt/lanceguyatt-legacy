@@ -1,6 +1,4 @@
-@import 'btn';
-
-:global {
+/* :global {
   .c-border {
     border-image: url(../../static/images/border.svg) 4 stretch;
     border-style: solid;
@@ -8,4 +6,4 @@
     padding: 2px;
     line-height: 1;
   }
-}
+} */

@@ -59,6 +59,7 @@ export default class Work extends Component {
 
   render() {
     const { data } = this.props.route;
+    const { name, website, image, description } = data;
 
     const standards = data.standards.map((item) => (
       <li key={item.id}>{item.name}</li>
@@ -68,12 +69,26 @@ export default class Work extends Component {
       <li key={item.id}>{item.name}</li>
     ));
 
+    const schemaOrgJSONLD = [
+      {
+        '@context': 'http://schema.org',
+        '@type': 'CreativeWork',
+        url: website,
+        name,
+        image: {
+          '@type': 'ImageObject',
+          url: image,
+        },
+        description,
+      },
+    ];
+
     return (
-      <div
-        className={styles.work}
-        itemScope
-        itemType="http://schema.org/CreativeWork"
-      >
+      <div className={styles.work}>
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgJSONLD, null, 4)}
+        </script>
+
         <Head data={data} />
 
         <Window close={data.parent} name={data.name}>
@@ -92,7 +107,7 @@ export default class Work extends Component {
               <div className="u-col-8-md">
                 <Dl>
                   <Dt>Name:</Dt>
-                  <Dd itemprop="name">{data.name}</Dd>
+                  <Dd>{data.name}</Dd>
                 </Dl>
 
                 <Dl>
