@@ -7,21 +7,21 @@ import Directory from '../../components/Directory';
 
 import styles from './style.css';
 
+const propTypes = {
+  route: PropTypes.shape({
+    data: PropTypes.shape(),
+  }),
+  children: PropTypes.node,
+};
+
+const defaultProps = {
+  route: {
+    data: {},
+  },
+  children: '',
+};
+
 export default class Drawer extends Component {
-  static propTypes = {
-    route: PropTypes.shape({
-      data: PropTypes.shape(),
-    }),
-    children: PropTypes.node,
-  };
-
-  static defaultProps = {
-    route: {
-      data: {},
-    },
-    children: '',
-  };
-
   componentDidMount() {}
 
   render() {
@@ -39,3 +39,6 @@ export default class Drawer extends Component {
     );
   }
 }
+
+Drawer.propTypes = propTypes;
+Drawer.defaultProps = defaultProps;

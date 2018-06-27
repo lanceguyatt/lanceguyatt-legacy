@@ -5,6 +5,7 @@ const projectContext = require.context('../client/', true, /index\.js$/);
 const projectModuleIds = projectContext
   .keys()
   .map((module) => String(projectContext.resolve(module)));
+/* eslint no-undef: */
 beforeEach(() => {
   // Remove our modules from the require cache before each test case.
   projectModuleIds.forEach((id) => delete require.cache[id]);

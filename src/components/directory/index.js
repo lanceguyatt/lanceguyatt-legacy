@@ -1,4 +1,3 @@
-/* eslint react/forbid-prop-types: 1 */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -21,9 +20,9 @@ DirectoryItem.defaultProps = {
 };
 
 export default function Directory({ items, wrap }) {
-  const renderItems = items.map(
-    (item) => (<DirectoryItem item={item} key={item.id} />: null),
-  );
+  const renderItems = items.map((item) => (
+    <DirectoryItem item={item} key={item.id} />
+  ));
 
   return (
     <nav>
@@ -34,6 +33,7 @@ export default function Directory({ items, wrap }) {
   );
 }
 
+/* eslint react/forbid-prop-types: 0 */
 Directory.propTypes = {
   items: PropTypes.array,
   wrap: PropTypes.bool,

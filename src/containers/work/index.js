@@ -42,19 +42,19 @@ Dd.defaultProps = {
   children: '',
 };
 
+const propTypes = {
+  route: PropTypes.shape({
+    data: PropTypes.shape(),
+  }),
+};
+
+const defaultProps = {
+  route: {
+    data: {},
+  },
+};
+
 export default class Work extends Component {
-  static propTypes = {
-    route: PropTypes.shape({
-      data: PropTypes.shape(),
-    }),
-  };
-
-  static defaultProps = {
-    route: {
-      data: {},
-    },
-  };
-
   componentDidMount() {}
 
   render() {
@@ -143,3 +143,6 @@ export default class Work extends Component {
     );
   }
 }
+
+Work.propTypes = propTypes;
+Work.defaultProps = defaultProps;

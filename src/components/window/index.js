@@ -9,25 +9,25 @@ import { Close, Depth, Zoom } from '../common';
 
 import styles from './style.css';
 
+const propTypes = {
+  name: PropTypes.string,
+  alternateHeadline: PropTypes.string,
+  close: PropTypes.string,
+  zoom: PropTypes.bool,
+  depth: PropTypes.bool,
+  children: PropTypes.node,
+};
+
+const defaultProps = {
+  name: '',
+  alternateHeadline: '',
+  close: '',
+  zoom: false,
+  depth: false,
+  children: '',
+};
+
 export default class Window extends Component {
-  static propTypes = {
-    name: PropTypes.string,
-    alternateHeadline: PropTypes.string,
-    close: PropTypes.string,
-    zoom: PropTypes.bool,
-    depth: PropTypes.bool,
-    children: PropTypes.node,
-  };
-
-  static defaultProps = {
-    name: '',
-    alternateHeadline: '',
-    close: '',
-    zoom: false,
-    depth: false,
-    children: '',
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -90,3 +90,6 @@ export default class Window extends Component {
     );
   }
 }
+
+Window.propTypes = propTypes;
+Window.defaultProps = defaultProps;

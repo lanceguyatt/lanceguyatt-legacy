@@ -12,15 +12,15 @@ import author from '../../../data/author/';
 
 import styles from './style.css';
 
+const propTypes = {
+  route: PropTypes.shape(),
+};
+
+const defaultProps = {
+  route: {},
+};
+
 export default class KickStart extends Component {
-  static propTypes = {
-    route: PropTypes.shape(),
-  };
-
-  static defaultProps = {
-    route: {},
-  };
-
   componentDidMount() {
     document.body.className = '';
     document.body.classList.add('u-bg-purple');
@@ -57,3 +57,6 @@ export default class KickStart extends Component {
     );
   }
 }
+
+KickStart.propTypes = propTypes;
+KickStart.defaultProps = defaultProps;

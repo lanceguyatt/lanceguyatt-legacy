@@ -24,15 +24,15 @@ const toastyMp3 = {
   type: 'audio/mp3',
 };
 
+const propTypes = {
+  route: PropTypes.shape(),
+};
+
+const defaultProps = {
+  route: {},
+};
+
 export default class GuruMeditation extends Component {
-  static propTypes = {
-    route: PropTypes.shape(),
-  };
-
-  static defaultProps = {
-    route: {},
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -90,3 +90,6 @@ export default class GuruMeditation extends Component {
     );
   }
 }
+
+GuruMeditation.propTypes = propTypes;
+GuruMeditation.defaultProps = defaultProps;

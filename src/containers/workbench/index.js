@@ -13,17 +13,17 @@ import styles from './style.css';
 import site from '../../../data/site';
 import kickstart from '../../../data/kickstart';
 
+const propTypes = {
+  route: PropTypes.shape(),
+  children: PropTypes.node,
+};
+
+const defaultProps = {
+  route: {},
+  children: null,
+};
+
 export default class WorkBench extends Component {
-  static propTypes = {
-    route: PropTypes.shape(),
-    children: PropTypes.node,
-  };
-
-  static defaultProps = {
-    route: {},
-    children: null,
-  };
-
   componentDidMount() {
     document.body.className = '';
     document.body.classList.add('u-bg-gray');
@@ -57,3 +57,6 @@ export default class WorkBench extends Component {
     );
   }
 }
+
+WorkBench.propTypes = propTypes;
+WorkBench.defaultProps = defaultProps;
